@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<!-- Boceto de referencia: HTML estático con datos de ejemplo, no es código de producción -->
+<title>Registrar una serie</title>
+
+</head>
+<body>
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;800&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#4F7A0F}a:hover{color:#1C1E1A}
+.h{font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;line-height:.95;margin:0}
+.paso{width:56px;height:56px;border-radius:14px;border:2px solid #1C1E1A;background:#FFFFFF;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:30px;color:#1C1E1A}
+.rpe{min-width:48px;min-height:48px;border-radius:12px;border:2px solid #E6E1D6;background:#FFFFFF;font-weight:700;font-size:17px;font-family:'Source Sans 3',sans-serif;color:#1C1E1A}
+</style>
+
+<div style="width: 390px; height: 844px; background: #FAF7F0; color: #1C1E1A; font-family: 'Source Sans 3', sans-serif; font-size: 16px; line-height: 1.4; display: flex; flex-direction: column">
+
+<header style="display: flex; align-items: center; gap: 8px; padding: 12px 12px; border-bottom: 1px solid #E6E1D6">
+<button type="button" aria-label="Volver a la sesión" style="width: 44px; height: 44px; border: 0; background: none"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M14 4l-7 7 7 7" stroke="#1C1E1A" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<div style="flex: 1"><div style="font-size: 13px; font-weight: 700; color: #4F7A0F">EJERCICIO 1 DE 5</div><div class="h" style="font-size: 26px">Sentadilla</div></div>
+<a href="#" style="font-weight: 700; font-size: 15px; padding: 12px 8px">Ver técnica</a>
+</header>
+<div style="height: 6px; background: #7CB518"></div>
+
+<section style="padding: 18px 20px 0; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; gap: 6px" aria-label="Series de hoy">
+<span style="flex: 1; padding: 8px 0; text-align: center; border-radius: 10px; background: #1C1E1A; color: #FAF7F0; font-weight: 700; font-size: 14px">Top ✓</span>
+<span style="flex: 1; padding: 8px 0; text-align: center; border-radius: 10px; background: #1C1E1A; color: #FAF7F0; font-weight: 700; font-size: 14px">1 ✓</span>
+<span style="flex: 1; padding: 8px 0; text-align: center; border-radius: 10px; background: #7CB518; font-weight: 700; font-size: 14px">2</span>
+<span style="flex: 1; padding: 8px 0; text-align: center; border-radius: 10px; background: #E6E1D6; font-weight: 700; font-size: 14px">3</span>
+<span style="flex: 1; padding: 8px 0; text-align: center; border-radius: 10px; background: #E6E1D6; font-weight: 700; font-size: 14px">4</span>
+</div>
+<div style="background: #FFFFFF; border: 2px solid #E6E1D6; border-radius: 16px; padding: 14px 16px">
+<div style="font-weight: 700">Serie 2 de 4 · objetivo</div>
+<div style="display: flex; align-items: baseline; gap: 8px"><span class="h" style="font-size: 44px">92.5 kg × 6</span><span style="font-weight: 700; color: #5E615A">RPE 10</span></div>
+<div style="font-size: 14px; color: #5E615A">La semana pasada: <b style="color: #1C1E1A">90 kg × 6</b>. Hoy, un poquito más.</div>
+</div>
+</section>
+
+<section style="padding: 18px 20px 0; display: flex; flex-direction: column; gap: 14px">
+<div>
+<div style="font-weight: 700; margin-bottom: 6px">Kilos</div>
+<div style="display: flex; align-items: center; justify-content: space-between">
+<button class="paso" type="button" aria-label="Quitar 2.5 kilos">−</button>
+<span class="h" style="font-size: 64px">92.5</span>
+<button class="paso" type="button" aria-label="Sumar 2.5 kilos">+</button>
+</div>
+</div>
+<div>
+<div style="font-weight: 700; margin-bottom: 6px">Repeticiones hechas</div>
+<div style="display: flex; align-items: center; justify-content: space-between">
+<button class="paso" type="button" aria-label="Quitar una repetición">−</button>
+<span class="h" style="font-size: 64px">6</span>
+<button class="paso" type="button" aria-label="Sumar una repetición">+</button>
+</div>
+</div>
+<div>
+<div style="font-weight: 700; margin-bottom: 6px">¿Qué tan dura fue? (RPE)</div>
+<div style="display: flex; gap: 6px; justify-content: space-between">
+<button class="rpe" type="button">6</button><button class="rpe" type="button">7</button><button class="rpe" type="button">8</button><button class="rpe" type="button" style="border-color: #1C1E1A; background: #7CB518">9</button><button class="rpe" type="button">10</button>
+</div>
+<div style="font-size: 13px; color: #5E615A; margin-top: 6px">10 = no te quedaba ni una más. Opcional.</div>
+</div>
+</section>
+
+<div style="margin-top: auto; padding: 14px 20px 22px; border-top: 1px solid #E6E1D6; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; background: #1C1E1A; color: #FAF7F0; border-radius: 12px">
+<span style="font-weight: 600">Descanso</span><span class="h" style="font-size: 30px">2:30</span><button type="button" style="min-height: 40px; border-radius: 10px; border: 2px solid #FAF7F0; background: none; color: #FAF7F0; font-weight: 700; padding: 0 12px; font-family: inherit">Saltar</button>
+</div>
+<button type="button" style="min-height: 56px; border-radius: 14px; background: #7CB518; border: 0; font-weight: 700; font-size: 18px; font-family: inherit; color: #1C1E1A">Guardar serie</button>
+</div>
+</div>
+
+
+</body>
+</html>

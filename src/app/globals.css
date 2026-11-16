@@ -1,0 +1,296 @@
+:root {
+  --hueso: #faf7f0;
+  --tinta: #1c1e1a;
+  --lima: #7cb518;
+  --lima-tinta: #4f7a0f;
+  --naranja: #e07a3e;
+  --gris: #5e615a;
+  --linea: #e6e1d6;
+  --lima-clara: #b6e06a;
+  --naranja-claro: #fbe6d9;
+  --pie: #141512;
+  --blanco: #ffffff;
+  --card-borde: #e6e1d6;
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--hueso);
+  color: var(--tinta);
+}
+
+body {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+a {
+  color: var(--lima-tinta);
+}
+
+a:hover {
+  color: var(--tinta);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  color: inherit;
+}
+
+.h {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 0.95;
+  margin: 0;
+}
+
+.h em {
+  font-style: normal;
+  background: var(--lima);
+  padding: 0 0.08em;
+}
+
+.wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.card {
+  background: var(--blanco);
+  border: 2px solid var(--linea);
+  border-radius: 18px;
+  padding: 22px;
+}
+
+.lbl {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gris);
+}
+
+.big {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 56px;
+  line-height: 0.9;
+}
+
+.btn,
+.btn2 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 24px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 17px;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+}
+
+.btn {
+  background: var(--lima);
+  color: var(--tinta);
+}
+
+.btn:hover {
+  filter: brightness(0.97);
+}
+
+.btn:disabled,
+.btn2:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn2 {
+  background: var(--blanco);
+  color: var(--tinta);
+  border: 2px solid var(--tinta);
+}
+
+.btn-ancho {
+  width: 100%;
+}
+
+.est {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 3px 12px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ok {
+  background: #e3f1c9;
+  color: #2f4a08;
+}
+
+.alerta {
+  background: #f9dcc9;
+  color: #7a3410;
+}
+
+.venc {
+  background: var(--tinta);
+  color: var(--hueso);
+}
+
+.muted {
+  color: var(--gris);
+}
+
+.por-definir {
+  color: var(--gris);
+  font-style: italic;
+}
+
+label.f {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.in,
+textarea.in,
+select.in {
+  min-height: 50px;
+  border: 2px solid #cfc9bb;
+  border-radius: 12px;
+  padding: 0 14px;
+  font-size: 17px;
+  background: var(--blanco);
+  color: var(--tinta);
+}
+
+textarea.in {
+  min-height: 90px;
+  padding: 12px 14px;
+  resize: vertical;
+}
+
+table.tabla {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.tabla td,
+table.tabla th {
+  padding: 14px 10px;
+  border-top: 1px solid var(--linea);
+  text-align: left;
+  vertical-align: middle;
+}
+
+table.tabla th {
+  font-size: 13px;
+  color: var(--gris);
+  border-top: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.barra-lima {
+  height: 6px;
+  background: var(--lima);
+}
+
+.error {
+  color: #7a3410;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.aviso-negro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: var(--tinta);
+  color: var(--hueso);
+}
+
+.chip {
+  font-size: 14px;
+  font-weight: 600;
+  background: #f1ece0;
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.nav-panel {
+  display: flex;
+  gap: 24px;
+  margin-left: auto;
+  font-weight: 600;
+  flex-wrap: wrap;
+}
+
+.nav-panel a {
+  color: var(--tinta);
+  text-decoration: none;
+  padding-bottom: 4px;
+}
+
+.nav-panel a.activo {
+  border-bottom: 3px solid var(--lima);
+}
+
+.logo-marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 26px;
+  color: var(--tinta);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.logo-simbolo {
+  width: 36px;
+  height: 36px;
+  display: block;
+}
+
+.logo-clave {
+  background: var(--lima);
+  padding: 0 0.08em;
+}
+
+.pie-auth {
+  font-size: 14px;
+  color: var(--gris);
+}
+
+@media (max-width: 720px) {
+  .wrap {
+    padding: 0 16px;
+  }
+  .big {
+    font-size: 40px;
+  }
+}

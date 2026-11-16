@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<!-- Boceto de referencia: HTML estático con datos de ejemplo, no es código de producción -->
+<title>Pagos del mes</title>
+
+</head>
+<body>
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;800&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#4F7A0F}a:hover{color:#1C1E1A}
+.h{font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;line-height:.95;margin:0}
+.h em{font-style:normal;background:#7CB518;padding:0 .08em}
+.card{background:#FFFFFF;border:2px solid #E6E1D6;border-radius:18px;padding:22px}
+.lbl{font-size:14px;font-weight:700;color:#5E615A}
+.big{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:56px;line-height:.9}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border-radius:14px;background:#7CB518;color:#1C1E1A;font-weight:700;font-size:17px;text-decoration:none;border:0;font-family:'Source Sans 3',sans-serif}
+.btn2{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 22px;border-radius:14px;background:#FFFFFF;color:#1C1E1A;font-weight:700;font-size:17px;text-decoration:none;border:2px solid #1C1E1A;font-family:'Source Sans 3',sans-serif}
+.est{display:inline-block;border-radius:999px;padding:3px 12px;font-size:14px;font-weight:700}
+.ok{background:#E3F1C9;color:#2F4A08}
+.alerta{background:#F9DCC9;color:#7A3410}
+.venc{background:#1C1E1A;color:#FAF7F0}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+table{width:100%;border-collapse:collapse}
+td,th{padding:14px 10px;border-top:1px solid #E6E1D6;text-align:left;vertical-align:middle}
+th{font-size:13px;color:#5E615A;border-top:0;text-transform:uppercase;letter-spacing:.03em}
+label.f{display:flex;flex-direction:column;gap:6px;font-weight:700;font-size:15px}
+.in{min-height:50px;border:2px solid #CFC9BB;border-radius:12px;padding:0 14px;font-size:17px;font-family:'Source Sans 3',sans-serif;background:#FFFFFF;color:#1C1E1A}
+</style>
+
+
+<div style="background: #FAF7F0; color: #1C1E1A; font-family: 'Source Sans 3', sans-serif; font-size: 17px; line-height: 1.45; padding-bottom: 56px">
+<header style="border-bottom: 1px solid #E6E1D6; background: #FAF7F0">
+<div class="wrap" style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap; min-height: 72px">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 26px"><span style="background: #1C1E1A; color: #FAF7F0; border-radius: 7px; padding: 1px 6px"><span style="color: #7CB518">+</span>1</span> UN KILO MÁS <span style="font-family: 'Source Sans 3', sans-serif; font-size: 14px; font-weight: 700; color: #5E615A; text-transform: none">· Panel del entrenador</span></div>
+<nav style="display: flex; gap: 24px; margin-left: auto; font-weight: 600; flex-wrap: wrap"><a href="#" style="color: #1C1E1A; text-decoration: none;">Clientes</a><a href="#" style="color: #1C1E1A; text-decoration: none;">Rutinas y plantillas</a><a href="#" style="color: #1C1E1A; text-decoration: none;">Ejercicios</a><a href="#" style="color: #1C1E1A; text-decoration: none; border-bottom: 3px solid #7CB518;">Pagos</a></nav>
+<div style="display: flex; align-items: center; gap: 10px"><span style="width: 40px; height: 40px; border-radius: 50%; background: #1C1E1A; color: #FAF7F0; display: grid; place-items: center; font-weight: 700">Y</span><span style="font-size: 15px"><b>Yohan</b><br><span style="color: #5E615A">Entrenador</span></span></div>
+</div>
+</header>
+<div style="height: 6px; background: #7CB518"></div>
+
+<div class="wrap" style="padding-top: 36px; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px; justify-content: space-between">
+<h1 class="h" style="font-size: 64px">Pagos de <em>noviembre</em></h1>
+<div style="display: flex; gap: 12px; flex-wrap: wrap"><select class="in" aria-label="Mes"><option>Noviembre 2026</option><option>Octubre 2026</option></select><a class="btn2" href="#">Exportar a Excel</a></div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px">
+<div class="card"><div class="lbl">Cobrado en el mes</div><div class="big" style="font-size: 44px">$1,800</div><div style="font-size: 14px; color: #5E615A">Ruta +1. Coaching: [precio por definir]</div></div>
+<div class="card"><div class="lbl">Pagos registrados</div><div class="big">9</div></div>
+<div class="card"><div class="lbl">Registrados por Yohan</div><div class="big">6</div></div>
+<div class="card"><div class="lbl">Registrados por Alfredo</div><div class="big">3</div></div>
+</div>
+<div class="card" style="padding: 0; overflow: hidden">
+<div style="overflow-x: auto; padding: 0 12px">
+<table style="font-size: 15px">
+<thead><tr><th>Fecha</th><th>Cliente</th><th>Plan</th><th>Monto</th><th>Folio</th><th>Cubre hasta</th><th>Lo registró</th></tr></thead>
+<tbody>
+<tr><td>15 nov</td><td><b>Juan Pérez</b></td><td>Coaching</td><td>[Por definir]</td><td>0048213</td><td>15 dic</td><td>Yohan</td></tr>
+<tr><td>14 nov</td><td><b>Sofía Martínez</b></td><td>Coaching</td><td>[Por definir]</td><td>0048190</td><td>14 dic</td><td>Alfredo</td></tr>
+<tr><td>2 nov</td><td><b>Mariana Ruiz</b></td><td>Ruta +1 · mensual</td><td>$200</td><td>0047788</td><td>2 dic</td><td>Yohan</td></tr>
+<tr><td>1 nov</td><td><b>Pedro Gómez</b></td><td>Ruta +1 · completa</td><td>$1,400</td><td>0047701</td><td>20 jul</td><td>Yohan</td></tr>
+<tr><td>15 nov</td><td><b>Ana Torres</b></td><td>Ruta +1 · mensual</td><td>$200</td><td>0048301</td><td>15 dic</td><td>Alfredo</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div style="padding: 16px 18px; background: #F1ECE0; border-radius: 14px; font-size: 15px">Sirve para llevar las cuentas claras entre los dos. Cómo se reparte el dinero es una decisión pendiente de los socios: aquí solo se ve quién registró cada pago. «Exportar a Excel» descarga también clientes y registros, como respaldo.</div>
+<div style="font-size: 14px; color: #5E615A">Datos de ejemplo.</div>
+</div>
+
+</div>
+
+
+</body>
+</html>

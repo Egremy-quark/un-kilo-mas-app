@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<!-- Boceto de referencia: HTML estático con datos de ejemplo, no es código de producción -->
+<title>Mi avance en escritorio</title>
+
+</head>
+<body>
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;800&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#4F7A0F}a:hover{color:#1C1E1A}
+.h{font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;line-height:.95;margin:0}
+.h em{font-style:normal;background:#7CB518;padding:0 .08em}
+.card{background:#FFFFFF;border:2px solid #E6E1D6;border-radius:18px;padding:22px}
+.lbl{font-size:15px;font-weight:700;color:#5E615A}
+.big{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:64px;line-height:.9}
+.u{font-family:'Source Sans 3',sans-serif;font-size:20px;font-weight:700}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+td,th{padding:12px 10px;border-top:1px solid #E6E1D6;text-align:left}
+th{font-size:14px;color:#5E615A;border-top:0}
+</style>
+
+<div style="background: #FAF7F0; color: #1C1E1A; font-family: 'Source Sans 3', sans-serif; font-size: 17px; line-height: 1.45; padding-bottom: 56px">
+
+<header style="border-bottom: 1px solid #E6E1D6">
+<div class="wrap" style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap; min-height: 72px">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 26px"><span style="background: #1C1E1A; color: #FAF7F0; border-radius: 7px; padding: 1px 6px"><span style="color: #7CB518">+</span>1</span> UN KILO MÁS</div>
+<nav style="display: flex; gap: 24px; margin-left: auto; font-weight: 600; flex-wrap: wrap"><a href="#" style="color: #1C1E1A; text-decoration: none">Hoy</a><a href="#" style="color: #1C1E1A; text-decoration: none; border-bottom: 3px solid #7CB518">Mi avance</a><a href="#" style="color: #1C1E1A; text-decoration: none">Historial</a><a href="#" style="color: #1C1E1A; text-decoration: none">Mis bloques</a></nav>
+</div>
+</header>
+<div style="height: 6px; background: #7CB518"></div>
+
+<div class="wrap" style="padding-top: 36px; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px; justify-content: space-between">
+<div><div style="font-weight: 700; color: #4F7A0F">Preparación de fuerza · semana 3 de 4 · sesión 7 de 12</div><h1 class="h" style="font-size: 72px">Mi <em>avance</em></h1></div>
+<a href="#" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 24px; border-radius: 14px; background: #7CB518; color: #1C1E1A; font-weight: 700; text-decoration: none">Ir a la sesión de hoy</a>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 24px">
+<div class="card" style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; justify-content: space-between">
+<div><div class="lbl">Sentadilla · tu 1RM estimado</div><div style="display: flex; align-items: baseline; gap: 10px"><span class="big" style="font-size: 88px">117.5</span><span class="u">kg</span><span style="background: #7CB518; border-radius: 10px; padding: 4px 12px; font-weight: 700">+12.5 kg en 8 semanas</span></div></div>
+<div style="display: flex; gap: 6px; flex-wrap: wrap">
+<button type="button" style="min-height: 40px; border-radius: 999px; border: 2px solid #1C1E1A; background: #1C1E1A; color: #FAF7F0; font-weight: 700; padding: 0 16px; font-family: inherit">Sentadilla</button>
+<button type="button" style="min-height: 40px; border-radius: 999px; border: 2px solid #E6E1D6; background: #FFFFFF; font-weight: 700; padding: 0 16px; font-family: inherit">Peso muerto</button>
+<button type="button" style="min-height: 40px; border-radius: 999px; border: 2px solid #E6E1D6; background: #FFFFFF; font-weight: 700; padding: 0 16px; font-family: inherit">Press militar</button>
+</div>
+</div>
+<svg width="100%" height="300" viewBox="0 0 760 300" preserveAspectRatio="none" role="img" aria-label="1RM estimado de sentadilla por semana: de 105 kg en la semana 1 a 117.5 kg en la semana 8, con una bajada en la semana 4 de descarga">
+<line x1="50" y1="30" x2="750" y2="30" stroke="#E6E1D6"/><line x1="50" y1="110" x2="750" y2="110" stroke="#E6E1D6"/><line x1="50" y1="190" x2="750" y2="190" stroke="#E6E1D6"/><line x1="50" y1="260" x2="750" y2="260" stroke="#1C1E1A" stroke-width="1.5"/>
+<text x="6" y="35" font-size="14" fill="#5E615A" font-family="Source Sans 3">120 kg</text><text x="6" y="115" font-size="14" fill="#5E615A" font-family="Source Sans 3">113 kg</text><text x="6" y="195" font-size="14" fill="#5E615A" font-family="Source Sans 3">106 kg</text>
+<rect x="300" y="30" width="80" height="230" fill="#F1ECE0"/><text x="340" y="284" font-size="14" text-anchor="middle" fill="#5E615A" font-family="Source Sans 3">Descarga</text>
+<polyline points="80,201 160,172 240,143 340,166 420,115 500,87 580,58 680,30" fill="none" stroke="#7CB518" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="80" cy="201" r="7" fill="#1C1E1A"/><circle cx="160" cy="172" r="7" fill="#1C1E1A"/><circle cx="240" cy="143" r="7" fill="#1C1E1A"/><circle cx="340" cy="166" r="7" fill="#1C1E1A"/><circle cx="420" cy="115" r="7" fill="#1C1E1A"/><circle cx="500" cy="87" r="7" fill="#1C1E1A"/><circle cx="580" cy="58" r="7" fill="#1C1E1A"/><circle cx="680" cy="30" r="10" fill="#7CB518" stroke="#1C1E1A" stroke-width="3"/>
+<text x="80" y="284" font-size="14" text-anchor="middle" fill="#5E615A" font-family="Source Sans 3">Sem 1</text><text x="160" y="284" font-size="14" text-anchor="middle" fill="#5E615A" font-family="Source Sans 3">Sem 2</text><text x="240" y="284" font-size="14" text-anchor="middle" fill="#5E615A" font-family="Source Sans 3">Sem 3</text><text x="420" y="284" font-size="14" text-anchor="middle" fill="#5E615A" font-family="Source Sans 3">Sem 5</text><text x="500" y="284" font-size="14" text-anchor="middle" fill="#5E615A" font-family="Source Sans 3">Sem 6</text><text x="580" y="284" font-size="14" text-anchor="middle" fill="#5E615A" font-family="Source Sans 3">Sem 7</text><text x="680" y="284" font-size="14" text-anchor="middle" fill="#5E615A" font-family="Source Sans 3">Sem 8</text>
+</svg>
+<div style="font-size: 14px; color: #5E615A">Calculado con tus series registradas (promedio de Epley y Brzycki), como en la calculadora de la web.</div>
+</div>
+
+<div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<div class="card"><div class="lbl">Constancia</div><div style="display: flex; gap: 28px"><div><span class="big">2</span><span class="u"> de 3</span><div style="font-size: 15px">esta semana</div></div><div><span class="big">10</span><div style="font-size: 15px">este mes</div></div></div></div>
+<div class="card"><div class="lbl" style="margin-bottom: 8px">El mesociclo</div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; text-align: center; font-size: 13px; font-weight: 700">
+<div><div style="height: 12px; border-radius: 6px; background: #1C1E1A"></div>Sem 1</div><div><div style="height: 12px; border-radius: 6px; background: #1C1E1A"></div>Sem 2</div><div><div style="height: 12px; border-radius: 6px; background: #7CB518"></div>Sem 3</div><div><div style="height: 12px; border-radius: 6px; background: #D9D2C3"></div>Descarga</div>
+</div></div>
+<div class="card" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+<div><div class="lbl">Peso corporal</div><span class="big" style="font-size: 44px">78.4</span><span class="u"> kg</span></div>
+<div><div class="lbl">Ganas de entrenar</div><span class="big" style="font-size: 44px">7.4</span><span class="u"> /10</span></div>
+</div>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 24px">
+<div class="card" style="flex: 1 1 360px; min-width: 0">
+<div class="lbl">Tu mejor serie</div>
+<table style="width: 100%; border-collapse: collapse">
+<thead><tr><th>Ejercicio</th><th>Mejor serie</th><th>Volumen semana</th></tr></thead>
+<tbody>
+<tr><td>Sentadilla</td><td><b>92.5 kg × 6</b></td><td>2 220 kg</td></tr>
+<tr><td>Peso muerto rumano</td><td><b>80 kg × 6</b></td><td>1 440 kg</td></tr>
+<tr><td>Press militar</td><td><b>37.5 kg × 6</b></td><td>750 kg</td></tr>
+<tr><td>Elevaciones laterales</td><td><b>8 kg × 15</b></td><td>360 kg</td></tr>
+</tbody>
+</table>
+</div>
+<div class="card" style="flex: 1 1 360px; min-width: 0">
+<div class="lbl">Historial reciente</div>
+<table style="width: 100%; border-collapse: collapse">
+<thead><tr><th>Sesión</th><th>Fecha</th><th>Duración</th><th>Ganas</th></tr></thead>
+<tbody>
+<tr><td><b>Día C</b></td><td>jueves 12</td><td>58 min</td><td>8</td></tr>
+<tr><td><b>Día B</b></td><td>martes 10</td><td>64 min</td><td>6</td></tr>
+<tr><td><b>Día A</b></td><td>lunes 9</td><td>71 min</td><td>7</td></tr>
+<tr><td><b>Día C</b></td><td>viernes 6</td><td>60 min</td><td>8</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div style="font-size: 14px; color: #5E615A">Datos de ejemplo. El programa real lo define Yohan.</div>
+</div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<!-- Boceto de referencia: HTML estático con datos de ejemplo, no es código de producción -->
+<title>Cambiar ejercicio</title>
+
+</head>
+<body>
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;800&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#4F7A0F}a:hover{color:#1C1E1A}
+.h{font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;line-height:.95;margin:0}
+.h em{font-style:normal;background:#7CB518;padding:0 .08em}
+.card{background:#FFFFFF;border:2px solid #E6E1D6;border-radius:16px;padding:16px}
+.lbl{font-size:14px;font-weight:700;color:#5E615A}
+.btn{display:flex;align-items:center;justify-content:center;min-height:56px;border-radius:14px;background:#7CB518;color:#1C1E1A;font-weight:700;font-size:18px;border:0;font-family:'Source Sans 3',sans-serif;text-decoration:none}
+.btn2{display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:14px;background:#FFFFFF;color:#1C1E1A;font-weight:700;font-size:17px;border:2px solid #1C1E1A;font-family:'Source Sans 3',sans-serif;text-decoration:none}
+.est{display:inline-block;border-radius:999px;padding:3px 12px;font-size:14px;font-weight:700}
+</style>
+
+<div style="width: 390px; height: 900px; background: #FAF7F0; color: #1C1E1A; font-family: 'Source Sans 3', sans-serif; font-size: 16px; line-height: 1.4; display: flex; flex-direction: column">
+<header style="display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border-bottom: 1px solid #E6E1D6">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 22px"><span style="background: #1C1E1A; color: #FAF7F0; border-radius: 6px; padding: 1px 5px"><span style="color: #7CB518">+</span>1</span> UN KILO MÁS</div>
+<button type="button" aria-label="Menú" style="width: 44px; height: 44px; border: 0; background: none"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M3 6h16M3 11h16M3 16h16" stroke="#1C1E1A" stroke-width="2.5" stroke-linecap="round"/></svg></button>
+</header>
+<div style="height: 6px; background: #7CB518"></div>
+<section style="padding: 20px; display: flex; flex-direction: column; gap: 14px">
+<a href="#" style="font-weight: 700">← Día A · semana 2</a>
+<div class="lbl">Ejercicio 1 de 6</div>
+<h1 class="h" style="font-size: 44px">Prensa</h1>
+<div class="card" style="display: flex; gap: 14px; align-items: center"><div><div class="lbl">Hoy</div><span class="h" style="font-size: 34px">3 × 15/12/10</span></div><div style="margin-left: auto; text-align: right; font-size: 14px; color: #5E615A">Descanso<br><b style="color: #1C1E1A">1'30"</b></div></div>
+
+<div style="padding: 14px 16px; background: #1C1E1A; color: #FAF7F0; border-radius: 14px; display: flex; flex-direction: column; gap: 4px">
+<b>¿No hay prensa en tu gimnasio o está ocupada?</b>
+<span style="font-size: 14px; color: #CFC9BB">Cámbiala por una de estas. Las series y las reps se quedan igual.</span>
+</div>
+<div class="card" style="display: flex; flex-direction: column; gap: 0; padding: 4px 16px">
+<label style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid #E6E1D6"><input type="radio" name="c" aria-label="Sentadilla sin peso"><span style="flex: 1"><b>Sentadilla sin peso</b></span><span class="est" style="background: #F1ECE0; color: #5E615A">Sin equipo</span></label>
+<label style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid #E6E1D6"><input type="radio" name="c" checked aria-label="Sentadilla frontal"><span style="flex: 1"><b>Sentadilla frontal</b></span><span class="est" style="background: #E3F1C9; color: #2F4A08">Equivalente</span></label>
+<label style="display: flex; align-items: center; gap: 12px; padding: 12px 0"><input type="radio" name="c" aria-label="Prensa horizontal"><span style="flex: 1"><b>Prensa horizontal</b></span><span class="est" style="background: #F1ECE0; color: #5E615A">Con máquina</span></label>
+</div>
+<a class="btn" href="#">Cambiar solo por hoy</a>
+<a class="btn2" href="#">Cambiar para toda la fase</a>
+<div style="font-size: 13px; color: #5E615A">Tu avance se guarda con el ejercicio que hiciste de verdad.</div>
+</section>
+
+</div>
+
+
+</body>
+</html>

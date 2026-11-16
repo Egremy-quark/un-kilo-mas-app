@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<!-- Boceto de referencia: HTML estático con datos de ejemplo, no es código de producción -->
+<title>Sesión de hoy</title>
+
+</head>
+<body>
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;800&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#4F7A0F}a:hover{color:#1C1E1A}
+.h{font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;line-height:.95;margin:0}
+.h em{font-style:normal;background:#7CB518;padding:0 .08em}
+.ej{background:#FFFFFF;border:2px solid #E6E1D6;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.tag{font-size:13px;font-weight:700;color:#4F7A0F;text-transform:uppercase;letter-spacing:.02em}
+.meta{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:14px;font-weight:600;background:#F1ECE0;border-radius:999px;padding:4px 10px}
+.btn{display:flex;align-items:center;justify-content:center;min-height:56px;border-radius:14px;background:#7CB518;color:#1C1E1A;font-weight:700;font-size:18px;border:0;font-family:'Source Sans 3',sans-serif;width:100%}
+</style>
+
+<div style="width: 390px; height: 1560px; background: #FAF7F0; color: #1C1E1A; font-family: 'Source Sans 3', sans-serif; font-size: 16px; line-height: 1.4; display: flex; flex-direction: column">
+
+<header style="display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border-bottom: 1px solid #E6E1D6">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 22px"><span style="background: #1C1E1A; color: #FAF7F0; border-radius: 6px; padding: 1px 5px"><span style="color: #7CB518">+</span>1</span> UN KILO MÁS</div>
+<button type="button" aria-label="Menú" style="width: 44px; height: 44px; border: 0; background: none"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M3 6h16M3 11h16M3 16h16" stroke="#1C1E1A" stroke-width="2.5" stroke-linecap="round"/></svg></button>
+</header>
+<div style="height: 6px; background: #7CB518"></div>
+
+<section style="padding: 20px; display: flex; flex-direction: column; gap: 14px">
+<div class="tag">Preparación de fuerza · semana 3 de 4</div>
+<h1 class="h" style="font-size: 46px">Día A · <em>Full body</em></h1>
+<div style="color: #5E615A; font-weight: 600">Sentadilla + press militar · sesión 7 de 12 · unos 70 min</div>
+<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 3px" role="img" aria-label="Sesión 7 de 12 del mesociclo">
+<span style="height: 8px; border-radius: 4px; background: #1C1E1A"></span><span style="height: 8px; border-radius: 4px; background: #1C1E1A"></span><span style="height: 8px; border-radius: 4px; background: #1C1E1A"></span><span style="height: 8px; border-radius: 4px; background: #1C1E1A"></span><span style="height: 8px; border-radius: 4px; background: #1C1E1A"></span><span style="height: 8px; border-radius: 4px; background: #1C1E1A"></span><span style="height: 8px; border-radius: 4px; background: #7CB518"></span><span style="height: 8px; border-radius: 4px; background: #E6E1D6"></span><span style="height: 8px; border-radius: 4px; background: #E6E1D6"></span><span style="height: 8px; border-radius: 4px; background: #D9D2C3"></span><span style="height: 8px; border-radius: 4px; background: #D9D2C3"></span><span style="height: 8px; border-radius: 4px; background: #D9D2C3"></span>
+</div>
+<div style="font-size: 13px; color: #5E615A">Las 3 últimas son la semana de descarga.</div>
+</section>
+
+<section style="margin: 0 20px; padding: 16px; background: #1C1E1A; color: #FAF7F0; border-radius: 16px; display: flex; flex-direction: column; gap: 12px">
+<div style="font-weight: 700">Antes de empezar</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<label style="font-size: 14px; color: #CFC9BB">Tu peso hoy (kg)<input value="78.4" style="display: block; width: 100%; box-sizing: border-box; margin-top: 4px; min-height: 48px; border-radius: 10px; border: 0; padding: 0 12px; font-size: 18px; font-family: inherit; font-weight: 700"></label>
+<div style="font-size: 14px; color: #CFC9BB">Ganas de entrenar<div style="display: flex; align-items: center; gap: 8px; margin-top: 4px; min-height: 48px"><span class="h" style="font-size: 40px; color: #FAF7F0">7</span><span>de 10</span></div></div>
+</div>
+<input type="range" min="0" max="10" value="7" aria-label="Ganas de entrenar del 0 al 10" style="width: 100%; accent-color: #7CB518">
+<div style="font-size: 13px; color: #CFC9BB">La hora de inicio se guarda sola al pulsar «Empezar».</div>
+</section>
+
+<section style="padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<h2 class="h" style="font-size: 30px">Lo que toca hoy</h2>
+
+<div class="ej" style="border-color: #1C1E1A">
+<div class="tag">1 · Principal</div>
+<div class="h" style="font-size: 26px">Sentadilla</div>
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span>Top set · 1 × 1 al 85 %</span><span class="h" style="font-size: 30px">102<span style="font-family: 'Source Sans 3'; font-size: 14px; font-weight: 700"> kg</span></span></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span>Trabajo · 4 × 8/6/4/2 al 77 %</span><span class="h" style="font-size: 30px">92.5<span style="font-family: 'Source Sans 3'; font-size: 14px; font-weight: 700"> kg</span></span></div>
+<div class="meta"><span class="chip">RPE 10</span><span class="chip">Descanso 2:30</span><span class="chip">1RM de referencia 120 kg</span></div>
+<div style="font-size: 14px; color: #5E615A">Calculado de tu 1RM: si tu 1RM cambia, los kilos se actualizan solos.</div>
+</div>
+
+<div class="ej">
+<div class="tag">2</div>
+<div class="h" style="font-size: 26px">Peso muerto rumano</div>
+<div>3 × 6</div>
+<div class="meta"><span class="chip">RPE 10</span><span class="chip">Descanso 2:00</span></div>
+</div>
+
+<div class="ej">
+<div class="tag">3 · Principal</div>
+<div class="h" style="font-size: 26px">Press militar</div>
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span>Trabajo · 4 × 8/6/4/2 al 75 %</span><span class="h" style="font-size: 30px">37.5<span style="font-family: 'Source Sans 3'; font-size: 14px; font-weight: 700"> kg</span></span></div>
+<div class="meta"><span class="chip">RPE 10</span><span class="chip">Descanso 2:30</span></div>
+</div>
+
+<div class="ej">
+<div class="tag">4</div>
+<div class="h" style="font-size: 26px">Elevaciones laterales</div>
+<div>3 × 12–15</div>
+<div class="meta"><span class="chip">RPE 10</span><span class="chip">Descanso 1:30</span></div>
+</div>
+
+<div class="ej">
+<div class="tag">5 · Triserie, 3 vueltas</div>
+<div class="h" style="font-size: 26px">Crunch en polea · Pantorrillas · Curl Scott</div>
+<div>20 · 12 · 12 repeticiones, al fallo</div>
+<div class="meta"><span class="chip">2:00 entre vueltas</span></div>
+</div>
+</section>
+
+<div style="margin-top: auto; padding: 16px 20px 24px; border-top: 1px solid #E6E1D6; background: #FAF7F0">
+<button class="btn" type="button">Empezar la sesión</button>
+</div>
+</div>
+
+
+</body>
+</html>

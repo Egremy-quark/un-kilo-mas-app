@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<!-- Boceto de referencia: HTML estático con datos de ejemplo, no es código de producción -->
+<title>Biblioteca de ejercicios</title>
+
+</head>
+<body>
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;800&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#4F7A0F}a:hover{color:#1C1E1A}
+.h{font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;line-height:.95;margin:0}
+.h em{font-style:normal;background:#7CB518;padding:0 .08em}
+.card{background:#FFFFFF;border:2px solid #E6E1D6;border-radius:18px;padding:22px}
+.lbl{font-size:14px;font-weight:700;color:#5E615A}
+.big{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:56px;line-height:.9}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border-radius:14px;background:#7CB518;color:#1C1E1A;font-weight:700;font-size:17px;text-decoration:none;border:0;font-family:'Source Sans 3',sans-serif}
+.btn2{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 22px;border-radius:14px;background:#FFFFFF;color:#1C1E1A;font-weight:700;font-size:17px;text-decoration:none;border:2px solid #1C1E1A;font-family:'Source Sans 3',sans-serif}
+.est{display:inline-block;border-radius:999px;padding:3px 12px;font-size:14px;font-weight:700}
+.ok{background:#E3F1C9;color:#2F4A08}
+.alerta{background:#F9DCC9;color:#7A3410}
+.venc{background:#1C1E1A;color:#FAF7F0}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+table{width:100%;border-collapse:collapse}
+td,th{padding:14px 10px;border-top:1px solid #E6E1D6;text-align:left;vertical-align:middle}
+th{font-size:13px;color:#5E615A;border-top:0;text-transform:uppercase;letter-spacing:.03em}
+label.f{display:flex;flex-direction:column;gap:6px;font-weight:700;font-size:15px}
+.in{min-height:50px;border:2px solid #CFC9BB;border-radius:12px;padding:0 14px;font-size:17px;font-family:'Source Sans 3',sans-serif;background:#FFFFFF;color:#1C1E1A}
+</style>
+
+
+<div style="background: #FAF7F0; color: #1C1E1A; font-family: 'Source Sans 3', sans-serif; font-size: 17px; line-height: 1.45; padding-bottom: 56px">
+<header style="border-bottom: 1px solid #E6E1D6; background: #FAF7F0">
+<div class="wrap" style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap; min-height: 72px">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 26px"><span style="background: #1C1E1A; color: #FAF7F0; border-radius: 7px; padding: 1px 6px"><span style="color: #7CB518">+</span>1</span> UN KILO MÁS <span style="font-family: 'Source Sans 3', sans-serif; font-size: 14px; font-weight: 700; color: #5E615A; text-transform: none">· Panel del entrenador</span></div>
+<nav style="display: flex; gap: 24px; margin-left: auto; font-weight: 600; flex-wrap: wrap"><a href="#" style="color: #1C1E1A; text-decoration: none;">Clientes</a><a href="#" style="color: #1C1E1A; text-decoration: none;">Rutinas y plantillas</a><a href="#" style="color: #1C1E1A; text-decoration: none; border-bottom: 3px solid #7CB518;">Ejercicios</a><a href="#" style="color: #1C1E1A; text-decoration: none;">Pagos</a></nav>
+<div style="display: flex; align-items: center; gap: 10px"><span style="width: 40px; height: 40px; border-radius: 50%; background: #1C1E1A; color: #FAF7F0; display: grid; place-items: center; font-weight: 700">Y</span><span style="font-size: 15px"><b>Yohan</b><br><span style="color: #5E615A">Entrenador</span></span></div>
+</div>
+</header>
+<div style="height: 6px; background: #7CB518"></div>
+
+<div class="wrap" style="padding-top: 36px; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px; justify-content: space-between">
+<div><h1 class="h" style="font-size: 64px">Biblioteca de <em>ejercicios</em></h1><p style="margin: 6px 0 0; max-width: 680px">Al armar una rutina se elige de aquí. Así cada ejercicio tiene un solo nombre y las gráficas de avance no se parten.</p></div>
+<a class="btn" href="#">+ Nuevo ejercicio</a>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+<div class="card" style="flex: 999 1 640px; min-width: 0; padding: 0; overflow: hidden">
+<div style="display: flex; flex-wrap: wrap; gap: 10px; padding: 16px 20px; border-bottom: 1px solid #E6E1D6">
+<input class="in" placeholder="Buscar ejercicio" aria-label="Buscar ejercicio" style="flex: 1 1 240px">
+<select class="in" aria-label="Patrón"><option>Todos los patrones</option><option>Rodilla</option><option>Bisagra</option><option>Empuje</option><option>Jalón</option><option>Accesorio</option></select>
+</div>
+<div style="overflow-x: auto; padding: 0 12px">
+<table style="font-size: 15px">
+<thead><tr><th>Ejercicio</th><th>Patrón</th><th>Se mide en</th><th>Video</th><th>Usado en</th></tr></thead>
+<tbody>
+<tr style="background: #EEF6DE"><td><b>Sentadilla</b></td><td>Rodilla</td><td>Kilos y reps</td><td>Sí</td><td>9 rutinas</td></tr>
+<tr><td><b>Pin squat bajo</b></td><td>Rodilla</td><td>Kilos y reps</td><td>Sí</td><td>3 rutinas</td></tr>
+<tr><td><b>Peso muerto</b></td><td>Bisagra</td><td>Kilos y reps</td><td>Sí</td><td>8 rutinas</td></tr>
+<tr><td><b>Peso muerto rumano</b></td><td>Bisagra</td><td>Kilos y reps</td><td>No</td><td>6 rutinas</td></tr>
+<tr><td><b>Press banca</b></td><td>Empuje</td><td>Kilos y reps</td><td>Sí</td><td>7 rutinas</td></tr>
+<tr><td><b>Fondos en paralelas</b></td><td>Empuje</td><td>Peso corporal + lastre</td><td>No</td><td>2 rutinas</td></tr>
+<tr><td><b>Dominada prona</b></td><td>Jalón</td><td>Peso corporal + lastre</td><td>Sí</td><td>5 rutinas</td></tr>
+<tr><td><b>Tuck front lever</b></td><td>Jalón</td><td>Tiempo (segundos)</td><td>Sí</td><td>1 rutina</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<form class="card" style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 14px; border-color: #1C1E1A">
+<div class="lbl">Editando: Sentadilla</div>
+<label class="f">Nombre<input class="in" value="Sentadilla"></label>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<label class="f">Patrón<select class="in"><option>Rodilla</option></select></label>
+<label class="f">Se mide en<select class="in"><option>Kilos y reps</option><option>Peso corporal + lastre</option><option>Tiempo</option></select></label>
+</div>
+<label class="f">Video de técnica<input class="in" placeholder="Enlace de YouTube"></label>
+<label class="f">Nota técnica por defecto<input class="in" value="Paciencia abajo"></label>
+<div style="font-size: 14px; color: #5E615A">Al ponerlo en una rutina, la nota y el video se copian; los puedes cambiar solo para ese cliente.</div>
+<button class="btn" type="button">Guardar</button>
+</form>
+</div>
+</div>
+
+</div>
+
+
+</body>
+</html>

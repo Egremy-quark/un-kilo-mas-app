@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<!-- Boceto de referencia: HTML estático con datos de ejemplo, no es código de producción -->
+<title>Ficha del cliente</title>
+
+</head>
+<body>
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;800&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#4F7A0F}a:hover{color:#1C1E1A}
+.h{font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;line-height:.95;margin:0}
+.h em{font-style:normal;background:#7CB518;padding:0 .08em}
+.card{background:#FFFFFF;border:2px solid #E6E1D6;border-radius:18px;padding:22px}
+.lbl{font-size:14px;font-weight:700;color:#5E615A}
+.big{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:56px;line-height:.9}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border-radius:14px;background:#7CB518;color:#1C1E1A;font-weight:700;font-size:17px;text-decoration:none;border:0;font-family:'Source Sans 3',sans-serif}
+.btn2{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 22px;border-radius:14px;background:#FFFFFF;color:#1C1E1A;font-weight:700;font-size:17px;text-decoration:none;border:2px solid #1C1E1A;font-family:'Source Sans 3',sans-serif}
+.est{display:inline-block;border-radius:999px;padding:3px 12px;font-size:14px;font-weight:700}
+.ok{background:#E3F1C9;color:#2F4A08}
+.alerta{background:#F9DCC9;color:#7A3410}
+.venc{background:#1C1E1A;color:#FAF7F0}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+table{width:100%;border-collapse:collapse}
+td,th{padding:14px 10px;border-top:1px solid #E6E1D6;text-align:left;vertical-align:middle}
+th{font-size:13px;color:#5E615A;border-top:0;text-transform:uppercase;letter-spacing:.03em}
+label.f{display:flex;flex-direction:column;gap:6px;font-weight:700;font-size:15px}
+.in{min-height:50px;border:2px solid #CFC9BB;border-radius:12px;padding:0 14px;font-size:17px;font-family:'Source Sans 3',sans-serif;background:#FFFFFF;color:#1C1E1A}
+</style>
+
+
+<div style="background: #FAF7F0; color: #1C1E1A; font-family: 'Source Sans 3', sans-serif; font-size: 17px; line-height: 1.45; padding-bottom: 56px">
+<header style="border-bottom: 1px solid #E6E1D6; background: #FAF7F0">
+<div class="wrap" style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap; min-height: 72px">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 26px"><span style="background: #1C1E1A; color: #FAF7F0; border-radius: 7px; padding: 1px 6px"><span style="color: #7CB518">+</span>1</span> UN KILO MÁS <span style="font-family: 'Source Sans 3', sans-serif; font-size: 14px; font-weight: 700; color: #5E615A; text-transform: none">· Panel del entrenador</span></div>
+<nav style="display: flex; gap: 24px; margin-left: auto; font-weight: 600; flex-wrap: wrap"><a href="#" style="color: #1C1E1A; text-decoration: none; border-bottom: 3px solid #7CB518;">Clientes</a><a href="#" style="color: #1C1E1A; text-decoration: none;">Rutinas y plantillas</a><a href="#" style="color: #1C1E1A; text-decoration: none;">Ejercicios</a><a href="#" style="color: #1C1E1A; text-decoration: none;">Pagos</a></nav>
+<div style="display: flex; align-items: center; gap: 10px"><span style="width: 40px; height: 40px; border-radius: 50%; background: #1C1E1A; color: #FAF7F0; display: grid; place-items: center; font-weight: 700">Y</span><span style="font-size: 15px"><b>Yohan</b><br><span style="color: #5E615A">Entrenador</span></span></div>
+</div>
+</header>
+<div style="height: 6px; background: #7CB518"></div>
+
+<div class="wrap" style="padding-top: 36px; display: flex; flex-direction: column; gap: 24px">
+<a href="#" style="font-weight: 700">← Clientes</a>
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px; justify-content: space-between">
+<div><h1 class="h" style="font-size: 64px">Francisco <em>«Panchito»</em> López</h1><div style="color: #5E615A; font-weight: 600">pancho@ejemplo.com · 921 000 0001 · entrenador a cargo: Alfredo</div></div>
+<div style="display: flex; gap: 12px; flex-wrap: wrap"><a class="btn2" href="#">Editar rutina</a><a class="btn" href="#">Registrar pago</a></div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 24px">
+<div class="card" style="flex: 1 1 340px; min-width: 0; border-color: #E07A3E; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; align-items: center"><div class="lbl">Mensualidad</div><span class="est alerta">Vence en 3 días</span></div>
+<div class="big">18 nov</div>
+<div style="font-size: 15px">Al registrar su próxima transferencia, la fecha se corre un mes desde el vencimiento (no desde hoy), para que no pierda días.</div>
+<table style="font-size: 15px">
+<thead><tr><th>Pago</th><th>Monto</th><th>Folio</th><th>Cubre</th></tr></thead>
+<tbody>
+<tr><td>18 oct</td><td>[Por definir]</td><td>0047110</td><td>18 oct – 18 nov</td></tr>
+<tr><td>18 sep</td><td>[Por definir]</td><td>0045022</td><td>18 sep – 18 oct</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="card" style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px"><div class="lbl">Rutina actual</div><a href="#" style="font-weight: 700; font-size: 15px">Ver completa</a></div>
+<div class="h" style="font-size: 36px">Hipertrofia · <em>4 semanas</em></div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; text-align: center; font-size: 13px; font-weight: 700">
+<div><div style="height: 12px; border-radius: 6px; background: #1C1E1A"></div>Sem 1</div><div><div style="height: 12px; border-radius: 6px; background: #1C1E1A"></div>Sem 2</div><div><div style="height: 12px; border-radius: 6px; background: #7CB518"></div>Sem 3</div><div><div style="height: 12px; border-radius: 6px; background: #D9D2C3"></div>Descarga</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; font-size: 15px">
+<div style="background: #F1ECE0; border-radius: 12px; padding: 12px"><b>Día A</b> · 6 ejercicios<br>Sentadilla, press banca…</div>
+<div style="background: #F1ECE0; border-radius: 12px; padding: 12px"><b>Día B</b> · 6 ejercicios<br>Peso muerto, dominadas…</div>
+<div style="background: #F1ECE0; border-radius: 12px; padding: 12px"><b>Día C</b> · 5 ejercicios<br>Pin squat, press inclinado…</div>
+</div>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 24px">
+<div class="card" style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; align-items: center">
+<div><div class="lbl">Sentadilla · 1RM estimado</div><span class="big">117.5</span><span style="font-weight: 700; font-size: 18px"> kg</span> <span class="est ok">+12.5 kg</span></div>
+<select class="in" aria-label="Ejercicio"><option>Sentadilla</option><option>Press banca</option><option>Peso muerto</option></select>
+</div>
+<svg width="100%" height="200" viewBox="0 0 700 200" preserveAspectRatio="none" role="img" aria-label="1RM estimado de sentadilla: de 105 a 117.5 kg en 8 semanas">
+<line x1="0" y1="20" x2="700" y2="20" stroke="#E6E1D6"/><line x1="0" y1="90" x2="700" y2="90" stroke="#E6E1D6"/><line x1="0" y1="170" x2="700" y2="170" stroke="#1C1E1A" stroke-width="1.5"/>
+<rect x="250" y="20" width="70" height="150" fill="#F1ECE0"/>
+<polyline points="30,140 110,122 190,104 285,118 370,85 450,66 530,45 640,22" fill="none" stroke="#7CB518" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="30" cy="140" r="6" fill="#1C1E1A"/><circle cx="110" cy="122" r="6" fill="#1C1E1A"/><circle cx="190" cy="104" r="6" fill="#1C1E1A"/><circle cx="285" cy="118" r="6" fill="#1C1E1A"/><circle cx="370" cy="85" r="6" fill="#1C1E1A"/><circle cx="450" cy="66" r="6" fill="#1C1E1A"/><circle cx="530" cy="45" r="6" fill="#1C1E1A"/><circle cx="640" cy="22" r="9" fill="#7CB518" stroke="#1C1E1A" stroke-width="3"/>
+</svg>
+</div>
+<div style="flex: 1 1 340px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-content: start">
+<div class="card"><div class="lbl">Esta semana</div><span class="big" style="font-size: 44px">2</span><span style="font-weight: 700"> de 3</span></div>
+<div class="card"><div class="lbl">Última sesión</div><span class="big" style="font-size: 44px">2</span><span style="font-weight: 700"> días</span></div>
+<div class="card"><div class="lbl">Peso corporal</div><span class="big" style="font-size: 44px">78.4</span><span style="font-weight: 700"> kg</span></div>
+<div class="card"><div class="lbl">Ganas de entrenar</div><span class="big" style="font-size: 44px">7.4</span><span style="font-weight: 700"> /10</span></div>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 24px">
+<div class="card" style="flex: 1 1 420px; min-width: 0">
+<div style="display: flex; justify-content: space-between; align-items: center"><div class="lbl">1RM de referencia</div><span style="font-size: 14px; color: #5E615A">Con esto se calculan sus kilos</span></div>
+<table style="font-size: 15px">
+<thead><tr><th>Ejercicio</th><th>1RM</th><th>De dónde sale</th><th></th></tr></thead>
+<tbody>
+<tr><td>Sentadilla</td><td><b>120 kg</b></td><td>Lo puso Alfredo · 1 nov</td><td><a href="#" style="font-weight: 700">Cambiar</a></td></tr>
+<tr><td>Press banca</td><td><b>82.5 kg</b></td><td>Estimado de su mejor serie</td><td><a href="#" style="font-weight: 700">Cambiar</a></td></tr>
+<tr><td>Peso muerto</td><td><b>150 kg</b></td><td>Estimado de su mejor serie</td><td><a href="#" style="font-weight: 700">Cambiar</a></td></tr>
+</tbody>
+</table>
+<div style="font-size: 14px; color: #5E615A; margin-top: 8px">Si su mejor serie estimada supera el 1RM de referencia, te avisa para que decidas si lo subes.</div>
+</div>
+<div class="card" style="flex: 1 1 360px; min-width: 0">
+<div class="lbl">Rutinas anteriores</div>
+<table style="font-size: 15px">
+<thead><tr><th>Rutina</th><th>Fechas</th><th>Sesiones</th></tr></thead>
+<tbody>
+<tr><td><b>Técnica · bloque 1</b></td><td>sep – oct</td><td>11 de 12</td></tr>
+<tr><td><b>Base · bloque 0</b></td><td>ago – sep</td><td>9 de 12</td></tr>
+</tbody>
+</table>
+<a href="#" style="display: inline-block; margin-top: 10px; font-weight: 700">Usar una como base para la siguiente</a>
+</div>
+</div>
+
+<div class="card">
+<div class="lbl">Últimas sesiones y sus notas</div>
+<table>
+<thead><tr><th>Sesión</th><th>Fecha</th><th>Duración</th><th>Ganas</th><th>Lo más destacado</th><th>Nota del cliente</th></tr></thead>
+<tbody>
+<tr><td><b>Día B</b> · sem 3</td><td>jueves 12</td><td>62 min</td><td>8</td><td>Peso muerto 140 kg × 5 · <span style="color: #4F7A0F; font-weight: 700">+5 kg</span></td><td>«La última serie salió fácil»</td></tr>
+<tr><td><b>Día A</b> · sem 3</td><td>martes 10</td><td>70 min</td><td>6</td><td>Sentadilla 92.5 kg × 6 · <span style="color: #4F7A0F; font-weight: 700">+2.5 kg</span></td><td><span class="est alerta">«Me molestó la rodilla izquierda»</span></td></tr>
+<tr><td><b>Día C</b> · sem 2</td><td>viernes 6</td><td>55 min</td><td>7</td><td>Pin squat 80 kg × 2 × 6</td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 14px; color: #5E615A">Datos de ejemplo.</div>
+</div>
+
+</div>
+
+
+</body>
+</html>

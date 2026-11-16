@@ -1,0 +1,5689 @@
+{
+ "programa": "Ruta +1",
+ "version": "borrador-1",
+ "fases": [
+  {
+   "orden": 1,
+   "id": "arranque",
+   "nombre": "Arranque",
+   "descripcion": "Volver a moverse sin lastimarte",
+   "semanas": 6,
+   "dias_por_semana": 2,
+   "dias": [
+    {
+     "dia": "A",
+     "ejercicios": [
+      {
+       "orden": 1,
+       "nombre": "Prensa",
+       "semanas": [
+        {
+         "texto": "3 × 15/12/10",
+         "series": "3",
+         "reps": "15/12/10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "3 × 15/12/10",
+         "series": "3",
+         "reps": "15/12/10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "3 × 12/10/8",
+         "series": "3",
+         "reps": "12/10/8",
+         "descanso": "1'45\""
+        },
+        {
+         "texto": "3 × 12/10/8",
+         "series": "3",
+         "reps": "12/10/8",
+         "descanso": "1'45\""
+        },
+        {
+         "texto": "3 × 10/8/6",
+         "series": "3",
+         "reps": "10/8/6",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "3 × 10/8/6",
+         "series": "3",
+         "reps": "10/8/6",
+         "descanso": "2'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Sentadilla sin peso",
+        "Sentadilla frontal",
+        "Prensa horizontal",
+        "Sentadilla con salto",
+        "Zancada"
+       ],
+       "nota": "1 s pausa en box"
+      },
+      {
+       "orden": 2,
+       "nombre": "Press de pecho en máquina",
+       "semanas": [
+        {
+         "texto": "3 × 15/12/10",
+         "series": "3",
+         "reps": "15/12/10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "3 × 15/12/10",
+         "series": "3",
+         "reps": "15/12/10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "3 × 12/10/8",
+         "series": "3",
+         "reps": "12/10/8",
+         "descanso": "1'45\""
+        },
+        {
+         "texto": "3 × 12/10/8",
+         "series": "3",
+         "reps": "12/10/8",
+         "descanso": "1'45\""
+        },
+        {
+         "texto": "3 × 10/8/6",
+         "series": "3",
+         "reps": "10/8/6",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "3 × 10/8/6",
+         "series": "3",
+         "reps": "10/8/6",
+         "descanso": "2'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Lagartijas",
+        "Fondos en paralelas",
+        "Lagartijas con peso",
+        "Press con mancuernas"
+       ],
+       "nota": "1 s pausa al pecho"
+      },
+      {
+       "orden": 3,
+       "nombre": "Remo a una mano en polea",
+       "semanas": [
+        {
+         "texto": "3 × 15/12/10",
+         "series": "3",
+         "reps": "15/12/10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "3 × 15/12/10",
+         "series": "3",
+         "reps": "15/12/10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "3 × 12/10/8",
+         "series": "3",
+         "reps": "12/10/8",
+         "descanso": "1'45\""
+        },
+        {
+         "texto": "3 × 12/10/8",
+         "series": "3",
+         "reps": "12/10/8",
+         "descanso": "1'45\""
+        },
+        {
+         "texto": "3 × 10/8/6",
+         "series": "3",
+         "reps": "10/8/6",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "3 × 10/8/6",
+         "series": "3",
+         "reps": "10/8/6",
+         "descanso": "2'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Superman en el piso",
+        "Remo con mancuerna",
+        "Remo en máquina",
+        "Bird dog",
+        "Remo en banco"
+       ],
+       "nota": "Espalda recta"
+      },
+      {
+       "orden": 4,
+       "nombre": "Curl con barra",
+       "semanas": [
+        {
+         "texto": "2 × 12",
+         "series": "2",
+         "reps": "12"
+        },
+        {
+         "texto": "3 × 12",
+         "series": "3",
+         "reps": "12"
+        },
+        {
+         "texto": "3 × 12",
+         "series": "3",
+         "reps": "12"
+        },
+        {
+         "texto": "3 × 12",
+         "series": "3",
+         "reps": "12"
+        },
+        {
+         "texto": "3 × 12",
+         "series": "3",
+         "reps": "12"
+        },
+        {
+         "texto": "3 × 12",
+         "series": "3",
+         "reps": "12"
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Curl con liga",
+        "Curl con mancuernas",
+        "Curl en máquina",
+        "Curl martillo",
+        "Curl con barra Z"
+       ]
+      },
+      {
+       "orden": 5,
+       "nombre": "Puente de glúteo a una pierna",
+       "semanas": [
+        {
+         "series": "2",
+         "texto": "2 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Puente de glúteo",
+        "Peso muerto rumano",
+        "Curl femoral acostado",
+        "Curl femoral sentado"
+       ]
+      },
+      {
+       "orden": 6,
+       "nombre": "Pantorrilla",
+       "semanas": [
+        {
+         "descanso": "30\"",
+         "series": "2",
+         "texto": "2 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "30\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "30\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "30\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "30\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "30\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Pantorrilla sin peso",
+        "Pantorrilla a una pierna",
+        "Pantorrilla en prensa",
+        "Pantorrilla con peso",
+        "Pantorrilla en máquina"
+       ]
+      }
+     ]
+    },
+    {
+     "dia": "B",
+     "ejercicios": [
+      {
+       "orden": 1,
+       "nombre": "Peso muerto rumano",
+       "semanas": [
+        {
+         "texto": "3 × 15/12/10",
+         "series": "3",
+         "reps": "15/12/10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "3 × 15/12/10",
+         "series": "3",
+         "reps": "15/12/10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "3 × 12/10/8",
+         "series": "3",
+         "reps": "12/10/8",
+         "descanso": "1'45\""
+        },
+        {
+         "texto": "3 × 12/10/8",
+         "series": "3",
+         "reps": "12/10/8",
+         "descanso": "1'45\""
+        },
+        {
+         "texto": "3 × 10/8/6",
+         "series": "3",
+         "reps": "10/8/6",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "3 × 10/8/6",
+         "series": "3",
+         "reps": "10/8/6",
+         "descanso": "2'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Puente de glúteo",
+        "Curl femoral acostado",
+        "Puente de glúteo a una pierna",
+        "Curl femoral sentado"
+       ],
+       "nota": "Espalda neutra"
+      },
+      {
+       "orden": 2,
+       "nombre": "Press de hombro con mancuernas",
+       "semanas": [
+        {
+         "texto": "3 × 15/12/10",
+         "series": "3",
+         "reps": "15/12/10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "3 × 15/12/10",
+         "series": "3",
+         "reps": "15/12/10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "3 × 12/10/8",
+         "series": "3",
+         "reps": "12/10/8",
+         "descanso": "1'45\""
+        },
+        {
+         "texto": "3 × 12/10/8",
+         "series": "3",
+         "reps": "12/10/8",
+         "descanso": "1'45\""
+        },
+        {
+         "texto": "3 × 10/8/6",
+         "series": "3",
+         "reps": "10/8/6",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "3 × 10/8/6",
+         "series": "3",
+         "reps": "10/8/6",
+         "descanso": "2'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Plancha con brazos estirados",
+        "Press con mancuernas",
+        "Press de hombro en máquina",
+        "Caminata en pared",
+        "Press de hombro con liga"
+       ],
+       "nota": "Hasta las claviculas"
+      },
+      {
+       "orden": 3,
+       "nombre": "Jalón al pecho",
+       "semanas": [
+        {
+         "texto": "3 × 15/12/10",
+         "series": "3",
+         "reps": "15/12/10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "3 × 15/12/10",
+         "series": "3",
+         "reps": "15/12/10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "3 × 12/10/8",
+         "series": "3",
+         "reps": "12/10/8",
+         "descanso": "1'45\""
+        },
+        {
+         "texto": "3 × 12/10/8",
+         "series": "3",
+         "reps": "12/10/8",
+         "descanso": "1'45\""
+        },
+        {
+         "texto": "3 × 10/8/6",
+         "series": "3",
+         "reps": "10/8/6",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "3 × 10/8/6",
+         "series": "3",
+         "reps": "10/8/6",
+         "descanso": "2'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Remo invertido en barra",
+        "Dominada",
+        "Jalón agarre supino",
+        "Remo en polea baja",
+        "Remo con mancuerna"
+       ],
+       "nota": "Tocando el pecho"
+      },
+      {
+       "orden": 4,
+       "nombre": "Subida a cajón",
+       "semanas": [
+        {
+         "texto": "2 × 12",
+         "series": "2",
+         "reps": "12"
+        },
+        {
+         "texto": "3 × 12",
+         "series": "3",
+         "reps": "12"
+        },
+        {
+         "texto": "3 × 12",
+         "series": "3",
+         "reps": "12"
+        },
+        {
+         "texto": "3 × 12",
+         "series": "3",
+         "reps": "12"
+        },
+        {
+         "texto": "3 × 12",
+         "series": "3",
+         "reps": "12"
+        },
+        {
+         "texto": "3 × 12",
+         "series": "3",
+         "reps": "12"
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Zancada con salto",
+        "Prensa",
+        "Prensa horizontal",
+        "Sentadilla a una pierna",
+        "Sentadilla búlgara"
+       ]
+      },
+      {
+       "orden": 5,
+       "nombre": "Crunch inverso",
+       "semanas": [
+        {
+         "series": "2",
+         "texto": "2 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Crunch",
+        "Crunch inverso con peso",
+        "Crunch en máquina",
+        "Crunch con peso",
+        "Dragon flag"
+       ]
+      },
+      {
+       "orden": 6,
+       "nombre": "Press con mancuernas en banco",
+       "semanas": [
+        {
+         "descanso": "30\"",
+         "series": "2",
+         "texto": "2 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "30\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "30\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "30\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "30\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "30\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Lagartijas",
+        "Fondos en paralelas",
+        "Press de pecho en máquina",
+        "Lagartijas con peso",
+        "Press con mancuernas"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "orden": 2,
+   "id": "cimientos",
+   "nombre": "Cimientos",
+   "descripcion": "Preparar el cuerpo para cargar",
+   "semanas": 3,
+   "dias_por_semana": 3,
+   "dias": [
+    {
+     "dia": "A",
+     "ejercicios": [
+      {
+       "orden": 1,
+       "nombre": "Sentadilla",
+       "semanas": [
+        {
+         "texto": "3 × 8/6/4",
+         "series": "3",
+         "reps": "8/6/4",
+         "descanso": "2'00''"
+        },
+        {
+         "texto": "3 × 8/6/4",
+         "series": "3",
+         "reps": "8/6/4",
+         "descanso": "2'30\""
+        },
+        {
+         "texto": "8 × 3 @ 8RM",
+         "series": "8",
+         "reps": "3",
+         "descanso": "1'00\"",
+         "nota_carga": "8RM"
+        }
+       ],
+       "cambios_permitidos": [
+        "Sentadilla con salto",
+        "Sentadilla a cajón",
+        "Prensa",
+        "Salto a cajón",
+        "Sentadilla frontal"
+       ],
+       "nota": "Control espalda baja"
+      },
+      {
+       "orden": 2,
+       "nombre": "Curl femoral",
+       "semanas": [
+        {
+         "texto": "3 × 10",
+         "series": "3",
+         "reps": "10",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "3 × 8",
+         "series": "3",
+         "reps": "8",
+         "descanso": "2'00''"
+        },
+        {
+         "texto": "2 × 6",
+         "series": "2",
+         "reps": "6",
+         "descanso": "3'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Curl femoral de pie sin peso",
+        "Hiperextensión",
+        "Curl femoral acostado",
+        "Curl femoral deslizando en el piso",
+        "Glute ham raise"
+       ],
+       "nota": "Lento y controlado"
+      },
+      {
+       "orden": 3,
+       "nombre": "Press de hombro con barra",
+       "semanas": [
+        {
+         "texto": "3 × 8/6/4",
+         "series": "3",
+         "reps": "8/6/4",
+         "descanso": "2'00''"
+        },
+        {
+         "texto": "3 × 8/6/4",
+         "series": "3",
+         "reps": "8/6/4",
+         "descanso": "2'30\""
+        },
+        {
+         "texto": "8 × 3 @ 8RM",
+         "series": "8",
+         "reps": "3",
+         "descanso": "1'00\"",
+         "nota_carga": "8RM"
+        }
+       ],
+       "cambios_permitidos": [
+        "Plancha con brazos estirados",
+        "Press con mancuernas",
+        "Press de hombro en máquina",
+        "Caminata en pared",
+        "Press de hombro con liga"
+       ],
+       "nota": "Hasta las claviculas"
+      },
+      {
+       "orden": 4,
+       "nombre": "Press con mancuernas",
+       "semanas": [
+        {
+         "texto": "3 × 10",
+         "series": "3",
+         "reps": "10",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "3 × 8",
+         "series": "3",
+         "reps": "8",
+         "descanso": "2'00''"
+        },
+        {
+         "texto": "2 × 6",
+         "series": "2",
+         "reps": "6",
+         "descanso": "3'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Press de hombro con barra",
+        "Press de hombro en máquina",
+        "Lagartijas de pica",
+        "Press de hombro sentado",
+        "Press de hombro de pie"
+       ],
+       "nota": "Recorrido completo"
+      },
+      {
+       "orden": 5,
+       "nombre": "Pantorrilla",
+       "semanas": [
+        {
+         "texto": "3 × 20",
+         "series": "3",
+         "reps": "20"
+        },
+        {
+         "texto": "4 × 20",
+         "series": "4",
+         "reps": "20"
+        },
+        {
+         "texto": "2 × 20",
+         "series": "2",
+         "reps": "20"
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Pantorrilla sin peso",
+        "Pantorrilla a una pierna",
+        "Pantorrilla en prensa",
+        "Pantorrilla con peso",
+        "Pantorrilla en máquina"
+       ]
+      },
+      {
+       "orden": 6,
+       "nombre": "Crunch inverso",
+       "semanas": [
+        {
+         "descanso": "1'00\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "45\"",
+         "series": "4",
+         "texto": "4 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "30\"",
+         "series": "2",
+         "texto": "2 × (igual que el primero del bloque)",
+         "heredado": true
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Crunch",
+        "Crunch inverso con peso",
+        "Crunch en máquina",
+        "Crunch con peso",
+        "Dragon flag"
+       ]
+      }
+     ],
+     "foco": "Pierna · Femoral · Hombro · Abdomen · Pantorrilla"
+    },
+    {
+     "dia": "B",
+     "ejercicios": [
+      {
+       "orden": 1,
+       "nombre": "Press de banca",
+       "semanas": [
+        {
+         "texto": "3 × 8/6/4",
+         "series": "3",
+         "reps": "8/6/4",
+         "descanso": "2'00''"
+        },
+        {
+         "texto": "3 × 8/6/4",
+         "series": "3",
+         "reps": "8/6/4",
+         "descanso": "2'30\""
+        },
+        {
+         "texto": "8 × 3 @ 8RM",
+         "series": "8",
+         "reps": "3",
+         "descanso": "1'00\"",
+         "nota_carga": "8RM"
+        }
+       ],
+       "cambios_permitidos": [
+        "Lagartijas",
+        "Fondos en paralelas",
+        "Press de pecho en máquina",
+        "Lagartijas con peso",
+        "Press con mancuernas"
+       ],
+       "nota": "1 s pausa al pecho"
+      },
+      {
+       "orden": 2,
+       "nombre": "Press inclinado",
+       "semanas": [
+        {
+         "texto": "3 × 10",
+         "series": "3",
+         "reps": "10",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "3 × 8",
+         "series": "3",
+         "reps": "8",
+         "descanso": "2'00''"
+        },
+        {
+         "texto": "2 × 6",
+         "series": "2",
+         "reps": "6",
+         "descanso": "3'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Lagartijas con pies elevados",
+        "Press inclinado con mancuernas",
+        "Press inclinado en máquina"
+       ],
+       "nota": "Brazos en plano sagital"
+      },
+      {
+       "orden": 3,
+       "nombre": "Fondos o press cerrado",
+       "semanas": [
+        {
+         "texto": "3 × 8/6/4",
+         "series": "3",
+         "reps": "8/6/4",
+         "descanso": "2'00''"
+        },
+        {
+         "texto": "3 × 8/6/4",
+         "series": "3",
+         "reps": "8/6/4",
+         "descanso": "2'30\""
+        },
+        {
+         "texto": "8 × 3 @ 8RM",
+         "series": "8",
+         "reps": "3",
+         "descanso": "1'00\"",
+         "nota_carga": "8RM"
+        }
+       ],
+       "cambios_permitidos": [
+        "Lagartijas cerradas",
+        "Tríceps en polea alta",
+        "Tríceps en máquina",
+        "Press cerrado",
+        "Fondos asistidos"
+       ],
+       "nota": "Codos cerrados"
+      },
+      {
+       "orden": 4,
+       "nombre": "Sentadilla a cajón",
+       "semanas": [
+        {
+         "texto": "6 × 2 @ 8RM",
+         "series": "6",
+         "reps": "2",
+         "descanso": "1'00\"",
+         "nota_carga": "8RM",
+         "tecnica": "Pausa 2 s"
+        },
+        {
+         "texto": "6 × 2 @ 8RM",
+         "series": "6",
+         "reps": "2",
+         "descanso": "1'00\"",
+         "nota_carga": "8RM",
+         "tecnica": "Pausa 2 s"
+        },
+        {
+         "texto": "1 ×  máx. @8RM",
+         "series": "1",
+         "descanso": "1'00\"",
+         "tecnica": "Sin pausa"
+        }
+       ],
+       "cambios_permitidos": [
+        "Sentadilla sin peso",
+        "Sentadilla",
+        "Prensa"
+       ],
+       "nota": "Controlar butt wink"
+      },
+      {
+       "orden": 5,
+       "nombre": "Hiperextensión",
+       "semanas": [
+        {
+         "texto": "3 × 12",
+         "series": "3",
+         "reps": "12"
+        },
+        {
+         "texto": "4 × 12",
+         "series": "4",
+         "reps": "12"
+        },
+        {
+         "texto": "2 × 12",
+         "series": "2",
+         "reps": "12"
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Puente de glúteo",
+        "Peso muerto rumano",
+        "Curl femoral acostado",
+        "Puente de glúteo a una pierna",
+        "Curl femoral sentado"
+       ]
+      },
+      {
+       "orden": 6,
+       "nombre": "Pantorrilla",
+       "semanas": [
+        {
+         "descanso": "1'00\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "45\"",
+         "series": "4",
+         "texto": "4 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "30\"",
+         "series": "2",
+         "texto": "2 × (igual que el primero del bloque)",
+         "heredado": true
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Pantorrilla sin peso",
+        "Pantorrilla a una pierna",
+        "Pantorrilla en prensa",
+        "Pantorrilla con peso",
+        "Pantorrilla en máquina"
+       ]
+      }
+     ],
+     "foco": "Pecho · Tríceps · Pantorrilla · Pierna"
+    },
+    {
+     "dia": "C",
+     "ejercicios": [
+      {
+       "orden": 1,
+       "nombre": "Peso muerto",
+       "semanas": [
+        {
+         "texto": "4 × 8/6/4/2",
+         "series": "4",
+         "reps": "8/6/4/2"
+        },
+        {
+         "texto": "4 × 8/6/4/2",
+         "series": "4",
+         "reps": "8/6/4/2"
+        },
+        {
+         "texto": "8 × 3 @ 8RM",
+         "series": "8",
+         "reps": "3",
+         "nota_carga": "8RM"
+        }
+       ],
+       "cambios_permitidos": [
+        "Peso muerto con liga",
+        "Peso muerto desde rack",
+        "Remo en máquina",
+        "Peso muerto a una pierna",
+        "Peso muerto rumano"
+       ]
+      },
+      {
+       "orden": 2,
+       "nombre": "Dominada",
+       "semanas": [
+        {
+         "texto": "3 × 8/6/4",
+         "series": "3",
+         "reps": "8/6/4",
+         "descanso": "2'00''"
+        },
+        {
+         "texto": "3 × 8/6/4",
+         "series": "3",
+         "reps": "8/6/4",
+         "descanso": "2'30\""
+        },
+        {
+         "texto": "8 × 3 @ 8RM",
+         "series": "8",
+         "reps": "3",
+         "descanso": "1'00\"",
+         "nota_carga": "8RM"
+        }
+       ],
+       "cambios_permitidos": [
+        "Remo invertido en barra",
+        "Dominada con liga",
+        "Jalón al pecho",
+        "Dominada asistida",
+        "Dominada con peso"
+       ],
+       "nota": "Tocar el pecho"
+      },
+      {
+       "orden": 3,
+       "nombre": "Curl con barra",
+       "semanas": [
+        {
+         "texto": "3 × 8/6/4",
+         "series": "3",
+         "reps": "8/6/4",
+         "descanso": "2'00''"
+        },
+        {
+         "texto": "3 × 8/6/4",
+         "series": "3",
+         "reps": "8/6/4",
+         "descanso": "2'30\""
+        },
+        {
+         "texto": "8 × 3 @ 8RM",
+         "series": "8",
+         "reps": "3",
+         "descanso": "1'00\"",
+         "nota_carga": "8RM"
+        }
+       ],
+       "cambios_permitidos": [
+        "Curl con liga",
+        "Curl con mancuernas",
+        "Curl en máquina",
+        "Curl martillo",
+        "Curl con barra Z"
+       ],
+       "nota": "Control escapulas"
+      },
+      {
+       "orden": 4,
+       "nombre": "Crunch inverso",
+       "semanas": [
+        {
+         "texto": "3 × 12",
+         "series": "3",
+         "reps": "12"
+        },
+        {
+         "texto": "4 × 12",
+         "series": "4",
+         "reps": "12"
+        },
+        {
+         "texto": "2 × 12",
+         "series": "2",
+         "reps": "12"
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Crunch",
+        "Crunch inverso con peso",
+        "Crunch en máquina",
+        "Crunch con peso",
+        "Dragon flag"
+       ]
+      },
+      {
+       "orden": 5,
+       "nombre": "Extensión de cuádriceps",
+       "semanas": [
+        {
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "series": "4",
+         "texto": "4 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "series": "2",
+         "texto": "2 × (igual que el primero del bloque)",
+         "heredado": true
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Extensión de rodilla sin peso",
+        "Sissy squat",
+        "Prensa",
+        "Zancada"
+       ]
+      },
+      {
+       "orden": 6,
+       "nombre": "Remo con barra o en banco",
+       "semanas": [
+        {
+         "descanso": "45\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "30\"",
+         "series": "4",
+         "texto": "4 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "15\"",
+         "series": "2",
+         "texto": "2 × (igual que el primero del bloque)",
+         "heredado": true
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Superman en el piso",
+        "Remo con mancuerna",
+        "Remo en máquina",
+        "Bird dog",
+        "Remo en banco"
+       ]
+      }
+     ],
+     "foco": "Espalda · Bíceps · Abdomen · Cuádriceps"
+    }
+   ]
+  },
+  {
+   "orden": 3,
+   "id": "pulir",
+   "nombre": "Pulir",
+   "descripcion": "Afinar cómo haces cada movimiento",
+   "semanas": 7,
+   "dias_por_semana": 2,
+   "dias": [
+    {
+     "dia": "A",
+     "ejercicios": [
+      {
+       "orden": 1,
+       "nombre": "Peso muerto",
+       "semanas": [
+        {
+         "texto": "8 × 3 @ 75%",
+         "series": "8",
+         "reps": "3",
+         "pct": 0.75,
+         "descanso": "1'00''"
+        },
+        {
+         "texto": "7 × 4 @ 75%",
+         "series": "7",
+         "reps": "4",
+         "pct": 0.75,
+         "descanso": "1'15''"
+        },
+        {
+         "texto": "6 × 5 @ 75%",
+         "series": "6",
+         "reps": "5",
+         "pct": 0.75,
+         "descanso": "1'30''"
+        },
+        {
+         "texto": "8 × 3 @ 80%",
+         "series": "8",
+         "reps": "3",
+         "pct": 0.8,
+         "descanso": "1'00''"
+        },
+        {
+         "texto": "7 × 4 @ 80%",
+         "series": "7",
+         "reps": "4",
+         "pct": 0.8,
+         "descanso": "1'15''"
+        },
+        {
+         "texto": "6 × 5 @ 80%",
+         "series": "6",
+         "reps": "5",
+         "pct": 0.8,
+         "descanso": "1'30''"
+        },
+        {
+         "texto": "8 × 2 @ 85%",
+         "series": "8",
+         "reps": "2",
+         "pct": 0.85,
+         "descanso": "1'30\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Peso muerto con liga",
+        "Peso muerto desde rack",
+        "Remo en máquina",
+        "Peso muerto a una pierna",
+        "Peso muerto rumano"
+       ]
+      },
+      {
+       "orden": 2,
+       "nombre": "Press de hombro con barra",
+       "semanas": [
+        {
+         "texto": "8 × 3 @ 75%",
+         "series": "8",
+         "reps": "3",
+         "pct": 0.75,
+         "descanso": "1'00''"
+        },
+        {
+         "texto": "7 × 4 @ 75%",
+         "series": "7",
+         "reps": "4",
+         "pct": 0.75,
+         "descanso": "1'15''"
+        },
+        {
+         "texto": "6 × 5 @ 75%",
+         "series": "6",
+         "reps": "5",
+         "pct": 0.75,
+         "descanso": "1'30''"
+        },
+        {
+         "texto": "8 × 3 @ 80%",
+         "series": "8",
+         "reps": "3",
+         "pct": 0.8,
+         "descanso": "1'00''"
+        },
+        {
+         "texto": "7 × 4 @ 80%",
+         "series": "7",
+         "reps": "4",
+         "pct": 0.8,
+         "descanso": "1'15''"
+        },
+        {
+         "texto": "6 × 5 @ 80%",
+         "series": "6",
+         "reps": "5",
+         "pct": 0.8,
+         "descanso": "1'30''"
+        },
+        {
+         "texto": "8 × 2 @ 85%",
+         "series": "8",
+         "reps": "2",
+         "pct": 0.85,
+         "descanso": "1'30\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Plancha con brazos estirados",
+        "Press con mancuernas",
+        "Press de hombro en máquina",
+        "Caminata en pared",
+        "Press de hombro con liga"
+       ]
+      },
+      {
+       "orden": 3,
+       "nombre": "Remo en T o con mancuerna",
+       "semanas": [
+        {
+         "texto": "4 × 8",
+         "series": "4",
+         "reps": "8"
+        },
+        {
+         "texto": "3 × 10",
+         "series": "3",
+         "reps": "10"
+        },
+        {
+         "texto": "4 × 8",
+         "series": "4",
+         "reps": "8"
+        },
+        {
+         "texto": "3 × 10",
+         "series": "3",
+         "reps": "10"
+        },
+        {
+         "texto": "4 × 8",
+         "series": "4",
+         "reps": "8"
+        },
+        {
+         "texto": "3 × 10",
+         "series": "3",
+         "reps": "10"
+        },
+        {
+         "texto": "2 × 12",
+         "series": "2",
+         "reps": "12"
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Superman en el piso",
+        "Remo con mancuerna",
+        "Remo en máquina",
+        "Bird dog",
+        "Remo en banco"
+       ]
+      },
+      {
+       "orden": 4,
+       "nombre": "Fondos o press cerrado",
+       "semanas": [
+        {
+         "descanso": "45\"",
+         "series": "4",
+         "texto": "4 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "45\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "45\"",
+         "series": "4",
+         "texto": "4 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "45\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "45\"",
+         "series": "4",
+         "texto": "4 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "45\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "60\"",
+         "series": "2",
+         "texto": "2 × (igual que el primero del bloque)",
+         "heredado": true
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Lagartijas cerradas",
+        "Tríceps en polea alta",
+        "Tríceps en máquina",
+        "Press cerrado",
+        "Fondos asistidos"
+       ]
+      },
+      {
+       "orden": 5,
+       "nombre": "Pantorrilla",
+       "semanas": [
+        {
+         "texto": "3 × 20",
+         "series": "3",
+         "reps": "20"
+        },
+        {
+         "texto": "3 × 20",
+         "series": "3",
+         "reps": "20"
+        },
+        {
+         "texto": "3 × 20",
+         "series": "3",
+         "reps": "20"
+        },
+        {
+         "texto": "3 × 20",
+         "series": "3",
+         "reps": "20"
+        },
+        {
+         "texto": "3 × 20",
+         "series": "3",
+         "reps": "20"
+        },
+        {
+         "texto": "3 × 20",
+         "series": "3",
+         "reps": "20"
+        },
+        {
+         "texto": "1 × 20",
+         "series": "1",
+         "reps": "20"
+        }
+       ],
+       "grupo": "B",
+       "cambios_permitidos": [
+        "Pantorrilla sin peso",
+        "Pantorrilla a una pierna",
+        "Pantorrilla en prensa",
+        "Pantorrilla con peso",
+        "Pantorrilla en máquina"
+       ]
+      },
+      {
+       "orden": 6,
+       "nombre": "Prensa o zancada",
+       "semanas": [
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "45\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "45\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "45\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "45\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "45\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "45\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "60\""
+        }
+       ],
+       "grupo": "B",
+       "cambios_permitidos": [
+        "Sentadilla sin peso",
+        "Sentadilla frontal",
+        "Prensa horizontal",
+        "Sentadilla con salto",
+        "Zancada"
+       ]
+      }
+     ]
+    },
+    {
+     "dia": "B",
+     "ejercicios": [
+      {
+       "orden": 1,
+       "nombre": "Sentadilla",
+       "semanas": [
+        {
+         "texto": "8 × 3 @ 75%",
+         "series": "8",
+         "reps": "3",
+         "pct": 0.75,
+         "descanso": "1'00''"
+        },
+        {
+         "texto": "7 × 4 @ 75%",
+         "series": "7",
+         "reps": "4",
+         "pct": 0.75,
+         "descanso": "1'15''"
+        },
+        {
+         "texto": "6 × 5 @ 75%",
+         "series": "6",
+         "reps": "5",
+         "pct": 0.75,
+         "descanso": "1'30''"
+        },
+        {
+         "texto": "8 × 3 @ 80%",
+         "series": "8",
+         "reps": "3",
+         "pct": 0.8,
+         "descanso": "1'00''"
+        },
+        {
+         "texto": "7 × 4 @ 80%",
+         "series": "7",
+         "reps": "4",
+         "pct": 0.8,
+         "descanso": "1'15''"
+        },
+        {
+         "texto": "6 × 5 @ 80%",
+         "series": "6",
+         "reps": "5",
+         "pct": 0.8,
+         "descanso": "1'30''"
+        },
+        {
+         "texto": "8 × 2 @ 85%",
+         "series": "8",
+         "reps": "2",
+         "pct": 0.85,
+         "descanso": "1'30\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Sentadilla con salto",
+        "Sentadilla a cajón",
+        "Prensa",
+        "Salto a cajón",
+        "Sentadilla frontal"
+       ]
+      },
+      {
+       "orden": 2,
+       "nombre": "Press de banca",
+       "semanas": [
+        {
+         "texto": "8 × 3 @ 75%",
+         "series": "8",
+         "reps": "3",
+         "pct": 0.75,
+         "descanso": "1'00''"
+        },
+        {
+         "texto": "7 × 4 @ 75%",
+         "series": "7",
+         "reps": "4",
+         "pct": 0.75,
+         "descanso": "1'15''"
+        },
+        {
+         "texto": "6 × 5 @ 75%",
+         "series": "6",
+         "reps": "5",
+         "pct": 0.75,
+         "descanso": "1'30''"
+        },
+        {
+         "texto": "8 × 3 @ 80%",
+         "series": "8",
+         "reps": "3",
+         "pct": 0.8,
+         "descanso": "1'00''"
+        },
+        {
+         "texto": "7 × 4 @ 80%",
+         "series": "7",
+         "reps": "4",
+         "pct": 0.8,
+         "descanso": "1'15''"
+        },
+        {
+         "texto": "6 × 5 @ 80%",
+         "series": "6",
+         "reps": "5",
+         "pct": 0.8,
+         "descanso": "1'30''"
+        },
+        {
+         "texto": "8 × 2 @ 85%",
+         "series": "8",
+         "reps": "2",
+         "pct": 0.85,
+         "descanso": "1'30\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Lagartijas",
+        "Fondos en paralelas",
+        "Press de pecho en máquina",
+        "Lagartijas con peso",
+        "Press con mancuernas"
+       ]
+      },
+      {
+       "orden": 3,
+       "nombre": "Extensión de tríceps acostado",
+       "semanas": [
+        {
+         "texto": "4 × 8",
+         "series": "4",
+         "reps": "8"
+        },
+        {
+         "texto": "3 × 10",
+         "series": "3",
+         "reps": "10"
+        },
+        {
+         "texto": "4 × 8",
+         "series": "4",
+         "reps": "8"
+        },
+        {
+         "texto": "3 × 10",
+         "series": "3",
+         "reps": "10"
+        },
+        {
+         "texto": "4 × 8",
+         "series": "4",
+         "reps": "8"
+        },
+        {
+         "texto": "3 × 10",
+         "series": "3",
+         "reps": "10"
+        },
+        {
+         "texto": "2 × 12",
+         "series": "2",
+         "reps": "12"
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Extensión de tríceps con liga",
+        "Extensión de tríceps en polea",
+        "Tríceps en máquina",
+        "Extensión de tríceps con mancuerna"
+       ]
+      },
+      {
+       "orden": 4,
+       "nombre": "Dominada",
+       "semanas": [
+        {
+         "descanso": "45\"",
+         "series": "4",
+         "texto": "4 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "45\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "45\"",
+         "series": "4",
+         "texto": "4 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "45\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "45\"",
+         "series": "4",
+         "texto": "4 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "45\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "60\"",
+         "series": "2",
+         "texto": "2 × (igual que el primero del bloque)",
+         "heredado": true
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Remo invertido en barra",
+        "Dominada con liga",
+        "Jalón al pecho",
+        "Dominada asistida",
+        "Dominada con peso"
+       ]
+      },
+      {
+       "orden": 5,
+       "nombre": "Crunch inverso",
+       "semanas": [
+        {
+         "texto": "3 × 20",
+         "series": "3",
+         "reps": "20"
+        },
+        {
+         "texto": "3 × 20",
+         "series": "3",
+         "reps": "20"
+        },
+        {
+         "texto": "3 × 20",
+         "series": "3",
+         "reps": "20"
+        },
+        {
+         "texto": "3 × 20",
+         "series": "3",
+         "reps": "20"
+        },
+        {
+         "texto": "3 × 20",
+         "series": "3",
+         "reps": "20"
+        },
+        {
+         "texto": "3 × 20",
+         "series": "3",
+         "reps": "20"
+        },
+        {
+         "texto": "1 × 20",
+         "series": "1",
+         "reps": "20"
+        }
+       ],
+       "grupo": "B",
+       "cambios_permitidos": [
+        "Crunch",
+        "Crunch inverso con peso",
+        "Crunch en máquina",
+        "Crunch con peso",
+        "Dragon flag"
+       ]
+      },
+      {
+       "orden": 6,
+       "nombre": "Curl femoral",
+       "semanas": [
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "45\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "45\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "45\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "45\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "45\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "45\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "60\""
+        }
+       ],
+       "grupo": "B",
+       "cambios_permitidos": [
+        "Curl femoral de pie sin peso",
+        "Hiperextensión",
+        "Curl femoral acostado",
+        "Curl femoral deslizando en el piso",
+        "Glute ham raise"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "orden": 4,
+   "id": "carga",
+   "nombre": "Carga",
+   "descripcion": "Primer bloque pesado",
+   "semanas": 5,
+   "dias_por_semana": 2,
+   "dias": [
+    {
+     "dia": "A",
+     "ejercicios": [
+      {
+       "orden": 1,
+       "nombre": "Sentadilla",
+       "semanas": [
+        {
+         "texto": "4 × 4 @ 80%",
+         "series": "4",
+         "reps": "4",
+         "pct": 0.8,
+         "descanso": "3'00''"
+        },
+        {
+         "texto": "4 × 4 @ 82.5%",
+         "series": "4",
+         "reps": "4",
+         "pct": 0.825,
+         "descanso": "3'00''"
+        },
+        {
+         "texto": "4 × 4 @ 85%",
+         "series": "4",
+         "reps": "4",
+         "pct": 0.85,
+         "descanso": "3'00''"
+        },
+        {
+         "texto": "4 × 4 @ 87.5%",
+         "series": "4",
+         "reps": "4",
+         "pct": 0.875,
+         "descanso": "3'00''"
+        },
+        {
+         "texto": "8 × 3 @ 75%",
+         "series": "8",
+         "reps": "3",
+         "pct": 0.75,
+         "descanso": "1'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Sentadilla con salto",
+        "Sentadilla a cajón",
+        "Prensa",
+        "Salto a cajón",
+        "Sentadilla frontal"
+       ],
+       "nota": "Control excéntrica - subir explosivo"
+      },
+      {
+       "orden": 2,
+       "nombre": "Press de banca",
+       "semanas": [
+        {
+         "texto": "4 × 4 @ 80%",
+         "series": "4",
+         "reps": "4",
+         "pct": 0.8,
+         "descanso": "3'00''"
+        },
+        {
+         "texto": "4 × 4 @ 82.5%",
+         "series": "4",
+         "reps": "4",
+         "pct": 0.825,
+         "descanso": "3'00''"
+        },
+        {
+         "texto": "4 × 4 @ 85%",
+         "series": "4",
+         "reps": "4",
+         "pct": 0.85,
+         "descanso": "3'00''"
+        },
+        {
+         "texto": "4 × 4 @ 87.5%",
+         "series": "4",
+         "reps": "4",
+         "pct": 0.875,
+         "descanso": "3'00''"
+        },
+        {
+         "texto": "8 × 3 @ 75%",
+         "series": "8",
+         "reps": "3",
+         "pct": 0.75,
+         "descanso": "1'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Lagartijas",
+        "Fondos en paralelas",
+        "Press de pecho en máquina",
+        "Lagartijas con peso",
+        "Press con mancuernas"
+       ],
+       "nota": "1 s pausa - subida explosiva"
+      },
+      {
+       "orden": 3,
+       "nombre": "Remo con barra o en banco",
+       "semanas": [
+        {
+         "texto": "4 × 4 @ 80%",
+         "series": "4",
+         "reps": "4",
+         "pct": 0.8,
+         "descanso": "3'00''"
+        },
+        {
+         "texto": "4 × 4 @ 82.5%",
+         "series": "4",
+         "reps": "4",
+         "pct": 0.825,
+         "descanso": "3'00''"
+        },
+        {
+         "texto": "4 × 4 @ 85%",
+         "series": "4",
+         "reps": "4",
+         "pct": 0.85,
+         "descanso": "3'00''"
+        },
+        {
+         "texto": "4 × 4 @ 87.5%",
+         "series": "4",
+         "reps": "4",
+         "pct": 0.875,
+         "descanso": "3'00''"
+        },
+        {
+         "texto": "8 × 3 @ 75%",
+         "series": "8",
+         "reps": "3",
+         "pct": 0.75,
+         "descanso": "1'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Superman en el piso",
+        "Remo con mancuerna",
+        "Remo en máquina",
+        "Bird dog",
+        "Remo en banco"
+       ],
+       "nota": "Espalda neutra - explosivo"
+      },
+      {
+       "orden": 4,
+       "nombre": "Crunch inverso",
+       "semanas": [
+        {
+         "texto": "3 × 12",
+         "series": "3",
+         "reps": "12"
+        },
+        {
+         "texto": "3 × 12",
+         "series": "3",
+         "reps": "12"
+        },
+        {
+         "texto": "3 × 12",
+         "series": "3",
+         "reps": "12"
+        },
+        {
+         "texto": "2 × 12",
+         "series": "2",
+         "reps": "12"
+        },
+        {
+         "texto": "1 × 12",
+         "series": "1",
+         "reps": "12"
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Crunch",
+        "Crunch inverso con peso",
+        "Crunch en máquina",
+        "Crunch con peso",
+        "Dragon flag"
+       ]
+      },
+      {
+       "orden": 5,
+       "nombre": "Hiperextensión o curl femoral",
+       "semanas": [
+        {
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "series": "2",
+         "texto": "2 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "series": "1",
+         "texto": "1 × (igual que el primero del bloque)",
+         "heredado": true
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Puente de glúteo",
+        "Peso muerto rumano",
+        "Curl femoral acostado",
+        "Puente de glúteo a una pierna",
+        "Curl femoral sentado"
+       ]
+      },
+      {
+       "orden": 6,
+       "nombre": "Curl con barra",
+       "semanas": [
+        {
+         "descanso": "30\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "30\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "30\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "30\"",
+         "series": "2",
+         "texto": "2 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "30\"",
+         "series": "1",
+         "texto": "1 × (igual que el primero del bloque)",
+         "heredado": true
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Curl con liga",
+        "Curl con mancuernas",
+        "Curl en máquina",
+        "Curl martillo",
+        "Curl con barra Z"
+       ]
+      }
+     ]
+    },
+    {
+     "dia": "B",
+     "ejercicios": [
+      {
+       "orden": 1,
+       "nombre": "Peso muerto",
+       "semanas": [
+        {
+         "texto": "4 × 4 @ 80%",
+         "series": "4",
+         "reps": "4",
+         "pct": 0.8,
+         "descanso": "3'00''"
+        },
+        {
+         "texto": "4 × 4 @ 82.5%",
+         "series": "4",
+         "reps": "4",
+         "pct": 0.825,
+         "descanso": "3'00''"
+        },
+        {
+         "texto": "4 × 4 @ 85%",
+         "series": "4",
+         "reps": "4",
+         "pct": 0.85,
+         "descanso": "3'00''"
+        },
+        {
+         "texto": "4 × 4 @ 87.5%",
+         "series": "4",
+         "reps": "4",
+         "pct": 0.875,
+         "descanso": "3'00''"
+        },
+        {
+         "texto": "8 × 3 @ 75%",
+         "series": "8",
+         "reps": "3",
+         "pct": 0.75,
+         "descanso": "1'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Peso muerto con liga",
+        "Peso muerto desde rack",
+        "Remo en máquina",
+        "Peso muerto a una pierna",
+        "Peso muerto rumano"
+       ],
+       "nota": "Arrancadas - no rebote"
+      },
+      {
+       "orden": 2,
+       "nombre": "Press de hombro sentado",
+       "semanas": [
+        {
+         "texto": "4 × 4 @ 80%",
+         "series": "4",
+         "reps": "4",
+         "pct": 0.8,
+         "descanso": "3'00''"
+        },
+        {
+         "texto": "4 × 4 @ 82.5%",
+         "series": "4",
+         "reps": "4",
+         "pct": 0.825,
+         "descanso": "3'00''"
+        },
+        {
+         "texto": "4 × 4 @ 85%",
+         "series": "4",
+         "reps": "4",
+         "pct": 0.85,
+         "descanso": "3'00''"
+        },
+        {
+         "texto": "4 × 4 @ 87.5%",
+         "series": "4",
+         "reps": "4",
+         "pct": 0.875,
+         "descanso": "3'00''"
+        },
+        {
+         "texto": "8 × 3 @ 75%",
+         "series": "8",
+         "reps": "3",
+         "pct": 0.75,
+         "descanso": "1'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Press de hombro de pie",
+        "Press de hombro en máquina",
+        "Lagartijas de pica",
+        "Press de hombro con mancuernas"
+       ],
+       "nota": "Arrancadas - no rebote"
+      },
+      {
+       "orden": 3,
+       "nombre": "Dominada supina",
+       "semanas": [
+        {
+         "texto": "4 × 4 @ 80%",
+         "series": "4",
+         "reps": "4",
+         "pct": 0.8,
+         "descanso": "3'00''"
+        },
+        {
+         "texto": "4 × 4 @ 82.5%",
+         "series": "4",
+         "reps": "4",
+         "pct": 0.825,
+         "descanso": "3'00''"
+        },
+        {
+         "texto": "4 × 4 @ 85%",
+         "series": "4",
+         "reps": "4",
+         "pct": 0.85,
+         "descanso": "3'00''"
+        },
+        {
+         "texto": "4 × 4 @ 87.5%",
+         "series": "4",
+         "reps": "4",
+         "pct": 0.875,
+         "descanso": "3'00''"
+        },
+        {
+         "texto": "8 × 3 @ 75%",
+         "series": "8",
+         "reps": "3",
+         "pct": 0.75,
+         "descanso": "1'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Dominada asistida",
+        "Dominada",
+        "Jalón al pecho"
+       ],
+       "nota": "Explosivo hasta pecho"
+      },
+      {
+       "orden": 4,
+       "nombre": "Prensa o extensión de cuádriceps",
+       "semanas": [
+        {
+         "texto": "3 × 12",
+         "series": "3",
+         "reps": "12"
+        },
+        {
+         "texto": "3 × 12",
+         "series": "3",
+         "reps": "12"
+        },
+        {
+         "texto": "3 × 12",
+         "series": "3",
+         "reps": "12"
+        },
+        {
+         "texto": "2 × 12",
+         "series": "2",
+         "reps": "12"
+        },
+        {
+         "texto": "1 × 12",
+         "series": "1",
+         "reps": "12"
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Sentadilla sin peso",
+        "Sentadilla frontal",
+        "Prensa horizontal",
+        "Sentadilla con salto",
+        "Zancada"
+       ]
+      },
+      {
+       "orden": 5,
+       "nombre": "Pantorrilla",
+       "semanas": [
+        {
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "series": "2",
+         "texto": "2 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "series": "1",
+         "texto": "1 × (igual que el primero del bloque)",
+         "heredado": true
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Pantorrilla sin peso",
+        "Pantorrilla a una pierna",
+        "Pantorrilla en prensa",
+        "Pantorrilla con peso",
+        "Pantorrilla en máquina"
+       ]
+      },
+      {
+       "orden": 6,
+       "nombre": "Fondos o press cerrado",
+       "semanas": [
+        {
+         "descanso": "30\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "30\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "30\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "30\"",
+         "series": "2",
+         "texto": "2 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "30\"",
+         "series": "1",
+         "texto": "1 × (igual que el primero del bloque)",
+         "heredado": true
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Lagartijas cerradas",
+        "Tríceps en polea alta",
+        "Tríceps en máquina",
+        "Press cerrado",
+        "Fondos asistidos"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "orden": 5,
+   "id": "carga-2",
+   "nombre": "Carga II",
+   "descripcion": "Subir un escalón",
+   "semanas": 4,
+   "dias_por_semana": 3,
+   "dias": [
+    {
+     "dia": "A",
+     "ejercicios": [
+      {
+       "orden": 1,
+       "nombre": "Sentadilla",
+       "semanas": [
+        {
+         "texto": "2-3 ×  @ 87.5%",
+         "series": "2-3",
+         "pct": 0.875,
+         "descanso": "4'00\"",
+         "tecnica": "Rest-pause 15 s"
+        },
+        {
+         "texto": "3 ×  @ 90%",
+         "series": "3",
+         "pct": 0.9,
+         "descanso": "4'00\"",
+         "tecnica": "Rest-pause 20 s"
+        },
+        {
+         "texto": "2 ×  @ 92.5%",
+         "series": "2",
+         "pct": 0.925,
+         "descanso": "4'00\"",
+         "tecnica": "Rest-pause 25 s"
+        },
+        {
+         "texto": "10 × 1",
+         "series": "10",
+         "reps": "1",
+         "descanso": "2'00\"",
+         "tecnica": "Normal"
+        }
+       ],
+       "cambios_permitidos": [
+        "Sentadilla con salto",
+        "Sentadilla a cajón",
+        "Prensa",
+        "Salto a cajón",
+        "Sentadilla frontal"
+       ],
+       "nota": "Control excéntrica - subir explosivo"
+      },
+      {
+       "orden": 2,
+       "nombre": "Press de banca",
+       "semanas": [
+        {
+         "texto": "2-3 ×  @ 87.5%",
+         "series": "2-3",
+         "pct": 0.875,
+         "descanso": "4'00\"",
+         "tecnica": "Rest-pause 15 s"
+        },
+        {
+         "texto": "3 ×  @ 90%",
+         "series": "3",
+         "pct": 0.9,
+         "descanso": "4'00\"",
+         "tecnica": "Rest-pause 20 s"
+        },
+        {
+         "texto": "2 ×  @ 92.5%",
+         "series": "2",
+         "pct": 0.925,
+         "descanso": "4'00\"",
+         "tecnica": "Rest-pause 25 s"
+        },
+        {
+         "texto": "10 × 1",
+         "series": "10",
+         "reps": "1",
+         "descanso": "2'00\"",
+         "tecnica": "Normal"
+        }
+       ],
+       "cambios_permitidos": [
+        "Lagartijas",
+        "Fondos en paralelas",
+        "Press de pecho en máquina",
+        "Lagartijas con peso",
+        "Press con mancuernas"
+       ],
+       "nota": "1 s pausa - subida explosiva"
+      },
+      {
+       "orden": 3,
+       "nombre": "Curl con barra",
+       "semanas": [
+        {
+         "texto": "5 × 8",
+         "series": "5",
+         "reps": "8"
+        },
+        {
+         "texto": "5 × 8",
+         "series": "5",
+         "reps": "8"
+        },
+        {
+         "texto": "4 × 8",
+         "series": "4",
+         "reps": "8"
+        },
+        {
+         "texto": "2 ×  máx.",
+         "series": "2"
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Curl con liga",
+        "Curl con mancuernas",
+        "Curl en máquina",
+        "Curl martillo",
+        "Curl con barra Z"
+       ]
+      },
+      {
+       "orden": 4,
+       "nombre": "Extensión de cuádriceps o prensa",
+       "semanas": [
+        {
+         "texto": "RPE 8",
+         "descanso": "30\""
+        },
+        {
+         "texto": "RPE 9",
+         "descanso": "30\""
+        },
+        {
+         "texto": "RPE 10",
+         "descanso": "30\""
+        },
+        {
+         "texto": "al fallo",
+         "descanso": "60\""
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Extensión de rodilla sin peso",
+        "Sissy squat",
+        "Prensa",
+        "Zancada"
+       ]
+      }
+     ],
+     "foco": "Pierna · Pecho · Abdomen · Bíceps · Femoral"
+    },
+    {
+     "dia": "B",
+     "ejercicios": [
+      {
+       "orden": 1,
+       "nombre": "Peso muerto",
+       "semanas": [
+        {
+         "texto": "2-3 ×  @ 87.5%",
+         "series": "2-3",
+         "pct": 0.875,
+         "descanso": "4'00\"",
+         "tecnica": "Rest-pause 15 s"
+        },
+        {
+         "texto": "3 ×  @ 90%",
+         "series": "3",
+         "pct": 0.9,
+         "descanso": "4'00\"",
+         "tecnica": "Rest-pause 20 s"
+        },
+        {
+         "texto": "2 ×  @ 92.5%",
+         "series": "2",
+         "pct": 0.925,
+         "descanso": "4'00\"",
+         "tecnica": "Rest-pause 25 s"
+        },
+        {
+         "texto": "10 × 1",
+         "series": "10",
+         "reps": "1",
+         "descanso": "2'00\"",
+         "tecnica": "Normal"
+        }
+       ],
+       "cambios_permitidos": [
+        "Peso muerto con liga",
+        "Peso muerto desde rack",
+        "Remo en máquina",
+        "Peso muerto a una pierna",
+        "Peso muerto rumano"
+       ],
+       "nota": "Arrancadas - no rebote"
+      },
+      {
+       "orden": 2,
+       "nombre": "Dominada supina",
+       "semanas": [
+        {
+         "texto": "2-3 ×  @ 87.5%",
+         "series": "2-3",
+         "pct": 0.875,
+         "descanso": "4'00\"",
+         "tecnica": "Rest-pause 15 s"
+        },
+        {
+         "texto": "3 ×  @ 90%",
+         "series": "3",
+         "pct": 0.9,
+         "descanso": "4'00\"",
+         "tecnica": "Rest-pause 20 s"
+        },
+        {
+         "texto": "2 ×  @ 92.5%",
+         "series": "2",
+         "pct": 0.925,
+         "descanso": "4'00\"",
+         "tecnica": "Rest-pause 25 s"
+        },
+        {
+         "texto": "10 × 1",
+         "series": "10",
+         "reps": "1",
+         "descanso": "2'00\"",
+         "tecnica": "Normal"
+        }
+       ],
+       "cambios_permitidos": [
+        "Dominada asistida",
+        "Dominada",
+        "Jalón al pecho"
+       ],
+       "nota": "Explosivo hasta pecho"
+      },
+      {
+       "orden": 3,
+       "nombre": "Curl femoral",
+       "semanas": [
+        {
+         "texto": "5 × 8",
+         "series": "5",
+         "reps": "8"
+        },
+        {
+         "texto": "5 × 8",
+         "series": "5",
+         "reps": "8"
+        },
+        {
+         "texto": "4 × 8",
+         "series": "4",
+         "reps": "8"
+        },
+        {
+         "texto": "2 ×  máx.",
+         "series": "2"
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Curl femoral de pie sin peso",
+        "Hiperextensión",
+        "Curl femoral acostado",
+        "Curl femoral deslizando en el piso",
+        "Glute ham raise"
+       ]
+      },
+      {
+       "orden": 4,
+       "nombre": "Crunch inverso",
+       "semanas": [
+        {
+         "texto": "RPE 8",
+         "descanso": "30\""
+        },
+        {
+         "texto": "RPE 9",
+         "descanso": "30\""
+        },
+        {
+         "texto": "RPE 10",
+         "descanso": "30\""
+        },
+        {
+         "texto": "al fallo",
+         "descanso": "60\""
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Crunch",
+        "Crunch inverso con peso",
+        "Crunch en máquina",
+        "Crunch con peso",
+        "Dragon flag"
+       ]
+      }
+     ],
+     "foco": "Espalda · Cuádriceps · Abdomen"
+    },
+    {
+     "dia": "C",
+     "ejercicios": [
+      {
+       "orden": 1,
+       "nombre": "Press de hombro sentado",
+       "semanas": [
+        {
+         "texto": "2-3 ×  @ 87.5%",
+         "series": "2-3",
+         "pct": 0.875,
+         "descanso": "4'00\"",
+         "tecnica": "Rest-pause 15 s"
+        },
+        {
+         "texto": "3 ×  @ 90%",
+         "series": "3",
+         "pct": 0.9,
+         "descanso": "4'00\"",
+         "tecnica": "Rest-pause 20 s"
+        },
+        {
+         "texto": "2 ×  @ 92.5%",
+         "series": "2",
+         "pct": 0.925,
+         "descanso": "4'00\"",
+         "tecnica": "Rest-pause 25 s"
+        },
+        {
+         "texto": "10 × 1",
+         "series": "10",
+         "reps": "1",
+         "descanso": "2'00\"",
+         "tecnica": "Normal"
+        }
+       ],
+       "cambios_permitidos": [
+        "Press de hombro de pie",
+        "Press de hombro en máquina",
+        "Lagartijas de pica",
+        "Press de hombro con mancuernas"
+       ],
+       "nota": "Arrancadas - no rebote"
+      },
+      {
+       "orden": 2,
+       "nombre": "Press cerrado o fondos",
+       "semanas": [
+        {
+         "texto": "2-3 ×  @ 85%",
+         "series": "2-3",
+         "pct": 0.85
+        },
+        {
+         "texto": "3 ×  @ 87.5%",
+         "series": "3",
+         "pct": 0.875
+        },
+        {
+         "texto": "2 ×  @ 90%",
+         "series": "2",
+         "pct": 0.9
+        },
+        {
+         "texto": "10 × 1",
+         "series": "10",
+         "reps": "1"
+        }
+       ],
+       "cambios_permitidos": [
+        "Lagartijas cerradas",
+        "Tríceps en polea alta",
+        "Tríceps en máquina",
+        "Press cerrado",
+        "Fondos asistidos"
+       ]
+      },
+      {
+       "orden": 3,
+       "nombre": "Pantorrilla",
+       "semanas": [
+        {
+         "texto": "5 ×  12 RM",
+         "series": "5"
+        },
+        {
+         "texto": "5 ×  12 RM",
+         "series": "5"
+        },
+        {
+         "texto": "4 ×  12 RM",
+         "series": "4"
+        },
+        {
+         "texto": "2 ×  12 RM",
+         "series": "2"
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Pantorrilla sin peso",
+        "Pantorrilla a una pierna",
+        "Pantorrilla en prensa",
+        "Pantorrilla con peso",
+        "Pantorrilla en máquina"
+       ]
+      },
+      {
+       "orden": 4,
+       "nombre": "Sentadilla a cajón con pausa de 2 s",
+       "semanas": [
+        {
+         "texto": "4 @ 70%",
+         "descanso": "30\""
+        },
+        {
+         "texto": "4 @ 70%",
+         "descanso": "30\""
+        },
+        {
+         "texto": "4 @ 70%",
+         "descanso": "30\""
+        },
+        {
+         "texto": "5 @ 70%",
+         "descanso": "60\""
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Sentadilla sin peso",
+        "Sentadilla",
+        "Prensa"
+       ]
+      }
+     ],
+     "foco": "Hombro · Tríceps · Pantorrilla"
+    }
+   ]
+  },
+  {
+   "orden": 6,
+   "id": "mixto",
+   "nombre": "Mixto",
+   "descripcion": "Fuerza y volumen juntos",
+   "semanas": 3,
+   "dias_por_semana": 3,
+   "dias": [
+    {
+     "dia": "A",
+     "ejercicios": [
+      {
+       "orden": 1,
+       "nombre": "Sentadilla",
+       "semanas": [
+        {
+         "texto": "3 × 4/6/8",
+         "series": "3",
+         "reps": "4/6/8",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "2 × 20",
+         "series": "2",
+         "reps": "20",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "3 × 4/6",
+         "series": "3",
+         "reps": "4/6",
+         "descanso": "2'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Sentadilla con salto",
+        "Sentadilla a cajón",
+        "Prensa",
+        "Salto a cajón",
+        "Sentadilla frontal"
+       ],
+       "nota": "8 + drop¹"
+      },
+      {
+       "orden": 2,
+       "nombre": "Prensa o extensión de cuádriceps",
+       "semanas": [
+        {
+         "texto": "3 × 8",
+         "series": "3",
+         "reps": "8",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "2 × 8",
+         "series": "2",
+         "reps": "8",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "1 × 8",
+         "series": "1",
+         "reps": "8",
+         "descanso": "2'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Sentadilla sin peso",
+        "Sentadilla frontal",
+        "Prensa horizontal",
+        "Sentadilla con salto",
+        "Zancada"
+       ],
+       "nota": "Ultima serie drop¹"
+      },
+      {
+       "orden": 3,
+       "nombre": "Press de hombro sentado",
+       "semanas": [
+        {
+         "texto": "3 × 4/6",
+         "series": "3",
+         "reps": "4/6",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "3 × 4/6",
+         "series": "3",
+         "reps": "4/6",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "2 × 6",
+         "series": "2",
+         "reps": "6",
+         "descanso": "2'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Press de hombro de pie",
+        "Press de hombro en máquina",
+        "Lagartijas de pica",
+        "Press de hombro con mancuernas"
+       ],
+       "nota": "8 + drop¹"
+      },
+      {
+       "orden": 4,
+       "nombre": "Press con mancuernas",
+       "semanas": [
+        {
+         "texto": "3 × 6",
+         "series": "3",
+         "reps": "6",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "2 × 6",
+         "series": "2",
+         "reps": "6",
+         "descanso": "2'30\""
+        },
+        {
+         "texto": "1 × 8",
+         "series": "1",
+         "reps": "8",
+         "descanso": "2'30\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Press de hombro con barra",
+        "Press de hombro en máquina",
+        "Lagartijas de pica",
+        "Press de hombro sentado",
+        "Press de hombro de pie"
+       ],
+       "nota": "Ultima serie drop¹"
+      },
+      {
+       "orden": 5,
+       "nombre": "Crunch inverso",
+       "semanas": [
+        {
+         "texto": "3 × 25",
+         "series": "3",
+         "reps": "25"
+        },
+        {
+         "texto": "3 × 25",
+         "series": "3",
+         "reps": "25"
+        },
+        {
+         "texto": "2 × 25",
+         "series": "2",
+         "reps": "25"
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Crunch",
+        "Crunch inverso con peso",
+        "Crunch en máquina",
+        "Crunch con peso",
+        "Dragon flag"
+       ]
+      },
+      {
+       "orden": 6,
+       "nombre": "Pantorrilla",
+       "semanas": [
+        {
+         "descanso": "30\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "30\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "30\"",
+         "series": "2",
+         "texto": "2 × (igual que el primero del bloque)",
+         "heredado": true
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Pantorrilla sin peso",
+        "Pantorrilla a una pierna",
+        "Pantorrilla en prensa",
+        "Pantorrilla con peso",
+        "Pantorrilla en máquina"
+       ]
+      }
+     ],
+     "foco": "Pierna · Hombro · Abdomen"
+    },
+    {
+     "dia": "B",
+     "ejercicios": [
+      {
+       "orden": 1,
+       "nombre": "Press de banca",
+       "semanas": [
+        {
+         "texto": "3 × 4/6",
+         "series": "3",
+         "reps": "4/6",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "3 × 4/6",
+         "series": "3",
+         "reps": "4/6",
+         "descanso": "2'30\""
+        },
+        {
+         "texto": "2 × 4/6",
+         "series": "2",
+         "reps": "4/6",
+         "descanso": "2'30\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Lagartijas",
+        "Fondos en paralelas",
+        "Press de pecho en máquina",
+        "Lagartijas con peso",
+        "Press con mancuernas"
+       ],
+       "nota": "8 + drop¹"
+      },
+      {
+       "orden": 2,
+       "nombre": "Aperturas o cruces en polea",
+       "semanas": [
+        {
+         "texto": "3 × 10",
+         "series": "3",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "2 × 10",
+         "series": "2",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "1 × 12",
+         "series": "1",
+         "reps": "12",
+         "descanso": "1'30\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Press de banca",
+        "Aperturas en máquina"
+       ]
+      },
+      {
+       "orden": 3,
+       "nombre": "Press inclinado",
+       "semanas": [
+        {
+         "texto": "3 × 6",
+         "series": "3",
+         "reps": "6",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "2 × 6",
+         "series": "2",
+         "reps": "6",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "1 × 8",
+         "series": "1",
+         "reps": "8",
+         "descanso": "2'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Lagartijas con pies elevados",
+        "Press inclinado con mancuernas",
+        "Press inclinado en máquina"
+       ],
+       "nota": "Ultima serie drop¹"
+      },
+      {
+       "orden": 4,
+       "nombre": "Fondos o press cerrado",
+       "semanas": [
+        {
+         "texto": "3 × 4/6",
+         "series": "3",
+         "reps": "4/6",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "3 × 4/6",
+         "series": "3",
+         "reps": "4/6",
+         "descanso": "2'30\""
+        },
+        {
+         "texto": "2 × 4/8",
+         "series": "2",
+         "reps": "4/8",
+         "descanso": "2'30\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Lagartijas cerradas",
+        "Tríceps en polea alta",
+        "Tríceps en máquina",
+        "Press cerrado",
+        "Fondos asistidos"
+       ],
+       "nota": "8 + drop¹"
+      },
+      {
+       "orden": 5,
+       "nombre": "Hiperextensión",
+       "semanas": [
+        {
+         "texto": "3 × 20",
+         "series": "3",
+         "reps": "20"
+        },
+        {
+         "texto": "3 × 20",
+         "series": "3",
+         "reps": "20"
+        },
+        {
+         "texto": "2 × 20",
+         "series": "2",
+         "reps": "20"
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Puente de glúteo",
+        "Peso muerto rumano",
+        "Curl femoral acostado",
+        "Puente de glúteo a una pierna",
+        "Curl femoral sentado"
+       ]
+      },
+      {
+       "orden": 6,
+       "nombre": "Remo con barra o en banco",
+       "semanas": [
+        {
+         "texto": "12",
+         "reps": "12",
+         "descanso": "30\""
+        },
+        {
+         "texto": "12",
+         "reps": "12",
+         "descanso": "30\""
+        },
+        {
+         "texto": "15",
+         "reps": "15",
+         "descanso": "30\""
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Superman en el piso",
+        "Remo con mancuerna",
+        "Remo en máquina",
+        "Bird dog",
+        "Remo en banco"
+       ]
+      }
+     ],
+     "foco": "Pecho · Tríceps · Abdomen · Espalda"
+    },
+    {
+     "dia": "C",
+     "ejercicios": [
+      {
+       "orden": 1,
+       "nombre": "Peso muerto",
+       "semanas": [
+        {
+         "texto": "3 × 4/6",
+         "series": "3",
+         "reps": "4/6",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "2 × 4",
+         "series": "2",
+         "reps": "4",
+         "descanso": "1'00\""
+        },
+        {
+         "texto": "8 × 3 @ 75%",
+         "series": "8",
+         "reps": "3",
+         "pct": 0.75,
+         "descanso": "1'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Peso muerto con liga",
+        "Peso muerto desde rack",
+        "Remo en máquina",
+        "Peso muerto a una pierna",
+        "Peso muerto rumano"
+       ],
+       "nota": "20 rest pause"
+      },
+      {
+       "orden": 2,
+       "nombre": "Curl femoral",
+       "semanas": [
+        {
+         "texto": "3 × 8",
+         "series": "3",
+         "reps": "8",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "2 × 8",
+         "series": "2",
+         "reps": "8",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "1 × 10",
+         "series": "1",
+         "reps": "10",
+         "descanso": "2'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Curl femoral de pie sin peso",
+        "Hiperextensión",
+        "Curl femoral acostado",
+        "Curl femoral deslizando en el piso",
+        "Glute ham raise"
+       ],
+       "nota": "Ultima serie drop¹"
+      },
+      {
+       "orden": 3,
+       "nombre": "Dominada supina",
+       "semanas": [
+        {
+         "texto": "3 × 4/6",
+         "series": "3",
+         "reps": "4/6",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "3 × 4/6",
+         "series": "3",
+         "reps": "4/6",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "2 × 4/8",
+         "series": "2",
+         "reps": "4/8",
+         "descanso": "2'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Dominada asistida",
+        "Dominada",
+        "Jalón al pecho"
+       ],
+       "nota": "8 + drop¹"
+      },
+      {
+       "orden": 4,
+       "nombre": "Curl con barra",
+       "semanas": [
+        {
+         "texto": "3 × 4/6",
+         "series": "3",
+         "reps": "4/6",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "3 × 4/6",
+         "series": "3",
+         "reps": "4/6",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "2 × 4/8",
+         "series": "2",
+         "reps": "4/8",
+         "descanso": "2'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Curl con liga",
+        "Curl con mancuernas",
+        "Curl en máquina",
+        "Curl martillo",
+        "Curl con barra Z"
+       ],
+       "nota": "8 + drop¹"
+      },
+      {
+       "orden": 5,
+       "nombre": "Plancha",
+       "semanas": [
+        {
+         "texto": "3 ×  máx.",
+         "series": "3"
+        },
+        {
+         "texto": "3 ×  máx.",
+         "series": "3"
+        },
+        {
+         "texto": "2 ×  máx.",
+         "series": "2"
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Dragon flag",
+        "Crunch inverso",
+        "Rueda abdominal"
+       ]
+      },
+      {
+       "orden": 6,
+       "nombre": "Pantorrilla",
+       "semanas": [
+        {
+         "texto": "15",
+         "reps": "15",
+         "descanso": "30\""
+        },
+        {
+         "texto": "15",
+         "reps": "15",
+         "descanso": "30\""
+        },
+        {
+         "texto": "15",
+         "reps": "15",
+         "descanso": "30\""
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Pantorrilla sin peso",
+        "Pantorrilla a una pierna",
+        "Pantorrilla en prensa",
+        "Pantorrilla con peso",
+        "Pantorrilla en máquina"
+       ]
+      }
+     ],
+     "foco": "Espalda · Bíceps · Pantorrilla · Abdomen"
+    }
+   ]
+  },
+  {
+   "orden": 7,
+   "id": "volumen",
+   "nombre": "Volumen",
+   "descripcion": "Construir músculo",
+   "semanas": 3,
+   "dias_por_semana": 3,
+   "dias": [
+    {
+     "dia": "A",
+     "ejercicios": [
+      {
+       "orden": 1,
+       "nombre": "Sentadilla",
+       "semanas": [
+        {
+         "texto": "2 × 20",
+         "series": "2",
+         "reps": "20",
+         "descanso": "+ PULLOVER RESPIRATORIO"
+        },
+        {
+         "texto": "3 × 8/6",
+         "series": "3",
+         "reps": "8/6",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "1 × 20",
+         "series": "1",
+         "reps": "20",
+         "descanso": "2'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Sentadilla con salto",
+        "Sentadilla a cajón",
+        "Prensa",
+        "Salto a cajón",
+        "Sentadilla frontal"
+       ],
+       "nota": "Rest-pause"
+      },
+      {
+       "orden": 2,
+       "nombre": "Curl femoral",
+       "semanas": [
+        {
+         "texto": "2 × 10",
+         "series": "2",
+         "reps": "10",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "3 × 10",
+         "series": "3",
+         "reps": "10",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "1 × 12",
+         "series": "1",
+         "reps": "12",
+         "descanso": "2'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Curl femoral de pie sin peso",
+        "Hiperextensión",
+        "Curl femoral acostado",
+        "Curl femoral deslizando en el piso",
+        "Glute ham raise"
+       ],
+       "nota": "Ultima serie parciales al final"
+      },
+      {
+       "orden": 3,
+       "nombre": "Press de hombro sentado",
+       "semanas": [
+        {
+         "texto": "3 × 8/6",
+         "series": "3",
+         "reps": "8/6",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "3 × 8/6",
+         "series": "3",
+         "reps": "8/6",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "2 × 8",
+         "series": "2",
+         "reps": "8",
+         "descanso": "2'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Press de hombro de pie",
+        "Press de hombro en máquina",
+        "Lagartijas de pica",
+        "Press de hombro con mancuernas"
+       ],
+       "nota": "4 + rest-pause"
+      },
+      {
+       "orden": 4,
+       "nombre": "Elevaciones laterales",
+       "semanas": [
+        {
+         "texto": "4 × 10",
+         "series": "4",
+         "reps": "10",
+         "descanso": "Alternar DCH /IZQ @ 30\""
+        },
+        {
+         "texto": "3 × 10",
+         "series": "3",
+         "reps": "10",
+         "descanso": "Alternar DCH /IZQ @ 30\""
+        },
+        {
+         "texto": "2 × 12",
+         "series": "2",
+         "reps": "12",
+         "descanso": "Alternar DCH /IZQ @ 30\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Elevaciones laterales con liga",
+        "Elevaciones laterales en polea",
+        "Elevaciones frontales"
+       ],
+       "nota": "[ unilateral en polea baja ]"
+      },
+      {
+       "orden": 5,
+       "nombre": "Crunch inverso",
+       "semanas": [
+        {
+         "texto": "3 × 15",
+         "series": "3",
+         "reps": "15"
+        },
+        {
+         "texto": "3 × 15",
+         "series": "3",
+         "reps": "15"
+        },
+        {
+         "texto": "2 × 15",
+         "series": "2",
+         "reps": "15"
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Crunch",
+        "Crunch inverso con peso",
+        "Crunch en máquina",
+        "Crunch con peso",
+        "Dragon flag"
+       ]
+      },
+      {
+       "orden": 6,
+       "nombre": "Pantorrilla",
+       "semanas": [
+        {
+         "descanso": "30\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "30\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "30\"",
+         "series": "2",
+         "texto": "2 × (igual que el primero del bloque)",
+         "heredado": true
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Pantorrilla sin peso",
+        "Pantorrilla a una pierna",
+        "Pantorrilla en prensa",
+        "Pantorrilla con peso",
+        "Pantorrilla en máquina"
+       ]
+      }
+     ],
+     "foco": "Pierna · Hombro · Abdomen"
+    },
+    {
+     "dia": "B",
+     "ejercicios": [
+      {
+       "orden": 1,
+       "nombre": "Press de banca",
+       "semanas": [
+        {
+         "texto": "3 × 8/6",
+         "series": "3",
+         "reps": "8/6",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "3 × 8/6",
+         "series": "3",
+         "reps": "8/6",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "8 × 3 @ 75%",
+         "series": "8",
+         "reps": "3",
+         "pct": 0.75,
+         "descanso": "1'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Lagartijas",
+        "Fondos en paralelas",
+        "Press de pecho en máquina",
+        "Lagartijas con peso",
+        "Press con mancuernas"
+       ],
+       "nota": "4 + rest-pause"
+      },
+      {
+       "orden": 2,
+       "nombre": "Aperturas o cruces en polea",
+       "semanas": [
+        {
+         "texto": "3 × 10",
+         "series": "3",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "2 × 10",
+         "series": "2",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "No se hace esta semana",
+         "omitir": true
+        }
+       ],
+       "cambios_permitidos": [
+        "Press de banca",
+        "Aperturas en máquina"
+       ]
+      },
+      {
+       "orden": 3,
+       "nombre": "Press inclinado",
+       "semanas": [
+        {
+         "texto": "2 × 10",
+         "series": "2",
+         "reps": "10",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "3 × 10",
+         "series": "3",
+         "reps": "10",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "No se hace esta semana",
+         "omitir": true
+        }
+       ],
+       "cambios_permitidos": [
+        "Lagartijas con pies elevados",
+        "Press inclinado con mancuernas",
+        "Press inclinado en máquina"
+       ],
+       "nota": "Ultima serie parciales al final"
+      },
+      {
+       "orden": 4,
+       "nombre": "Curl con barra",
+       "semanas": [
+        {
+         "texto": "3 × 8/6/4",
+         "series": "3",
+         "reps": "8/6/4",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "3 × 8/6",
+         "series": "3",
+         "reps": "8/6",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "2 × 8",
+         "series": "2",
+         "reps": "8",
+         "descanso": "2'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Curl con liga",
+        "Curl con mancuernas",
+        "Curl en máquina",
+        "Curl martillo",
+        "Curl con barra Z"
+       ],
+       "nota": "4 + rest-pause"
+      },
+      {
+       "orden": 5,
+       "nombre": "Hiperextensión",
+       "semanas": [
+        {
+         "texto": "3 × 20",
+         "series": "3",
+         "reps": "20"
+        },
+        {
+         "texto": "3 × 20",
+         "series": "3",
+         "reps": "20"
+        },
+        {
+         "texto": "2 × 20",
+         "series": "2",
+         "reps": "20"
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Puente de glúteo",
+        "Peso muerto rumano",
+        "Curl femoral acostado",
+        "Puente de glúteo a una pierna",
+        "Curl femoral sentado"
+       ]
+      },
+      {
+       "orden": 6,
+       "nombre": "Remo con barra o en banco",
+       "semanas": [
+        {
+         "texto": "12",
+         "reps": "12",
+         "descanso": "30\""
+        },
+        {
+         "texto": "12",
+         "reps": "12",
+         "descanso": "30\""
+        },
+        {
+         "texto": "15",
+         "reps": "15",
+         "descanso": "30\""
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Superman en el piso",
+        "Remo con mancuerna",
+        "Remo en máquina",
+        "Bird dog",
+        "Remo en banco"
+       ]
+      }
+     ],
+     "foco": "Pecho · Bíceps · Abdomen · Espalda"
+    },
+    {
+     "dia": "C",
+     "ejercicios": [
+      {
+       "orden": 1,
+       "nombre": "Peso muerto",
+       "semanas": [
+        {
+         "texto": "3 × 8/6/4",
+         "series": "3",
+         "reps": "8/6/4",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "3 × 8/6",
+         "series": "3",
+         "reps": "8/6",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "8 × 3 @ 75%",
+         "series": "8",
+         "reps": "3",
+         "pct": 0.75,
+         "descanso": "1'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Peso muerto con liga",
+        "Peso muerto desde rack",
+        "Remo en máquina",
+        "Peso muerto a una pierna",
+        "Peso muerto rumano"
+       ],
+       "nota": "20 rest pause"
+      },
+      {
+       "orden": 2,
+       "nombre": "Extensión de cuádriceps o prensa",
+       "semanas": [
+        {
+         "texto": "3 × 10",
+         "series": "3",
+         "reps": "10",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "2 × 10",
+         "series": "2",
+         "reps": "10",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "1 × 10",
+         "series": "1",
+         "reps": "10",
+         "descanso": "2'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Extensión de rodilla sin peso",
+        "Sissy squat",
+        "Prensa",
+        "Zancada"
+       ],
+       "nota": "Ultima serie parciales al final"
+      },
+      {
+       "orden": 3,
+       "nombre": "Dominada supina",
+       "semanas": [
+        {
+         "texto": "3 × 8/6/4",
+         "series": "3",
+         "reps": "8/6/4",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "3 × 8/6",
+         "series": "3",
+         "reps": "8/6",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "1 × 8",
+         "series": "1",
+         "reps": "8",
+         "descanso": "2'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Dominada asistida",
+        "Dominada",
+        "Jalón al pecho"
+       ],
+       "nota": "4 + rest-pause"
+      },
+      {
+       "orden": 4,
+       "nombre": "Fondos o press cerrado",
+       "semanas": [
+        {
+         "texto": "3 × 8/6/4",
+         "series": "3",
+         "reps": "8/6/4",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "3 × 8/6",
+         "series": "3",
+         "reps": "8/6",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "1 × 8",
+         "series": "1",
+         "reps": "8",
+         "descanso": "2'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Lagartijas cerradas",
+        "Tríceps en polea alta",
+        "Tríceps en máquina",
+        "Press cerrado",
+        "Fondos asistidos"
+       ],
+       "nota": "4 + rest-pause"
+      },
+      {
+       "orden": 5,
+       "nombre": "Leñador con barra, de rodillas",
+       "semanas": [
+        {
+         "texto": "3 × 20",
+         "series": "3",
+         "reps": "20"
+        },
+        {
+         "texto": "3 × 20",
+         "series": "3",
+         "reps": "20"
+        },
+        {
+         "texto": "1 × 20",
+         "series": "1",
+         "reps": "20"
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Dragon flag",
+        "Crunch inverso",
+        "Rueda abdominal"
+       ]
+      },
+      {
+       "orden": 6,
+       "nombre": "Pantorrilla",
+       "semanas": [
+        {
+         "texto": "30",
+         "reps": "30",
+         "descanso": "30\""
+        },
+        {
+         "texto": "30",
+         "reps": "30",
+         "descanso": "30\""
+        },
+        {
+         "texto": "30",
+         "reps": "30",
+         "descanso": "30\""
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Pantorrilla sin peso",
+        "Pantorrilla a una pierna",
+        "Pantorrilla en prensa",
+        "Pantorrilla con peso",
+        "Pantorrilla en máquina"
+       ]
+      }
+     ],
+     "foco": "Espalda · Tríceps · Pantorrilla · Abdomen"
+    }
+   ]
+  },
+  {
+   "orden": 8,
+   "id": "remate",
+   "nombre": "Remate",
+   "descripcion": "Cerrar el ciclo y consolidar",
+   "semanas": 6,
+   "dias_por_semana": 3,
+   "dias": [
+    {
+     "dia": "A",
+     "ejercicios": [
+      {
+       "orden": 1,
+       "nombre": "Sentadilla",
+       "semanas": [
+        {
+         "series": "8",
+         "reps": "2",
+         "pct": 0.75,
+         "texto": "8 × 2 @ 75%",
+         "descanso": "1 min"
+        },
+        {
+         "series": "8",
+         "tempo": "3232",
+         "pct": 0.75,
+         "texto": "8 series, tempo 3-2-3-2 @ 75%",
+         "revisar_semana": true,
+         "descanso": "1 min"
+        },
+        {
+         "series": "8",
+         "reps": "3",
+         "pct": 0.75,
+         "texto": "8 × 3 @ 75%",
+         "descanso": "1 min"
+        },
+        {
+         "series": "8",
+         "reps": "2",
+         "pct": 0.775,
+         "texto": "8 × 2 @ 77.5%",
+         "descanso": "1 min"
+        },
+        {
+         "series": "8",
+         "tempo": "3232",
+         "pct": 0.775,
+         "texto": "8 series, tempo 3-2-3-2 @ 77.5%",
+         "revisar_semana": true,
+         "descanso": "1 min"
+        },
+        {
+         "series": "8",
+         "reps": "3",
+         "pct": 0.775,
+         "texto": "8 × 3 @ 77.5%",
+         "descanso": "1 min"
+        }
+       ],
+       "revisar": true,
+       "cambios_permitidos": [
+        "Sentadilla con salto",
+        "Sentadilla a cajón",
+        "Prensa",
+        "Salto a cajón",
+        "Sentadilla frontal"
+       ]
+      },
+      {
+       "orden": 2,
+       "nombre": "Extensión de cuádriceps",
+       "semanas": [
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Extensión de rodilla sin peso",
+        "Sissy squat",
+        "Prensa",
+        "Zancada"
+       ]
+      },
+      {
+       "orden": 3,
+       "nombre": "Curl femoral",
+       "semanas": [
+        {
+         "texto": "bombeo"
+        },
+        {
+         "texto": "bombeo"
+        },
+        {
+         "texto": "bombeo"
+        },
+        {
+         "texto": "bombeo"
+        },
+        {
+         "texto": "bombeo"
+        },
+        {
+         "texto": "bombeo"
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Curl femoral de pie sin peso",
+        "Hiperextensión",
+        "Curl femoral acostado",
+        "Curl femoral deslizando en el piso",
+        "Glute ham raise"
+       ]
+      },
+      {
+       "orden": 4,
+       "nombre": "Prensa",
+       "semanas": [
+        {
+         "texto": "12",
+         "reps": "12",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "12",
+         "reps": "12",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "12",
+         "reps": "12",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "12",
+         "reps": "12",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "12",
+         "reps": "12",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "12",
+         "reps": "12",
+         "descanso": "1'30\""
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Sentadilla sin peso",
+        "Sentadilla frontal",
+        "Prensa horizontal",
+        "Sentadilla con salto",
+        "Zancada"
+       ]
+      },
+      {
+       "orden": 5,
+       "nombre": "Press de hombro con barra",
+       "semanas": [
+        {
+         "series": "8",
+         "reps": "2",
+         "pct": 0.75,
+         "texto": "8 × 2 @ 75%",
+         "descanso": "1 min"
+        },
+        {
+         "series": "8",
+         "tempo": "3232",
+         "pct": 0.75,
+         "texto": "8 series, tempo 3-2-3-2 @ 75%",
+         "revisar_semana": true,
+         "descanso": "1 min"
+        },
+        {
+         "series": "8",
+         "reps": "3",
+         "pct": 0.75,
+         "texto": "8 × 3 @ 75%",
+         "descanso": "1 min"
+        },
+        {
+         "series": "8",
+         "reps": "2",
+         "pct": 0.775,
+         "texto": "8 × 2 @ 77.5%",
+         "descanso": "1 min"
+        },
+        {
+         "series": "8",
+         "tempo": "3232",
+         "pct": 0.775,
+         "texto": "8 series, tempo 3-2-3-2 @ 77.5%",
+         "revisar_semana": true,
+         "descanso": "1 min"
+        },
+        {
+         "series": "8",
+         "reps": "3",
+         "pct": 0.775,
+         "texto": "8 × 3 @ 77.5%",
+         "descanso": "1 min"
+        }
+       ],
+       "revisar": true,
+       "cambios_permitidos": [
+        "Plancha con brazos estirados",
+        "Press con mancuernas",
+        "Press de hombro en máquina",
+        "Caminata en pared",
+        "Press de hombro con liga"
+       ]
+      },
+      {
+       "orden": 6,
+       "nombre": "Elevaciones laterales",
+       "semanas": [
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        }
+       ],
+       "grupo": "B",
+       "cambios_permitidos": [
+        "Elevaciones laterales con liga",
+        "Elevaciones laterales en polea",
+        "Elevaciones frontales"
+       ]
+      },
+      {
+       "orden": 7,
+       "nombre": "Press con mancuernas",
+       "semanas": [
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        }
+       ],
+       "grupo": "B",
+       "cambios_permitidos": [
+        "Press de hombro con barra",
+        "Press de hombro en máquina",
+        "Lagartijas de pica",
+        "Press de hombro sentado",
+        "Press de hombro de pie"
+       ]
+      },
+      {
+       "orden": 8,
+       "nombre": "Pantorrilla",
+       "semanas": [
+        {
+         "texto": "2-3 ×  descendente",
+         "series": "2-3",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "2-3 ×  descendente",
+         "series": "2-3",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "1-2 ×  descendente",
+         "series": "1-2",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "2-3 ×  descendente",
+         "series": "2-3",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "2-3 ×  descendente",
+         "series": "2-3",
+         "descanso": "2'00\""
+        },
+        {
+         "texto": "1-2 ×  descendente",
+         "series": "1-2",
+         "descanso": "2'00\""
+        }
+       ],
+       "cambios_permitidos": [
+        "Pantorrilla sin peso",
+        "Pantorrilla a una pierna",
+        "Pantorrilla en prensa",
+        "Pantorrilla con peso",
+        "Pantorrilla en máquina"
+       ]
+      }
+     ],
+     "foco": "Pierna · Pecho · Pantorrilla"
+    },
+    {
+     "dia": "B",
+     "ejercicios": [
+      {
+       "orden": 1,
+       "nombre": "Press horizontal",
+       "semanas": [
+        {
+         "series": "8",
+         "reps": "2",
+         "pct": 0.75,
+         "texto": "8 × 2 @ 75%"
+        },
+        {
+         "series": "8",
+         "tempo": "3232",
+         "pct": 0.75,
+         "texto": "8 series, tempo 3-2-3-2 @ 75%",
+         "revisar_semana": true
+        },
+        {
+         "series": "8",
+         "reps": "3",
+         "pct": 0.75,
+         "texto": "8 × 3 @ 75%"
+        },
+        {
+         "series": "8",
+         "reps": "2",
+         "pct": 0.775,
+         "texto": "8 × 2 @ 77.5%"
+        },
+        {
+         "series": "8",
+         "tempo": "3232",
+         "pct": 0.775,
+         "texto": "8 series, tempo 3-2-3-2 @ 77.5%",
+         "revisar_semana": true
+        },
+        {
+         "series": "8",
+         "reps": "3",
+         "pct": 0.775,
+         "texto": "8 × 3 @ 77.5%"
+        }
+       ],
+       "revisar": true,
+       "cambios_permitidos": [
+        "Lagartijas",
+        "Fondos en paralelas",
+        "Press de pecho en máquina",
+        "Lagartijas con peso",
+        "Press con mancuernas"
+       ]
+      },
+      {
+       "orden": 2,
+       "nombre": "Aperturas en banco",
+       "semanas": [
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Aperturas en TRX",
+        "Aperturas en polea baja",
+        "Aperturas en máquina",
+        "Cruces en polea baja"
+       ]
+      },
+      {
+       "orden": 3,
+       "nombre": "Press inclinado",
+       "semanas": [
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Lagartijas con pies elevados",
+        "Press inclinado con mancuernas",
+        "Press inclinado en máquina"
+       ]
+      },
+      {
+       "orden": 4,
+       "nombre": "Curl con barra",
+       "semanas": [
+        {
+         "series": "8",
+         "reps": "2",
+         "pct": 0.75,
+         "texto": "8 × 2 @ 75%",
+         "descanso": "1 min"
+        },
+        {
+         "series": "8",
+         "tempo": "3232",
+         "pct": 0.75,
+         "texto": "8 series, tempo 3-2-3-2 @ 75%",
+         "revisar_semana": true,
+         "descanso": "1 min"
+        },
+        {
+         "series": "8",
+         "reps": "3",
+         "pct": 0.75,
+         "texto": "8 × 3 @ 75%",
+         "descanso": "1 min"
+        },
+        {
+         "series": "8",
+         "reps": "2",
+         "pct": 0.775,
+         "texto": "8 × 2 @ 77.5%",
+         "descanso": "1 min"
+        },
+        {
+         "series": "8",
+         "tempo": "3232",
+         "pct": 0.775,
+         "texto": "8 series, tempo 3-2-3-2 @ 77.5%",
+         "revisar_semana": true,
+         "descanso": "1 min"
+        },
+        {
+         "series": "8",
+         "reps": "3",
+         "pct": 0.775,
+         "texto": "8 × 3 @ 77.5%",
+         "descanso": "1 min"
+        }
+       ],
+       "revisar": true,
+       "cambios_permitidos": [
+        "Curl con liga",
+        "Curl con mancuernas",
+        "Curl en máquina",
+        "Curl martillo",
+        "Curl con barra Z"
+       ]
+      },
+      {
+       "orden": 5,
+       "nombre": "Curl en banco inclinado",
+       "semanas": [
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        }
+       ],
+       "grupo": "B",
+       "cambios_permitidos": [
+        "Curl con liga",
+        "Curl araña",
+        "Curl con barra"
+       ]
+      },
+      {
+       "orden": 6,
+       "nombre": "Curl araña",
+       "semanas": [
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        }
+       ],
+       "grupo": "B",
+       "cambios_permitidos": [
+        "Curl en TRX",
+        "Curl en banco inclinado",
+        "Curl con barra"
+       ]
+      },
+      {
+       "orden": 7,
+       "nombre": "Extensión de tríceps acostado",
+       "semanas": [
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        }
+       ],
+       "grupo": "C",
+       "cambios_permitidos": [
+        "Extensión de tríceps con liga",
+        "Extensión de tríceps en polea",
+        "Tríceps en máquina",
+        "Extensión de tríceps con mancuerna"
+       ]
+      },
+      {
+       "orden": 8,
+       "nombre": "Fondos o press cerrado",
+       "semanas": [
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        }
+       ],
+       "grupo": "C",
+       "cambios_permitidos": [
+        "Lagartijas cerradas",
+        "Tríceps en polea alta",
+        "Tríceps en máquina",
+        "Press cerrado",
+        "Fondos asistidos"
+       ]
+      }
+     ],
+     "foco": "Hombro · Bíceps · Tríceps"
+    },
+    {
+     "dia": "C",
+     "ejercicios": [
+      {
+       "orden": 1,
+       "nombre": "Peso muerto",
+       "semanas": [
+        {
+         "series": "8",
+         "reps": "2",
+         "pct": 0.75,
+         "texto": "8 × 2 @ 75%"
+        },
+        {
+         "series": "8",
+         "tempo": "3232",
+         "pct": 0.75,
+         "texto": "8 series, tempo 3-2-3-2 @ 75%",
+         "revisar_semana": true
+        },
+        {
+         "series": "8",
+         "reps": "3",
+         "pct": 0.75,
+         "texto": "8 × 3 @ 75%"
+        },
+        {
+         "series": "8",
+         "reps": "2",
+         "pct": 0.775,
+         "texto": "8 × 2 @ 77.5%"
+        },
+        {
+         "series": "8",
+         "tempo": "3232",
+         "pct": 0.775,
+         "texto": "8 series, tempo 3-2-3-2 @ 77.5%",
+         "revisar_semana": true
+        },
+        {
+         "series": "8",
+         "reps": "3",
+         "pct": 0.775,
+         "texto": "8 × 3 @ 77.5%"
+        }
+       ],
+       "revisar": true,
+       "cambios_permitidos": [
+        "Peso muerto con liga",
+        "Peso muerto desde rack",
+        "Remo en máquina",
+        "Peso muerto a una pierna",
+        "Peso muerto rumano"
+       ]
+      },
+      {
+       "orden": 2,
+       "nombre": "Curl femoral",
+       "semanas": [
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Curl femoral de pie sin peso",
+        "Hiperextensión",
+        "Curl femoral acostado",
+        "Curl femoral deslizando en el piso",
+        "Glute ham raise"
+       ]
+      },
+      {
+       "orden": 3,
+       "nombre": "Hiperextensión",
+       "semanas": [
+        {
+         "texto": "bombeo"
+        },
+        {
+         "texto": "bombeo"
+        },
+        {
+         "texto": "bombeo"
+        },
+        {
+         "texto": "bombeo"
+        },
+        {
+         "texto": "bombeo"
+        },
+        {
+         "texto": "bombeo"
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Puente de glúteo",
+        "Peso muerto rumano",
+        "Curl femoral acostado",
+        "Puente de glúteo a una pierna",
+        "Curl femoral sentado"
+       ]
+      },
+      {
+       "orden": 4,
+       "nombre": "Zancada o sentadilla búlgara",
+       "semanas": [
+        {
+         "texto": "12",
+         "reps": "12",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "12",
+         "reps": "12",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "12",
+         "reps": "12",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "12",
+         "reps": "12",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "12",
+         "reps": "12",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "12",
+         "reps": "12",
+         "descanso": "1'30\""
+        }
+       ],
+       "grupo": "A",
+       "cambios_permitidos": [
+        "Zancada con salto",
+        "Prensa",
+        "Prensa horizontal",
+        "Sentadilla a una pierna",
+        "Sentadilla búlgara"
+       ]
+      },
+      {
+       "orden": 5,
+       "nombre": "Dominada agarre cerrado",
+       "semanas": [
+        {
+         "series": "8",
+         "reps": "2",
+         "pct": 0.75,
+         "texto": "8 × 2 @ 75%"
+        },
+        {
+         "series": "8",
+         "tempo": "3232",
+         "pct": 0.75,
+         "texto": "8 series, tempo 3-2-3-2 @ 75%",
+         "revisar_semana": true
+        },
+        {
+         "series": "8",
+         "reps": "3",
+         "pct": 0.75,
+         "texto": "8 × 3 @ 75%"
+        },
+        {
+         "series": "8",
+         "reps": "2",
+         "pct": 0.775,
+         "texto": "8 × 2 @ 77.5%"
+        },
+        {
+         "series": "8",
+         "tempo": "3232",
+         "pct": 0.775,
+         "texto": "8 series, tempo 3-2-3-2 @ 77.5%",
+         "revisar_semana": true
+        },
+        {
+         "series": "8",
+         "reps": "3",
+         "pct": 0.775,
+         "texto": "8 × 3 @ 77.5%"
+        }
+       ],
+       "revisar": true,
+       "cambios_permitidos": [
+        "Dominada supina",
+        "Jalón al pecho"
+       ]
+      },
+      {
+       "orden": 6,
+       "nombre": "Jalón al pecho",
+       "semanas": [
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        },
+        {
+         "texto": "Series libres × al máximo de reps"
+        }
+       ],
+       "grupo": "B",
+       "cambios_permitidos": [
+        "Remo invertido en barra",
+        "Dominada",
+        "Jalón agarre supino",
+        "Remo en polea baja",
+        "Remo con mancuerna"
+       ]
+      },
+      {
+       "orden": 7,
+       "nombre": "Dominada agarre abierto",
+       "semanas": [
+        {
+         "texto": "bombeo"
+        },
+        {
+         "texto": "bombeo"
+        },
+        {
+         "texto": "bombeo"
+        },
+        {
+         "texto": "bombeo"
+        },
+        {
+         "texto": "bombeo"
+        },
+        {
+         "texto": "bombeo"
+        }
+       ],
+       "grupo": "B",
+       "cambios_permitidos": [
+        "Dominada supina",
+        "Dominada agarre cerrado",
+        "Jalón al pecho"
+       ]
+      },
+      {
+       "orden": 8,
+       "nombre": "Remo con barra o en banco",
+       "semanas": [
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        },
+        {
+         "texto": "10",
+         "reps": "10",
+         "descanso": "1'30\""
+        }
+       ],
+       "grupo": "B",
+       "cambios_permitidos": [
+        "Superman en el piso",
+        "Remo con mancuerna",
+        "Remo en máquina",
+        "Bird dog",
+        "Remo en banco"
+       ]
+      },
+      {
+       "orden": 9,
+       "nombre": "Crunch inverso",
+       "semanas": [
+        {
+         "texto": "3 × 15",
+         "series": "3",
+         "reps": "15"
+        },
+        {
+         "texto": "3 × 15",
+         "series": "3",
+         "reps": "15"
+        },
+        {
+         "texto": "3 × 15",
+         "series": "3",
+         "reps": "15"
+        },
+        {
+         "texto": "3 × 15",
+         "series": "3",
+         "reps": "15"
+        },
+        {
+         "texto": "3 × 15",
+         "series": "3",
+         "reps": "15"
+        },
+        {
+         "texto": "3 × 15",
+         "series": "3",
+         "reps": "15"
+        }
+       ],
+       "grupo": "C",
+       "cambios_permitidos": [
+        "Crunch",
+        "Crunch inverso con peso",
+        "Crunch en máquina",
+        "Crunch con peso",
+        "Dragon flag"
+       ]
+      },
+      {
+       "orden": 10,
+       "nombre": "Crunch",
+       "semanas": [
+        {
+         "descanso": "1'30\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "1'30\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "1'30\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "1'30\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "1'30\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        },
+        {
+         "descanso": "1'30\"",
+         "series": "3",
+         "texto": "3 × (igual que el primero del bloque)",
+         "heredado": true
+        }
+       ],
+       "grupo": "C",
+       "cambios_permitidos": [
+        "Dragon flag",
+        "Crunch inverso",
+        "Rueda abdominal"
+       ]
+      }
+     ],
+     "foco": "Espalda · Femoral · Abdomen"
+    }
+   ]
+  }
+ ],
+ "cambios_permitidos": {
+  "Press de banca": [
+   {
+    "nombre": "Lagartijas",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Fondos en paralelas",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Press de pecho en máquina",
+    "tipo": "Con máquina"
+   },
+   {
+    "nombre": "Lagartijas con peso",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Press con mancuernas",
+    "tipo": "Con máquina"
+   }
+  ],
+  "Sentadilla a cajón": [
+   {
+    "nombre": "Sentadilla sin peso",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Sentadilla",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Prensa",
+    "tipo": "Con máquina"
+   }
+  ],
+  "Remo con barra o en banco": [
+   {
+    "nombre": "Superman en el piso",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Remo con mancuerna",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Remo en máquina",
+    "tipo": "Con máquina"
+   },
+   {
+    "nombre": "Bird dog",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Remo en banco",
+    "tipo": "Equivalente"
+   }
+  ],
+  "Curl con barra": [
+   {
+    "nombre": "Curl con liga",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Curl con mancuernas",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Curl en máquina",
+    "tipo": "Con máquina"
+   },
+   {
+    "nombre": "Curl martillo",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Curl con barra Z",
+    "tipo": "Equivalente"
+   }
+  ],
+  "Hiperextensión": [
+   {
+    "nombre": "Puente de glúteo",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Peso muerto rumano",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Curl femoral acostado",
+    "tipo": "Con máquina"
+   },
+   {
+    "nombre": "Puente de glúteo a una pierna",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Curl femoral sentado",
+    "tipo": "Con máquina"
+   }
+  ],
+  "Pantorrilla": [
+   {
+    "nombre": "Pantorrilla sin peso",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Pantorrilla a una pierna",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Pantorrilla en prensa",
+    "tipo": "Con máquina"
+   },
+   {
+    "nombre": "Pantorrilla con peso",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Pantorrilla en máquina",
+    "tipo": "Con máquina"
+   }
+  ],
+  "Peso muerto": [
+   {
+    "nombre": "Peso muerto con liga",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Peso muerto desde rack",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Remo en máquina",
+    "tipo": "Con máquina"
+   },
+   {
+    "nombre": "Peso muerto a una pierna",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Peso muerto rumano",
+    "tipo": "Sin equipo"
+   }
+  ],
+  "Press de hombro con barra": [
+   {
+    "nombre": "Plancha con brazos estirados",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Press con mancuernas",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Press de hombro en máquina",
+    "tipo": "Con máquina"
+   },
+   {
+    "nombre": "Caminata en pared",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Press de hombro con liga",
+    "tipo": "Con máquina"
+   }
+  ],
+  "Dominada": [
+   {
+    "nombre": "Remo invertido en barra",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Dominada con liga",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Jalón al pecho",
+    "tipo": "Con máquina"
+   },
+   {
+    "nombre": "Dominada asistida",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Dominada con peso",
+    "tipo": "Equivalente"
+   }
+  ],
+  "Jalón al pecho": [
+   {
+    "nombre": "Remo invertido en barra",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Dominada",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Jalón agarre supino",
+    "tipo": "Con máquina"
+   },
+   {
+    "nombre": "Remo en polea baja",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Remo con mancuerna",
+    "tipo": "Con máquina"
+   }
+  ],
+  "Prensa": [
+   {
+    "nombre": "Sentadilla sin peso",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Sentadilla frontal",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Prensa horizontal",
+    "tipo": "Con máquina"
+   },
+   {
+    "nombre": "Sentadilla con salto",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Zancada",
+    "tipo": "Equivalente"
+   }
+  ],
+  "Crunch inverso": [
+   {
+    "nombre": "Crunch",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Crunch inverso con peso",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Crunch en máquina",
+    "tipo": "Con máquina"
+   },
+   {
+    "nombre": "Crunch con peso",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Dragon flag",
+    "tipo": "Equivalente"
+   }
+  ],
+  "Fondos o press cerrado": [
+   {
+    "nombre": "Lagartijas cerradas",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Tríceps en polea alta",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Tríceps en máquina",
+    "tipo": "Con máquina"
+   },
+   {
+    "nombre": "Press cerrado",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Fondos asistidos",
+    "tipo": "Sin equipo"
+   }
+  ],
+  "Sentadilla": [
+   {
+    "nombre": "Sentadilla con salto",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Sentadilla a cajón",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Prensa",
+    "tipo": "Con máquina"
+   },
+   {
+    "nombre": "Salto a cajón",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Sentadilla frontal",
+    "tipo": "Equivalente"
+   }
+  ],
+  "Curl femoral": [
+   {
+    "nombre": "Curl femoral de pie sin peso",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Hiperextensión",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Curl femoral acostado",
+    "tipo": "Con máquina"
+   },
+   {
+    "nombre": "Curl femoral deslizando en el piso",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Glute ham raise",
+    "tipo": "Con máquina"
+   }
+  ],
+  "Press con mancuernas": [
+   {
+    "nombre": "Press de hombro con barra",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Press de hombro en máquina",
+    "tipo": "Con máquina"
+   },
+   {
+    "nombre": "Lagartijas de pica",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Press de hombro sentado",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Press de hombro de pie",
+    "tipo": "Con máquina"
+   }
+  ],
+  "Press inclinado": [
+   {
+    "nombre": "Lagartijas con pies elevados",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Press inclinado con mancuernas",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Press inclinado en máquina",
+    "tipo": "Con máquina"
+   }
+  ],
+  "Extensión de cuádriceps": [
+   {
+    "nombre": "Extensión de rodilla sin peso",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Sissy squat",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Prensa",
+    "tipo": "Con máquina"
+   },
+   {
+    "nombre": "Zancada",
+    "tipo": "Equivalente"
+   }
+  ],
+  "Zancada o sentadilla búlgara": [
+   {
+    "nombre": "Zancada con salto",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Prensa",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Prensa horizontal",
+    "tipo": "Con máquina"
+   },
+   {
+    "nombre": "Sentadilla a una pierna",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Sentadilla búlgara",
+    "tipo": "Equivalente"
+   }
+  ],
+  "Extensión de tríceps acostado": [
+   {
+    "nombre": "Extensión de tríceps con liga",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Extensión de tríceps en polea",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Tríceps en máquina",
+    "tipo": "Con máquina"
+   },
+   {
+    "nombre": "Extensión de tríceps con mancuerna",
+    "tipo": "Con máquina"
+   }
+  ],
+  "Press de hombro sentado": [
+   {
+    "nombre": "Press de hombro de pie",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Press de hombro en máquina",
+    "tipo": "Con máquina"
+   },
+   {
+    "nombre": "Lagartijas de pica",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Press de hombro con mancuernas",
+    "tipo": "Equivalente"
+   }
+  ],
+  "Dominada supina": [
+   {
+    "nombre": "Dominada asistida",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Dominada",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Jalón al pecho",
+    "tipo": "Con máquina"
+   }
+  ],
+  "Aperturas en banco": [
+   {
+    "nombre": "Aperturas en TRX",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Aperturas en polea baja",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Aperturas en máquina",
+    "tipo": "Con máquina"
+   },
+   {
+    "nombre": "Cruces en polea baja",
+    "tipo": "Equivalente"
+   }
+  ],
+  "Elevaciones laterales": [
+   {
+    "nombre": "Elevaciones laterales con liga",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Elevaciones laterales en polea",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Elevaciones frontales",
+    "tipo": "Con máquina"
+   }
+  ],
+  "Aperturas o cruces en polea": [
+   {
+    "nombre": "Press de banca",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Aperturas en máquina",
+    "tipo": "Con máquina"
+   }
+  ],
+  "Leñador con barra, de rodillas": [
+   {
+    "nombre": "Dragon flag",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Crunch inverso",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Rueda abdominal",
+    "tipo": "Con máquina"
+   }
+  ],
+  "Curl en banco inclinado": [
+   {
+    "nombre": "Curl con liga",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Curl araña",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Curl con barra",
+    "tipo": "Con máquina"
+   }
+  ],
+  "Curl araña": [
+   {
+    "nombre": "Curl en TRX",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Curl en banco inclinado",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Curl con barra",
+    "tipo": "Con máquina"
+   }
+  ],
+  "Dominada agarre abierto": [
+   {
+    "nombre": "Dominada supina",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Dominada agarre cerrado",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Jalón al pecho",
+    "tipo": "Con máquina"
+   }
+  ],
+  "Crunch": [
+   {
+    "nombre": "Dragon flag",
+    "tipo": "Sin equipo"
+   },
+   {
+    "nombre": "Crunch inverso",
+    "tipo": "Equivalente"
+   },
+   {
+    "nombre": "Rueda abdominal",
+    "tipo": "Con máquina"
+   }
+  ]
+ },
+ "nota": "Borrador generado para Un Kilo Más. Nombres y formato propios. Revisar con Yohan los ejercicios marcados \"revisar\" antes de cargarlo."
+}
