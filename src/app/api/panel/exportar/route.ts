@@ -1,5 +1,6 @@
 import ExcelJS from 'exceljs';
 import { exigirEntrenador, jsonError } from '@/lib/api';
+import { finDeMes, ymdEnZona } from '@/lib/fecha';
 
 export async function GET(request: Request) {
   const auth = await exigirEntrenador();
@@ -32,7 +33,7 @@ export async function GET(request: Request) {
       { header: 'Cubre hasta', key: 'cubre_hasta' },
     ];
     let q = auth.admin.from('pagos').select('plan, fecha_transferencia, monto_mxn, folio, cubre_desde, cubre_hasta, cliente_id');
-    if (mes) q = q.gte('fecha_transferencia', `${mes}-01`).lte('fecha_transferencia', `${mes}-31`);
+    if (mes) q = q.gte('fecha_transferencia', `${mes}-01`).lte('fecha_transferencia', finDeMes(mes));
     const { data } = await q;
     const ids = [...new Set((data ?? []).map((p) => p.cliente_id as string))];
     const { data: perfiles } = ids.length
@@ -62,11 +63,12 @@ export async function GET(request: Request) {
     return jsonError('Tipo de exportación no válido.');
   }
 
+  const archivo = tipo === 'pagos' && mes ? `pagos-${mes}.xlsx` : `${tipo}-${ymdEnZona()}.xlsx`;
   const buffer = await libro.xlsx.writeBuffer();
   return new Response(buffer, {
     headers: {
       'Content-Type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-      'Content-Disposition': `attachment; filename="${tipo}.xlsx"`,
+      'Content-Disposition': `attachment; filename="${archivo}"`,
     },
   });
 }

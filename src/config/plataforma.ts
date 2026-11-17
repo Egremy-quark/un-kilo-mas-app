@@ -47,6 +47,7 @@ export const plataforma = {
   retencion: { activa: false, mesesInactivo: 12, diasAviso: 30 },
   redondeoKg: 2.5,
   semanasPorDefecto: 4,
+  zonaHoraria: 'America/Mexico_City',
   smtpConfigurado: process.env.SMTP_CONFIGURADO === 'true',
 } as const;
 

@@ -1,4 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
+import { config } from 'dotenv';
+
+config({ path: '.env.local' });
 
 export default defineConfig({
   testDir: 'pruebas',
@@ -11,7 +14,14 @@ export default defineConfig({
   },
   projects: [
     { name: 'panel', use: { ...devices['Desktop Chrome'], viewport: { width: 1280, height: 900 } } },
+    { name: 'panel-375', use: { ...devices['Desktop Chrome'], viewport: { width: 375, height: 812 } } },
     { name: 'cliente', use: { ...devices['Desktop Chrome'], viewport: { width: 390, height: 844 } } },
   ],
+  webServer: {
+    command: 'npm run dev',
+    url: 'http://localhost:3000',
+    reuseExistingServer: true,
+    timeout: 120_000,
+  },
   outputDir: 'test-results',
 });

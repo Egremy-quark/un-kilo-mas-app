@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { crearClienteNavegador } from '@/lib/supabase/client';
+import { etiquetaTipoAlternativa } from '@/lib/etiquetas';
 
 export function CambiarForma({
   sesionId,
@@ -29,8 +30,6 @@ export function CambiarForma({
     router.push(`/app/sesion`);
   }
 
-  const etiqueta = (t: string) => (t === 'sin_equipo' ? 'Sin equipo' : t === 'maquina' ? 'Con máquina' : 'Equivalente');
-
   return (
     <>
       <a href="/app/sesion">← Sesión</a>
@@ -41,7 +40,7 @@ export function CambiarForma({
       {alternativas.map((a) => (
         <div key={a.id} className="card" style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
           <b>{a.nombre}</b>
-          <span className="chip">{etiqueta(a.tipo)}</span>
+          <span className="chip">{etiquetaTipoAlternativa(a.tipo)}</span>
           <button className="btn2" type="button" onClick={() => void elegir(a.id, 'hoy')}>
             Cambiar solo por hoy
           </button>

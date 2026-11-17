@@ -31,3 +31,9 @@ export function leerEntero(texto: string): number | null {
   if (!/^\d+$/.test(limpio)) return null;
   return Number(limpio);
 }
+
+export function formatearDinero(valor: number): string {
+  const entero = Math.round(valor);
+  const conMiles = String(Math.abs(entero)).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  return `${entero < 0 ? '-' : ''}$${conMiles}`;
+}

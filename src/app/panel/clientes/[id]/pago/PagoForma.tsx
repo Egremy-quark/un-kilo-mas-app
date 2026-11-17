@@ -2,14 +2,16 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { plataforma } from '@/config/plataforma';
 import { calcularCobertura, montoCoincide, precioEsperado } from '@/lib/planes';
 import type { PlanPagado } from '@/config/plataforma';
+import { formatearRangoCorto, utcDesdeYmd, ymdDeDate, ymdEnZona } from '@/lib/fecha';
+import { formatearDinero } from '@/lib/formato';
+import { TarjetasPlan } from '@/components/TarjetasPlan';
 
 export function PagoForma({ clienteId, cubreHastaAnterior, veniaDePrueba }: { clienteId: string; cubreHastaAnterior: string | null; veniaDePrueba: boolean }) {
   const router = useRouter();
   const [plan, setPlan] = useState<PlanPagado>('ruta_mensual');
-  const [fecha, setFecha] = useState(new Date().toISOString().slice(0, 10));
+  const [fecha, setFecha] = useState(ymdEnZona());
   const [monto, setMonto] = useState('');
   const [folio, setFolio] = useState('');
   const [meses, setMeses] = useState(1);
@@ -18,9 +20,9 @@ export function PagoForma({ clienteId, cubreHastaAnterior, veniaDePrueba }: { cl
   const [error, setError] = useState('');
   const cubre = calcularCobertura({
     plan,
-    fechaTransferencia: new Date(fecha),
+    fechaTransferencia: utcDesdeYmd(fecha),
     meses,
-    cubreHastaAnterior: cubreHastaAnterior ? new Date(cubreHastaAnterior) : null,
+    cubreHastaAnterior: cubreHastaAnterior ? utcDesdeYmd(cubreHastaAnterior) : null,
     veniaDePrueba,
   });
   const esperado = precioEsperado(plan, meses);
@@ -63,18 +65,14 @@ export function PagoForma({ clienteId, cubreHastaAnterior, veniaDePrueba }: { cl
   return (
     <form
       className="card"
-      style={{ display: 'flex', flexDirection: 'column', gap: 14, maxWidth: 640 }}
+      style={{ display: 'flex', flexDirection: 'column', gap: 14, maxWidth: 720 }}
       onSubmit={(e) => {
         e.preventDefault();
         void enviar();
       }}
     >
-      {(['ruta_mensual', 'ruta_completa', 'coaching'] as PlanPagado[]).map((p) => (
-        <label key={p}>
-          <input type="radio" checked={plan === p} onChange={() => setPlan(p)} /> {plataforma.planes[p].nombre}{' '}
-          {plataforma.planes[p].precio == null ? <span className="por-definir">[POR DEFINIR]</span> : `$${plataforma.planes[p].precio}`}
-        </label>
-      ))}
+      <div className="lbl">Plan</div>
+      <TarjetasPlan valor={plan} onChange={setPlan} />
       <label className="f">
         Fecha
         <input className="in" type="date" value={fecha} onChange={(e) => setFecha(e.target.value)} />
@@ -98,8 +96,9 @@ export function PagoForma({ clienteId, cubreHastaAnterior, veniaDePrueba }: { cl
         <input className="in" value={nota} onChange={(e) => setNota(e.target.value)} />
       </label>
       <div className="card" style={{ background: '#f1ece0' }}>
-        Cubre del {cubre.cubreDesde.toISOString().slice(0, 10)} al {cubre.cubreHasta.toISOString().slice(0, 10)}.
-        {esperado != null ? ` Precio de tarifa: $${esperado}.` : ' Precio de coaching [POR DEFINIR].'}
+        <div className="lbl">Lo que va a pasar</div>
+        Cubre {formatearRangoCorto(ymdDeDate(cubre.cubreDesde), ymdDeDate(cubre.cubreHasta))}.
+        {esperado != null ? ` Precio de tarifa: ${formatearDinero(esperado)}.` : ' Precio de coaching [POR DEFINIR].'}
       </div>
       {aviso ? <p className="error">{aviso} Si vuelves a guardar, se registra igual.</p> : null}
       {error ? <p className="error">{error}</p> : null}

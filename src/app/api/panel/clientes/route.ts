@@ -14,6 +14,7 @@ const Cuerpo = z.object({
   folio: z.string().optional(),
   meses: z.number().int().positive().optional(),
   nota: z.string().optional(),
+  entrenador_a_cargo_id: z.string().uuid().nullable().optional(),
   confirmar_monto: z.boolean().optional(),
 });
 
@@ -31,6 +32,9 @@ export async function POST(request: Request) {
   if (!parsed.success) return jsonError(parsed.error.issues[0]?.message ?? 'Revisa los datos.');
   const d = parsed.data;
   const plan = d.plan as PlanPagado;
+  if (plan === 'coaching' && !d.entrenador_a_cargo_id) {
+    return jsonError('Elige el entrenador a cargo.');
+  }
 
   if (!d.confirmar_monto && !montoCoincide(plan, d.monto_mxn ?? null, d.meses)) {
     const esperado = precioEsperado(plan, d.meses);
@@ -70,7 +74,7 @@ export async function POST(request: Request) {
     whatsapp: d.whatsapp ?? null,
     plan,
     origen: 'alta_manual',
-    entrenador_a_cargo_id: plan === 'coaching' ? auth.user.id : null,
+    entrenador_a_cargo_id: plan === 'coaching' ? d.entrenador_a_cargo_id ?? null : null,
     prueba_inicio: null,
     activo: true,
   });

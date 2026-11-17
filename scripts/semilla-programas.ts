@@ -5,6 +5,7 @@ import { config } from 'dotenv';
 import { createClient } from '@supabase/supabase-js';
 import { descansoASegundos } from '../src/lib/descanso';
 import { normalizarNombre, tipoAlternativa } from '../src/lib/normalizar';
+import { clasificarMedida, clasificarPatron } from '../src/lib/patron';
 
 config({ path: '.env.local' });
 config();
@@ -78,7 +79,12 @@ async function ejercicioId(nombre: string): Promise<string> {
 
   const { data, error } = await supabase
     .from('ejercicios')
-    .insert({ nombre, medida: 'kg_reps', nota_default: null })
+    .insert({
+      nombre,
+      medida: clasificarMedida(nombre),
+      patron: clasificarPatron(nombre),
+      nota_default: null,
+    })
     .select('id')
     .single();
   if (error) {
@@ -126,12 +132,25 @@ async function vaciarRutina(rutinaId: string) {
   await supabase.from('rutina_dias').delete().eq('rutina_id', rutinaId);
 }
 
+async function asegurarPatrones() {
+  const { data } = await supabase.from('ejercicios').select('id, nombre, patron, medida');
+  for (const fila of data ?? []) {
+    const nombre = fila.nombre as string;
+    const patron = clasificarPatron(nombre);
+    const medida = clasificarMedida(nombre);
+    const patch: { patron?: string | null; medida?: string } = {};
+    if (patron !== (fila.patron as string | null)) patch.patron = patron;
+    if (medida !== fila.medida) patch.medida = medida;
+    if (Object.keys(patch).length) await supabase.from('ejercicios').update(patch).eq('id', fila.id);
+  }
+}
+
 async function asegurarFase(params: {
   programaId: string;
   orden: number;
   nombre: string;
   descripcion: string;
-  semanas: number;
+  semanas: number | null;
   enfoque?: 'fuerza' | 'hipertrofia' | 'transicion' | 'tecnica';
   publicada: boolean;
 }) {
@@ -148,7 +167,7 @@ async function asegurarFase(params: {
       .from('rutinas')
       .insert({
         cliente_id: null,
-        es_plantilla: true,
+        es_plantilla: false,
         nombre: params.nombre,
         enfoque: params.enfoque ?? 'tecnica',
         semanas: params.semanas,
@@ -164,7 +183,8 @@ async function asegurarFase(params: {
       .update({
         nombre: params.nombre,
         semanas: params.semanas,
-        es_plantilla: true,
+        enfoque: params.enfoque ?? 'tecnica',
+        es_plantilla: false,
         estado: params.publicada ? 'publicada' : 'borrador',
       })
       .eq('id', rutinaId);
@@ -257,7 +277,7 @@ async function sembrarPrueba() {
       orden: p.orden,
       nombre: p.nombre,
       descripcion: p.descripcion,
-      semanas: 4,
+      semanas: null,
       enfoque: 'tecnica',
       publicada: false,
     });
@@ -275,9 +295,26 @@ async function sembrarPrueba() {
   console.log('Programa prueba: Rutina 01 y 02 vacías.');
 }
 
+const ENFOQUE_FASE: Record<string, 'fuerza' | 'hipertrofia' | 'transicion' | 'tecnica'> = {
+  Arranque: 'tecnica',
+  Pulir: 'tecnica',
+  Cimientos: 'fuerza',
+  Carga: 'fuerza',
+  'Carga II': 'fuerza',
+  Mixto: 'transicion',
+  Volumen: 'hipertrofia',
+  Remate: 'hipertrofia',
+};
+
 async function sembrarRuta() {
   const bruto = JSON.parse(readFileSync(join(raiz, 'datos/ruta-1.json'), 'utf8')) as RutaJson;
   const programaId = await asegurarPrograma('ruta-1', bruto.programa ?? 'Ruta +1', 'Programa general de 8 fases.');
+  const tiposRaiz = new Map<string, 'sin_equipo' | 'equivalente' | 'maquina'>();
+  for (const [nombre, alts] of Object.entries(bruto.cambios_permitidos ?? {})) {
+    for (const alt of alts) {
+      tiposRaiz.set(`${normalizarNombre(nombre)}|${normalizarNombre(alt.nombre)}`, tipoAlternativa(alt.tipo));
+    }
+  }
 
   for (const [nombre, alts] of Object.entries(bruto.cambios_permitidos ?? {})) {
     const origen = await ejercicioId(nombre);
@@ -303,7 +340,7 @@ async function sembrarRuta() {
       nombre: fase.nombre,
       descripcion: fase.descripcion ?? '',
       semanas: fase.semanas,
-      enfoque: 'fuerza',
+      enfoque: ENFOQUE_FASE[fase.nombre] ?? 'fuerza',
       publicada: !hayRevisar,
     });
     await llenarRutina(rutinaId, fase.dias, fase.semanas);
@@ -316,7 +353,7 @@ async function sembrarRuta() {
             {
               ejercicio_id: origen,
               alternativa_id: destino,
-              tipo: 'equivalente',
+              tipo: tiposRaiz.get(`${normalizarNombre(ej.nombre)}|${normalizarNombre(nombreAlt)}`) ?? 'equivalente',
               orden,
             },
             { onConflict: 'ejercicio_id,alternativa_id' },
@@ -330,4 +367,5 @@ async function sembrarRuta() {
 
 await sembrarPrueba();
 await sembrarRuta();
+await asegurarPatrones();
 console.log('Semilla de programas lista.');

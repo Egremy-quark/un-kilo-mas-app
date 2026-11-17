@@ -1,5 +1,6 @@
 import { estadoPlan, type EstadoPlan } from './planes';
 import { plataforma } from '@/config/plataforma';
+import { hoyUtc } from './fecha';
 
 export interface ClienteLista {
   id: string;
@@ -20,23 +21,24 @@ export interface ClienteLista {
 export function filtrarClientes(
   lista: ClienteLista[],
   q: string,
-  filtro: string,
+  estado: string,
+  plan = 'todos',
 ): ClienteLista[] {
   const texto = q.trim().toLowerCase();
   return lista.filter((c) => {
     if (texto && !`${c.nombre ?? ''} ${c.correo ?? ''}`.toLowerCase().includes(texto)) return false;
-    if (filtro === 'por_vencer') return c.estado === 'por_vencer';
-    if (filtro === 'vencidos') return c.estado === 'vencida' || c.estado === 'prueba_terminada';
-    if (filtro === 'prueba') return c.plan === 'prueba';
-    if (filtro === 'ruta') return c.plan === 'ruta_mensual' || c.plan === 'ruta_completa';
-    if (filtro === 'coaching') return c.plan === 'coaching';
+    if (estado === 'por_vencer' && c.estado !== 'por_vencer') return false;
+    if (estado === 'vencidos' && c.estado !== 'vencida' && c.estado !== 'prueba_terminada') return false;
+    if (plan === 'prueba' && c.plan !== 'prueba') return false;
+    if (plan === 'ruta' && c.plan !== 'ruta_mensual' && c.plan !== 'ruta_completa') return false;
+    if (plan === 'coaching' && c.plan !== 'coaching') return false;
     return true;
   });
 }
 
 export function cifras(lista: ClienteLista[]) {
-  const hoy = new Date();
-  const semana = new Date();
+  const hoy = hoyUtc();
+  const semana = new Date(hoy);
   semana.setUTCDate(hoy.getUTCDate() + 7);
   return {
     activos: lista.filter((c) => c.estado === 'activa' || c.estado === 'por_vencer').length,

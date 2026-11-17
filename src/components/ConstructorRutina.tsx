@@ -1,12 +1,13 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { crearClienteNavegador } from '@/lib/supabase/client';
 import { kilosObjetivo } from '@/lib/kilos';
 import { segundosATexto } from '@/lib/descanso';
 import { plataforma } from '@/config/plataforma';
+import { etiquetaEstadoRutina, type Enfoque } from '@/lib/etiquetas';
+import type { InicialConstructor } from '@/lib/cargar-constructor';
 
-type Enfoque = 'fuerza' | 'hipertrofia' | 'transicion' | 'tecnica';
 type Intensidad = 'pct_1rm' | 'rm' | 'rpe' | 'rir_fallo' | 'texto';
 
 interface Dia {
@@ -56,34 +57,43 @@ export function ConstructorRutina({
   rutinaId,
   clienteNombre,
   esFase,
+  faseOrden,
+  faseNombre,
+  inicial,
   rmEjemplo = 100,
 }: {
   rutinaId: string;
   clienteNombre?: string;
   esFase?: boolean;
+  faseOrden?: number | null;
+  faseNombre?: string | null;
+  inicial?: InicialConstructor;
   rmEjemplo?: number;
 }) {
   const supabase = useMemo(() => crearClienteNavegador(), []);
-  const [nombre, setNombre] = useState('');
-  const [semanas, setSemanas] = useState<number>(plataforma.semanasPorDefecto);
-  const [descarga, setDescarga] = useState<number | null>(null);
-  const [enfoque, setEnfoque] = useState<Enfoque>('fuerza');
-  const [dias, setDias] = useState<Dia[]>([]);
-  const [ejercicios, setEjercicios] = useState<Ej[]>([]);
-  const [pres, setPres] = useState<Pres[]>([]);
-  const [catalogo, setCatalogo] = useState<Catalogo[]>([]);
-  const [diaActivo, setDiaActivo] = useState<string | null>(null);
+  const [nombre, setNombre] = useState(inicial?.nombre ?? '');
+  const [semanas, setSemanas] = useState<number | null>(inicial?.semanas ?? null);
+  const [descarga, setDescarga] = useState<number | null>(inicial?.descarga ?? null);
+  const [enfoque, setEnfoque] = useState<Enfoque>(inicial?.enfoque ?? 'fuerza');
+  const [dias, setDias] = useState<Dia[]>(inicial?.dias ?? []);
+  const [ejercicios, setEjercicios] = useState<Ej[]>((inicial?.ejercicios as Ej[] | undefined) ?? []);
+  const [pres, setPres] = useState<Pres[]>((inicial?.pres as Pres[] | undefined) ?? []);
+  const [catalogo, setCatalogo] = useState<Catalogo[]>(inicial?.catalogo ?? []);
+  const [diaActivo, setDiaActivo] = useState<string | null>(inicial?.dias[0]?.id ?? null);
   const [editando, setEditando] = useState<string | null>(null);
   const [semanaEdit, setSemanaEdit] = useState(1);
   const [rmMap, setRmMap] = useState<Record<string, number>>({});
-  const [estado, setEstado] = useState('borrador');
+  const [estado, setEstado] = useState(inicial?.estado ?? 'borrador');
   const [msg, setMsg] = useState('');
+  const [hojaAbierta, setHojaAbierta] = useState(false);
+  const saltarAuto = useRef(true);
+  const semanasTabla = semanas ?? 0;
 
   const cargar = useCallback(async () => {
-    const { data: r } = await supabase.from('rutinas').select('*').eq('id', rutinaId).single();
+    const { data: r } = await supabase.from('rutinas').select('*').eq('id', rutinaId).maybeSingle();
     if (r) {
       setNombre(r.nombre as string);
-      setSemanas(r.semanas as number);
+      setSemanas((r.semanas as number | null) ?? null);
       setDescarga((r.semana_descarga as number | null) ?? null);
       setEnfoque((r.enfoque as Enfoque) ?? 'fuerza');
       setEstado(r.estado as string);
@@ -96,7 +106,7 @@ export function ConstructorRutina({
     }
     const { data: ds } = await supabase.from('rutina_dias').select('*').eq('rutina_id', rutinaId).order('orden');
     setDias((ds ?? []) as Dia[]);
-    if (ds?.[0] && !diaActivo) setDiaActivo(ds[0].id as string);
+    setDiaActivo((prev) => prev ?? ((ds?.[0]?.id as string | undefined) ?? null));
     const diaIds = (ds ?? []).map((d) => d.id);
     const { data: ejs } = diaIds.length
       ? await supabase.from('rutina_ejercicios').select('*, ejercicios(nombre)').in('dia_id', diaIds).order('orden')
@@ -108,11 +118,11 @@ export function ConstructorRutina({
     setPres((ps ?? []) as Pres[]);
     const { data: cat } = await supabase.from('ejercicios').select('id, nombre').order('nombre');
     setCatalogo((cat ?? []) as Catalogo[]);
-  }, [rutinaId, supabase, diaActivo]);
+  }, [rutinaId, supabase]);
 
   useEffect(() => {
-    void cargar();
-  }, [cargar]);
+    if (!inicial) void cargar();
+  }, [cargar, inicial]);
 
   async function guardarMeta() {
     await supabase
@@ -123,6 +133,10 @@ export function ConstructorRutina({
   }
 
   useEffect(() => {
+    if (saltarAuto.current) {
+      saltarAuto.current = false;
+      return;
+    }
     const t = setTimeout(() => void guardarMeta(), 1200);
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -157,7 +171,7 @@ export function ConstructorRutina({
       .single();
     if (!data) return;
     const nuevas: Pres[] = [];
-    for (let s = 1; s <= semanas; s++) {
+    for (let s = 1; s <= (semanas ?? plataforma.semanasPorDefecto); s++) {
       const { data: p } = await supabase
         .from('prescripciones')
         .insert({ rutina_ejercicio_id: data.id, semana: s, texto: '' })
@@ -182,6 +196,11 @@ export function ConstructorRutina({
   const actual = ejercicios.find((e) => e.id === editando);
   const presActual = pres.find((p) => p.rutina_ejercicio_id === editando && p.semana === semanaEdit);
 
+  async function patchDia(id: string, patch: Partial<Dia>) {
+    await supabase.from('rutina_dias').update(patch).eq('id', id);
+    setDias((ds) => ds.map((d) => (d.id === id ? { ...d, ...patch } : d)));
+  }
+
   async function patchEj(id: string, patch: Partial<Ej>) {
     await supabase.from('rutina_ejercicios').update(patch).eq('id', id);
     setEjercicios((e) => e.map((x) => (x.id === id ? { ...x, ...patch } : x)));
@@ -203,7 +222,7 @@ export function ConstructorRutina({
 
   async function copiarSemanas() {
     if (!presActual || !editando) return;
-    for (let s = 1; s <= semanas; s++) {
+    for (let s = 1; s <= (semanas ?? plataforma.semanasPorDefecto); s++) {
       const existente = pres.find((p) => p.rutina_ejercicio_id === editando && p.semana === s);
       const copia = { ...presActual, semana: s, id: existente?.id };
       copia.texto = armarTexto(copia);
@@ -241,19 +260,26 @@ export function ConstructorRutina({
   const rm = actual ? rmMap[actual.ejercicio_id] ?? (esFase ? rmEjemplo : 0) : rmEjemplo;
   const kilos = actual && presActual?.pct != null ? kilosObjetivo(rm, presActual.pct) : null;
 
+  const titulo = esFase && faseOrden && faseNombre ? (
+    <>
+      Fase {faseOrden} · <em>{faseNombre}</em>
+    </>
+  ) : clienteNombre ? (
+    <>
+      Rutina de <em>{clienteNombre}</em>
+    </>
+  ) : (
+    nombre || 'Rutina'
+  );
+
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
+    <div className="constructor" style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
+      <p className="aviso-escritorio muted">Para armar rutinas es más cómodo en computadora.</p>
       <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end', gap: 16, justifyContent: 'space-between' }}>
-        <h1 className="h" style={{ fontSize: 52 }}>
-          {clienteNombre ? (
-            <>
-              Rutina de <em>{clienteNombre}</em>
-            </>
-          ) : (
-            nombre || 'Rutina'
-          )}
+        <h1 className="h titulo-panel" style={{ fontSize: 52 }}>
+          {titulo}
         </h1>
-        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+        <div className="constructor-acciones" style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
           <button className="btn2" type="button" onClick={() => void guardarPlantilla()}>
             Guardar como plantilla
           </button>
@@ -267,18 +293,21 @@ export function ConstructorRutina({
           ) : null}
         </div>
       </div>
-      {msg ? <p className="muted">{msg} · estado: {estado}</p> : null}
+      {msg ? <p className="muted">{msg} · estado: {etiquetaEstadoRutina(estado)}</p> : null}
 
-      <div className="card" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 16, alignItems: 'end' }}>
+      <div className="card constructor-meta" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 16, alignItems: 'end' }}>
         <label className="f" style={{ gridColumn: 'span 2' }}>
           Nombre de la rutina
           <input className="in" value={nombre} onChange={(e) => setNombre(e.target.value)} />
         </label>
         <label className="f">
           Semanas
-          <select className="in" value={semanas} onChange={(e) => setSemanas(Number(e.target.value))}>
+          <select className="in" value={semanas ?? ''} onChange={(e) => setSemanas(e.target.value ? Number(e.target.value) : null)}>
+            <option value="">[POR DEFINIR]</option>
             {[3, 4, 5, 6, 7, 8].map((n) => (
-              <option key={n}>{n}</option>
+              <option key={n} value={n}>
+                {n}
+              </option>
             ))}
           </select>
         </label>
@@ -286,14 +315,14 @@ export function ConstructorRutina({
           Semana de descarga
           <select className="in" value={descarga ?? ''} onChange={(e) => setDescarga(e.target.value ? Number(e.target.value) : null)}>
             <option value="">Ninguna</option>
-            {Array.from({ length: semanas }, (_, i) => i + 1).map((n) => (
+            {Array.from({ length: semanasTabla }, (_, i) => i + 1).map((n) => (
               <option key={n} value={n}>
                 Semana {n}
               </option>
             ))}
           </select>
         </label>
-        <div style={{ gridColumn: 'span 4', display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+        <div className="constructor-enfoques" style={{ gridColumn: 'span 4', display: 'flex', flexWrap: 'wrap', gap: 8 }}>
           {ENFOQUES.map((e) => (
             <button
               key={e.id}
@@ -342,16 +371,50 @@ export function ConstructorRutina({
           + Agregar día
         </button>
       </div>
+      {diaActivo ? (
+        <label className="f" style={{ maxWidth: 480 }}>
+          Foco del día
+          <input
+            className="in"
+            defaultValue={dias.find((d) => d.id === diaActivo)?.foco ?? ''}
+            key={diaActivo}
+            onBlur={(e) => void patchDia(diaActivo, { foco: e.target.value || null })}
+          />
+        </label>
+      ) : null}
 
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24, alignItems: 'flex-start' }}>
-        <div className="card" style={{ flex: '999 1 640px', minWidth: 0, padding: 0, overflow: 'hidden' }}>
-          <div style={{ overflowX: 'auto', padding: '0 12px' }}>
-            <table className="tabla" style={{ fontSize: 15 }}>
+      <div className="constructor-cuerpo" style={{ display: 'flex', flexWrap: 'wrap', gap: 24, alignItems: 'flex-start' }}>
+        <div className="card constructor-tabla-card" style={{ flex: '999 1 640px', minWidth: 0, padding: 0, overflow: 'hidden' }}>
+          <ul className="constructor-lista">
+            {ejDelDia.map((e, i) => {
+              const p = pres.find((x) => x.rutina_ejercicio_id === e.id && x.semana === 1);
+              return (
+                <li key={e.id}>
+                  <button
+                    type="button"
+                    className="constructor-lista-item"
+                    onClick={() => {
+                      setEditando(e.id);
+                      setHojaAbierta(true);
+                    }}
+                  >
+                    <b>
+                      {e.grupo ? `${e.orden}${e.grupo}` : e.orden || i + 1}. {e.nombre}
+                    </b>
+                    <span className="muted">{p?.texto || '—'}</span>
+                    {e.nota ? <span className="muted">{e.nota}</span> : null}
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+          <div className="constructor-tabla-scroll" style={{ overflowX: 'auto', padding: '0 12px' }}>
+            <table className="tabla constructor-tabla" style={{ fontSize: 15 }}>
               <thead>
                 <tr>
                   <th>#</th>
                   <th>Ejercicio</th>
-                  {Array.from({ length: semanas }, (_, i) => (
+                  {Array.from({ length: semanasTabla }, (_, i) => (
                     <th key={i} style={descarga === i + 1 ? { background: '#f1ece0' } : undefined}>
                       Sem {i + 1}
                       {descarga === i + 1 ? ' · descarga' : ''}
@@ -369,12 +432,19 @@ export function ConstructorRutina({
                       </b>
                     </td>
                     <td>
-                      <button type="button" onClick={() => setEditando(e.id)} style={{ background: 'none', border: 0, textAlign: 'left', padding: 0, cursor: 'pointer' }}>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setEditando(e.id);
+                          setHojaAbierta(true);
+                        }}
+                        style={{ background: 'none', border: 0, textAlign: 'left', padding: 0, cursor: 'pointer' }}
+                      >
                         <b>{e.nombre}</b>
                         {e.revisar ? <span className="est alerta">revisar</span> : null}
                       </button>
                     </td>
-                    {Array.from({ length: semanas }, (_, s) => {
+                    {Array.from({ length: semanasTabla }, (_, s) => {
                       const p = pres.find((x) => x.rutina_ejercicio_id === e.id && x.semana === s + 1);
                       return (
                         <td key={s} style={descarga === s + 1 ? { background: '#f7f3ea' } : undefined}>
@@ -400,7 +470,14 @@ export function ConstructorRutina({
         </div>
 
         {actual && presActual ? (
-          <form className="card" style={{ flex: '1 1 360px', display: 'flex', flexDirection: 'column', gap: 14, borderColor: 'var(--tinta)' }} onSubmit={(e) => e.preventDefault()}>
+          <form
+            className={`card editor-ejercicio${hojaAbierta ? ' abierto' : ''}`}
+            style={{ flex: '1 1 360px', display: 'flex', flexDirection: 'column', gap: 14, borderColor: 'var(--tinta)' }}
+            onSubmit={(e) => e.preventDefault()}
+          >
+            <button type="button" className="cerrar-hoja btn2" onClick={() => setHojaAbierta(false)}>
+              Cerrar
+            </button>
             <div className="lbl">Editando el ejercicio</div>
             <label className="f">
               Ejercicio
@@ -434,7 +511,7 @@ export function ConstructorRutina({
             <label className="f">
               Semana
               <select className="in" value={semanaEdit} onChange={(e) => setSemanaEdit(Number(e.target.value))}>
-                {Array.from({ length: semanas }, (_, i) => (
+                {Array.from({ length: semanasTabla }, (_, i) => (
                   <option key={i + 1} value={i + 1}>
                     {i + 1}
                   </option>

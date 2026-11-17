@@ -10,8 +10,11 @@
     "lint": "tsc --noEmit",
     "test": "vitest run",
     "capturas": "playwright test",
+    "capturas:install": "playwright install chromium",
     "semilla-entrenadores": "tsx scripts/semilla-entrenadores.ts",
     "semilla-programas": "tsx scripts/semilla-programas.ts",
+    "semilla-clientes-demo": "tsx scripts/semilla-clientes-demo.ts",
+    "verificar-semilla": "tsx scripts/verificar-semilla.ts",
     "importar-excel": "tsx scripts/importar-excel.ts",
     "types": "echo 'supabase gen types typescript --project-id <id> --schema public > src/lib/supabase/database.types.ts'"
   },

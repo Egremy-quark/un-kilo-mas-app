@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { crearClienteServidor } from '@/lib/supabase/server';
 import { estadoDeCliente, type ClienteLista } from '@/lib/clientes-panel';
 import { ListaClientes } from './ListaClientes';
@@ -67,5 +68,9 @@ export default async function PanelClientes() {
     if (c.plan === 'coaching' && !c.rutina) avisos.push({ texto: `${c.nombre} no tiene rutina publicada.`, href: `/panel/clientes/${c.id}` });
   }
 
-  return <ListaClientes lista={lista} avisos={avisos} />;
+  return (
+    <Suspense>
+      <ListaClientes lista={lista} avisos={avisos} />
+    </Suspense>
+  );
 }

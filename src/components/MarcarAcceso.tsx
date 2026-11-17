@@ -2,10 +2,11 @@
 
 import { useEffect } from 'react';
 import { crearClienteNavegador } from '@/lib/supabase/client';
+import { ymdEnZona } from '@/lib/fecha';
 
 export function MarcarAcceso() {
   useEffect(() => {
-    const hoy = new Date().toISOString().slice(0, 10);
+    const hoy = ymdEnZona();
     if (sessionStorage.getItem('ultimo_acceso') === hoy) return;
     const supabase = crearClienteNavegador();
     void supabase.auth.getUser().then(async ({ data }) => {

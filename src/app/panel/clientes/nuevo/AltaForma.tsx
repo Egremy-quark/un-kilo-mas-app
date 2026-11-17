@@ -2,21 +2,28 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { plataforma, esPorDefinir } from '@/config/plataforma';
 import { calcularCobertura, montoCoincide, precioEsperado } from '@/lib/planes';
 import type { PlanPagado } from '@/config/plataforma';
+import { formatearRangoCorto, utcDesdeYmd, ymdDeDate, ymdEnZona } from '@/lib/fecha';
+import { formatearDinero } from '@/lib/formato';
+import { TarjetasPlan } from '@/components/TarjetasPlan';
 
-export function AltaForma() {
+export function AltaForma({
+  entrenadores,
+}: {
+  entrenadores: { id: string; nombre: string | null }[];
+}) {
   const router = useRouter();
   const [plan, setPlan] = useState<PlanPagado>('coaching');
   const [nombre, setNombre] = useState('');
   const [correo, setCorreo] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
-  const [fecha, setFecha] = useState(new Date().toISOString().slice(0, 10));
+  const [fecha, setFecha] = useState(ymdEnZona());
   const [monto, setMonto] = useState('');
   const [folio, setFolio] = useState('');
   const [meses, setMeses] = useState(1);
   const [nota, setNota] = useState('');
+  const [entrenadorId, setEntrenadorId] = useState('');
   const [error, setError] = useState('');
   const [aviso, setAviso] = useState('');
   const [cargando, setCargando] = useState(false);
@@ -24,7 +31,7 @@ export function AltaForma() {
   const esperado = precioEsperado(plan, meses);
   const cubre = calcularCobertura({
     plan,
-    fechaTransferencia: new Date(fecha),
+    fechaTransferencia: utcDesdeYmd(fecha),
     meses,
     veniaDePrueba: true,
   });
@@ -32,11 +39,15 @@ export function AltaForma() {
   async function enviar(confirmar = false) {
     setError('');
     setAviso('');
+    if (plan === 'coaching' && !entrenadorId) {
+      setError('Elige el entrenador a cargo.');
+      return;
+    }
     setCargando(true);
     const montoNum = monto === '' ? null : Number(monto);
     if (!confirmar && !montoCoincide(plan, montoNum, meses)) {
       setCargando(false);
-      setAviso(esperado == null ? 'El precio de coaching está [POR DEFINIR].' : `El monto no coincide con ${esperado} MXN.`);
+      setAviso(esperado == null ? 'El precio de coaching está [POR DEFINIR].' : `El monto no coincide con ${formatearDinero(esperado)} MXN.`);
       return;
     }
     const res = await fetch('/api/panel/clientes', {
@@ -52,6 +63,7 @@ export function AltaForma() {
         folio,
         meses: plan === 'ruta_completa' ? undefined : meses,
         nota,
+        entrenador_a_cargo_id: plan === 'coaching' ? entrenadorId : null,
         confirmar_monto: confirmar || Boolean(aviso),
       }),
     });
@@ -99,18 +111,21 @@ export function AltaForma() {
         <div className="lbl" style={{ marginBottom: 8 }}>
           Plan
         </div>
-        {(['ruta_mensual', 'ruta_completa', 'coaching'] as PlanPagado[]).map((p) => (
-          <label key={p} style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 6 }}>
-            <input type="radio" checked={plan === p} onChange={() => setPlan(p)} />
-            {plataforma.planes[p].nombre}{' '}
-            {plataforma.planes[p].precio == null ? (
-              <span className="por-definir">[POR DEFINIR]</span>
-            ) : (
-              <span>${plataforma.planes[p].precio} MXN</span>
-            )}
-          </label>
-        ))}
+        <TarjetasPlan valor={plan} onChange={setPlan} />
       </div>
+      {plan === 'coaching' ? (
+        <label className="f">
+          Entrenador a cargo
+          <select className="in" value={entrenadorId} onChange={(e) => setEntrenadorId(e.target.value)} required>
+            <option value="">Elige entrenador</option>
+            {entrenadores.map((e) => (
+              <option key={e.id} value={e.id}>
+                {e.nombre ?? 'Entrenador'}
+              </option>
+            ))}
+          </select>
+        </label>
+      ) : null}
       <label className="f">
         Fecha de la transferencia
         <input className="in" type="date" value={fecha} onChange={(e) => setFecha(e.target.value)} required />
@@ -136,12 +151,11 @@ export function AltaForma() {
       <div className="card" style={{ background: '#f1ece0' }}>
         <div className="lbl">Lo que va a pasar</div>
         <p>
-          Cubre del {cubre.cubreDesde.toISOString().slice(0, 10)} al {cubre.cubreHasta.toISOString().slice(0, 10)}. Se manda la invitación al correo.
+          Cubre {formatearRangoCorto(ymdDeDate(cubre.cubreDesde), ymdDeDate(cubre.cubreHasta))}. Se manda la invitación al correo.
         </p>
       </div>
       {aviso ? <p className="error">{aviso} Si guardas, se registra igual.</p> : null}
       {error ? <p className="error">{error}</p> : null}
-      {esPorDefinir(plataforma.datosTransferencia.clabe) ? <p className="por-definir">Datos de transferencia [POR DEFINIR]</p> : null}
       <button className="btn" type="submit" disabled={cargando}>
         Dar de alta e invitar
       </button>

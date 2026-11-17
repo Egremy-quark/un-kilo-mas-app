@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation';
 import { crearClienteServidor } from '@/lib/supabase/server';
 import { CambiarForma } from './CambiarForma';
+import { ymdEnZona } from '@/lib/fecha';
 
 function uno<T>(valor: T | T[] | null | undefined): T | null {
   if (Array.isArray(valor)) return valor[0] ?? null;
@@ -23,7 +24,7 @@ export default async function PaginaCambiar({ searchParams }: { searchParams: Pr
     <CambiarForma
       sesionId={sesion}
       rutinaEjercicioId={ejercicio}
-      fecha={(ses?.fecha as string) ?? new Date().toISOString().slice(0, 10)}
+      fecha={(ses?.fecha as string) ?? ymdEnZona()}
       alternativas={(alts ?? []).map((a) => {
         const ex = uno(a.ejercicios as { id: string; nombre: string } | { id: string; nombre: string }[] | null);
         return {

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { crearClienteNavegador } from '@/lib/supabase/client';
+import { etiquetaMedida, etiquetaPatron, etiquetaTipoAlternativa, PATRONES } from '@/lib/etiquetas';
 
 interface Ej {
   id: string;
@@ -12,10 +13,24 @@ interface Ej {
   nota_default: string | null;
 }
 
+interface Alt {
+  id: string;
+  alternativa_id: string;
+  nombre: string;
+  tipo: string;
+  orden: number;
+}
+
 const MEDIDAS = [
   { id: 'kg_reps', label: 'Kilos y reps' },
   { id: 'peso_corporal', label: 'Peso corporal' },
   { id: 'tiempo', label: 'Tiempo' },
+];
+
+const TIPOS_ALT = [
+  { id: 'sin_equipo', label: 'Sin equipo' },
+  { id: 'equivalente', label: 'Equivalente' },
+  { id: 'maquina', label: 'Con máquina' },
 ];
 
 export function Biblioteca() {
@@ -23,7 +38,9 @@ export function Biblioteca() {
   const [lista, setLista] = useState<Ej[]>([]);
   const [q, setQ] = useState('');
   const [edit, setEdit] = useState<Ej | null>(null);
-  const [alts, setAlts] = useState<{ id: string; nombre: string; tipo: string }[]>([]);
+  const [alts, setAlts] = useState<Alt[]>([]);
+  const [busquedaAlt, setBusquedaAlt] = useState('');
+  const [tipoAlt, setTipoAlt] = useState('equivalente');
   const [msg, setMsg] = useState('');
 
   async function cargar() {
@@ -36,36 +53,122 @@ export function Biblioteca() {
 
   async function abrir(e: Ej) {
     setEdit(e);
+    setMsg('');
     const { data } = await supabase
       .from('ejercicio_alternativas')
-      .select('id, tipo, ejercicios:alternativa_id(nombre)')
+      .select('id, tipo, orden, alternativa_id, ejercicios:alternativa_id(nombre)')
       .eq('ejercicio_id', e.id)
       .order('orden');
-    setAlts((data ?? []).map((a) => ({ id: a.id as string, tipo: a.tipo as string, nombre: (a.ejercicios as { nombre?: string } | null)?.nombre ?? '' })));
+    setAlts(
+      (data ?? []).map((a) => ({
+        id: a.id as string,
+        alternativa_id: a.alternativa_id as string,
+        tipo: a.tipo as string,
+        orden: Number(a.orden ?? 0),
+        nombre: (a.ejercicios as { nombre?: string } | null)?.nombre ?? '',
+      })),
+    );
   }
 
   async function guardar() {
     if (!edit) return;
+    if (!edit.nombre.trim()) {
+      setMsg('Escribe el nombre.');
+      return;
+    }
     if (edit.id.startsWith('nuevo')) {
-      const { data, error } = await supabase.from('ejercicios').insert({ nombre: edit.nombre, patron: edit.patron, medida: edit.medida, video_url: edit.video_url, nota_default: edit.nota_default }).select('*').single();
+      const { data, error } = await supabase
+        .from('ejercicios')
+        .insert({
+          nombre: edit.nombre.trim(),
+          patron: edit.patron || null,
+          medida: edit.medida,
+          video_url: edit.video_url || null,
+          nota_default: edit.nota_default || null,
+        })
+        .select('*')
+        .single();
       setMsg(error ? error.message : 'Creado');
       if (data) setEdit(data as Ej);
     } else {
-      const { error } = await supabase.from('ejercicios').update(edit).eq('id', edit.id);
+      const { error } = await supabase
+        .from('ejercicios')
+        .update({
+          nombre: edit.nombre.trim(),
+          patron: edit.patron || null,
+          medida: edit.medida,
+          video_url: edit.video_url || null,
+          nota_default: edit.nota_default || null,
+        })
+        .eq('id', edit.id);
       setMsg(error ? (error.message.includes('duplicate') ? 'Ya hay un ejercicio con ese nombre.' : error.message) : 'Guardado');
     }
     await cargar();
   }
 
+  async function agregarAlt(destino: Ej) {
+    if (!edit || edit.id.startsWith('nuevo')) {
+      setMsg('Guarda el ejercicio antes de agregar cambios.');
+      return;
+    }
+    const { data, error } = await supabase
+      .from('ejercicio_alternativas')
+      .insert({
+        ejercicio_id: edit.id,
+        alternativa_id: destino.id,
+        tipo: tipoAlt,
+        orden: alts.length,
+      })
+      .select('id')
+      .single();
+    if (error || !data) {
+      setMsg(error?.message.includes('duplicate') ? 'Esa alternativa ya está.' : (error?.message ?? 'No se pudo agregar.'));
+      return;
+    }
+    setAlts((a) => [...a, { id: data.id as string, alternativa_id: destino.id, nombre: destino.nombre, tipo: tipoAlt, orden: alts.length }]);
+    setBusquedaAlt('');
+  }
+
+  async function quitarAlt(id: string) {
+    await supabase.from('ejercicio_alternativas').delete().eq('id', id);
+    setAlts((a) => a.filter((x) => x.id !== id));
+  }
+
+  async function moverAlt(id: string, dir: -1 | 1) {
+    const i = alts.findIndex((a) => a.id === id);
+    const j = i + dir;
+    if (i < 0 || j < 0 || j >= alts.length) return;
+    const copia = [...alts];
+    const tmp = copia[i];
+    copia[i] = copia[j];
+    copia[j] = tmp;
+    setAlts(copia);
+    await Promise.all(copia.map((a, orden) => supabase.from('ejercicio_alternativas').update({ orden }).eq('id', a.id)));
+  }
+
   const filtrada = lista.filter((e) => e.nombre.toLowerCase().includes(q.toLowerCase()));
+  const sugeridas = lista
+    .filter((e) => edit && e.id !== edit.id && e.nombre.toLowerCase().includes(busquedaAlt.toLowerCase()) && !alts.some((a) => a.alternativa_id === e.id))
+    .slice(0, 8);
 
   return (
     <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
-      <div className="card" style={{ flex: '2 1 480px', padding: 0 }}>
-        <div style={{ padding: 16 }}>
+      <div className="card tabla-o-tarjetas" style={{ flex: '2 1 480px', padding: 0 }}>
+        <div className="acciones-cabeza" style={{ padding: 16 }}>
           <input className="in" placeholder="Buscar" value={q} onChange={(e) => setQ(e.target.value)} />
+          <button
+            className="btn"
+            type="button"
+            onClick={() => {
+              setEdit({ id: 'nuevo', nombre: '', patron: '', medida: 'kg_reps', video_url: '', nota_default: '' });
+              setAlts([]);
+              setMsg('');
+            }}
+          >
+            + Nuevo ejercicio
+          </button>
         </div>
-        <table className="tabla">
+        <table className="tabla solo-escritorio">
           <thead>
             <tr>
               <th>Nombre</th>
@@ -80,10 +183,10 @@ export function Biblioteca() {
                 <td>
                   <b>{e.nombre}</b>
                 </td>
-                <td>{e.patron ?? '—'}</td>
-                <td>{MEDIDAS.find((m) => m.id === e.medida)?.label}</td>
+                <td>{e.patron ? etiquetaPatron(e.patron) : '—'}</td>
+                <td>{etiquetaMedida(e.medida)}</td>
                 <td>
-                  <button type="button" onClick={() => void abrir(e)}>
+                  <button type="button" className="btn2" onClick={() => void abrir(e)}>
                     Abrir
                   </button>
                 </td>
@@ -91,21 +194,50 @@ export function Biblioteca() {
             ))}
           </tbody>
         </table>
-        <div style={{ padding: 16 }}>
-          <button className="btn2" type="button" onClick={() => setEdit({ id: 'nuevo', nombre: '', patron: '', medida: 'kg_reps', video_url: '', nota_default: '' })}>
-            + Ejercicio
-          </button>
+        <div className="tarjetas-movil">
+          {filtrada.map((e) => (
+            <article key={e.id} className="tarjeta-fila">
+              <h2>{e.nombre}</h2>
+              <dl>
+                <div>
+                  <dt>Patrón</dt>
+                  <dd>{e.patron ? etiquetaPatron(e.patron) : '—'}</dd>
+                </div>
+                <div>
+                  <dt>Se mide</dt>
+                  <dd>{etiquetaMedida(e.medida)}</dd>
+                </div>
+              </dl>
+              <button type="button" className="btn2 btn-ancho" onClick={() => void abrir(e)}>
+                Abrir
+              </button>
+            </article>
+          ))}
         </div>
       </div>
       {edit ? (
-        <form className="card" style={{ flex: '1 1 320px', display: 'flex', flexDirection: 'column', gap: 12 }} onSubmit={(e) => { e.preventDefault(); void guardar(); }}>
+        <form
+          className="card"
+          style={{ flex: '1 1 320px', display: 'flex', flexDirection: 'column', gap: 12 }}
+          onSubmit={(e) => {
+            e.preventDefault();
+            void guardar();
+          }}
+        >
           <label className="f">
             Nombre
             <input className="in" value={edit.nombre} onChange={(e) => setEdit({ ...edit, nombre: e.target.value })} />
           </label>
           <label className="f">
             Patrón
-            <input className="in" value={edit.patron ?? ''} onChange={(e) => setEdit({ ...edit, patron: e.target.value })} />
+            <select className="in" value={edit.patron ?? ''} onChange={(e) => setEdit({ ...edit, patron: e.target.value || null })}>
+              <option value="">Sin asignar</option>
+              {PATRONES.map((p) => (
+                <option key={p.id} value={p.id}>
+                  {p.label}
+                </option>
+              ))}
+            </select>
           </label>
           <label className="f">
             Se mide
@@ -127,10 +259,44 @@ export function Biblioteca() {
           </label>
           <div className="lbl">Cambios permitidos</div>
           {alts.map((a) => (
-            <div key={a.id} className="chip">
-              {a.nombre} · {a.tipo}
+            <div key={a.id} className="alt-fila">
+              <span>
+                {a.nombre} · {etiquetaTipoAlternativa(a.tipo)}
+              </span>
+              <span className="alt-acciones">
+                <button type="button" className="btn2" style={{ minHeight: 44, padding: '0 12px' }} onClick={() => void moverAlt(a.id, -1)} aria-label="Subir">
+                  ↑
+                </button>
+                <button type="button" className="btn2" style={{ minHeight: 44, padding: '0 12px' }} onClick={() => void moverAlt(a.id, 1)} aria-label="Bajar">
+                  ↓
+                </button>
+                <button type="button" className="btn2" style={{ minHeight: 44, padding: '0 12px' }} onClick={() => void quitarAlt(a.id)}>
+                  Quitar
+                </button>
+              </span>
             </div>
           ))}
+          <label className="f">
+            Agregar alternativa
+            <input className="in" placeholder="Buscar en el catálogo" value={busquedaAlt} onChange={(e) => setBusquedaAlt(e.target.value)} />
+          </label>
+          <label className="f">
+            Tipo
+            <select className="in" value={tipoAlt} onChange={(e) => setTipoAlt(e.target.value)}>
+              {TIPOS_ALT.map((t) => (
+                <option key={t.id} value={t.id}>
+                  {t.label}
+                </option>
+              ))}
+            </select>
+          </label>
+          {busquedaAlt
+            ? sugeridas.map((s) => (
+                <button key={s.id} type="button" className="btn2" onClick={() => void agregarAlt(s)}>
+                  + {s.nombre}
+                </button>
+              ))
+            : null}
           {msg ? <p>{msg}</p> : null}
           <button className="btn" type="submit">
             Guardar

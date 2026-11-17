@@ -1,4 +1,5 @@
 import { plataforma, type PlanPagado } from '@/config/plataforma';
+import { hoyUtc } from './fecha';
 
 export type EstadoPlan =
   | 'prueba'
@@ -75,7 +76,7 @@ export function estadoPlan(entrada: {
   cubreHasta?: Date | null;
   hoy?: Date;
 }): EstadoPlan {
-  const hoy = soloFecha(entrada.hoy ?? new Date());
+  const hoy = soloFecha(entrada.hoy ?? hoyUtc());
   if (entrada.plan === 'prueba') {
     if (entrada.pruebaTerminada) return 'prueba_terminada';
     if (!entrada.pruebaInicio) return 'prueba';

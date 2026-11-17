@@ -1,4 +1,5 @@
 import { exigirEntrenador, jsonError, jsonOk } from '@/lib/api';
+import { ymdEnZona } from '@/lib/fecha';
 
 export async function POST(_request: Request, { params }: { params: Promise<{ id: string }> }) {
   const auth = await exigirEntrenador();
@@ -24,7 +25,7 @@ export async function POST(_request: Request, { params }: { params: Promise<{ id
 
   const { error } = await auth.admin
     .from('rutinas')
-    .update({ estado: 'publicada', fecha_inicio: new Date().toISOString().slice(0, 10) })
+    .update({ estado: 'publicada', fecha_inicio: ymdEnZona() })
     .eq('id', id);
   if (error) return jsonError('No se pudo publicar.');
   return jsonOk();

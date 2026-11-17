@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Logo } from './Logo';
 import { CerrarSesion } from './CerrarSesion';
 import { MarcarAcceso } from './MarcarAcceso';
+import { NavApp } from './NavApp';
 
 export function AppShell({ nombre, children }: { nombre: string; children: React.ReactNode }) {
   return (
@@ -11,11 +12,10 @@ export function AppShell({ nombre, children }: { nombre: string; children: React
         <Link href="/app" style={{ textDecoration: 'none', color: 'inherit' }}>
           <Logo />
         </Link>
-        <nav style={{ display: 'flex', gap: 12, alignItems: 'center', fontSize: 14, fontWeight: 700 }}>
-          <Link href="/app/avance">Avance</Link>
-          <Link href="/app/historial">Historial</Link>
+        <div style={{ display: 'flex', gap: 12, alignItems: 'center', fontSize: 14, fontWeight: 700 }}>
+          <NavApp />
           <CerrarSesion />
-        </nav>
+        </div>
       </header>
       <div className="barra-lima" />
       <div style={{ padding: 20, display: 'flex', flexDirection: 'column', gap: 14 }}>

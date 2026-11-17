@@ -3,6 +3,7 @@ import { cronAutorizado, jsonError } from '@/lib/api';
 import { crearClienteAdmin } from '@/lib/supabase/admin';
 import { plataforma } from '@/config/plataforma';
 import { cuentasAAvisar, cuentasABorrar, type CuentaRetencion } from '@/lib/retencion';
+import { hoyUtc, ymdEnZona } from '@/lib/fecha';
 
 export async function GET(request: Request) {
   if (!cronAutorizado(request)) return jsonError('No autorizado.', 401);
@@ -26,12 +27,12 @@ export async function GET(request: Request) {
     diasAviso: plataforma.retencion.diasAviso,
     smtp: plataforma.smtpConfigurado,
   };
-  const hoy = new Date();
+  const hoy = hoyUtc();
   const avisar = cuentasAAvisar(cuentas, cfg, hoy);
   const borrar = cuentasABorrar(cuentas, cfg, hoy);
 
   if (cfg.activa && cfg.smtp) {
-    const hoyIso = hoy.toISOString().slice(0, 10);
+    const hoyIso = ymdEnZona();
     for (const c of avisar) {
       await admin.from('perfiles').update({ aviso_borrado_en: hoyIso }).eq('id', c.id);
     }

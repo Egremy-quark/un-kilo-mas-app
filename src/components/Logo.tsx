@@ -45,7 +45,7 @@ export function Logo({
         {resto ? `${resto} ` : ''}
         <span className="logo-clave">{clave}</span>
         {subtitulo ? (
-          <span style={{ fontFamily: '"Source Sans 3", sans-serif', fontSize: 14, fontWeight: 700, color: 'var(--gris)', textTransform: 'none', marginLeft: 8 }}>
+          <span className="logo-subtitulo" style={{ fontFamily: '"Source Sans 3", sans-serif', fontSize: 14, fontWeight: 700, color: 'var(--gris)', textTransform: 'none', marginLeft: 8 }}>
             · {subtitulo}
           </span>
         ) : null}
