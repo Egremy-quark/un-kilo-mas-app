@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { crearClienteNavegador } from '@/lib/supabase/client';
 import { guardarSerieLocal, subirPendientes } from '@/lib/offline';
 import { segundosATexto } from '@/lib/descanso';
+import { BotonPendiente } from '@/components/BotonPendiente';
 
 interface Props {
   sesionId: string;
@@ -25,6 +26,7 @@ export function SerieForma(p: Props) {
   const [numero, setNumero] = useState(1);
   const [rest, setRest] = useState(0);
   const [msg, setMsg] = useState('');
+  const [guardando, setGuardando] = useState(false);
 
   useEffect(() => {
     if (rest <= 0) return;
@@ -48,6 +50,7 @@ export function SerieForma(p: Props) {
       setMsg('Ya no puedes registrar series nuevas.');
       return;
     }
+    setGuardando(true);
     const payload = {
       sesion_id: p.sesionId,
       rutina_ejercicio_id: p.rutinaEjercicioId,
@@ -70,6 +73,7 @@ export function SerieForma(p: Props) {
     }
     setNumero((n) => n + 1);
     if (p.descansoSeg) setRest(p.descansoSeg);
+    setGuardando(false);
   }
 
   return (
@@ -124,9 +128,9 @@ export function SerieForma(p: Props) {
           </div>
         ) : null}
         {msg ? <p>{msg}</p> : null}
-        <button className="btn btn-ancho" type="button" onClick={() => void guardar()}>
+        <BotonPendiente className="btn btn-ancho" type="button" cargando={guardando} etiquetaCargando="Guardando…" onClick={() => void guardar()}>
           Guardar serie
-        </button>
+        </BotonPendiente>
       </div>
     </>
   );

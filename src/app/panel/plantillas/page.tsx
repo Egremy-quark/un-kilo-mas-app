@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import { AccionIcono } from '@/components/AccionIcono';
+import { Icono } from '@/components/Iconos';
 import { crearClienteServidor } from '@/lib/supabase/server';
 import { NuevaPlantilla } from './NuevaPlantilla';
 import { etiquetaEnfoque, etiquetaEstadoRutina, etiquetaSemanas } from '@/lib/etiquetas';
@@ -38,7 +39,7 @@ export default async function Plantillas() {
                   <th>Semanas</th>
                   <th>Enfoque</th>
                   <th>Estado</th>
-                  <th></th>
+                  <th>Acciones</th>
                 </tr>
               </thead>
               <tbody>
@@ -47,13 +48,21 @@ export default async function Plantillas() {
                     <td>
                       <b>{r.nombre as string}</b>
                     </td>
-                    <td>{etiquetaSemanas(r.semanas as number | null)}</td>
+                    <td>
+                      {(r.semanas as number | null) == null ? (
+                        <span className="por-definir">por definir</span>
+                      ) : (
+                        etiquetaSemanas(r.semanas as number | null)
+                      )}
+                    </td>
                     <td>{etiquetaEnfoque(r.enfoque as string)}</td>
                     <td>{etiquetaEstadoRutina(r.estado as string)}</td>
                     <td>
-                      <Link className="btn2" href={`/panel/rutinas/${r.id}`}>
-                        Abrir
-                      </Link>
+                      <div className="acciones-fila">
+                        <AccionIcono href={`/panel/rutinas/${r.id}`} etiqueta="Abrir editor">
+                          <Icono nombre="lapiz" />
+                        </AccionIcono>
+                      </div>
                     </td>
                   </tr>
                 ))}
@@ -77,9 +86,11 @@ export default async function Plantillas() {
                       <dd>{etiquetaEstadoRutina(r.estado as string)}</dd>
                     </div>
                   </dl>
-                  <Link className="btn2 btn-ancho" href={`/panel/rutinas/${r.id}`}>
-                    Abrir
-                  </Link>
+                  <div className="acciones-fila">
+                    <AccionIcono href={`/panel/rutinas/${r.id}`} etiqueta="Abrir editor">
+                      <Icono nombre="lapiz" />
+                    </AccionIcono>
+                  </div>
                 </article>
               ))}
             </div>

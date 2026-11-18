@@ -6,6 +6,7 @@ import { createClient } from '@supabase/supabase-js';
 import { descansoASegundos } from '../src/lib/descanso';
 import { normalizarNombre, tipoAlternativa } from '../src/lib/normalizar';
 import { clasificarMedida, clasificarPatron } from '../src/lib/patron';
+import { esPrescripcionVaga } from '../src/lib/pendiente-yohan';
 
 config({ path: '.env.local' });
 config();
@@ -30,6 +31,7 @@ interface SemanaJson {
   tecnica?: string;
   descanso?: string;
   omitir?: boolean;
+  heredado?: boolean;
 }
 
 interface EjercicioJson {
@@ -214,7 +216,7 @@ async function asegurarFase(params: {
   return rutinaId;
 }
 
-async function llenarRutina(rutinaId: string, dias: DiaJson[], semanasTotales: number) {
+async function llenarRutina(rutinaId: string, dias: DiaJson[], semanasTotales: number, accesoriosPendientes = false) {
   await vaciarRutina(rutinaId);
   for (const [i, dia] of dias.entries()) {
     const { data: filaDia, error } = await supabase
@@ -225,6 +227,10 @@ async function llenarRutina(rutinaId: string, dias: DiaJson[], semanasTotales: n
     if (error || !filaDia) throw error ?? new Error('No se pudo crear el día.');
     for (const ej of dia.ejercicios) {
       const ejercicio_id = await ejercicioId(ej.nombre);
+      const accesorioPendiente =
+        !ej.revisar &&
+        (accesoriosPendientes ||
+          (ej.semanas ?? []).some((s) => Boolean(s.heredado) || esPrescripcionVaga(s.texto)));
       const { data: filaEj, error: errorEj } = await supabase
         .from('rutina_ejercicios')
         .insert({
@@ -232,13 +238,31 @@ async function llenarRutina(rutinaId: string, dias: DiaJson[], semanasTotales: n
           ejercicio_id,
           orden: ej.orden,
           grupo: ej.grupo ?? null,
-          intensidad_tipo: intensidadDe(ej.semanas ?? []),
-          nota: ej.nota ?? null,
+          intensidad_tipo: accesorioPendiente ? 'texto' : intensidadDe(ej.semanas ?? []),
+          nota: accesorioPendiente ? '[CONTENIDO POR YOHAN]' : (ej.nota ?? null),
           revisar: Boolean(ej.revisar),
         })
         .select('id')
         .single();
       if (errorEj || !filaEj) throw errorEj ?? new Error('No se pudo crear el ejercicio.');
+      if (accesorioPendiente) {
+        for (let s = 1; s <= semanasTotales; s++) {
+          await supabase.from('prescripciones').insert({
+            rutina_ejercicio_id: filaEj.id,
+            semana: s,
+            series: null,
+            reps: null,
+            pct: null,
+            rm: null,
+            tempo: null,
+            tecnica: null,
+            descanso_seg: null,
+            omitir: false,
+            texto: '',
+          });
+        }
+        continue;
+      }
       const semanas = ej.semanas ?? [];
       for (let s = 0; s < Math.max(semanasTotales, semanas.length); s++) {
         const pres = semanas[s];
@@ -343,7 +367,7 @@ async function sembrarRuta() {
       enfoque: ENFOQUE_FASE[fase.nombre] ?? 'fuerza',
       publicada: !hayRevisar,
     });
-    await llenarRutina(rutinaId, fase.dias, fase.semanas);
+    await llenarRutina(rutinaId, fase.dias, fase.semanas, fase.nombre === 'Remate');
     for (const dia of fase.dias) {
       for (const ej of dia.ejercicios) {
         const origen = await ejercicioId(ej.nombre);

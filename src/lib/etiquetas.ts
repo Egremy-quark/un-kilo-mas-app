@@ -82,5 +82,5 @@ export function etiquetaMedida(valor: string | null | undefined): string {
 }
 
 export function etiquetaSemanas(valor: number | null | undefined): string {
-  return valor == null ? '[POR DEFINIR]' : String(valor);
+  return valor == null ? 'por definir' : String(valor);
 }

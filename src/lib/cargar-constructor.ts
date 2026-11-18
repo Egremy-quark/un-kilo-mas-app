@@ -37,6 +37,7 @@ export interface PresConstructor {
 export interface CatalogoConstructor {
   id: string;
   nombre: string;
+  patron?: string | null;
 }
 
 export interface InicialConstructor {
@@ -71,7 +72,7 @@ export async function cargarConstructor(
   const { data: ps } = ejIds.length
     ? await supabase.from('prescripciones').select('*').in('rutina_ejercicio_id', ejIds)
     : { data: [] };
-  const { data: cat } = await supabase.from('ejercicios').select('id, nombre').order('nombre');
+  const { data: cat } = await supabase.from('ejercicios').select('id, nombre, patron').order('nombre');
   return {
     nombre: (r.nombre as string) ?? '',
     semanas: (r.semanas as number | null) ?? null,

@@ -1,5 +1,5 @@
-import { LoaderPagina } from '@/components/LoaderPagina';
+import { LoaderUnico } from '@/components/CapaCargando';
 
 export default function CargandoPanel() {
-  return <LoaderPagina etiqueta="Cargando" />;
+  return <LoaderUnico />;
 }

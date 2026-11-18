@@ -7,6 +7,7 @@ import type { PlanPagado } from '@/config/plataforma';
 import { formatearRangoCorto, utcDesdeYmd, ymdDeDate, ymdEnZona } from '@/lib/fecha';
 import { formatearDinero } from '@/lib/formato';
 import { TarjetasPlan } from '@/components/TarjetasPlan';
+import { BotonPendiente } from '@/components/BotonPendiente';
 
 export function AltaForma({
   entrenadores,
@@ -156,9 +157,9 @@ export function AltaForma({
       </div>
       {aviso ? <p className="error">{aviso} Si guardas, se registra igual.</p> : null}
       {error ? <p className="error">{error}</p> : null}
-      <button className="btn" type="submit" disabled={cargando}>
+      <BotonPendiente type="submit" cargando={cargando} etiquetaCargando="Dando de alta…">
         Dar de alta e invitar
-      </button>
+      </BotonPendiente>
     </form>
   );
 }

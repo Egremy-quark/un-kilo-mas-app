@@ -19,6 +19,16 @@ describe('patrón y medida por nombre', () => {
     expect(clasificarPatron('Movimiento raro XYZ')).toBeNull();
   });
 
+  it('asigna patrón a los 7 que quedaban vacíos', () => {
+    expect(clasificarPatron('Caminata en pared')).toBe('accesorio');
+    expect(clasificarPatron('Dragon flag')).toBe('accesorio');
+    expect(clasificarPatron('Glute ham raise')).toBe('bisagra');
+    expect(clasificarPatron('Leñador con barra de rodillas')).toBe('accesorio');
+    expect(clasificarPatron('Salto a cajón')).toBe('accesorio');
+    expect(clasificarPatron('Sissy squat')).toBe('rodilla');
+    expect(clasificarPatron('Subida a cajón')).toBe('rodilla');
+  });
+
   it('mide plancha en tiempo y lagartijas en peso corporal', () => {
     expect(clasificarMedida('Plancha frontal')).toBe('tiempo');
     expect(clasificarMedida('Lagartijas')).toBe('peso_corporal');

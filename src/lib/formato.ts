@@ -37,3 +37,14 @@ export function formatearDinero(valor: number): string {
   const conMiles = String(Math.abs(entero)).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   return `${entero < 0 ? '-' : ''}$${conMiles}`;
 }
+
+export function textoMonto(valor: number | string | null | undefined): string {
+  if (valor == null || valor === '') return 'Sin monto';
+  const n = typeof valor === 'number' ? valor : Number(valor);
+  if (!Number.isFinite(n)) return 'Sin monto';
+  return formatearDinero(n);
+}
+
+export function textoFolio(valor: string | null | undefined): string {
+  return valor?.trim() ? valor : 'Sin folio';
+}

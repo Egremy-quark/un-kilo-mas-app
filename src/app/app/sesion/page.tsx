@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation';
 import { crearClienteServidor } from '@/lib/supabase/server';
 import { contextoCliente } from '@/lib/contexto-cliente';
+import { prescripcionParaCliente, textoCliente } from '@/lib/pendiente-yohan';
 import { SesionHoy } from './SesionHoy';
 
 export default async function PaginaSesion() {
@@ -23,9 +24,10 @@ export default async function PaginaSesion() {
     if (fase?.publicada) rutinaId = fase.rutina_id as string;
   }
   if (!rutinaId) {
-    return <p>Tu rutina se está preparando.</p>;
+    return <p>Tu rutina se está preparando. Aún no está lista.</p>;
   }
-  const { data: dias } = await supabase.from('rutina_dias').select('id, letra, foco').eq('rutina_id', rutinaId).order('orden');
+  const { data: diasBruto } = await supabase.from('rutina_dias').select('id, letra, foco').eq('rutina_id', rutinaId).order('orden');
+  const dias = (diasBruto ?? []).map((d) => ({ ...d, foco: textoCliente(d.foco as string | null) || null }));
   const diaIds = (dias ?? []).map((d) => d.id as string);
   const { data: ejs } = diaIds.length
     ? await supabase.from('rutina_ejercicios').select('id, dia_id, ejercicio_id, grupo, nota, revisar, ejercicios(nombre)').in('dia_id', diaIds).order('orden')
@@ -50,16 +52,15 @@ export default async function PaginaSesion() {
       grupo: e.grupo as string | null,
       nota: e.nota as string | null,
       revisar: Boolean(e.revisar),
-      pres: {
-        texto: (p?.texto as string) ?? '',
-        pct: (p?.pct as number | null) ?? null,
-        descanso_seg: (p?.descanso_seg as number | null) ?? null,
-        omitir: Boolean(p?.omitir),
-      },
+      pres: prescripcionParaCliente(p),
       rm: rmMap.get(hechoId) ?? rmMap.get(e.ejercicio_id as string) ?? null,
       hechoId,
     };
   });
+
+  if (!ejercicios.length) {
+    return <p>Tu rutina aún no está lista. Cuando el entrenador la arme, aquí vas a ver la sesión.</p>;
+  }
 
   return (
     <SesionHoy

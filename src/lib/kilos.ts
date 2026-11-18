@@ -3,5 +3,6 @@ import { redondearAlPaso } from './formato';
 
 /** Kilos objetivo = pct × 1RM, redondeado al paso de la plataforma (2.5 kg). */
 export function kilosObjetivo(rmKg: number, pct: number, paso = plataforma.redondeoKg): number {
+  if (!Number.isFinite(rmKg) || !Number.isFinite(pct)) return 0;
   return redondearAlPaso(rmKg * pct, paso);
 }

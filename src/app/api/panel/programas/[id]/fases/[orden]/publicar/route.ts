@@ -14,18 +14,6 @@ export async function POST(_request: Request, { params }: { params: Promise<{ id
   const rutinaId = fase.rutina_id as string | null;
   if (!rutinaId) return jsonError('Esta fase no tiene rutina.');
 
-  const { data: dias } = await auth.admin.from('rutina_dias').select('id').eq('rutina_id', rutinaId);
-  const diaIds = (dias ?? []).map((d) => d.id as string);
-  if (diaIds.length) {
-    const { data: ejercicios } = await auth.admin
-      .from('rutina_ejercicios')
-      .select('revisar')
-      .in('dia_id', diaIds);
-    if ((ejercicios ?? []).some((e) => e.revisar)) {
-      return jsonError('No se puede publicar: hay ejercicios marcados «revisar».');
-    }
-  }
-
   await auth.admin.from('programa_fases').update({ publicada: true }).eq('id', fase.id);
   await auth.admin.from('rutinas').update({ estado: 'publicada' }).eq('id', rutinaId);
   return jsonOk();

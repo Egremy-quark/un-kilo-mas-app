@@ -1,8 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { crearClienteNavegador } from '@/lib/supabase/client';
 import { etiquetaMedida, etiquetaPatron, etiquetaTipoAlternativa, PATRONES } from '@/lib/etiquetas';
+import { BotonPendiente } from '@/components/BotonPendiente';
+import { CamposEditor } from '@/components/CamposEditor';
+import { Icono } from '@/components/Iconos';
 
 interface Ej {
   id: string;
@@ -37,11 +41,13 @@ export function Biblioteca() {
   const supabase = crearClienteNavegador();
   const [lista, setLista] = useState<Ej[]>([]);
   const [q, setQ] = useState('');
+  const [patronFiltro, setPatronFiltro] = useState('todos');
   const [edit, setEdit] = useState<Ej | null>(null);
   const [alts, setAlts] = useState<Alt[]>([]);
   const [busquedaAlt, setBusquedaAlt] = useState('');
   const [tipoAlt, setTipoAlt] = useState('equivalente');
   const [msg, setMsg] = useState('');
+  const [guardando, setGuardando] = useState(false);
 
   async function cargar() {
     const { data } = await supabase.from('ejercicios').select('*').order('nombre');
@@ -76,6 +82,7 @@ export function Biblioteca() {
       setMsg('Escribe el nombre.');
       return;
     }
+    setGuardando(true);
     if (edit.id.startsWith('nuevo')) {
       const { data, error } = await supabase
         .from('ejercicios')
@@ -104,6 +111,7 @@ export function Biblioteca() {
       setMsg(error ? (error.message.includes('duplicate') ? 'Ya hay un ejercicio con ese nombre.' : error.message) : 'Guardado');
     }
     await cargar();
+    setGuardando(false);
   }
 
   async function agregarAlt(destino: Ej) {
@@ -146,14 +154,35 @@ export function Biblioteca() {
     await Promise.all(copia.map((a, orden) => supabase.from('ejercicio_alternativas').update({ orden }).eq('id', a.id)));
   }
 
-  const filtrada = lista.filter((e) => e.nombre.toLowerCase().includes(q.toLowerCase()));
+  const ordenPatrones = ['accesorio', 'empuje', 'rodilla', 'jalon', 'bisagra'] as const;
+  const filtrada = lista.filter((e) => {
+    const texto = q.trim().toLowerCase();
+    const nombreOk = !texto || e.nombre.toLowerCase().includes(texto) || etiquetaPatron(e.patron).toLowerCase().includes(texto);
+    const patronOk = patronFiltro === 'todos' || e.patron === patronFiltro;
+    return nombreOk && patronOk;
+  });
   const sugeridas = lista
     .filter((e) => edit && e.id !== edit.id && e.nombre.toLowerCase().includes(busquedaAlt.toLowerCase()) && !alts.some((a) => a.alternativa_id === e.id))
     .slice(0, 8);
 
+  useEffect(() => {
+    if (!edit) return;
+    const html = document.documentElement;
+    const prev = html.style.overflow;
+    html.style.overflow = 'hidden';
+    return () => {
+      html.style.overflow = prev;
+    };
+  }, [edit]);
+
+  function cerrar() {
+    setEdit(null);
+    setMsg('');
+  }
+
   return (
-    <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
-      <div className="card tabla-o-tarjetas" style={{ flex: '2 1 480px', padding: 0 }}>
+    <div>
+      <div className="card tabla-o-tarjetas" style={{ padding: 0 }}>
         <div className="acciones-cabeza" style={{ padding: 16 }}>
           <input className="in" placeholder="Buscar" value={q} onChange={(e) => setQ(e.target.value)} />
           <button
@@ -168,13 +197,35 @@ export function Biblioteca() {
             + Nuevo ejercicio
           </button>
         </div>
+        <div className="zona-filtros">
+          <span className="lbl">Patrón</span>
+          <div className="chips-scroll">
+            <button type="button" className="chip-filtro" aria-pressed={patronFiltro === 'todos'} onClick={() => setPatronFiltro('todos')}>
+              Todos ({lista.length})
+            </button>
+            {ordenPatrones.map((id) => (
+              <button key={id} type="button" className="chip-filtro" aria-pressed={patronFiltro === id} onClick={() => setPatronFiltro(id)}>
+                {etiquetaPatron(id)} ({lista.filter((e) => e.patron === id).length})
+              </button>
+            ))}
+          </div>
+        </div>
+        {filtrada.length === 0 ? (
+          <div className="estado-vacio">
+            <p>Ningún ejercicio coincide con el filtro. Hay {lista.length} en total.</p>
+            <button type="button" className="btn2" onClick={() => { setQ(''); setPatronFiltro('todos'); }}>
+              Limpiar filtros
+            </button>
+          </div>
+        ) : (
+        <>
         <table className="tabla solo-escritorio">
           <thead>
             <tr>
               <th>Nombre</th>
               <th>Patrón</th>
               <th>Se mide</th>
-              <th></th>
+              <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
@@ -186,9 +237,11 @@ export function Biblioteca() {
                 <td>{e.patron ? etiquetaPatron(e.patron) : '—'}</td>
                 <td>{etiquetaMedida(e.medida)}</td>
                 <td>
-                  <button type="button" className="btn2" onClick={() => void abrir(e)}>
-                    Abrir
-                  </button>
+                  <div className="acciones-fila">
+                    <button type="button" className="btn-accion" title="Editar ejercicio" aria-label="Editar ejercicio" onClick={() => void abrir(e)}>
+                      <Icono nombre="lapiz" />
+                    </button>
+                  </div>
                 </td>
               </tr>
             ))}
@@ -208,22 +261,35 @@ export function Biblioteca() {
                   <dd>{etiquetaMedida(e.medida)}</dd>
                 </div>
               </dl>
-              <button type="button" className="btn2 btn-ancho" onClick={() => void abrir(e)}>
-                Abrir
-              </button>
+              <div className="acciones-fila">
+                <button type="button" className="btn-accion" title="Editar ejercicio" aria-label="Editar ejercicio" onClick={() => void abrir(e)}>
+                  <Icono nombre="lapiz" />
+                </button>
+              </div>
             </article>
           ))}
         </div>
+        </>
+        )}
       </div>
-      {edit ? (
+      {edit && typeof document !== 'undefined'
+        ? createPortal(
+        <>
+        <div className="editor-velo" aria-hidden="true" onClick={cerrar} />
         <form
-          className="card"
-          style={{ flex: '1 1 320px', display: 'flex', flexDirection: 'column', gap: 12 }}
+          className="card editor-ejercicio abierto"
           onSubmit={(e) => {
             e.preventDefault();
             void guardar();
           }}
         >
+          <div className="editor-cabeza">
+            <div className="lbl">{edit.id === 'nuevo' ? 'Nuevo ejercicio' : 'Editando el ejercicio'}</div>
+            <button type="button" className="btn-icono cerrar-hoja" aria-label="Cerrar" onClick={cerrar}>
+              <Icono nombre="cerrar" />
+            </button>
+          </div>
+          <CamposEditor>
           <label className="f">
             Nombre
             <input className="in" value={edit.nombre} onChange={(e) => setEdit({ ...edit, nombre: e.target.value })} />
@@ -298,11 +364,17 @@ export function Biblioteca() {
               ))
             : null}
           {msg ? <p>{msg}</p> : null}
-          <button className="btn" type="submit">
-            Guardar
-          </button>
+          </CamposEditor>
+          <div className="editor-pie">
+            <BotonPendiente type="submit" cargando={guardando} etiquetaCargando="Guardando…">
+              Guardar
+            </BotonPendiente>
+          </div>
         </form>
-      ) : null}
+        </>,
+        document.body,
+        )
+        : null}
     </div>
   );
 }

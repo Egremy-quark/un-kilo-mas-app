@@ -52,7 +52,7 @@ export default async function PanelClientes() {
       rutina: (rutinaCoach?.nombre as string | undefined) ?? ((ins as { programas?: { nombre?: string } } | undefined)?.programas?.nombre ?? null),
       semana: ins ? `Fase ${(ins as { fase_orden: number }).fase_orden} · sem ${(ins as { semana: number }).semana}` : null,
       ultima_sesion: ultSesion.get(p.id as string) ?? null,
-      a_cargo: p.entrenador_a_cargo_id ? (entMap.get(p.entrenador_a_cargo_id as string) ?? '—') : '—',
+      a_cargo: p.entrenador_a_cargo_id ? (entMap.get(p.entrenador_a_cargo_id as string) ?? 'Sin entrenador') : 'Sin entrenador',
       estado: estadoDeCliente({
         plan: p.plan as string,
         prueba_inicio: p.prueba_inicio as string | null,

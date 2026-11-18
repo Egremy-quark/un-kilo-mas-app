@@ -34,6 +34,7 @@ export function HistorialLista({ inicial }: { inicial: Ses[] }) {
       <h1 className="h" style={{ fontSize: 42 }}>
         Tu <em>historial</em>
       </h1>
+      {lista.length === 0 ? <p className="muted">Todavía no hay sesiones registradas.</p> : null}
       {lista.map((s) => (
         <div key={s.id} className="card">
           <b>{s.fecha}</b>

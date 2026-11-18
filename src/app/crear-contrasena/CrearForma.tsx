@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { crearClienteNavegador } from '@/lib/supabase/client';
+import { BotonPendiente } from '@/components/BotonPendiente';
 
 function mensajeError(code?: string) {
   if (code === 'weak_password') return 'Esa contraseña es muy débil. Prueba otra más larga.';
@@ -18,6 +19,7 @@ export function CrearForma() {
   const [contrasena, setContrasena] = useState('');
   const [error, setError] = useState('');
   const [listo, setListo] = useState(false);
+  const [cargando, setCargando] = useState(false);
 
   useEffect(() => {
     const supabase = crearClienteNavegador();
@@ -49,21 +51,29 @@ export function CrearForma() {
       setError('Usa al menos 8 caracteres.');
       return;
     }
-    const supabase = crearClienteNavegador();
-    const { data: sesion } = await supabase.auth.getUser();
-    if (!sesion.user) {
-      setError('Este enlace no dejó sesión. Ábrelo otra vez.');
-      return;
+    setCargando(true);
+    try {
+      const supabase = crearClienteNavegador();
+      const { data: sesion } = await supabase.auth.getUser();
+      if (!sesion.user) {
+        setError('Este enlace no dejó sesión. Ábrelo otra vez.');
+        setCargando(false);
+        return;
+      }
+      const { error: fallo } = await supabase.auth.updateUser({ password: contrasena });
+      if (fallo) {
+        setError(mensajeError(fallo.code));
+        setCargando(false);
+        return;
+      }
+      const { data } = await supabase.auth.getUser();
+      const { data: perfil } = await supabase.from('perfiles').select('rol').eq('id', data.user?.id ?? '').maybeSingle();
+      router.replace((perfil as { rol?: string } | null)?.rol === 'entrenador' ? '/panel' : '/app');
+      router.refresh();
+    } catch {
+      setError('No pudimos guardar la contraseña. Abre de nuevo el enlace.');
+      setCargando(false);
     }
-    const { error: fallo } = await supabase.auth.updateUser({ password: contrasena });
-    if (fallo) {
-      setError(mensajeError(fallo.code));
-      return;
-    }
-    const { data } = await supabase.auth.getUser();
-    const { data: perfil } = await supabase.from('perfiles').select('rol').eq('id', data.user?.id ?? '').maybeSingle();
-    router.replace((perfil as { rol?: string } | null)?.rol === 'entrenador' ? '/panel' : '/app');
-    router.refresh();
   }
 
   return (
@@ -73,9 +83,9 @@ export function CrearForma() {
         <input className="in" type="password" value={contrasena} onChange={(e) => setContrasena(e.target.value)} required minLength={8} />
       </label>
       {error ? <p className="error">{error}</p> : null}
-      <button className="btn" type="submit" disabled={!listo}>
+      <BotonPendiente type="submit" disabled={!listo} cargando={cargando} etiquetaCargando="Guardando…">
         Guardar y entrar
-      </button>
+      </BotonPendiente>
     </form>
   );
 }

@@ -7,6 +7,7 @@ import type { PlanPagado } from '@/config/plataforma';
 import { formatearRangoCorto, utcDesdeYmd, ymdDeDate, ymdEnZona } from '@/lib/fecha';
 import { formatearDinero } from '@/lib/formato';
 import { TarjetasPlan } from '@/components/TarjetasPlan';
+import { BotonPendiente } from '@/components/BotonPendiente';
 
 export function PagoForma({ clienteId, cubreHastaAnterior, veniaDePrueba }: { clienteId: string; cubreHastaAnterior: string | null; veniaDePrueba: boolean }) {
   const router = useRouter();
@@ -18,6 +19,7 @@ export function PagoForma({ clienteId, cubreHastaAnterior, veniaDePrueba }: { cl
   const [nota, setNota] = useState('');
   const [aviso, setAviso] = useState('');
   const [error, setError] = useState('');
+  const [cargando, setCargando] = useState(false);
   const cubre = calcularCobertura({
     plan,
     fechaTransferencia: utcDesdeYmd(fecha),
@@ -29,6 +31,7 @@ export function PagoForma({ clienteId, cubreHastaAnterior, veniaDePrueba }: { cl
 
   async function enviar() {
     setError('');
+    setCargando(true);
     const montoNum = monto === '' ? null : Number(monto);
     const res = await fetch('/api/panel/pagos', {
       method: 'POST',
@@ -47,10 +50,12 @@ export function PagoForma({ clienteId, cubreHastaAnterior, veniaDePrueba }: { cl
     const json = await res.json();
     if (res.status === 409) {
       setAviso(json.mensaje);
+      setCargando(false);
       return;
     }
     if (!json.ok) {
       setError(json.mensaje);
+      setCargando(false);
       return;
     }
     if (json.irARutina) {
@@ -102,9 +107,9 @@ export function PagoForma({ clienteId, cubreHastaAnterior, veniaDePrueba }: { cl
       </div>
       {aviso ? <p className="error">{aviso} Si vuelves a guardar, se registra igual.</p> : null}
       {error ? <p className="error">{error}</p> : null}
-      <button className="btn" type="submit">
+      <BotonPendiente type="submit" cargando={cargando} etiquetaCargando="Registrando…">
         Registrar pago
-      </button>
+      </BotonPendiente>
     </form>
   );
 }

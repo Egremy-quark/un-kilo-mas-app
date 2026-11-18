@@ -1,10 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { usePathname } from 'next/navigation';
 import { Logo } from './Logo';
 import { NavPanel } from './NavPanel';
 import { CerrarSesion } from './CerrarSesion';
+import { Icono } from './Iconos';
 
 export function CabeceraPanel({ nombre, etiqueta }: { nombre: string; etiqueta: string }) {
   const path = usePathname();
@@ -14,6 +16,16 @@ export function CabeceraPanel({ nombre, etiqueta }: { nombre: string; etiqueta: 
   useEffect(() => {
     setAbierto(false);
   }, [path]);
+
+  useEffect(() => {
+    if (!abierto) return;
+    const html = document.documentElement;
+    const previo = html.style.overflow;
+    html.style.overflow = 'hidden';
+    return () => {
+      html.style.overflow = previo;
+    };
+  }, [abierto]);
 
   const usuario = (
     <div className="usuario-panel">
@@ -31,27 +43,44 @@ export function CabeceraPanel({ nombre, etiqueta }: { nombre: string; etiqueta: 
   return (
     <header className="cabecera-panel">
       <div className="wrap cabecera-panel-inner">
-        <Logo subtitulo="Panel del entrenador" />
-        <NavPanel className="nav-panel-escritorio" />
-        <div className="usuario-escritorio">{usuario}</div>
-        <CerrarSesion className="salir-escritorio" />
-        <button
-          type="button"
-          className="btn-menu"
-          aria-label={abierto ? 'Cerrar menú' : 'Abrir menú'}
-          aria-expanded={abierto}
-          onClick={() => setAbierto((v) => !v)}
-        >
-          {abierto ? '✕' : '☰'}
-        </button>
-      </div>
-      {abierto ? (
-        <div className="menu-panel-movil wrap">
-          <NavPanel className="nav-panel-movil" onNavigate={() => setAbierto(false)} />
-          {usuario}
-          <CerrarSesion />
+        <div className="cabecera-panel-top">
+          <Logo subtitulo="Panel del entrenador" />
+          <div className="usuario-escritorio" style={{ marginLeft: 'auto' }}>
+            {usuario}
+          </div>
+          <CerrarSesion className="salir-escritorio" />
+          <button
+            type="button"
+            className="btn-menu"
+            aria-label={abierto ? 'Cerrar menú' : 'Abrir menú'}
+            aria-expanded={abierto}
+            onClick={() => setAbierto((v) => !v)}
+          >
+            {abierto ? <Icono nombre="cerrar" /> : <Icono nombre="menu" />}
+          </button>
         </div>
-      ) : null}
+      </div>
+      <div className="cabecera-panel-nav">
+        <div className="wrap">
+          <NavPanel className="nav-panel-escritorio" />
+        </div>
+      </div>
+      {abierto && typeof document !== 'undefined'
+        ? createPortal(
+            <>
+              <div className="drawer-velo" onClick={() => setAbierto(false)} />
+              <aside className="drawer-menu" role="dialog" aria-label="Menú">
+                <button type="button" className="drawer-cerrar" aria-label="Cerrar" onClick={() => setAbierto(false)}>
+                  <Icono nombre="cerrar" />
+                </button>
+                <NavPanel className="nav-panel-movil" onNavigate={() => setAbierto(false)} />
+                {usuario}
+                <CerrarSesion />
+              </aside>
+            </>,
+            document.body,
+          )
+        : null}
     </header>
   );
 }

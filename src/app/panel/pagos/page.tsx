@@ -1,7 +1,8 @@
 import { crearClienteServidor } from '@/lib/supabase/server';
 import { nombrePlan } from '@/lib/clientes-panel';
 import { finDeMes, formatearRangoCorto, mesActual, nombreMes } from '@/lib/fecha';
-import { formatearDinero } from '@/lib/formato';
+import { formatearDinero, textoFolio, textoMonto } from '@/lib/formato';
+import { DescargarExcel } from '@/components/DescargarExcel';
 
 export default async function PagosDelMes({ searchParams }: { searchParams: Promise<{ mes?: string }> }) {
   const { mes: mesParam } = await searchParams;
@@ -17,9 +18,12 @@ export default async function PagosDelMes({ searchParams }: { searchParams: Prom
   const total = (data ?? []).reduce((s, p) => s + Number(p.monto_mxn ?? 0), 0);
   const porEntrenador = new Map<string, number>();
   for (const p of data ?? []) {
-    const n = (p.entrenador as { nombre?: string } | null)?.nombre ?? '—';
+    const n = (p.entrenador as { nombre?: string } | null)?.nombre;
+    if (!n) continue;
     porEntrenador.set(n, (porEntrenador.get(n) ?? 0) + 1);
   }
+  const hayFolio = true;
+  const hayMonto = true;
 
   return (
     <>
@@ -27,9 +31,7 @@ export default async function PagosDelMes({ searchParams }: { searchParams: Prom
         <h1 className="h titulo-panel" style={{ fontSize: 60 }}>
           Pagos de <em>{nombreMes(mes)}</em>
         </h1>
-        <a className="btn2" href={`/api/panel/exportar?tipo=pagos&mes=${mes}`}>
-          Exportar a Excel
-        </a>
+        <DescargarExcel href={`/api/panel/exportar?tipo=pagos&mes=${mes}`}>Exportar a Excel</DescargarExcel>
       </div>
       <form method="get" style={{ display: 'flex', gap: 12, alignItems: 'end' }}>
         <label className="f" style={{ maxWidth: 220 }}>
@@ -48,7 +50,7 @@ export default async function PagosDelMes({ searchParams }: { searchParams: Prom
         <div className="card">
           <div className="lbl">Quién registró</div>
           {porEntrenador.size === 0 ? (
-            <div>—</div>
+            <div className="muted">Nadie registró pagos este mes.</div>
           ) : (
             [...porEntrenador.entries()].map(([n, c]) => (
               <div key={n}>
@@ -71,8 +73,8 @@ export default async function PagosDelMes({ searchParams }: { searchParams: Prom
                   <th>Cliente</th>
                   <th>Plan</th>
                   <th>Fecha</th>
-                  <th>Monto</th>
-                  <th>Folio</th>
+                  {hayMonto ? <th>Monto</th> : null}
+                  {hayFolio ? <th>Folio</th> : null}
                   <th>Cubre</th>
                   <th>Registró</th>
                 </tr>
@@ -83,10 +85,10 @@ export default async function PagosDelMes({ searchParams }: { searchParams: Prom
                     <td>{(p.perfiles as { nombre?: string } | null)?.nombre}</td>
                     <td>{nombrePlan(p.plan as string)}</td>
                     <td>{p.fecha_transferencia as string}</td>
-                    <td>{p.monto_mxn != null ? formatearDinero(Number(p.monto_mxn)) : '—'}</td>
-                    <td>{(p.folio as string) || '—'}</td>
+                    {hayMonto ? <td>{textoMonto(p.monto_mxn as number | null)}</td> : null}
+                    {hayFolio ? <td>{textoFolio(p.folio as string | null)}</td> : null}
                     <td>{formatearRangoCorto(p.cubre_desde as string, p.cubre_hasta as string)}</td>
-                    <td>{(p.entrenador as { nombre?: string } | null)?.nombre ?? '—'}</td>
+                    <td>{(p.entrenador as { nombre?: string } | null)?.nombre ?? 'Sin registrar'}</td>
                   </tr>
                 ))}
               </tbody>
@@ -101,17 +103,25 @@ export default async function PagosDelMes({ searchParams }: { searchParams: Prom
                       <dt>Fecha</dt>
                       <dd>{p.fecha_transferencia as string}</dd>
                     </div>
-                    <div>
-                      <dt>Monto</dt>
-                      <dd>{p.monto_mxn != null ? formatearDinero(Number(p.monto_mxn)) : '—'}</dd>
-                    </div>
+                    {hayMonto ? (
+                      <div>
+                        <dt>Monto</dt>
+                        <dd>{textoMonto(p.monto_mxn as number | null)}</dd>
+                      </div>
+                    ) : null}
+                    {hayFolio ? (
+                      <div>
+                        <dt>Folio</dt>
+                        <dd>{textoFolio(p.folio as string | null)}</dd>
+                      </div>
+                    ) : null}
                     <div>
                       <dt>Cubre</dt>
                       <dd>{formatearRangoCorto(p.cubre_desde as string, p.cubre_hasta as string)}</dd>
                     </div>
                     <div>
                       <dt>Registró</dt>
-                      <dd>{(p.entrenador as { nombre?: string } | null)?.nombre ?? '—'}</dd>
+                      <dd>{(p.entrenador as { nombre?: string } | null)?.nombre ?? 'Sin registrar'}</dd>
                     </div>
                   </dl>
                 </article>

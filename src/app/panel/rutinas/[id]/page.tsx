@@ -1,7 +1,7 @@
-import Link from 'next/link';
 import { crearClienteServidor } from '@/lib/supabase/server';
 import { ConstructorRutina } from '@/components/ConstructorRutina';
 import { cargarConstructor } from '@/lib/cargar-constructor';
+import { FijarMigas } from '@/components/MigasPanel';
 import { notFound } from 'next/navigation';
 
 export default async function PaginaRutina({ params }: { params: Promise<{ id: string }> }) {
@@ -17,18 +17,22 @@ export default async function PaginaRutina({ params }: { params: Promise<{ id: s
     .maybeSingle();
   const programa = fase?.programas as { clave?: string; nombre?: string } | null;
   const nombreCliente = (rutina?.perfiles as { nombre?: string } | null)?.nombre;
-  const volverHref = fase && programa?.clave
-    ? `/panel/programas/${programa.clave}`
+  const migas = fase && programa?.clave
+    ? [
+        { href: `/panel/programas/${programa.clave}`, label: programa.clave === 'ruta-1' || programa.nombre === 'Ruta +1' ? 'Ruta +1' : (programa.nombre ?? 'Programa') },
+        { label: (fase.nombre as string) || 'Rutina' },
+      ]
     : nombreCliente
-      ? `/panel/clientes/${rutina?.cliente_id}`
-      : '/panel/plantillas';
-  const volverTexto = fase ? `← ${programa?.nombre === 'Ruta +1' || programa?.clave === 'ruta-1' ? 'Ruta +1' : (programa?.nombre ?? 'Programa')}` : '← Volver';
+      ? [
+          { href: '/panel', label: 'Clientes' },
+          { href: `/panel/clientes/${rutina?.cliente_id}`, label: nombreCliente },
+          { label: 'Rutina' },
+        ]
+      : [{ href: '/panel/plantillas', label: 'Plantillas' }, { label: inicial.nombre || 'Rutina' }];
 
   return (
     <>
-      <Link href={volverHref} style={{ fontWeight: 700 }}>
-        {volverTexto}
-      </Link>
+      <FijarMigas items={migas} />
       <ConstructorRutina
         rutinaId={id}
         clienteNombre={nombreCliente}

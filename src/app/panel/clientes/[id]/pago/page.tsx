@@ -1,7 +1,7 @@
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { crearClienteServidor } from '@/lib/supabase/server';
 import { PagoForma } from './PagoForma';
+import { FijarMigas } from '@/components/MigasPanel';
 
 export default async function PaginaPago({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -11,9 +11,13 @@ export default async function PaginaPago({ params }: { params: Promise<{ id: str
   const { data: ultimo } = await supabase.from('pagos').select('cubre_hasta').eq('cliente_id', id).order('cubre_hasta', { ascending: false }).limit(1).maybeSingle();
   return (
     <>
-      <Link href={`/panel/clientes/${id}`} style={{ fontWeight: 700 }}>
-        ← {c.nombre as string}
-      </Link>
+      <FijarMigas
+        items={[
+          { href: '/panel', label: 'Clientes' },
+          { href: `/panel/clientes/${id}`, label: (c.nombre as string) || 'Cliente' },
+          { label: 'Pago' },
+        ]}
+      />
       <h1 className="h" style={{ fontSize: 56 }}>
         Registrar <em>pago</em>
       </h1>

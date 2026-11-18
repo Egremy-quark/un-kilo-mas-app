@@ -1,7 +1,19 @@
 import type { Enfoque } from '@/lib/etiquetas';
+import { prescripcionParaCliente } from '@/lib/pendiente-yohan';
+
+export interface SerieVista {
+  id: string;
+  ejercicio: string;
+  kg: number;
+  reps: number;
+  fecha: string;
+}
 
 export interface VistaClienteDatos {
   rutinaId: string;
+  clienteId: string | null;
+  clienteNombre: string | null;
+  esDemo: boolean;
   nombre: string;
   semanas: number | null;
   enfoque: Enfoque;
@@ -9,6 +21,7 @@ export interface VistaClienteDatos {
   faseNombre: string | null;
   programaNombre: string | null;
   programaClave: string | null;
+  historial: SerieVista[];
   dias: { id: string; letra: string; foco: string | null }[];
   ejercicios: {
     id: string;
@@ -18,7 +31,7 @@ export interface VistaClienteDatos {
     grupo: string | null;
     nota: string | null;
     revisar: boolean;
-    pres: { texto: string; pct: number | null; descanso_seg: number | null; omitir: boolean };
+    pres: { texto: string; series: string | null; reps: string | null; pct: number | null; descanso_seg: number | null; omitir: boolean };
     rm: number | null;
     hechoId: string;
     alternativas: { id: string; nombre: string; tipo: string }[];
@@ -28,6 +41,7 @@ export interface VistaClienteDatos {
 export async function cargarVistaCliente(
   supabase: { from: (t: string) => { select: (c: string) => any } },
   rutinaId: string,
+  clienteId?: string | null,
 ): Promise<VistaClienteDatos | null> {
   const { data: r } = await supabase.from('rutinas').select('id, nombre, semanas, enfoque').eq('id', rutinaId).maybeSingle();
   if (!r) return null;
@@ -59,6 +73,8 @@ export async function cargarVistaCliente(
   const pres = (presBruto ?? []) as {
     rutina_ejercicio_id: string;
     texto: string | null;
+    series: string | null;
+    reps: string | null;
     pct: number | null;
     descanso_seg: number | null;
     omitir: boolean;
@@ -72,6 +88,35 @@ export async function cargarVistaCliente(
     tipo: string;
     ejercicios: { id?: string; nombre?: string } | null;
   }[];
+
+  let historial: SerieVista[] = [];
+  let clienteNombre: string | null = null;
+  let esDemo = false;
+  const rms = new Map<string, number>();
+  if (clienteId) {
+    const { data: perfil } = await supabase.from('perfiles').select('nombre, correo').eq('id', clienteId).maybeSingle();
+    clienteNombre = (perfil as { nombre?: string } | null)?.nombre ?? null;
+    const correo = (perfil as { correo?: string } | null)?.correo ?? '';
+    esDemo = Boolean(clienteNombre?.startsWith('Demo') || correo.endsWith('@example.com'));
+    const { data: sesionesBruto } = await supabase.from('sesiones').select('id, fecha').eq('cliente_id', clienteId).order('fecha', { ascending: false });
+    const sesiones = (sesionesBruto ?? []) as { id: string; fecha: string }[];
+    const sesionIds = sesiones.map((s) => s.id);
+    const { data: seriesBruto } = sesionIds.length
+      ? await supabase.from('series').select('id, sesion_id, kg, reps, ejercicios(nombre)').in('sesion_id', sesionIds)
+      : { data: [] };
+    const fechaPor = new Map(sesiones.map((s) => [s.id, s.fecha]));
+    historial = ((seriesBruto ?? []) as { id: string; sesion_id: string; kg: number | null; reps: number | null; ejercicios: { nombre?: string } | null }[])
+      .filter((s) => s.kg != null && s.reps != null)
+      .map((s) => ({
+        id: s.id,
+        ejercicio: s.ejercicios?.nombre ?? '',
+        kg: Number(s.kg),
+        reps: Number(s.reps),
+        fecha: fechaPor.get(s.sesion_id) ?? '',
+      }));
+    const { data: rmFilas } = await supabase.from('rm_referencia').select('ejercicio_id, kg').eq('cliente_id', clienteId);
+    for (const fila of rmFilas ?? []) rms.set(fila.ejercicio_id as string, Number(fila.kg));
+  }
 
   const ejercicios = ejs.map((e) => {
     const p = pres.find((x) => x.rutina_ejercicio_id === e.id);
@@ -91,13 +136,8 @@ export async function cargarVistaCliente(
       grupo: e.grupo as string | null,
       nota: e.nota as string | null,
       revisar: Boolean(e.revisar),
-      pres: {
-        texto: (p?.texto as string) ?? '',
-        pct: (p?.pct as number | null) ?? null,
-        descanso_seg: (p?.descanso_seg as number | null) ?? null,
-        omitir: Boolean(p?.omitir),
-      },
-      rm: null,
+      pres: prescripcionParaCliente(p),
+      rm: rms.get(e.ejercicio_id as string) ?? null,
       hechoId: e.ejercicio_id as string,
       alternativas,
     };
@@ -105,6 +145,9 @@ export async function cargarVistaCliente(
 
   return {
     rutinaId,
+    clienteId: clienteId ?? null,
+    clienteNombre,
+    esDemo,
     nombre: (r.nombre as string) ?? '',
     semanas: (r.semanas as number | null) ?? null,
     enfoque: ((r.enfoque as Enfoque) ?? 'fuerza') as Enfoque,
@@ -112,6 +155,7 @@ export async function cargarVistaCliente(
     faseNombre: (fase?.nombre as string | undefined) ?? null,
     programaNombre: programa?.nombre ?? null,
     programaClave: programa?.clave ?? null,
+    historial,
     dias: (dias ?? []) as { id: string; letra: string; foco: string | null }[],
     ejercicios,
   };

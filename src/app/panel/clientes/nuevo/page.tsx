@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { crearClienteServidor } from '@/lib/supabase/server';
 import { AltaForma } from './AltaForma';
 
@@ -7,9 +6,6 @@ export default async function PaginaAlta() {
   const { data: entrenadores } = await supabase.from('perfiles').select('id, nombre, correo').eq('rol', 'entrenador').order('nombre');
   return (
     <>
-      <Link href="/panel" style={{ fontWeight: 700 }}>
-        ← Clientes
-      </Link>
       <h1 className="h titulo-panel" style={{ fontSize: 60 }}>
         Dar de <em>alta</em>
       </h1>

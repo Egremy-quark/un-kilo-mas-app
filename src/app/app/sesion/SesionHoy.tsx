@@ -6,6 +6,9 @@ import { crearClienteNavegador } from '@/lib/supabase/client';
 import { kilosObjetivo } from '@/lib/kilos';
 import { segundosATexto } from '@/lib/descanso';
 import { subirPendientes } from '@/lib/offline';
+import { textoCliente } from '@/lib/pendiente-yohan';
+import { BotonPendiente } from '@/components/BotonPendiente';
+import { PrescripcionVista } from '@/components/PrescripcionVista';
 
 interface Props {
   clienteId: string;
@@ -26,7 +29,7 @@ interface Props {
     grupo: string | null;
     nota: string | null;
     revisar: boolean;
-    pres: { texto: string; pct: number | null; descanso_seg: number | null; omitir: boolean };
+    pres: { texto: string; series: string | null; reps: string | null; pct: number | null; descanso_seg: number | null; omitir: boolean };
     rm: number | null;
     hechoId: string;
   }[];
@@ -40,6 +43,7 @@ export function SesionHoy(props: Props) {
   const [sesionId, setSesionId] = useState<string | null>(null);
   const [diaId, setDiaId] = useState(props.dias[0]?.id ?? '');
   const [error, setError] = useState('');
+  const [empezando, setEmpezando] = useState(false);
 
   useEffect(() => {
     void (async () => {
@@ -70,6 +74,7 @@ export function SesionHoy(props: Props) {
       setError('Ya no puedes registrar sesiones nuevas.');
       return;
     }
+    setEmpezando(true);
     if (props.inscripcionId) {
       const { error: eFase } = await supabase.rpc('iniciar_fase', { p_inscripcion_id: props.inscripcionId });
       if (eFase && !/preparando/i.test(eFase.message)) {
@@ -94,9 +99,11 @@ export function SesionHoy(props: Props) {
       .single();
     if (e || !data) {
       setError(e?.message ?? 'No se pudo empezar.');
+      setEmpezando(false);
       return;
     }
     setSesionId(data.id as string);
+    setEmpezando(false);
   }
 
   const delDia = props.ejercicios.filter((e) => e.dia_id === diaId && !e.pres.omitir);
@@ -120,7 +127,8 @@ export function SesionHoy(props: Props) {
               <select className="in" value={diaId} onChange={(e) => setDiaId(e.target.value)}>
                 {props.dias.map((d) => (
                   <option key={d.id} value={d.id}>
-                    {d.letra} {d.foco ?? ''}
+                    {d.letra}
+                    {textoCliente(d.foco) ? ` ${textoCliente(d.foco)}` : ''}
                   </option>
                 ))}
               </select>
@@ -138,9 +146,9 @@ export function SesionHoy(props: Props) {
             <input type="range" min={0} max={10} value={ganas} onChange={(e) => setGanas(Number(e.target.value))} style={{ width: '100%', accentColor: 'var(--lima)' }} />
           </div>
           {error ? <p className="error">{error}</p> : null}
-          <button className="btn" type="button" onClick={() => void empezar()} disabled={!props.puedeRegistrar}>
+          <BotonPendiente type="button" onClick={() => void empezar()} disabled={!props.puedeRegistrar} cargando={empezando} etiquetaCargando="Empezando…">
             Empezar
-          </button>
+          </BotonPendiente>
         </section>
       ) : (
         <section style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -158,7 +166,10 @@ export function SesionHoy(props: Props) {
                 <div className="h" style={{ fontSize: 26 }}>
                   {e.nombre}
                 </div>
-                <div>{e.pres.texto}</div>
+                {textoCliente(e.pres.texto) || e.pres.series || e.pres.reps || e.pres.pct != null ? (
+                  <PrescripcionVista texto={textoCliente(e.pres.texto)} series={e.pres.series} reps={e.pres.reps} pct={e.pres.pct} />
+                ) : null}
+                {textoCliente(e.nota) ? <p className="muted">{textoCliente(e.nota)}</p> : null}
                 {kilos != null ? (
                   <div className="h" style={{ fontSize: 30 }}>
                     {kilos} <span style={{ fontFamily: '"Source Sans 3", sans-serif', fontSize: 14 }}>kg</span>

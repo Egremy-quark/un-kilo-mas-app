@@ -7,6 +7,8 @@ import { estimado1rm, rmPorSemana } from '@/lib/dashboard';
 import { MoverInscripcion } from './MoverInscripcion';
 import { GraficaRm } from '@/components/GraficaRm';
 import { NuevaRutina } from './NuevaRutina';
+import { textoFolio, textoMonto } from '@/lib/formato';
+import { FijarMigas } from '@/components/MigasPanel';
 
 export default async function FichaCliente({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -45,16 +47,41 @@ export default async function FichaCliente({ params }: { params: Promise<{ id: s
 
   const insRuta = (inscripciones ?? []).find((i) => (i.programas as { clave?: string } | null)?.clave === 'ruta-1');
   const insPrueba = (inscripciones ?? []).find((i) => (i.programas as { clave?: string } | null)?.clave === 'prueba');
+  const insVista = insRuta ?? insPrueba;
+  const { data: faseActual } = insVista
+    ? await supabase
+        .from('programa_fases')
+        .select('rutina_id')
+        .eq('programa_id', insVista.programa_id as string)
+        .eq('orden', insVista.fase_orden as number)
+        .maybeSingle()
+    : { data: null };
+  let vistaRutinaId = (rutina?.id as string | undefined) ?? (faseActual?.rutina_id as string | undefined);
+  if (vistaRutinaId) {
+    const { data: diasV } = await supabase.from('rutina_dias').select('id').eq('rutina_id', vistaRutinaId);
+    const diaV = (diasV ?? []).map((d) => d.id as string);
+    const { count: ejsV } = diaV.length
+      ? await supabase.from('rutina_ejercicios').select('id', { count: 'exact', head: true }).in('dia_id', diaV)
+      : { count: 0 };
+    if (!ejsV) {
+      const { data: progRuta } = await supabase.from('programas').select('id').eq('clave', 'ruta-1').maybeSingle();
+      const { data: arranque } = progRuta
+        ? await supabase.from('programa_fases').select('rutina_id').eq('programa_id', progRuta.id).eq('orden', 1).maybeSingle()
+        : { data: null };
+      if (arranque?.rutina_id) vistaRutinaId = arranque.rutina_id as string;
+    }
+  }
 
   return (
     <>
-      <Link href="/panel" style={{ fontWeight: 700 }}>
-        ← Clientes
-      </Link>
+      <FijarMigas items={[{ href: '/panel', label: 'Clientes' }, { label: (c.nombre as string) || 'Cliente' }]} />
       <h1 className="h" style={{ fontSize: 56 }}>
         {c.nombre as string}
       </h1>
       <p className="muted">{c.correo as string}</p>
+      {String(c.nombre ?? '').startsWith('Demo') || String(c.correo ?? '').endsWith('@example.com') ? (
+        <span className="est alerta">Demo / prueba · no es un cliente real</span>
+      ) : null}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: 16 }}>
         <div className="card">
           <div className="lbl">Plan</div>
@@ -75,7 +102,7 @@ export default async function FichaCliente({ params }: { params: Promise<{ id: s
         <div className="card">
           <div className="lbl">A cargo</div>
           <p>
-            {(entrenador as { nombre?: string } | null)?.nombre ?? '—'}
+            {(entrenador as { nombre?: string } | null)?.nombre ?? 'Sin entrenador'}
             <br />
             <span className="muted">{(entrenador as { etiqueta_publica?: string } | null)?.etiqueta_publica}</span>
           </p>
@@ -100,6 +127,13 @@ export default async function FichaCliente({ params }: { params: Promise<{ id: s
           ) : (
             <NuevaRutina clienteId={id} />
           )}
+          {vistaRutinaId ? (
+            <p>
+              <Link className="btn" href={`/panel/vista-cliente/${vistaRutinaId}?cliente=${id}`} style={{ marginTop: 12 }}>
+                Ver como cliente
+              </Link>
+            </p>
+          ) : null}
         </div>
       </div>
 
@@ -152,6 +186,7 @@ export default async function FichaCliente({ params }: { params: Promise<{ id: s
               <th>Fecha</th>
               <th>Plan</th>
               <th>Monto</th>
+              <th>Folio</th>
               <th>Cubre</th>
             </tr>
           </thead>
@@ -160,7 +195,8 @@ export default async function FichaCliente({ params }: { params: Promise<{ id: s
               <tr key={p.id as string}>
                 <td>{p.fecha_transferencia as string}</td>
                 <td>{nombrePlan(p.plan as string)}</td>
-                <td>{p.monto_mxn != null ? `$${p.monto_mxn}` : '—'}</td>
+                <td>{textoMonto(p.monto_mxn as number | null)}</td>
+                <td>{textoFolio(p.folio as string | null)}</td>
                 <td>
                   {p.cubre_desde as string} → {p.cubre_hasta as string}
                 </td>
@@ -172,12 +208,18 @@ export default async function FichaCliente({ params }: { params: Promise<{ id: s
 
       <div className="card">
         <div className="lbl">Últimas sesiones</div>
-        {(sesiones ?? []).map((s) => (
-          <p key={s.id as string}>
-            {s.fecha as string} · peso {s.peso_corporal ?? '—'} · ganas {s.ganas ?? '—'}
-            {s.nota_cliente ? ` · «${s.nota_cliente}»` : ''}
-          </p>
-        ))}
+        {(sesiones ?? []).length === 0 ? (
+          <p className="muted">Todavía no hay sesiones registradas.</p>
+        ) : (
+          (sesiones ?? []).map((s) => (
+            <p key={s.id as string}>
+              {s.fecha as string}
+              {s.peso_corporal != null ? ` · peso ${s.peso_corporal} kg` : ''}
+              {s.ganas != null ? ` · ganas ${s.ganas}` : ''}
+              {s.nota_cliente ? ` · «${s.nota_cliente}»` : ''}
+            </p>
+          ))
+        )}
       </div>
     </>
   );

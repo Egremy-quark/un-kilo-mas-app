@@ -1,11 +1,15 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { cifras, filtrarClientes, nombrePlan, type ClienteLista } from '@/lib/clientes-panel';
 import { etiquetaEstado } from '@/lib/planes';
+import { mostrarCargando, ocultarCargando } from '@/lib/cargando-ui';
+import { AccionIcono } from '@/components/AccionIcono';
 import { AccionesBarra } from '@/components/AccionesBarra';
+import { Icono } from '@/components/Iconos';
+import { DescargarExcel } from '@/components/DescargarExcel';
 
 const ESTADOS = [
   ['todos', 'Todos'],
@@ -23,18 +27,37 @@ export function ListaClientes({ lista, avisos }: { lista: ClienteLista[]; avisos
   const router = useRouter();
   const params = useSearchParams();
   const [q, setQ] = useState('');
-  const estado = params.get('estado') || 'todos';
-  const plan = params.get('plan') || 'todos';
+  const estadoUrl = params.get('estado') || 'todos';
+  const planUrl = params.get('plan') || 'todos';
+  const [estado, setEstado] = useState(estadoUrl);
+  const [plan, setPlan] = useState(planUrl);
+  useEffect(() => {
+    setEstado(estadoUrl);
+    setPlan(planUrl);
+  }, [estadoUrl, planUrl]);
   const filtrada = useMemo(() => filtrarClientes(lista, q, estado, plan), [lista, q, estado, plan]);
   const c = cifras(lista);
   const claseEstado = (e: string) => (e === 'por_vencer' || e === 'prueba_terminada' ? 'alerta' : e === 'vencida' ? 'venc' : 'ok');
 
   function setFiltro(clave: 'estado' | 'plan', valor: string) {
+    mostrarCargando();
+    if (clave === 'estado') setEstado(valor);
+    else setPlan(valor);
     const n = new URLSearchParams(params.toString());
     if (valor === 'todos') n.delete(clave);
     else n.set(clave, valor);
     const qs = n.toString();
     router.replace(qs ? `/panel?${qs}` : '/panel');
+    ocultarCargando();
+  }
+
+  function limpiarFiltros() {
+    mostrarCargando();
+    setQ('');
+    setEstado('todos');
+    setPlan('todos');
+    router.replace('/panel');
+    ocultarCargando();
   }
 
   return (
@@ -50,12 +73,12 @@ export function ListaClientes({ lista, avisos }: { lista: ClienteLista[]; avisos
             </Link>
           }
           secundarios={[
-            <a key="excel" className="btn2" href="/api/panel/exportar?tipo=clientes">
+            <DescargarExcel key="excel" href="/api/panel/exportar?tipo=clientes">
               Exportar a Excel
-            </a>,
-            <a key="leads" className="btn2" href="/api/panel/exportar?tipo=leads">
+            </DescargarExcel>,
+            <Link key="leads" className="btn2" href="/panel/leads">
               Correos de la landing
-            </a>,
+            </Link>,
           ]}
         />
       </div>
@@ -64,7 +87,7 @@ export function ListaClientes({ lista, avisos }: { lista: ClienteLista[]; avisos
           <div className="lbl">Activos</div>
           <div className="big">{c.activos}</div>
         </div>
-        <div className="card" style={{ borderColor: 'var(--naranja)' }}>
+        <div className="card" style={c.vencenSemana > 0 ? { borderColor: 'var(--naranja)' } : undefined}>
           <div className="lbl">Vencen esta semana</div>
           <div className="big">{c.vencenSemana}</div>
         </div>
@@ -85,42 +108,57 @@ export function ListaClientes({ lista, avisos }: { lista: ClienteLista[]; avisos
           </Link>
         </div>
       ))}
-      <div className="card tabla-o-tarjetas" style={{ padding: 0, overflow: 'hidden' }}>
-        <div className="filtros-panel">
+      <div className="card filtros-clientes">
+        <label className="buscar-cliente">
+          <span className="lbl">Buscar</span>
           <input className="in" placeholder="Buscar cliente" value={q} onChange={(e) => setQ(e.target.value)} />
-          <div className="chips-scroll" role="group" aria-label="Estado">
-            {ESTADOS.map(([id, label]) => (
-              <button
-                key={id}
-                type="button"
-                className="chip-filtro"
-                aria-pressed={estado === id}
-                onClick={() => setFiltro('estado', id)}
-              >
-                {label}
-              </button>
-            ))}
+          {q ? (
+            <button type="button" className="buscar-limpiar" aria-label="Limpiar búsqueda" onClick={() => setQ('')}>
+              <Icono nombre="cerrar" />
+            </button>
+          ) : null}
+        </label>
+        <div className="grupos-filtro">
+          <div className="grupo-filtro" role="group" aria-label="Estado">
+            <span className="lbl">Estado</span>
+            <div className="chips-scroll">
+              {ESTADOS.map(([id, label]) => (
+                <button key={`estado-${id}`} type="button" className="chip-filtro" aria-pressed={estado === id} onClick={() => setFiltro('estado', id)}>
+                  {label}
+                </button>
+              ))}
+            </div>
           </div>
-          <div className="chips-scroll" role="group" aria-label="Plan">
-            {PLANES.map(([id, label]) => (
-              <button
-                key={id}
-                type="button"
-                className="chip-filtro"
-                aria-pressed={plan === id}
-                onClick={() => setFiltro('plan', id)}
-              >
-                {label}
-              </button>
-            ))}
+          <div className="grupo-filtro" role="group" aria-label="Plan">
+            <span className="lbl">Plan</span>
+            <div className="chips-scroll">
+              {PLANES.map(([id, label]) => (
+                <button key={`plan-${id}`} type="button" className="chip-filtro" aria-pressed={plan === id} onClick={() => setFiltro('plan', id)}>
+                  {label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
+      </div>
+      <div className="card tabla-o-tarjetas" style={{ padding: 0, overflow: 'hidden' }}>
         {filtrada.length === 0 ? (
           <div className="estado-vacio">
-            <p>Todavía no tienes clientes. Cuando alguien se registre desde la landing o lo des de alta, aparece aquí.</p>
-            <Link className="btn" href="/panel/clientes/nuevo">
-              Dar de alta un cliente
-            </Link>
+            {lista.length === 0 ? (
+              <>
+                <p>Todavía no tienes clientes. Cuando alguien se registre desde la landing o lo des de alta, aparece aquí.</p>
+                <Link className="btn" href="/panel/clientes/nuevo">
+                  Dar de alta un cliente
+                </Link>
+              </>
+            ) : (
+              <>
+                <p>Ningún cliente coincide con el filtro. Hay {lista.length} en total.</p>
+                <button type="button" className="btn2" onClick={limpiarFiltros}>
+                  Limpiar filtros
+                </button>
+              </>
+            )}
           </div>
         ) : (
           <>
@@ -131,11 +169,11 @@ export function ListaClientes({ lista, avisos }: { lista: ClienteLista[]; avisos
                     <th>Cliente</th>
                     <th>Plan</th>
                     <th>Rutina</th>
-                    <th>Semana</th>
-                    <th>Última sesión</th>
+                    <th className="sin-corte">Semana</th>
+                    <th className="sin-corte">Última sesión</th>
                     <th>Mensualidad</th>
-                    <th>A cargo</th>
-                    <th></th>
+                    <th className="sin-corte">A cargo</th>
+                    <th>Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -143,6 +181,12 @@ export function ListaClientes({ lista, avisos }: { lista: ClienteLista[]; avisos
                     <tr key={cli.id}>
                       <td>
                         <b>{cli.nombre ?? 'Sin nombre'}</b>
+                        {cli.nombre?.startsWith('Demo') || cli.correo?.endsWith('@example.com') ? (
+                          <>
+                            {' '}
+                            <span className="est alerta">Demo</span>
+                          </>
+                        ) : null}
                         <br />
                         <span className="muted" style={{ fontSize: 14 }}>
                           {cli.correo}
@@ -152,8 +196,8 @@ export function ListaClientes({ lista, avisos }: { lista: ClienteLista[]; avisos
                         <span className="est ok">{nombrePlan(cli.plan)}</span>
                       </td>
                       <td>{cli.rutina ?? '—'}</td>
-                      <td>{cli.semana ?? '—'}</td>
-                      <td>{cli.ultima_sesion ?? '—'}</td>
+                      <td className="sin-corte">{cli.semana ?? '—'}</td>
+                      <td className="sin-corte">{cli.ultima_sesion ?? '—'}</td>
                       <td>
                         {cli.solicitud ? (
                           <span className="est alerta">Eligió {nombrePlan(cli.solicitud)} · espera su pago</span>
@@ -161,11 +205,13 @@ export function ListaClientes({ lista, avisos }: { lista: ClienteLista[]; avisos
                           <span className={`est ${claseEstado(cli.estado)}`}>{etiquetaEstado(cli.estado)}</span>
                         )}
                       </td>
-                      <td>{cli.a_cargo}</td>
+                      <td className="sin-corte">{cli.a_cargo}</td>
                       <td>
-                        <Link className="btn2" href={`/panel/clientes/${cli.id}`}>
-                          Abrir
-                        </Link>
+                        <div className="acciones-fila">
+                          <AccionIcono href={`/panel/clientes/${cli.id}`} etiqueta="Abrir ficha">
+                            <Icono nombre="lapiz" />
+                          </AccionIcono>
+                        </div>
                       </td>
                     </tr>
                   ))}
@@ -195,9 +241,11 @@ export function ListaClientes({ lista, avisos }: { lista: ClienteLista[]; avisos
                       <dd>{cli.a_cargo}</dd>
                     </div>
                   </dl>
-                  <Link className="btn2 btn-ancho" href={`/panel/clientes/${cli.id}`}>
-                    Abrir
-                  </Link>
+                  <div className="acciones-fila">
+                    <AccionIcono href={`/panel/clientes/${cli.id}`} etiqueta="Abrir ficha">
+                      <Icono nombre="lapiz" />
+                    </AccionIcono>
+                  </div>
                 </article>
               ))}
             </div>
@@ -205,7 +253,7 @@ export function ListaClientes({ lista, avisos }: { lista: ClienteLista[]; avisos
         )}
       </div>
       <p className="muted" style={{ fontSize: 14 }}>
-        Los dos entrenadores ven a todos los clientes. Los de Prueba y Ruta +1 no tienen entrenador a cargo.
+        Los dos entrenadores ven a todos los clientes y tienen los mismos permisos. Demo Prueba está a cargo de Fred para pruebas.
       </p>
     </>
   );

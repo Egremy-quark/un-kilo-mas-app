@@ -1,12 +1,22 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import { createPortal } from 'react-dom';
 import { crearClienteNavegador } from '@/lib/supabase/client';
 import { kilosObjetivo } from '@/lib/kilos';
 import { segundosATexto } from '@/lib/descanso';
 import { plataforma } from '@/config/plataforma';
 import { etiquetaEstadoRutina, type Enfoque } from '@/lib/etiquetas';
 import type { InicialConstructor } from '@/lib/cargar-constructor';
+import { esPendienteYohan, esPrescripcionVaga, restoTrasMarca } from '@/lib/pendiente-yohan';
+import { mostrarCargando, ocultarCargando } from '@/lib/cargando-ui';
+import { AvisoInterno } from './AvisoInterno';
+import { BotonPendiente } from './BotonPendiente';
+import { Globo } from './Globo';
+import { CamposEditor } from './CamposEditor';
+import { Icono } from './Iconos';
+import { PrescripcionVista } from './PrescripcionVista';
+import { SelectorEjercicio } from './SelectorEjercicio';
 
 type Intensidad = 'pct_1rm' | 'rm' | 'rpe' | 'rir_fallo' | 'texto';
 
@@ -44,6 +54,7 @@ interface Pres {
 interface Catalogo {
   id: string;
   nombre: string;
+  patron?: string | null;
 }
 
 const ENFOQUES: { id: Enfoque; label: string }[] = [
@@ -52,6 +63,21 @@ const ENFOQUES: { id: Enfoque; label: string }[] = [
   { id: 'transicion', label: 'Transición fuerza → hipertrofia' },
   { id: 'tecnica', label: 'Técnica' },
 ];
+
+function filtrarEntero(valor: string) {
+  return valor.replace(/\D/g, '');
+}
+
+function filtrarReps(valor: string) {
+  return valor.replace(/[^\d/]/g, '');
+}
+
+function filtrarDecimal(valor: string) {
+  const limpio = valor.replace(/[^\d.]/g, '');
+  const corte = limpio.indexOf('.');
+  if (corte < 0) return limpio;
+  return `${limpio.slice(0, corte + 1)}${limpio.slice(corte + 1).replace(/\./g, '')}`;
+}
 
 export function ConstructorRutina({
   rutinaId,
@@ -86,7 +112,14 @@ export function ConstructorRutina({
   const [estado, setEstado] = useState(inicial?.estado ?? 'borrador');
   const [msg, setMsg] = useState('');
   const [hojaAbierta, setHojaAbierta] = useState(false);
-  const saltarAuto = useRef(true);
+  const [avisoCierre, setAvisoCierre] = useState(false);
+  const [pendiente, setPendiente] = useState<string | null>(null);
+  const [pctTexto, setPctTexto] = useState<string | null>(null);
+  const firma = JSON.stringify({ nombre, semanas, descarga, enfoque, dias, ejercicios, pres });
+  const firmaRef = useRef(firma);
+  firmaRef.current = firma;
+  const [firmaGuardada, setFirmaGuardada] = useState<string | null>(null);
+  const sucio = firmaGuardada != null && firma !== firmaGuardada;
   const semanasTabla = semanas ?? 0;
 
   const cargar = useCallback(async () => {
@@ -116,31 +149,103 @@ export function ConstructorRutina({
     const ejIds = lista.map((e) => e.id as string);
     const { data: ps } = ejIds.length ? await supabase.from('prescripciones').select('*').in('rutina_ejercicio_id', ejIds) : { data: [] };
     setPres((ps ?? []) as Pres[]);
-    const { data: cat } = await supabase.from('ejercicios').select('id, nombre').order('nombre');
+    const { data: cat } = await supabase.from('ejercicios').select('id, nombre, patron').order('nombre');
     setCatalogo((cat ?? []) as Catalogo[]);
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => setFirmaGuardada(firmaRef.current));
+    });
   }, [rutinaId, supabase]);
 
   useEffect(() => {
     if (!inicial) void cargar();
+    else setFirmaGuardada(firmaRef.current);
   }, [cargar, inicial]);
 
-  async function guardarMeta() {
-    await supabase
+  useEffect(() => {
+    setPctTexto(null);
+  }, [semanaEdit, editando]);
+
+  async function conPendiente(id: string, fn: () => Promise<void>) {
+    if (pendiente) return;
+    setPendiente(id);
+    setMsg('');
+    try {
+      await fn();
+    } catch (e) {
+      setMsg(e instanceof Error ? e.message : 'No se pudo completar.');
+    } finally {
+      setPendiente(null);
+    }
+  }
+
+  async function guardarTodo() {
+    const antes = firmaGuardada
+      ? (JSON.parse(firmaGuardada) as { dias: Dia[]; ejercicios: Ej[]; pres: Pres[] })
+      : { dias: [], ejercicios: [], pres: [] };
+    const { error } = await supabase
       .from('rutinas')
       .update({ nombre, semanas, semana_descarga: descarga, enfoque, actualizado_en: new Date().toISOString() })
       .eq('id', rutinaId);
-    setMsg('Borrador guardado');
-  }
-
-  useEffect(() => {
-    if (saltarAuto.current) {
-      saltarAuto.current = false;
-      return;
+    if (error) {
+      setMsg(error.message);
+      return false;
     }
-    const t = setTimeout(() => void guardarMeta(), 1200);
-    return () => clearTimeout(t);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [nombre, semanas, descarga, enfoque]);
+    for (const d of dias) {
+      const prev = antes.dias.find((x) => x.id === d.id);
+      if (prev && prev.foco === d.foco && prev.letra === d.letra && prev.orden === d.orden) continue;
+      const { error: fallo } = await supabase.from('rutina_dias').update({ foco: d.foco, letra: d.letra, orden: d.orden }).eq('id', d.id);
+      if (fallo) {
+        setMsg(fallo.message);
+        return false;
+      }
+    }
+    for (const e of ejercicios) {
+      const prev = antes.ejercicios.find((x) => x.id === e.id);
+      if (prev && JSON.stringify(prev) === JSON.stringify(e)) continue;
+      const { error: fallo } = await supabase
+        .from('rutina_ejercicios')
+        .update({
+          ejercicio_id: e.ejercicio_id,
+          orden: e.orden,
+          grupo: e.grupo,
+          intensidad_tipo: e.intensidad_tipo,
+          nota: e.nota,
+          video_url: e.video_url,
+          revisar: e.revisar,
+        })
+        .eq('id', e.id);
+      if (fallo) {
+        setMsg(fallo.message);
+        return false;
+      }
+    }
+    for (const p of pres) {
+      if (!p.id) continue;
+      const prev = antes.pres.find((x) => x.id === p.id);
+      if (prev && JSON.stringify(prev) === JSON.stringify(p)) continue;
+      const { error: fallo } = await supabase
+        .from('prescripciones')
+        .update({
+          series: p.series,
+          reps: p.reps,
+          pct: p.pct,
+          rm: p.rm,
+          tecnica: p.tecnica,
+          descanso_seg: p.descanso_seg,
+          omitir: p.omitir,
+          texto: p.texto,
+          semana: p.semana,
+        })
+        .eq('id', p.id);
+      if (fallo) {
+        setMsg(fallo.message);
+        return false;
+      }
+    }
+    setFirmaGuardada(firma);
+    setMsg('Borrador guardado');
+    return true;
+  }
 
   async function agregarDia() {
     const letra = String.fromCharCode(65 + dias.length);
@@ -152,6 +257,8 @@ export function ConstructorRutina({
     if (data) {
       setDias((d) => [...d, data as Dia]);
       setDiaActivo(data.id as string);
+      setEditando(null);
+      setHojaAbierta(false);
     }
   }
 
@@ -182,6 +289,7 @@ export function ConstructorRutina({
     setEjercicios((e) => [...e, { ...(data as Ej), nombre: catalogo[0].nombre }]);
     setPres((p) => [...p, ...nuevas]);
     setEditando(data.id as string);
+    setHojaAbierta(true);
   }
 
   async function borrarEjercicio(id: string) {
@@ -196,43 +304,35 @@ export function ConstructorRutina({
   const actual = ejercicios.find((e) => e.id === editando);
   const presActual = pres.find((p) => p.rutina_ejercicio_id === editando && p.semana === semanaEdit);
 
-  async function patchDia(id: string, patch: Partial<Dia>) {
-    await supabase.from('rutina_dias').update(patch).eq('id', id);
+  function patchDia(id: string, patch: Partial<Dia>) {
     setDias((ds) => ds.map((d) => (d.id === id ? { ...d, ...patch } : d)));
   }
 
-  async function patchEj(id: string, patch: Partial<Ej>) {
-    await supabase.from('rutina_ejercicios').update(patch).eq('id', id);
+  function patchEj(id: string, patch: Partial<Ej>) {
     setEjercicios((e) => e.map((x) => (x.id === id ? { ...x, ...patch } : x)));
   }
 
-  async function patchPres(p: Pres, patch: Partial<Pres>) {
+  function patchPres(p: Pres, patch: Partial<Pres>) {
     const next = { ...p, ...patch };
     next.texto = armarTexto(next);
-    if (p.id) await supabase.from('prescripciones').update(next).eq('id', p.id);
     setPres((xs) => xs.map((x) => (x.id === p.id ? next : x)));
   }
 
   function armarTexto(p: Pres): string {
     if (p.omitir) return '—';
     const seriesReps = [p.series, p.reps].filter(Boolean).join(' × ');
-    const extra = p.pct ? ` · ${Math.round(p.pct * 100)} %` : p.rm ? ` · ${p.rm}RM` : '';
+    const extra = p.pct != null && Number.isFinite(p.pct) ? ` · ${Math.round(p.pct * 100)} %` : p.rm ? ` · ${p.rm}RM` : '';
     return `${seriesReps}${extra}`.trim();
   }
 
   async function copiarSemanas() {
     if (!presActual || !editando) return;
-    for (let s = 1; s <= (semanas ?? plataforma.semanasPorDefecto); s++) {
-      const existente = pres.find((p) => p.rutina_ejercicio_id === editando && p.semana === s);
-      const copia = { ...presActual, semana: s, id: existente?.id };
+    setPres((actuales) => actuales.map((p) => {
+      if (p.rutina_ejercicio_id !== editando) return p;
+      const copia = { ...presActual, semana: p.semana, id: p.id };
       copia.texto = armarTexto(copia);
-      if (existente?.id) await supabase.from('prescripciones').update(copia).eq('id', existente.id);
-      else {
-        const { data } = await supabase.from('prescripciones').insert({ ...copia, id: undefined, rutina_ejercicio_id: editando }).select('*').single();
-        if (data) setPres((p) => [...p.filter((x) => !(x.rutina_ejercicio_id === editando && x.semana === s)), data as Pres]);
-      }
-    }
-    await cargar();
+      return copia;
+    }));
   }
 
   async function publicar() {
@@ -243,7 +343,7 @@ export function ConstructorRutina({
     }
     const res = await fetch(url, { method: 'POST' });
     const json = await res.json();
-    setMsg(json.ok ? 'Publicada' : json.mensaje);
+    setMsg(json.ok ? 'Publicada' : json.mensaje ?? 'No se pudo publicar.');
     if (json.ok) setEstado('publicada');
   }
 
@@ -254,11 +354,94 @@ export function ConstructorRutina({
       body: JSON.stringify({ es_plantilla: true, nombre: `${nombre} (plantilla)` }),
     });
     const json = await res.json();
-    setMsg(json.ok ? 'Guardada como plantilla' : json.mensaje);
+    setMsg(json.ok ? 'Guardada como plantilla' : json.mensaje ?? 'No se pudo guardar.');
   }
 
+  function cambiarDia(id: string) {
+    mostrarCargando();
+    setDiaActivo(id);
+    const sigue = ejercicios.some((e) => e.id === editando && e.dia_id === id);
+    if (!sigue) {
+      setEditando(null);
+      setHojaAbierta(false);
+    }
+    requestAnimationFrame(() => ocultarCargando());
+  }
+
+  useEffect(() => {
+    if (!hojaAbierta) return;
+    const html = document.documentElement;
+    const prev = html.style.overflow;
+    html.style.overflow = 'hidden';
+    return () => {
+      html.style.overflow = prev;
+    };
+  }, [hojaAbierta]);
+
+  function restaurar() {
+    if (!firmaGuardada) return;
+    const antes = JSON.parse(firmaGuardada) as {
+      nombre: string;
+      semanas: number | null;
+      descarga: number | null;
+      enfoque: Enfoque;
+      dias: Dia[];
+      ejercicios: Ej[];
+      pres: Pres[];
+    };
+    setNombre(antes.nombre);
+    setSemanas(antes.semanas);
+    setDescarga(antes.descarga);
+    setEnfoque(antes.enfoque);
+    setDias(antes.dias);
+    setEjercicios(antes.ejercicios);
+    setPres(antes.pres);
+    setPctTexto(null);
+  }
+
+  function cerrarHoja() {
+    if (sucio) {
+      setAvisoCierre(true);
+      return;
+    }
+    setHojaAbierta(false);
+  }
+
+  function descartarYCerrar() {
+    restaurar();
+    setAvisoCierre(false);
+    setHojaAbierta(false);
+  }
+
+  async function guardarYCerrar() {
+    const ok = await guardarTodo();
+    if (!ok) return;
+    setAvisoCierre(false);
+    setHojaAbierta(false);
+  }
+
+  function abrirHoja(id: string) {
+    setEditando(id);
+    setHojaAbierta(true);
+  }
+
+  function portalHoja(nodo: ReactNode) {
+    if (hojaAbierta && typeof document !== 'undefined') {
+      return createPortal(nodo, document.body);
+    }
+    return null;
+  }
+
+  function presVacia(p?: Pres) {
+    return !p || ((!p.texto || esPrescripcionVaga(p.texto)) && !p.series && !p.reps && p.pct == null && !p.tecnica);
+  }
+
+  const porRevisar = ejercicios.filter((e) => e.revisar).length;
+
   const rm = actual ? rmMap[actual.ejercicio_id] ?? (esFase ? rmEjemplo : 0) : rmEjemplo;
-  const kilos = actual && presActual?.pct != null ? kilosObjetivo(rm, presActual.pct) : null;
+  const pctOk = presActual?.pct != null && Number.isFinite(presActual.pct);
+  const kilosCalc = actual && pctOk ? kilosObjetivo(rm, presActual.pct as number) : null;
+  const kilos = kilosCalc != null && Number.isFinite(kilosCalc) ? kilosCalc : null;
 
   const titulo = esFase && faseOrden && faseNombre ? (
     <>
@@ -273,27 +456,45 @@ export function ConstructorRutina({
   );
 
   return (
-    <div className="constructor" style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
-      <p className="aviso-escritorio muted">Para armar rutinas es más cómodo en computadora.</p>
-      <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end', gap: 16, justifyContent: 'space-between' }}>
-        <h1 className="h titulo-panel" style={{ fontSize: 52 }}>
-          {titulo}
-        </h1>
-        <div className="constructor-acciones" style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-          <button className="btn2" type="button" onClick={() => void guardarPlantilla()}>
-            Guardar como plantilla
-          </button>
-          <button className="btn2" type="button" onClick={() => void guardarMeta()}>
-            Guardar borrador
-          </button>
+    <div className={`constructor${hojaAbierta ? ' hoja-abierta' : ''}`}>
+      <p className="aviso-escritorio muted constructor-aviso">Mejor en computadora.</p>
+      <div className="constructor-tope">
+        <h1 className="h constructor-titulo">{titulo}</h1>
+        <div className="constructor-acciones">
+          <BotonPendiente className="btn2 btn-con-icono" type="button" cargando={pendiente === 'plantilla'} etiquetaCargando="Guardando…" onClick={() => void conPendiente('plantilla', guardarPlantilla)}>
+            <Icono nombre="plantilla" /> Plantilla
+          </BotonPendiente>
+          <BotonPendiente className="btn btn-con-icono" type="button" cargando={pendiente === 'guardar'} etiquetaCargando="Guardando…" onClick={() => void conPendiente('guardar', async () => { await guardarTodo(); })}>
+            <Icono nombre="borrador" /> Guardar
+          </BotonPendiente>
           {!esFase ? (
-            <button className="btn" type="button" onClick={() => void publicar()}>
-              Publicar{clienteNombre ? ` para ${clienteNombre}` : ''}
-            </button>
+            <BotonPendiente className="btn btn-con-icono" type="button" cargando={pendiente === 'publicar'} etiquetaCargando="Publicando…" onClick={() => void conPendiente('publicar', publicar)}>
+              <Icono nombre="publicar" /> Publicar
+            </BotonPendiente>
           ) : null}
         </div>
       </div>
-      {msg ? <p className="muted">{msg} · estado: {etiquetaEstadoRutina(estado)}</p> : null}
+      {msg ? <p className={`constructor-msg ${msg.toLowerCase().includes('no se') || msg.toLowerCase().includes('error') ? 'error' : 'muted'}`}>{msg} · {etiquetaEstadoRutina(estado)}</p> : null}
+      {sucio ? <p className="muted">Cambios sin guardar</p> : null}
+      {porRevisar ? (
+        <p className="leyenda-revisar">
+          {porRevisar} ejercicio{porRevisar === 1 ? '' : 's'} marcado{porRevisar === 1 ? '' : 's'} «revisar» (etiqueta naranja). Es solo informativo: Fred y Yohan pueden quitarla y publicar igual; no bloquea editar.
+        </p>
+      ) : null}
+      <p className="leyenda-revisar">
+        «Falta prescripción» significa que todavía no hay series y repeticiones escritas. Fred o Yohan pueden llenarlas en el ejercicio. Si nadie las escribe, el cliente no ve una prescripción inventada.
+      </p>
+      <details className="constructor-leyendas">
+        <summary>Qué significan las marcas</summary>
+        {porRevisar ? (
+          <p>
+            {porRevisar} ejercicio{porRevisar === 1 ? '' : 's'} «revisar». Fred o Yohan pueden quitarla; no bloquea publicar.
+          </p>
+        ) : null}
+        <p>
+          «Falta prescripción»: aún no hay series y reps. Fred o Yohan pueden escribirlas. Si nadie las llena, el cliente no ve un texto inventado.
+        </p>
+      </details>
 
       <div className="card constructor-meta" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 16, alignItems: 'end' }}>
         <label className="f" style={{ gridColumn: 'span 2' }}>
@@ -303,7 +504,7 @@ export function ConstructorRutina({
         <label className="f">
           Semanas
           <select className="in" value={semanas ?? ''} onChange={(e) => setSemanas(e.target.value ? Number(e.target.value) : null)}>
-            <option value="">[POR DEFINIR]</option>
+            <option value="">por definir</option>
             {[3, 4, 5, 6, 7, 8].map((n) => (
               <option key={n} value={n}>
                 {n}
@@ -330,13 +531,14 @@ export function ConstructorRutina({
               onClick={() => setEnfoque(e.id)}
               style={{
                 minHeight: 42,
-                borderRadius: 999,
-                border: '2px solid',
-                borderColor: enfoque === e.id ? 'var(--tinta)' : 'var(--linea)',
-                background: enfoque === e.id ? 'var(--tinta)' : '#fff',
-                color: enfoque === e.id ? 'var(--hueso)' : 'var(--tinta)',
+                borderRadius: 6,
+                border: '1px solid',
+                borderColor: enfoque === e.id ? '#d7e4b4' : 'var(--card-borde)',
+                background: enfoque === e.id ? '#eef6de' : '#fff',
+                color: 'var(--tinta)',
                 fontWeight: 700,
                 padding: '0 16px',
+                boxShadow: '0 1px 2px rgba(28, 30, 26, 0.06)',
               }}
             >
               {e.label}
@@ -350,7 +552,8 @@ export function ConstructorRutina({
           <button
             key={d.id}
             type="button"
-            onClick={() => setDiaActivo(d.id)}
+            className="pestana-dia"
+            onClick={() => cambiarDia(d.id)}
             style={{
               minHeight: 48,
               padding: '0 22px',
@@ -363,24 +566,36 @@ export function ConstructorRutina({
               color: diaActivo === d.id ? 'var(--tinta)' : 'var(--gris)',
             }}
           >
-            DÍA {d.letra}
-            {d.foco ? ` · ${d.foco}` : ''}
+            Día {d.letra}
           </button>
         ))}
-        <button type="button" onClick={() => void agregarDia()} style={{ minHeight: 48, padding: '0 18px', border: 0, background: 'none', fontWeight: 700, color: 'var(--lima-tinta)' }}>
-          + Agregar día
+        <button type="button" className="pestana-dia btn-con-icono" onClick={() => void conPendiente('dia', agregarDia)}>
+          {pendiente === 'dia' ? 'Agregando…' : (
+            <>
+              <Icono nombre="mas" /> Día
+            </>
+          )}
         </button>
       </div>
       {diaActivo ? (
-        <label className="f" style={{ maxWidth: 480 }}>
-          Foco del día
-          <input
-            className="in"
-            defaultValue={dias.find((d) => d.id === diaActivo)?.foco ?? ''}
-            key={diaActivo}
-            onBlur={(e) => void patchDia(diaActivo, { foco: e.target.value || null })}
-          />
-        </label>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 10, maxWidth: 480 }}>
+          {esPendienteYohan(dias.find((d) => d.id === diaActivo)?.foco) ? (
+            <AvisoInterno>
+              Falta el foco de este día (qué músculos o el propósito). Fred o Yohan pueden escribirlo aquí. Si nadie lo llena, el cliente no ve esa marca.
+              {restoTrasMarca(dias.find((d) => d.id === diaActivo)?.foco) ? ` ${restoTrasMarca(dias.find((d) => d.id === diaActivo)?.foco)}` : ''}
+            </AvisoInterno>
+          ) : null}
+          <label className="f">
+            Foco del día
+            <input
+              className="in"
+              defaultValue={esPendienteYohan(dias.find((d) => d.id === diaActivo)?.foco) ? '' : (dias.find((d) => d.id === diaActivo)?.foco ?? '')}
+              key={diaActivo}
+              placeholder={esPendienteYohan(dias.find((d) => d.id === diaActivo)?.foco) ? 'Falta el foco' : ''}
+              onBlur={(e) => void patchDia(diaActivo, { foco: e.target.value || null })}
+            />
+          </label>
+        </div>
       ) : null}
 
       <div className="constructor-cuerpo" style={{ display: 'flex', flexWrap: 'wrap', gap: 24, alignItems: 'flex-start' }}>
@@ -393,16 +608,21 @@ export function ConstructorRutina({
                   <button
                     type="button"
                     className="constructor-lista-item"
-                    onClick={() => {
-                      setEditando(e.id);
-                      setHojaAbierta(true);
-                    }}
+                    onClick={() => abrirHoja(e.id)}
                   >
-                    <b>
-                      {e.grupo ? `${e.orden}${e.grupo}` : e.orden || i + 1}. {e.nombre}
-                    </b>
-                    <span className="muted">{p?.texto || '—'}</span>
-                    {e.nota ? <span className="muted">{e.nota}</span> : null}
+                    <span className="constructor-lista-texto">
+                      <b>
+                        {e.grupo ? `${e.orden}${e.grupo}` : e.orden || i + 1}. {e.nombre}
+                      </b>
+                      <span className="muted">
+                        {esPendienteYohan(e.nota) || esPrescripcionVaga(p?.texto) || presVacia(p) ? (
+                          'Falta prescripción'
+                        ) : (
+                          <PrescripcionVista texto={p?.texto} series={p?.series} reps={p?.reps} pct={p?.pct} rm={p?.rm} />
+                        )}
+                      </span>
+                    </span>
+                    <Icono nombre="flecha" className="icono lista-flecha" />
                   </button>
                 </li>
               );
@@ -412,50 +632,86 @@ export function ConstructorRutina({
             <table className="tabla constructor-tabla" style={{ fontSize: 15 }}>
               <thead>
                 <tr>
-                  <th>#</th>
-                  <th>Ejercicio</th>
+                  <th rowSpan={2}>#</th>
+                  <th rowSpan={2}>Ejercicio</th>
+                  {semanasTabla ? (
+                    <th colSpan={semanasTabla} className="th-semana">
+                      Semana
+                    </th>
+                  ) : null}
+                  <th rowSpan={2} />
+                </tr>
+                <tr>
                   {Array.from({ length: semanasTabla }, (_, i) => (
-                    <th key={i} style={descarga === i + 1 ? { background: '#f1ece0' } : undefined}>
-                      Sem {i + 1}
-                      {descarga === i + 1 ? ' · descarga' : ''}
+                    <th key={i} className="th-sem-num" style={descarga === i + 1 ? { background: '#f1ece0' } : undefined}>
+                      {i + 1}
+                      {descarga === i + 1 ? <span className="muted"> ↓</span> : null}
                     </th>
                   ))}
-                  <th></th>
                 </tr>
               </thead>
               <tbody>
                 {ejDelDia.map((e, i) => (
-                  <tr key={e.id} style={{ background: editando === e.id ? '#eef6de' : undefined }}>
+                  <tr
+                    key={e.id}
+                    className={`fila-ejercicio${editando === e.id ? ' seleccionada' : ''}`}
+                    onClick={() => abrirHoja(e.id)}
+                  >
                     <td>
                       <b>
                         {e.grupo ? `${e.orden}${e.grupo}` : e.orden || i + 1}
                       </b>
                     </td>
                     <td>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setEditando(e.id);
-                          setHojaAbierta(true);
-                        }}
-                        style={{ background: 'none', border: 0, textAlign: 'left', padding: 0, cursor: 'pointer' }}
-                      >
-                        <b>{e.nombre}</b>
-                        {e.revisar ? <span className="est alerta">revisar</span> : null}
-                      </button>
+                      <b>{e.nombre}</b>
+                      {e.revisar ? <span className="est alerta">revisar · principal</span> : null}
+                      {esPendienteYohan(e.nota) || Array.from({ length: semanasTabla }, (_, s) => pres.find((x) => x.rutina_ejercicio_id === e.id && x.semana === s + 1)).every((p) => presVacia(p) || esPrescripcionVaga(p?.texto)) ? (
+                        <span className="est alerta">Falta prescripción</span>
+                      ) : null}
                     </td>
                     {Array.from({ length: semanasTabla }, (_, s) => {
                       const p = pres.find((x) => x.rutina_ejercicio_id === e.id && x.semana === s + 1);
                       return (
                         <td key={s} style={descarga === s + 1 ? { background: '#f7f3ea' } : undefined}>
-                          {p?.texto || '—'}
+                          {esPendienteYohan(e.nota) || esPrescripcionVaga(p?.texto) || presVacia(p) ? (
+                            ''
+                          ) : (
+                            <PrescripcionVista texto={p?.texto} series={p?.series} reps={p?.reps} pct={p?.pct} rm={p?.rm} />
+                          )}
                         </td>
                       );
                     })}
                     <td>
-                      <button type="button" onClick={() => void borrarEjercicio(e.id)}>
-                        Borrar
-                      </button>
+                      <div className="acciones-fila">
+                        <Globo texto="Editar ejercicio">
+                          <button
+                            type="button"
+                            className="btn-fantasma"
+                            title="Editar ejercicio"
+                            aria-label={`Editar ${e.nombre}`}
+                            onClick={(ev) => {
+                              ev.stopPropagation();
+                              abrirHoja(e.id);
+                            }}
+                          >
+                            <Icono nombre="lapiz" />
+                          </button>
+                        </Globo>
+                        <Globo texto="Borrar ejercicio">
+                          <button
+                            type="button"
+                            className="btn-fantasma"
+                            title="Borrar ejercicio"
+                            aria-label={`Borrar ${e.nombre}`}
+                            onClick={(ev) => {
+                              ev.stopPropagation();
+                              void borrarEjercicio(e.id);
+                            }}
+                          >
+                            <Icono nombre="basura" />
+                          </button>
+                        </Globo>
+                      </div>
                     </td>
                   </tr>
                 ))}
@@ -463,41 +719,46 @@ export function ConstructorRutina({
             </table>
           </div>
           <div style={{ padding: '16px 22px', borderTop: '1px solid var(--linea)' }}>
-            <button type="button" className="btn2" style={{ minHeight: 46 }} onClick={() => void agregarEjercicio()}>
-              + Agregar ejercicio
-            </button>
+            <BotonPendiente className="btn2 btn-con-icono" type="button" cargando={pendiente === 'ej'} etiquetaCargando="Agregando…" onClick={() => void conPendiente('ej', agregarEjercicio)}>
+              <Icono nombre="mas" /> Ejercicio
+            </BotonPendiente>
           </div>
         </div>
 
+        {portalHoja(
+        <>
+        {hojaAbierta ? <div className="editor-velo" aria-hidden="true" onClick={cerrarHoja} /> : null}
+        {avisoCierre ? (
+          <div className="aviso-app" role="dialog" aria-labelledby="aviso-cierre-titulo">
+            <h2 id="aviso-cierre-titulo" className="h" style={{ fontSize: 32 }}>Cambios sin guardar</h2>
+            <p>Hay cambios que todavía no se enviaron. Puedes guardarlos, descartarlos o seguir editando.</p>
+            <div className="aviso-app-acciones">
+              <button type="button" className="btn" onClick={() => void guardarYCerrar()}>Guardar</button>
+              <button type="button" className="btn2" onClick={descartarYCerrar}>Descartar</button>
+              <button type="button" className="btn2" onClick={() => setAvisoCierre(false)}>Seguir editando</button>
+            </div>
+          </div>
+        ) : null}
         {actual && presActual ? (
           <form
             className={`card editor-ejercicio${hojaAbierta ? ' abierto' : ''}`}
-            style={{ flex: '1 1 360px', display: 'flex', flexDirection: 'column', gap: 14, borderColor: 'var(--tinta)' }}
             onSubmit={(e) => e.preventDefault()}
           >
-            <button type="button" className="cerrar-hoja btn2" onClick={() => setHojaAbierta(false)}>
-              Cerrar
-            </button>
-            <div className="lbl">Editando el ejercicio</div>
-            <label className="f">
-              Ejercicio
-              <select
-                className="in"
-                value={actual.ejercicio_id}
-                onChange={(e) => {
-                  const id = e.target.value;
-                  const nom = catalogo.find((c) => c.id === id)?.nombre;
-                  void patchEj(actual.id, { ejercicio_id: id });
-                  setEjercicios((xs) => xs.map((x) => (x.id === actual.id ? { ...x, ejercicio_id: id, nombre: nom } : x)));
-                }}
-              >
-                {catalogo.map((c) => (
-                  <option key={c.id} value={c.id}>
-                    {c.nombre}
-                  </option>
-                ))}
-              </select>
-            </label>
+            <div className="editor-cabeza">
+              <div className="lbl">{sucio ? 'Cambios sin guardar' : 'Editando el ejercicio'}</div>
+              <button type="button" className="btn-icono cerrar-hoja" aria-label="Cerrar" onClick={cerrarHoja}>
+                <Icono nombre="cerrar" />
+              </button>
+            </div>
+            <CamposEditor>
+            <SelectorEjercicio
+              valor={actual.ejercicio_id}
+              catalogo={catalogo}
+              onChange={(id, nom) => {
+                void patchEj(actual.id, { ejercicio_id: id });
+                setEjercicios((xs) => xs.map((x) => (x.id === actual.id ? { ...x, ejercicio_id: id, nombre: nom } : x)));
+              }}
+            />
             <label className="f">
               Intensidad por
               <select className="in" value={actual.intensidad_tipo} onChange={(e) => void patchEj(actual.id, { intensidad_tipo: e.target.value as Intensidad })}>
@@ -521,18 +782,61 @@ export function ConstructorRutina({
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: 10 }}>
               <label className="f">
                 Series
-                <input className="in" value={presActual.series ?? ''} onChange={(e) => void patchPres(presActual, { series: e.target.value })} />
+                <input
+                  className="in"
+                  inputMode="numeric"
+                  value={presActual.series ?? ''}
+                  onBeforeInput={(e) => {
+                    const data = (e.nativeEvent as InputEvent).data;
+                    if (data && /\D/.test(data)) e.preventDefault();
+                  }}
+                  onPaste={(e) => {
+                    e.preventDefault();
+                    patchPres(presActual, { series: filtrarEntero(e.clipboardData.getData('text')) || null });
+                  }}
+                  onChange={(e) => patchPres(presActual, { series: filtrarEntero(e.target.value) || null })}
+                />
               </label>
               <label className="f">
                 Reps
-                <input className="in" value={presActual.reps ?? ''} onChange={(e) => void patchPres(presActual, { reps: e.target.value })} />
+                <input
+                  className="in"
+                  inputMode="numeric"
+                  value={presActual.reps ?? ''}
+                  onBeforeInput={(e) => {
+                    const data = (e.nativeEvent as InputEvent).data;
+                    if (data && /[^\d/]/.test(data)) e.preventDefault();
+                  }}
+                  onPaste={(e) => {
+                    e.preventDefault();
+                    patchPres(presActual, { reps: filtrarReps(e.clipboardData.getData('text')) || null });
+                  }}
+                  onChange={(e) => patchPres(presActual, { reps: filtrarReps(e.target.value) || null })}
+                />
               </label>
               <label className="f">
                 % 1RM
                 <input
                   className="in"
-                  value={presActual.pct != null ? Math.round(presActual.pct * 1000) / 10 : ''}
-                  onChange={(e) => void patchPres(presActual, { pct: e.target.value ? Number(e.target.value) / 100 : null })}
+                  inputMode="decimal"
+                  value={pctTexto ?? (pctOk ? String(Math.round((presActual.pct as number) * 1000) / 10) : '')}
+                  onBeforeInput={(e) => {
+                    const data = (e.nativeEvent as InputEvent).data;
+                    if (data && /[^\d.]/.test(data)) e.preventDefault();
+                  }}
+                  onPaste={(e) => {
+                    e.preventDefault();
+                    const texto = filtrarDecimal(e.clipboardData.getData('text'));
+                    setPctTexto(texto);
+                    const n = texto === '' || texto === '.' ? null : Number(texto);
+                    patchPres(presActual, { pct: n != null && Number.isFinite(n) ? n / 100 : null });
+                  }}
+                  onChange={(e) => {
+                    const texto = filtrarDecimal(e.target.value);
+                    setPctTexto(texto);
+                    const n = texto === '' || texto === '.' ? null : Number(texto);
+                    patchPres(presActual, { pct: n != null && Number.isFinite(n) ? n / 100 : null });
+                  }}
                 />
               </label>
             </div>
@@ -563,17 +867,30 @@ export function ConstructorRutina({
               <input type="checkbox" checked={actual.revisar} onChange={(e) => void patchEj(actual.id, { revisar: e.target.checked })} style={{ width: 22, height: 22, accentColor: 'var(--lima)' }} />
               Marcar «revisar»
             </label>
-            {kilos != null ? (
+            {pctOk ? (
               <div style={{ fontSize: 14, color: 'var(--gris)' }}>
-                Con el 1RM ({rm} kg), esta semana sale en <b style={{ color: 'var(--tinta)' }}>{kilos} kg</b>.
+                Con el 1RM ({rm} kg), esta semana sale en <b style={{ color: 'var(--tinta)' }}>{kilos != null ? `${kilos} kg` : '—'}</b>.
               </div>
             ) : null}
-            <button className="btn" type="button" onClick={() => void copiarSemanas()}>
-              Copiar a todas las semanas
-            </button>
+            {esPendienteYohan(actual.nota) || presVacia(presActual) ? (
+              <AvisoInterno>
+                Faltan series y repeticiones de este ejercicio. Fred o Yohan pueden escribirlas aquí. Si nadie las llena, el cliente no ve una prescripción inventada. No copies un texto genérico a las demás semanas.
+              </AvisoInterno>
+            ) : null}
+            </CamposEditor>
+            <div className="editor-pie">
+              <BotonPendiente className="btn btn-con-icono" type="button" cargando={pendiente === 'guardar'} etiquetaCargando="Guardando…" onClick={() => void conPendiente('guardar', async () => { await guardarTodo(); })}>
+                Guardar
+              </BotonPendiente>
+              <BotonPendiente className="btn btn-con-icono" type="button" cargando={pendiente === 'copiar'} etiquetaCargando="Copiando…" onClick={() => void conPendiente('copiar', copiarSemanas)}>
+                <Icono nombre="copiar" /> Copiar a todas las semanas
+              </BotonPendiente>
+            </div>
           </form>
         ) : (
-          <p className="muted">Elige un ejercicio para editarlo.</p>
+          <p className="muted editor-vacio">Elige un ejercicio para editarlo.</p>
+        )}
+        </>,
         )}
       </div>
     </div>

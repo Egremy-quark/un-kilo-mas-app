@@ -5,6 +5,7 @@ import { contextoCliente } from '@/lib/contexto-cliente';
 import { plataforma, esPorDefinir } from '@/config/plataforma';
 import { etiquetaEstado } from '@/lib/planes';
 import { nombrePlan } from '@/lib/clientes-panel';
+import { esPendienteYohan } from '@/lib/pendiente-yohan';
 
 export default async function InicioCliente() {
   const supabase = await crearClienteServidor();
@@ -63,7 +64,7 @@ async function InicioPrueba({ ctx }: { ctx: Awaited<ReturnType<typeof contextoCl
         <div className="h" style={{ fontSize: 32 }}>
           {f1?.nombre ?? 'Rutina 01 · Base articular'}
         </div>
-        <p>{f1?.descripcion}</p>
+        <p>{esPendienteYohan(f1?.descripcion as string) ? 'Tu entrenador todavía está armando esta rutina.' : (f1?.descripcion as string)}</p>
         {ctx.puedeRegistrar ? (
           <Link className="btn btn-ancho" href="/app/sesion">
             Hacer la sesión de hoy
@@ -79,7 +80,13 @@ async function InicioPrueba({ ctx }: { ctx: Awaited<ReturnType<typeof contextoCl
         <div className="h" style={{ fontSize: 30, color: bloqueada02 ? 'var(--gris)' : 'var(--tinta)' }}>
           {f2?.nombre ?? 'Rutina 02 · Aprender a moverse'}
         </div>
-        <p className="muted">{bloqueada02 ? 'Se abre al terminar la rutina 01.' : f2?.descripcion}</p>
+        <p className="muted">
+          {bloqueada02
+            ? 'Se abre al terminar la rutina 01.'
+            : esPendienteYohan(f2?.descripcion as string)
+              ? 'Tu entrenador todavía está armando esta rutina.'
+              : (f2?.descripcion as string)}
+        </p>
       </div>
       {!ctx.puedeRegistrar ? (
         <Link href="/app/sigue" className="btn">
