@@ -1,0 +1,849 @@
+{
+  "id": "f3-1-mesociclo-aprendiendo-intensidad-y-tecnica",
+  "nombre": "1° Mesociclo - Aprendiendo Intensidad y Tecnica",
+  "nombre_alias": [],
+  "fase": "Fase 3 - Macrocilo 1 - Aprendiendo Fuerza",
+  "fase_corta": "Aprendiendo Fuerza",
+  "semanas": 3,
+  "enfoque": "Técnica",
+  "enfoque_original": "inferido: contiene 'tecnica'",
+  "estado": "Borrador",
+  "dias": [
+    {
+      "codigo": "A",
+      "titulo": "1° PROGRAMA VALORACIÓN - DÍA A - \"INTENSIDAD y TECNICA\"",
+      "hoja": "Día A",
+      "enfoque_dia": "\"INTENSIDAD y TECNICA\"",
+      "instrucciones_sesion": {
+        "1": "Colocar una carga con la que solo podamos hacer 8 Repeticiones. Ni una más. No subir carga entre series.",
+        "2": "Repite tu carga anterior, y trata hacer TODAS las repeticiones posibles,                                              ROMPE TUS LÍMITES",
+        "3": "Espera la indiciaciones del Entrenador para colocar cargas este día."
+      },
+      "ejercicios": [
+        {
+          "nombre_original": "SENTADILLA CON BARRA",
+          "nombre": "Sentadilla con barra",
+          "nombre_clave": "SENTADILLA CON BARRA",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "3",
+              "reps": "8/6/4",
+              "metodo": null,
+              "prescripcion_texto": "3 x 8/6/4",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2:00 min",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "3°",
+              "descarga": false,
+              "series": "3",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "3 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2:30 min",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "5°",
+              "descarga": false,
+              "series": "3",
+              "reps": "8/6/4",
+              "metodo": null,
+              "prescripcion_texto": "3 x 8/6/4",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2:00 min",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "HIPEREXTENSIONES o RUMANO",
+          "nombre": "Hiperextensiones o rumano",
+          "nombre_clave": "HIPEREXTENSIONES O RUMANO",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "ALTERNAR EJERCICIOS",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "2",
+              "reps": "8 a 10",
+              "metodo": null,
+              "prescripcion_texto": "2 x 8 a 10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "3°",
+              "descarga": false,
+              "series": "3",
+              "reps": "10 a 12",
+              "metodo": null,
+              "prescripcion_texto": "3 x 10 a 12",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "5°",
+              "descarga": false,
+              "series": "2",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "LEG CURL (SENTADO)",
+          "nombre": "Leg curl (sentado)",
+          "nombre_clave": "LEG CURL SENTADO",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": "HIPEREXTENSIONES o RUMANO",
+          "rm_referencia": null,
+          "notas": "[Superserie: alternar con HIPEREXTENSIONES o RUMANO]",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "Carga al fallo",
+              "reps": null,
+              "metodo": null,
+              "prescripcion_texto": "Carga al fallo",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "60\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "3°",
+              "descarga": false,
+              "series": "Repite la carga",
+              "reps": null,
+              "metodo": null,
+              "prescripcion_texto": "Repite la carga",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "5°",
+              "descarga": false,
+              "series": "Rompe tus límites",
+              "reps": null,
+              "metodo": null,
+              "prescripcion_texto": "Rompe tus límites",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "60\"",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "PRESS BANCA",
+          "nombre": "Press banca",
+          "nombre_clave": "PRESS BANCA",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "1\" De pausa en el pecho",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "3",
+              "reps": "8/6/4",
+              "metodo": null,
+              "prescripcion_texto": "3 x 8/6/4",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2:00 min",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "3°",
+              "descarga": false,
+              "series": "3",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "3 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2:30 min",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "5°",
+              "descarga": false,
+              "series": "3",
+              "reps": "8/6/4",
+              "metodo": null,
+              "prescripcion_texto": "3 x 8/6/4",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2:00 min",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "PRESS FRANCES",
+          "nombre": "Press frances",
+          "nombre_clave": "PRESS FRANCES",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "ALTERNAR EJERCICIOS",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "2",
+              "reps": "10 a 12",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10 a 12",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "3°",
+              "descarga": false,
+              "series": "3",
+              "reps": "12 a 15",
+              "metodo": null,
+              "prescripcion_texto": "3 x 12 a 15",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "5°",
+              "descarga": false,
+              "series": "2",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "PLANCHA FRONTAL",
+          "nombre": "Plancha frontal",
+          "nombre_clave": "PLANCHA FRONTAL",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": "PRESS FRANCES",
+          "rm_referencia": null,
+          "notas": "[Superserie: alternar con PRESS FRANCES]",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "aguantar al fallo",
+              "reps": null,
+              "metodo": null,
+              "prescripcion_texto": "aguantar al fallo",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "60\"",
+              "notas": "TODO EL TIEMPO POSIBLE"
+            },
+            {
+              "semana": 2,
+              "sesion": "3°",
+              "descarga": false,
+              "series": "Repite la carga",
+              "reps": null,
+              "metodo": null,
+              "prescripcion_texto": "Repite la carga",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": "TODO EL TIEMPO POSIBLE"
+            },
+            {
+              "semana": 3,
+              "sesion": "5°",
+              "descarga": false,
+              "series": "Rompe tus límites",
+              "reps": null,
+              "metodo": null,
+              "prescripcion_texto": "Rompe tus límites",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "60\"",
+              "notas": "TODO EL TIEMPO POSIBLE"
+            }
+          ]
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "codigo": "B",
+      "titulo": "1° PROGRAMA VALORACIÓN - DÍA B - \"INTENSIDAD y TECNICA\"",
+      "hoja": "Día B",
+      "enfoque_dia": "\"INTENSIDAD y TECNICA\"",
+      "instrucciones_sesion": {
+        "1": "Colocar una carga con la que solo podamos hacer 8 Repeticiones. Ni una más. No subir carga entre series.",
+        "2": "Repite tu carga anterior, y trata hacer TODAS las repeticiones posibles, ROMPE TUS LÍMITES",
+        "3": "Espera la indiciaciones del Entrenador para colocar cargas este día."
+      },
+      "ejercicios": [
+        {
+          "nombre_original": "PESO MUERTO CONVENCIONAL",
+          "nombre": "Peso muerto convencional",
+          "nombre_clave": "PESO MUERTO CONVENCIONAL",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "3",
+              "reps": "8/6/4",
+              "metodo": null,
+              "prescripcion_texto": "3 x 8/6/4",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2:00 min",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "3°",
+              "descarga": false,
+              "series": "3",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "3 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2:30 min",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "5°",
+              "descarga": false,
+              "series": "3",
+              "reps": "8/6/4",
+              "metodo": null,
+              "prescripcion_texto": "3 x 8/6/4",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2:00 min",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "PRENSA 45°  o BULGARA",
+          "nombre": "Prensa 45°  o bulgara",
+          "nombre_clave": "PRENSA 45 O BULGARA",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "ALTERNAR EJERCICIOS",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "2",
+              "reps": "8 a 10",
+              "metodo": null,
+              "prescripcion_texto": "2 x 8 a 10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "3°",
+              "descarga": false,
+              "series": "3",
+              "reps": "10 a 12",
+              "metodo": null,
+              "prescripcion_texto": "3 x 10 a 12",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "5°",
+              "descarga": false,
+              "series": "2",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "EXTENSIONES DE PIERNA O GOBLET SQUAT",
+          "nombre": "Extensiones de pierna o goblet squat",
+          "nombre_clave": "EXTENSIONES DE PIERNA O GOBLET SQUAT",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": "PRENSA 45°  o BULGARA",
+          "rm_referencia": null,
+          "notas": "[Superserie: alternar con PRENSA 45°  o BULGARA]",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "Carga al fallo",
+              "reps": null,
+              "metodo": null,
+              "prescripcion_texto": "Carga al fallo",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "60\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "3°",
+              "descarga": false,
+              "series": "Repite la carga",
+              "reps": null,
+              "metodo": null,
+              "prescripcion_texto": "Repite la carga",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "5°",
+              "descarga": false,
+              "series": "Rompe tus límites",
+              "reps": null,
+              "metodo": null,
+              "prescripcion_texto": "Rompe tus límites",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "60\"",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "PRESS MILITAR",
+          "nombre": "Press militar",
+          "nombre_clave": "PRESS MILITAR",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "1\" De pausa en el pecho",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "3",
+              "reps": "8/6/4",
+              "metodo": null,
+              "prescripcion_texto": "3 x 8/6/4",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2:00 min",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "3°",
+              "descarga": false,
+              "series": "3",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "3 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2:30 min",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "5°",
+              "descarga": false,
+              "series": "3",
+              "reps": "8/6/4",
+              "metodo": null,
+              "prescripcion_texto": "3 x 8/6/4",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2:00 min",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "LAT MACHINE  SUPINA",
+          "nombre": "Lat machine  supina",
+          "nombre_clave": "LAT MACHINE SUPINA",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "ALTERNAR EJERCICIOS",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "2",
+              "reps": "10 a 12",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10 a 12",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "3°",
+              "descarga": false,
+              "series": "3",
+              "reps": "12 a 15",
+              "metodo": null,
+              "prescripcion_texto": "3 x 12 a 15",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "5°",
+              "descarga": false,
+              "series": "2",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "CURL DE BÍCEPS",
+          "nombre": "Curl de bíceps",
+          "nombre_clave": "CURL DE BICEPS",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": "LAT MACHINE  SUPINA",
+          "rm_referencia": null,
+          "notas": "[Superserie: alternar con LAT MACHINE  SUPINA]",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "Carga al fallo",
+              "reps": null,
+              "metodo": null,
+              "prescripcion_texto": "Carga al fallo",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "60\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "3°",
+              "descarga": false,
+              "series": "Repite la carga",
+              "reps": null,
+              "metodo": null,
+              "prescripcion_texto": "Repite la carga",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "5°",
+              "descarga": false,
+              "series": "Rompe tus límites",
+              "reps": null,
+              "metodo": null,
+              "prescripcion_texto": "Rompe tus límites",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "60\"",
+              "notas": null
+            }
+          ]
+        }
+      ],
+      "avisos": []
+    }
+  ],
+  "variantes": [
+    {
+      "etiqueta": "MUJERES",
+      "etiquetas": [
+        "MUJERES"
+      ],
+      "unidades": "kg",
+      "archivos": [
+        "1 Mesociclo - Aprendiendo Intensidad y Tecnica (Mujeres).xlsx"
+      ],
+      "atleta": null,
+      "coincidencia_posicional_pct": 100,
+      "sustituciones": [
+        {
+          "dia": "A",
+          "posicion": 3,
+          "en_plantilla": "LEG CURL (SENTADO)",
+          "en_variante": "LEG CURL (SENTADA)"
+        },
+        {
+          "dia": "A",
+          "posicion": 4,
+          "en_plantilla": "PRESS BANCA",
+          "en_variante": "PRESS BANCA MANCUERNAS"
+        },
+        {
+          "dia": "B",
+          "posicion": 2,
+          "en_plantilla": "PRENSA 45°  o BULGARA",
+          "en_variante": "PRENSA 45°"
+        },
+        {
+          "dia": "B",
+          "posicion": 3,
+          "en_plantilla": "EXTENSIONES DE PIERNA O GOBLET SQUAT",
+          "en_variante": "EXTENSIONES DE PIERNA"
+        },
+        {
+          "dia": "B",
+          "posicion": 4,
+          "en_plantilla": "PRESS MILITAR",
+          "en_variante": "PRESS HOMBRO MACUERNAS"
+        },
+        {
+          "dia": "B",
+          "posicion": 6,
+          "en_plantilla": "CURL DE BÍCEPS",
+          "en_variante": "HIP THRUST"
+        }
+      ],
+      "ejercicios_solo_variante": [],
+      "ejercicios_solo_plantilla": [],
+      "prescripcion_diferente": []
+    },
+    {
+      "etiqueta": "POCO MATERIAL",
+      "etiquetas": [
+        "POCO MATERIAL"
+      ],
+      "unidades": "kg",
+      "archivos": [
+        "1 Mesociclo - Aprendiendo Intensidad y Tecnica - POCO MATERIAL.xlsx"
+      ],
+      "atleta": null,
+      "coincidencia_posicional_pct": 100,
+      "sustituciones": [
+        {
+          "dia": "A",
+          "posicion": 2,
+          "en_plantilla": "HIPEREXTENSIONES o RUMANO",
+          "en_variante": "PM RUMANO"
+        },
+        {
+          "dia": "A",
+          "posicion": 3,
+          "en_plantilla": "LEG CURL (SENTADO)",
+          "en_variante": "CURL DESLIZANTE"
+        },
+        {
+          "dia": "B",
+          "posicion": 2,
+          "en_plantilla": "PRENSA 45°  o BULGARA",
+          "en_variante": "BULGARA SQUAT"
+        },
+        {
+          "dia": "B",
+          "posicion": 3,
+          "en_plantilla": "EXTENSIONES DE PIERNA O GOBLET SQUAT",
+          "en_variante": "SISSY SQUAT"
+        },
+        {
+          "dia": "B",
+          "posicion": 5,
+          "en_plantilla": "LAT MACHINE  SUPINA",
+          "en_variante": "RACK CHINS"
+        }
+      ],
+      "ejercicios_solo_variante": [],
+      "ejercicios_solo_plantilla": [],
+      "prescripcion_diferente": []
+    }
+  ],
+  "archivos_fuente": [
+    {
+      "archivo": "1 Mesociclo - Aprendiendo Intensidad y Tecnica.xlsx",
+      "drive_id": "1WpOGA9p8TeQaaz5j1484F8VUlQMvHOuo",
+      "fase": "Fase 3 - Macrocilo 1 - Aprendiendo Fuerza",
+      "variante": null,
+      "atleta": null,
+      "n_ejercicios": 12,
+      "semanas": 3,
+      "firma": "ac8fa95a8474"
+    },
+    {
+      "archivo": "1 Mesociclo - Aprendiendo Intensidad y Tecnica (Mujeres).xlsx",
+      "drive_id": "1kLFNBzpSXpA4E5H6sNDR6w_YzDsB-gGf",
+      "fase": "Fase 3 - Macrocilo 1 - Aprendiendo Fuerza",
+      "variante": "MUJERES",
+      "atleta": null,
+      "n_ejercicios": 12,
+      "semanas": 3,
+      "firma": "92270d2bae0d"
+    },
+    {
+      "archivo": "1 Mesociclo - Aprendiendo Intensidad y Tecnica - POCO MATERIAL.xlsx",
+      "drive_id": "1uh4RiZOL5DJ5-TzX1O78GPmcfyKzSWXM",
+      "fase": "Fase 3 - Macrocilo 1 - Aprendiendo Fuerza",
+      "variante": "POCO MATERIAL",
+      "atleta": null,
+      "n_ejercicios": 12,
+      "semanas": 3,
+      "firma": "3cec248e592b"
+    }
+  ],
+  "notas": "Plantilla canónica construida a partir del archivo de referencia '1 Mesociclo - Aprendiendo Intensidad y Tecnica.xlsx'. Las cargas en kg/lbs de los archivos son registro del atleta, no prescripción, salvo que se indique carga_kg_fuente.",
+  "revision": []
+}

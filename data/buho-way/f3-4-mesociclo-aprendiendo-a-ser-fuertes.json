@@ -1,0 +1,1007 @@
+{
+  "id": "f3-4-mesociclo-aprendiendo-a-ser-fuertes",
+  "nombre": "4° Mesociclo - Aprendiendo a ser Fuertes",
+  "nombre_alias": [],
+  "fase": "Fase 3 - Macrocilo 1 - Aprendiendo Fuerza",
+  "fase_corta": "Aprendiendo Fuerza",
+  "semanas": 4,
+  "enfoque": "Técnica",
+  "enfoque_original": "inferido: contiene 'aprendiendo a ser fuertes'",
+  "estado": "Borrador",
+  "dias": [
+    {
+      "codigo": "A",
+      "titulo": "Aprendiendo a SER FUERTES  - DÍA A - \"SENTADILLA y PRESS BANCA\"",
+      "hoja": "Entrenamiento A",
+      "enfoque_dia": "\"SENTADILLA y PRESS BANCA\"",
+      "instrucciones_sesion": {
+        "1": "Ajusta la carga para mantener un esfuerzo 7/8",
+        "2": "Ajusta la carga para mantener un esfuerzo 8/9",
+        "3": "Ajusta la carga para mantener un esfuerzo RPE-10",
+        "4": "AL FALLO"
+      },
+      "ejercicios": [
+        {
+          "nombre_original": "SENTADILLA CON BARRA",
+          "nombre": "Sentadilla con barra",
+          "nombre_clave": "SENTADILLA CON BARRA",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": {
+            "tipo": "1RM",
+            "valor": "100",
+            "unidad": null
+          },
+          "notas": "",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "4",
+              "reps": "4",
+              "metodo": null,
+              "prescripcion_texto": "4 x 4",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": "80",
+              "carga_texto": "Kg",
+              "descanso": "2'00\" a 3'00\"",
+              "notas": null,
+              "cargas_kg_registro": [
+                "80"
+              ],
+              "carga_kg_fuente_origen": "registro del atleta en el archivo (carga única en todas las series)"
+            },
+            {
+              "semana": 2,
+              "sesion": "2°",
+              "descarga": false,
+              "series": "4",
+              "reps": "4",
+              "metodo": null,
+              "prescripcion_texto": "4 x 4",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": "82.5",
+              "carga_texto": "Kg",
+              "descanso": "2'00\" a 3'00\"",
+              "notas": null,
+              "cargas_kg_registro": [
+                "82.5"
+              ],
+              "carga_kg_fuente_origen": "registro del atleta en el archivo (carga única en todas las series)"
+            },
+            {
+              "semana": 3,
+              "sesion": "3°",
+              "descarga": false,
+              "series": "3",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "3 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": "85",
+              "carga_texto": "Kg",
+              "descanso": "2'00\" a 3'00\"",
+              "notas": null,
+              "cargas_kg_registro": [
+                "85"
+              ],
+              "carga_kg_fuente_origen": "registro del atleta en el archivo (carga única en todas las series)"
+            },
+            {
+              "semana": 4,
+              "sesion": "4°",
+              "descarga": false,
+              "series": "2",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": "75",
+              "carga_texto": "Kg",
+              "descanso": "2'00\"",
+              "notas": null,
+              "cargas_kg_registro": [
+                "75"
+              ],
+              "carga_kg_fuente_origen": "registro del atleta en el archivo (carga única en todas las series)"
+            }
+          ]
+        },
+        {
+          "nombre_original": "PRENSA 45°/HACKA",
+          "nombre": "Prensa 45°/hacka",
+          "nombre_clave": "PRENSA 45 HACKA",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "2",
+              "reps": "(6-8)",
+              "metodo": null,
+              "prescripcion_texto": "2 x (6-8)",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "90\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "2°",
+              "descarga": false,
+              "series": "2",
+              "reps": "(6-8)",
+              "metodo": null,
+              "prescripcion_texto": "2 x (6-8)",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "90\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "3°",
+              "descarga": false,
+              "series": "2",
+              "reps": "(10)",
+              "metodo": null,
+              "prescripcion_texto": "2 x (10)",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "90\"",
+              "notas": null
+            },
+            {
+              "semana": 4,
+              "sesion": "4°",
+              "descarga": false,
+              "series": "2",
+              "reps": "(10-12)",
+              "metodo": null,
+              "prescripcion_texto": "2 x (10-12)",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "90\"",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "PRESS BANCA",
+          "nombre": "Press banca",
+          "nombre_clave": "PRESS BANCA",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": {
+            "tipo": "1RM",
+            "valor": "100",
+            "unidad": null
+          },
+          "notas": "ALTERNAR DOS EJERCICIOS",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "4",
+              "reps": "4",
+              "metodo": null,
+              "prescripcion_texto": "4 x 4",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": "80",
+              "carga_texto": "Kg",
+              "descanso": "90\" a 120\"",
+              "notas": null,
+              "cargas_kg_registro": [
+                "80"
+              ],
+              "carga_kg_fuente_origen": "registro del atleta en el archivo (carga única en todas las series)"
+            },
+            {
+              "semana": 2,
+              "sesion": "2°",
+              "descarga": false,
+              "series": "4",
+              "reps": "4",
+              "metodo": null,
+              "prescripcion_texto": "4 x 4",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": "82.5",
+              "carga_texto": "Kg",
+              "descanso": "90\" a 120\"",
+              "notas": null,
+              "cargas_kg_registro": [
+                "82.5"
+              ],
+              "carga_kg_fuente_origen": "registro del atleta en el archivo (carga única en todas las series)"
+            },
+            {
+              "semana": 3,
+              "sesion": "3°",
+              "descarga": false,
+              "series": "4",
+              "reps": "4",
+              "metodo": null,
+              "prescripcion_texto": "4 x 4",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": "85",
+              "carga_texto": "Kg",
+              "descanso": "90\" a 120\"",
+              "notas": null,
+              "cargas_kg_registro": [
+                "85"
+              ],
+              "carga_kg_fuente_origen": "registro del atleta en el archivo (carga única en todas las series)"
+            },
+            {
+              "semana": 4,
+              "sesion": "4°",
+              "descarga": false,
+              "series": "3",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "3 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": "75",
+              "carga_texto": "Kg",
+              "descanso": "2'00\"",
+              "notas": null,
+              "cargas_kg_registro": [
+                "75"
+              ],
+              "carga_kg_fuente_origen": "registro del atleta en el archivo (carga única en todas las series)"
+            }
+          ]
+        },
+        {
+          "nombre_original": "REMO CON BARRA",
+          "nombre": "Remo con barra",
+          "nombre_clave": "REMO CON BARRA",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": "PRESS BANCA",
+          "rm_referencia": null,
+          "notas": "[Superserie: alternar con PRESS BANCA]",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "2",
+              "reps": "(6 a 8)",
+              "metodo": null,
+              "prescripcion_texto": "2 x (6 a 8)",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "2°",
+              "descarga": false,
+              "series": "2",
+              "reps": "(6 a 8)",
+              "metodo": null,
+              "prescripcion_texto": "2 x (6 a 8)",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "3°",
+              "descarga": false,
+              "series": "2",
+              "reps": "(6 a 8)",
+              "metodo": null,
+              "prescripcion_texto": "2 x (6 a 8)",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 4,
+              "sesion": "4°",
+              "descarga": false,
+              "series": "2",
+              "reps": "(6 a 8)",
+              "metodo": null,
+              "prescripcion_texto": "2 x (6 a 8)",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "PLANCHA FRONTAL + LATERAL (15\")",
+          "nombre": "Plancha frontal + lateral (15\")",
+          "nombre_clave": "PLANCHA FRONTAL LATERAL 15",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "2",
+              "reps": "(30\")",
+              "metodo": null,
+              "prescripcion_texto": "2 x (30\")",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "30\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "2°",
+              "descarga": false,
+              "series": "2",
+              "reps": "(45\")",
+              "metodo": null,
+              "prescripcion_texto": "2 x (45\")",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "30\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "3°",
+              "descarga": false,
+              "series": "2",
+              "reps": "(45\")",
+              "metodo": null,
+              "prescripcion_texto": "2 x (45\")",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "30\"",
+              "notas": null
+            },
+            {
+              "semana": 4,
+              "sesion": "4°",
+              "descarga": false,
+              "series": "2",
+              "reps": "(60\")",
+              "metodo": null,
+              "prescripcion_texto": "2 x (60\")",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "30\"",
+              "notas": null
+            }
+          ]
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "codigo": "B",
+      "titulo": "Aprendiendo a SER FUERTES  - DÍA B - \"PESO MUERTO y PRESS MILITAR\"",
+      "hoja": "Entrenamiento B",
+      "enfoque_dia": "\"PESO MUERTO y PRESS MILITAR\"",
+      "instrucciones_sesion": {
+        "1": "Ajusta la carga para mantener un esfuerzo 7/8",
+        "2": "Ajusta la carga para mantener un esfuerzo 8/9",
+        "3": "Ajusta la carga para mantener un esfuerzo 9/10",
+        "4": "AL FALLO: serie 1 de calentamiento pesada, serie 2  AMRAP (todas las repeticiones posibles)"
+      },
+      "ejercicios": [
+        {
+          "nombre_original": "PESO MUERTO",
+          "nombre": "Peso muerto",
+          "nombre_clave": "PESO MUERTO",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": {
+            "tipo": "1RM",
+            "valor": "100",
+            "unidad": null
+          },
+          "notas": "",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "4",
+              "reps": "4",
+              "metodo": null,
+              "prescripcion_texto": "4 x 4",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": "75",
+              "carga_texto": "Kg",
+              "descanso": "2'00\" a 3'00\"",
+              "notas": null,
+              "cargas_kg_registro": [
+                "75"
+              ],
+              "carga_kg_fuente_origen": "registro del atleta en el archivo (carga única en todas las series)"
+            },
+            {
+              "semana": 2,
+              "sesion": "2°",
+              "descarga": false,
+              "series": "4",
+              "reps": "3",
+              "metodo": null,
+              "prescripcion_texto": "4 x 3",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": "85",
+              "carga_texto": "Kg",
+              "descanso": "2'00\" a 3'00\"",
+              "notas": null,
+              "cargas_kg_registro": [
+                "85"
+              ],
+              "carga_kg_fuente_origen": "registro del atleta en el archivo (carga única en todas las series)"
+            },
+            {
+              "semana": 3,
+              "sesion": "3°",
+              "descarga": false,
+              "series": "2",
+              "reps": "2",
+              "metodo": null,
+              "prescripcion_texto": "2 x 2",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": "90",
+              "carga_texto": "Kg",
+              "descanso": "2'00\" a 3'00\"",
+              "notas": null,
+              "cargas_kg_registro": [
+                "90"
+              ],
+              "carga_kg_fuente_origen": "registro del atleta en el archivo (carga única en todas las series)"
+            },
+            {
+              "semana": 4,
+              "sesion": "4°",
+              "descarga": false,
+              "series": "1",
+              "reps": "1",
+              "metodo": null,
+              "prescripcion_texto": "1 x 1",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": "Kg",
+              "descanso": "2'00\"",
+              "notas": null,
+              "cargas_kg_registro": [
+                "95",
+                "70"
+              ]
+            }
+          ],
+          "avisos": [
+            "semana 4: cargas del atleta varían por serie (95, 70 kg); sin carga única en plantilla"
+          ]
+        },
+        {
+          "nombre_original": "HIPEREXTENSIONES/RUMANO",
+          "nombre": "Hiperextensiones/rumano",
+          "nombre_clave": "HIPEREXTENSIONES RUMANO",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "2",
+              "reps": "(12-15)",
+              "metodo": null,
+              "prescripcion_texto": "2 x (12-15)",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "90\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "2°",
+              "descarga": false,
+              "series": "2",
+              "reps": "(12-15)",
+              "metodo": null,
+              "prescripcion_texto": "2 x (12-15)",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "90\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "3°",
+              "descarga": false,
+              "series": "2",
+              "reps": "(15)",
+              "metodo": null,
+              "prescripcion_texto": "2 x (15)",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "90\"",
+              "notas": null
+            },
+            {
+              "semana": 4,
+              "sesion": "4°",
+              "descarga": false,
+              "series": "2",
+              "reps": "(10-12)",
+              "metodo": null,
+              "prescripcion_texto": "2 x (10-12)",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "90\"",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "PRESS MILITAR",
+          "nombre": "Press militar",
+          "nombre_clave": "PRESS MILITAR",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": {
+            "tipo": "1RM",
+            "valor": "100",
+            "unidad": null
+          },
+          "notas": "ALTERNAR DOS EJERCICIOS",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "4",
+              "reps": "4",
+              "metodo": null,
+              "prescripcion_texto": "4 x 4",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": "80",
+              "carga_texto": "Kg",
+              "descanso": "90\" a 120\"",
+              "notas": null,
+              "cargas_kg_registro": [
+                "80"
+              ],
+              "carga_kg_fuente_origen": "registro del atleta en el archivo (carga única en todas las series)"
+            },
+            {
+              "semana": 2,
+              "sesion": "2°",
+              "descarga": false,
+              "series": "4",
+              "reps": "4",
+              "metodo": null,
+              "prescripcion_texto": "4 x 4",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": "82.5",
+              "carga_texto": "Kg",
+              "descanso": "90\" a 120\"",
+              "notas": null,
+              "cargas_kg_registro": [
+                "82.5"
+              ],
+              "carga_kg_fuente_origen": "registro del atleta en el archivo (carga única en todas las series)"
+            },
+            {
+              "semana": 3,
+              "sesion": "3°",
+              "descarga": false,
+              "series": "4",
+              "reps": "4",
+              "metodo": null,
+              "prescripcion_texto": "4 x 4",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": "85",
+              "carga_texto": "Kg",
+              "descanso": "90\" a 120\"",
+              "notas": null,
+              "cargas_kg_registro": [
+                "85"
+              ],
+              "carga_kg_fuente_origen": "registro del atleta en el archivo (carga única en todas las series)"
+            },
+            {
+              "semana": 4,
+              "sesion": "4°",
+              "descarga": false,
+              "series": "3",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "3 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": "75",
+              "carga_texto": "Kg",
+              "descanso": "2'00\"",
+              "notas": null,
+              "cargas_kg_registro": [
+                "75"
+              ],
+              "carga_kg_fuente_origen": "registro del atleta en el archivo (carga única en todas las series)"
+            }
+          ]
+        },
+        {
+          "nombre_original": "LAT MACHINE SUPINO",
+          "nombre": "Lat machine supino",
+          "nombre_clave": "LAT MACHINE SUPINO",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": "PRESS MILITAR",
+          "rm_referencia": null,
+          "notas": "[Superserie: alternar con PRESS MILITAR]",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "2",
+              "reps": "(6 a 8)",
+              "metodo": null,
+              "prescripcion_texto": "2 x (6 a 8)",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "2°",
+              "descarga": false,
+              "series": "2",
+              "reps": "(6 a 8)",
+              "metodo": null,
+              "prescripcion_texto": "2 x (6 a 8)",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "3°",
+              "descarga": false,
+              "series": "2",
+              "reps": "(6 a 8)",
+              "metodo": null,
+              "prescripcion_texto": "2 x (6 a 8)",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 4,
+              "sesion": "4°",
+              "descarga": false,
+              "series": "2",
+              "reps": "(6 a 8)",
+              "metodo": null,
+              "prescripcion_texto": "2 x (6 a 8)",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "CURL DE BÍCEPS BARRA/ HIP THRUST",
+          "nombre": "Curl de bíceps barra/ hip thrust",
+          "nombre_clave": "CURL DE BICEPS BARRA HIP THRUST",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "2",
+              "reps": "(6 a 8)",
+              "metodo": null,
+              "prescripcion_texto": "2 x (6 a 8)",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "30\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "2°",
+              "descarga": false,
+              "series": "2",
+              "reps": "(6 a 8)",
+              "metodo": null,
+              "prescripcion_texto": "2 x (6 a 8)",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "30\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "3°",
+              "descarga": false,
+              "series": "2",
+              "reps": "(6 a 8)",
+              "metodo": null,
+              "prescripcion_texto": "2 x (6 a 8)",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "30\"",
+              "notas": null
+            },
+            {
+              "semana": 4,
+              "sesion": "4°",
+              "descarga": false,
+              "series": "2",
+              "reps": "(6 a 8)",
+              "metodo": null,
+              "prescripcion_texto": "2 x (6 a 8)",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "30\"",
+              "notas": null
+            }
+          ]
+        }
+      ],
+      "avisos": []
+    }
+  ],
+  "variantes": [
+    {
+      "etiqueta": "POCO MATERIAL",
+      "etiquetas": [
+        "POCO MATERIAL"
+      ],
+      "unidades": "kg",
+      "archivos": [
+        "4 Mesociclo - Aprendiendo a ser Fuertes- Poco material.xlsx"
+      ],
+      "atleta": null,
+      "coincidencia_posicional_pct": 100,
+      "sustituciones": [
+        {
+          "dia": "A",
+          "posicion": 2,
+          "en_plantilla": "PRENSA 45°/HACKA",
+          "en_variante": "SENTADILLA BULGARA"
+        },
+        {
+          "dia": "B",
+          "posicion": 2,
+          "en_plantilla": "HIPEREXTENSIONES/RUMANO",
+          "en_variante": "RUMANO"
+        },
+        {
+          "dia": "B",
+          "posicion": 4,
+          "en_plantilla": "LAT MACHINE SUPINO",
+          "en_variante": "RACK CHINS"
+        },
+        {
+          "dia": "B",
+          "posicion": 5,
+          "en_plantilla": "CURL DE BÍCEPS BARRA/ HIP THRUST",
+          "en_variante": "CURL DE BÍCEPS BARRA"
+        }
+      ],
+      "ejercicios_solo_variante": [],
+      "ejercicios_solo_plantilla": [],
+      "prescripcion_diferente": []
+    },
+    {
+      "etiqueta": "GERA",
+      "etiquetas": [
+        "GERA"
+      ],
+      "unidades": "kg",
+      "archivos": [
+        "4 Mesociclo - Aprendiendo a ser Fuertes-GEra!.xlsx"
+      ],
+      "atleta": "Geraa!",
+      "coincidencia_posicional_pct": 90,
+      "sustituciones": [
+        {
+          "dia": "A",
+          "posicion": 2,
+          "en_plantilla": "PRENSA 45°/HACKA",
+          "en_variante": "ZANCADA REVERSA CON SAF BAR"
+        },
+        {
+          "dia": "A",
+          "posicion": 5,
+          "en_plantilla": "PLANCHA FRONTAL + LATERAL (15\")",
+          "en_variante": "PANTORRILLAS SAFETY BAR  202"
+        },
+        {
+          "dia": "B",
+          "posicion": 2,
+          "en_plantilla": "HIPEREXTENSIONES/RUMANO",
+          "en_variante": "HIPEREXTENSIONES"
+        },
+        {
+          "dia": "B",
+          "posicion": 5,
+          "en_plantilla": "CURL DE BÍCEPS BARRA/ HIP THRUST",
+          "en_variante": "EXTENSIONES DE PIERNA 5\""
+        }
+      ],
+      "ejercicios_solo_variante": [],
+      "ejercicios_solo_plantilla": [],
+      "prescripcion_diferente": [
+        {
+          "dia": "A",
+          "posicion": 5,
+          "ejercicio": "PLANCHA FRONTAL + LATERAL (15\")",
+          "semanas": {
+            "1": {
+              "plantilla": "2 x (30\")",
+              "variante": "2 x 15"
+            },
+            "2": {
+              "plantilla": "2 x (45\")",
+              "variante": "2 x 17"
+            },
+            "3": {
+              "plantilla": "2 x (45\")",
+              "variante": "2 x 20"
+            },
+            "4": {
+              "plantilla": "2 x (60\")",
+              "variante": "2 x 20"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "etiqueta": "NAYEE",
+      "etiquetas": [
+        "NAYEE"
+      ],
+      "unidades": "kg",
+      "archivos": [
+        "4 Mesociclo - Aprendiendo a ser Fuertes- Nayee.xlsx"
+      ],
+      "atleta": "Nayee!!",
+      "coincidencia_posicional_pct": 100,
+      "sustituciones": [
+        {
+          "dia": "A",
+          "posicion": 2,
+          "en_plantilla": "PRENSA 45°/HACKA",
+          "en_variante": "PESO MUERTO RUMANO"
+        },
+        {
+          "dia": "B",
+          "posicion": 2,
+          "en_plantilla": "HIPEREXTENSIONES/RUMANO",
+          "en_variante": "HIPEREXTENSIONES"
+        }
+      ],
+      "ejercicios_solo_variante": [],
+      "ejercicios_solo_plantilla": [],
+      "prescripcion_diferente": []
+    }
+  ],
+  "archivos_fuente": [
+    {
+      "archivo": "4 Mesociclo - Aprendiendo a ser Fuertes- Poco material.xlsx",
+      "drive_id": "1BLLQoGP7Irb9aNd5GIhugxao_cYtqQ8O",
+      "fase": "Fase 3 - Macrocilo 1 - Aprendiendo Fuerza",
+      "variante": "POCO MATERIAL",
+      "atleta": null,
+      "n_ejercicios": 10,
+      "semanas": 4,
+      "firma": "c7da1df349b9"
+    },
+    {
+      "archivo": "4 Mesociclo - Aprendiendo a ser Fuertes-GEra!.xlsx",
+      "drive_id": "1J49T4l0u3kumnE3DQ4AANlwfk4xHkaJl",
+      "fase": "Fase 3 - Macrocilo 1 - Aprendiendo Fuerza",
+      "variante": "GERA",
+      "atleta": "Geraa!",
+      "n_ejercicios": 10,
+      "semanas": 4,
+      "firma": "244ee102b4e4"
+    },
+    {
+      "archivo": "4 Mesociclo - Aprendiendo a ser Fuertes- Nayee.xlsx",
+      "drive_id": "1Y-CJX2U8rTPvzDig9ibJcwvoNweWuV5q",
+      "fase": "Fase 3 - Macrocilo 1 - Aprendiendo Fuerza",
+      "variante": "NAYEE",
+      "atleta": "Nayee!!",
+      "n_ejercicios": 10,
+      "semanas": 4,
+      "firma": "1a54b3ee5037"
+    },
+    {
+      "archivo": "4 Mesociclo - Aprendiendo a ser Fuertes.xlsx",
+      "drive_id": "1bQ_B9FH4PHARplw4ZXfDCaO697esY_jh",
+      "fase": "Fase 3 - Macrocilo 1 - Aprendiendo Fuerza",
+      "variante": null,
+      "atleta": null,
+      "n_ejercicios": 10,
+      "semanas": 4,
+      "firma": "910b8d526a17"
+    }
+  ],
+  "notas": "Plantilla canónica construida a partir del archivo de referencia '4 Mesociclo - Aprendiendo a ser Fuertes.xlsx'. Las cargas en kg/lbs de los archivos son registro del atleta, no prescripción, salvo que se indique carga_kg_fuente.",
+  "revision": []
+}

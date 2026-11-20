@@ -81,6 +81,17 @@ export function etiquetaMedida(valor: string | null | undefined): string {
   }
 }
 
+export function etiquetaVariante(campo: 'poblacion' | 'material' | 'unidades', valor: string | null | undefined): string {
+  if (!valor) return '';
+  if (campo === 'poblacion' && valor === 'mujeres') return 'Mujeres';
+  if (campo === 'poblacion' && valor === 'hombres') return 'Hombres';
+  if (campo === 'material' && valor === 'poco_material') return 'Poco material';
+  if (campo === 'material' && valor === 'sin_maquinas') return 'Sin máquinas';
+  if (campo === 'unidades' && valor === 'kg') return 'kg';
+  if (campo === 'unidades' && valor === 'lbs') return 'lbs';
+  return valor;
+}
+
 export function etiquetaSemanas(valor: number | null | undefined): string {
   return valor == null ? 'por definir' : String(valor);
 }

@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   outputFileTracingRoot: path.join(__dirname),
   eslint: { ignoreDuringBuilds: true },
+  devIndicators: { position: 'top-right' },
 };
 
 export default nextConfig;

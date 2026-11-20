@@ -6,6 +6,7 @@ import { crearClienteNavegador } from '@/lib/supabase/client';
 import { kilosObjetivo } from '@/lib/kilos';
 import { segundosATexto } from '@/lib/descanso';
 import { plataforma } from '@/config/plataforma';
+import { Desplegable } from '@/components/Desplegable';
 import { etiquetaEstadoRutina, type Enfoque } from '@/lib/etiquetas';
 import type { InicialConstructor } from '@/lib/cargar-constructor';
 import { esPendienteYohan, esPrescripcionVaga, restoTrasMarca } from '@/lib/pendiente-yohan';
@@ -85,6 +86,7 @@ export function ConstructorRutina({
   esFase,
   faseOrden,
   faseNombre,
+  pertenencia,
   inicial,
   rmEjemplo = 100,
 }: {
@@ -93,6 +95,7 @@ export function ConstructorRutina({
   esFase?: boolean;
   faseOrden?: number | null;
   faseNombre?: string | null;
+  pertenencia?: string | null;
   inicial?: InicialConstructor;
   rmEjemplo?: number;
 }) {
@@ -474,6 +477,7 @@ export function ConstructorRutina({
           ) : null}
         </div>
       </div>
+      {pertenencia ? <p className="muted">{pertenencia}</p> : null}
       {msg ? <p className={`constructor-msg ${msg.toLowerCase().includes('no se') || msg.toLowerCase().includes('error') ? 'error' : 'muted'}`}>{msg} · {etiquetaEstadoRutina(estado)}</p> : null}
       {sucio ? <p className="muted">Cambios sin guardar</p> : null}
       {porRevisar ? (
@@ -503,25 +507,21 @@ export function ConstructorRutina({
         </label>
         <label className="f">
           Semanas
-          <select className="in" value={semanas ?? ''} onChange={(e) => setSemanas(e.target.value ? Number(e.target.value) : null)}>
-            <option value="">por definir</option>
-            {[3, 4, 5, 6, 7, 8].map((n) => (
-              <option key={n} value={n}>
-                {n}
-              </option>
-            ))}
-          </select>
+          <Desplegable
+            etiqueta="Semanas"
+            valor={semanas == null ? '' : String(semanas)}
+            alCambiar={(valor) => setSemanas(valor ? Number(valor) : null)}
+            opciones={[{ valor: '', etiqueta: 'por definir' }, ...[3, 4, 5, 6, 7, 8].map((n) => ({ valor: String(n), etiqueta: String(n) }))]}
+          />
         </label>
         <label className="f">
           Semana de descarga
-          <select className="in" value={descarga ?? ''} onChange={(e) => setDescarga(e.target.value ? Number(e.target.value) : null)}>
-            <option value="">Ninguna</option>
-            {Array.from({ length: semanasTabla }, (_, i) => i + 1).map((n) => (
-              <option key={n} value={n}>
-                Semana {n}
-              </option>
-            ))}
-          </select>
+          <Desplegable
+            etiqueta="Semana de descarga"
+            valor={descarga == null ? '' : String(descarga)}
+            alCambiar={(valor) => setDescarga(valor ? Number(valor) : null)}
+            opciones={[{ valor: '', etiqueta: 'Ninguna' }, ...Array.from({ length: semanasTabla }, (_, i) => ({ valor: String(i + 1), etiqueta: `Semana ${i + 1}` }))]}
+          />
         </label>
         <div className="constructor-enfoques" style={{ gridColumn: 'span 4', display: 'flex', flexWrap: 'wrap', gap: 8 }}>
           {ENFOQUES.map((e) => (
@@ -599,6 +599,7 @@ export function ConstructorRutina({
       ) : null}
 
       <div className="constructor-cuerpo" style={{ display: 'flex', flexWrap: 'wrap', gap: 24, alignItems: 'flex-start' }}>
+        {ejDelDia.length === 0 ? <p className="constructor-sin-ejercicios">Sin ejercicios todavía</p> : null}
         <div className="card constructor-tabla-card" style={{ flex: '999 1 640px', minWidth: 0, padding: 0, overflow: 'hidden' }}>
           <ul className="constructor-lista">
             {ejDelDia.map((e, i) => {
@@ -627,7 +628,7 @@ export function ConstructorRutina({
                 </li>
               );
             })}
-          </ul>
+            </ul>
           <div className="constructor-tabla-scroll" style={{ overflowX: 'auto', padding: '0 12px' }}>
             <table className="tabla constructor-tabla" style={{ fontSize: 15 }}>
               <thead>
@@ -761,23 +762,27 @@ export function ConstructorRutina({
             />
             <label className="f">
               Intensidad por
-              <select className="in" value={actual.intensidad_tipo} onChange={(e) => void patchEj(actual.id, { intensidad_tipo: e.target.value as Intensidad })}>
-                <option value="pct_1rm">% del 1RM</option>
-                <option value="rm">RM</option>
-                <option value="rpe">RPE</option>
-                <option value="rir_fallo">RIR / al fallo</option>
-                <option value="texto">Texto</option>
-              </select>
+              <Desplegable
+                etiqueta="Intensidad"
+                valor={actual.intensidad_tipo}
+                alCambiar={(valor) => void patchEj(actual.id, { intensidad_tipo: valor as Intensidad })}
+                opciones={[
+                  { valor: 'pct_1rm', etiqueta: '% del 1RM' },
+                  { valor: 'rm', etiqueta: 'RM' },
+                  { valor: 'rpe', etiqueta: 'RPE' },
+                  { valor: 'rir_fallo', etiqueta: 'RIR / al fallo' },
+                  { valor: 'texto', etiqueta: 'Texto' },
+                ]}
+              />
             </label>
             <label className="f">
               Semana
-              <select className="in" value={semanaEdit} onChange={(e) => setSemanaEdit(Number(e.target.value))}>
-                {Array.from({ length: semanasTabla }, (_, i) => (
-                  <option key={i + 1} value={i + 1}>
-                    {i + 1}
-                  </option>
-                ))}
-              </select>
+              <Desplegable
+                etiqueta="Semana"
+                valor={String(semanaEdit)}
+                alCambiar={(valor) => setSemanaEdit(Number(valor))}
+                opciones={Array.from({ length: Math.max(semanasTabla, 1) }, (_, i) => ({ valor: String(i + 1), etiqueta: String(i + 1) }))}
+              />
             </label>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: 10 }}>
               <label className="f">

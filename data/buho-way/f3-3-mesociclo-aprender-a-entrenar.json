@@ -1,0 +1,1604 @@
+{
+  "id": "f3-3-mesociclo-aprender-a-entrenar",
+  "nombre": "3° Mesociclo - Aprender a Entrenar",
+  "nombre_alias": [],
+  "fase": "Fase 3 - Macrocilo 1 - Aprendiendo Fuerza",
+  "fase_corta": "Aprendiendo Fuerza",
+  "semanas": 6,
+  "enfoque": "Técnica",
+  "enfoque_original": "inferido: contiene 'aprender a entrenar'",
+  "estado": "Borrador",
+  "dias": [
+    {
+      "codigo": "D",
+      "titulo": "3° MESOCICLO- APRENDER A ENTRENAR - FULL BODY DÍA DE SQUAT/BANCA/REMO",
+      "hoja": "Entrenamiento A",
+      "enfoque_dia": null,
+      "instrucciones_sesion": {
+        "1": "Día de Volumen: Tratar de conseguir las series pautadas, foco en tecnica",
+        "2": "Día de intensidad: Tratar de Alcanzar las máximas repeticiones posibles.",
+        "3": "Día de Volumen: Tratar de conseguir las series pautadas, foco en tecnica",
+        "4": "Día de intensidad: Tratar de Rebasar tu día 3°",
+        "5": "Día de Volumen: Tratar de conseguir las series pautadas, foco en tecnica",
+        "6": "Día de descarga:       Solo UNA serie                   entrega tu alma."
+      },
+      "ejercicios": [
+        {
+          "nombre_original": "SENTADILLA CON BARRA",
+          "nombre": "Sentadilla con barra",
+          "nombre_clave": "SENTADILLA CON BARRA",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": {
+            "tipo": "1RM",
+            "valor": "56",
+            "unidad": null
+          },
+          "notas": "[Récord teórico del archivo] | Profundidad al máximo posible. | [Descanso entre reps: sem 1: 2:00 a 3:00, sem 2: 2:00 a 3:00, sem 3: 2:00 a 3:00, sem 4: 2:00 a 3:00, sem 5: 2:00 a 3:00, sem 6: 2:00 a 3:00]",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Día 1°",
+              "descarga": false,
+              "series": "3",
+              "reps": "5",
+              "metodo": null,
+              "prescripcion_texto": "3 x 5",
+              "porcentaje_rm": "0.75",
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": "¿ESFUERZO?",
+              "cargas_kg_registro": [
+                "42",
+                "42",
+                "42"
+              ]
+            },
+            {
+              "semana": 2,
+              "sesion": "Día 3°",
+              "descarga": false,
+              "series": "3",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "3 x AMRAP",
+              "porcentaje_rm": "0.85",
+              "carga_kg_fuente": null,
+              "carga_texto": "RPE-10",
+              "descanso": null,
+              "notas": null,
+              "cargas_kg_registro": [
+                "47.6",
+                "47.6",
+                "47.6"
+              ]
+            },
+            {
+              "semana": 3,
+              "sesion": "Día 5°",
+              "descarga": false,
+              "series": "3",
+              "reps": "6",
+              "metodo": null,
+              "prescripcion_texto": "3 x 6",
+              "porcentaje_rm": "0.75",
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": "¿ESFUERZO?",
+              "cargas_kg_registro": [
+                "42",
+                "42",
+                "42"
+              ]
+            },
+            {
+              "semana": 4,
+              "sesion": "Día 7°",
+              "descarga": false,
+              "series": "2",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP",
+              "porcentaje_rm": "0.85",
+              "carga_kg_fuente": null,
+              "carga_texto": "RPE-10",
+              "descanso": null,
+              "notas": null,
+              "cargas_kg_registro": [
+                "47.6",
+                "47.6"
+              ]
+            },
+            {
+              "semana": 5,
+              "sesion": "Día 9°",
+              "descarga": false,
+              "series": "4",
+              "reps": "6",
+              "metodo": null,
+              "prescripcion_texto": "4 x 6",
+              "porcentaje_rm": "0.75",
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": "¿ESFUERZO?",
+              "cargas_kg_registro": [
+                "42",
+                "42",
+                "42",
+                "42"
+              ]
+            },
+            {
+              "semana": 6,
+              "sesion": "Día 11°",
+              "descarga": true,
+              "series": "1",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "1 x AMRAP",
+              "porcentaje_rm": "0.85",
+              "carga_kg_fuente": null,
+              "carga_texto": "RPE-10",
+              "descanso": null,
+              "notas": null,
+              "cargas_kg_registro": [
+                "47.6"
+              ]
+            }
+          ]
+        },
+        {
+          "nombre_original": "LEG CURL",
+          "nombre": "Leg curl",
+          "nombre_clave": "LEG CURL",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "[Descanso entre reps: sem 1: 1:30-2:00, sem 2: 1:30-2:00, sem 3: 1:30-2:00, sem 4: 1:30-2:00, sem 5: 02:00:00, sem 6: 02:00:00]",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Día 1°",
+              "descarga": false,
+              "series": "2",
+              "reps": "6",
+              "metodo": null,
+              "prescripcion_texto": "2 x 6",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Día 3°",
+              "descarga": false,
+              "series": "2",
+              "reps": "8",
+              "metodo": null,
+              "prescripcion_texto": "2 x 8",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Día 5°",
+              "descarga": false,
+              "series": "2",
+              "reps": "10",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 4,
+              "sesion": "Día 7°",
+              "descarga": false,
+              "series": "1x AMRAP",
+              "reps": null,
+              "metodo": null,
+              "prescripcion_texto": "1x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 5,
+              "sesion": "Día 9°",
+              "descarga": false,
+              "series": "2",
+              "reps": "AMRAP+1",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP+1",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 6,
+              "sesion": "Día 11°",
+              "descarga": true,
+              "series": "1",
+              "reps": "AMRAP + 2",
+              "metodo": null,
+              "prescripcion_texto": "1 x AMRAP + 2",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "PRESS BANCA",
+          "nombre": "Press banca",
+          "nombre_clave": "PRESS BANCA",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": {
+            "tipo": "1RM",
+            "valor": "31.764705882352942",
+            "unidad": null
+          },
+          "notas": "[Récord teórico del archivo] | 1\" De pausa en el pecho, leg drive, retracción escapular | [Descanso entre reps: sem 1: 2:00 a 3:00, sem 2: 2:00 a 3:00, sem 3: 2:00 a 3:00, sem 4: 2:00 a 3:00, sem 5: 02:00:00, sem 6: 2:00 a 3:00]",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Día 1°",
+              "descarga": false,
+              "series": "3",
+              "reps": "5",
+              "metodo": null,
+              "prescripcion_texto": "3 x 5",
+              "porcentaje_rm": "0.75",
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": "¿ESFUERZO?",
+              "cargas_kg_registro": [
+                "23.823529411764707",
+                "23.823529411764707",
+                "23.823529411764707"
+              ]
+            },
+            {
+              "semana": 2,
+              "sesion": "Día 3°",
+              "descarga": false,
+              "series": "3",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "3 x AMRAP",
+              "porcentaje_rm": "0.85",
+              "carga_kg_fuente": null,
+              "carga_texto": "RPE-10",
+              "descanso": null,
+              "notas": null,
+              "cargas_kg_registro": [
+                "27",
+                "27",
+                "27"
+              ]
+            },
+            {
+              "semana": 3,
+              "sesion": "Día 5°",
+              "descarga": false,
+              "series": "3",
+              "reps": "6",
+              "metodo": null,
+              "prescripcion_texto": "3 x 6",
+              "porcentaje_rm": "0.75",
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": "¿ESFUERZO?",
+              "cargas_kg_registro": [
+                "23.823529411764707",
+                "23.823529411764707",
+                "23.823529411764707"
+              ]
+            },
+            {
+              "semana": 4,
+              "sesion": "Día 7°",
+              "descarga": false,
+              "series": "2",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP",
+              "porcentaje_rm": "0.85",
+              "carga_kg_fuente": null,
+              "carga_texto": "RPE-10",
+              "descanso": null,
+              "notas": null,
+              "cargas_kg_registro": [
+                "27",
+                "27"
+              ]
+            },
+            {
+              "semana": 5,
+              "sesion": "Día 9°",
+              "descarga": false,
+              "series": "3",
+              "reps": "8/6/4",
+              "metodo": null,
+              "prescripcion_texto": "3 x 8/6/4",
+              "porcentaje_rm": "0.75",
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": "¿ESFUERZO?",
+              "cargas_kg_registro": [
+                "23.823529411764707",
+                "23.823529411764707",
+                "23.823529411764707"
+              ]
+            },
+            {
+              "semana": 6,
+              "sesion": "Día 11°",
+              "descarga": true,
+              "series": "1",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "1 x AMRAP",
+              "porcentaje_rm": "0.85",
+              "carga_kg_fuente": null,
+              "carga_texto": "RPE-10",
+              "descanso": null,
+              "notas": null,
+              "cargas_kg_registro": [
+                "27"
+              ]
+            }
+          ]
+        },
+        {
+          "nombre_original": "SEAL ROW o REMO T",
+          "nombre": "Seal row o remo t",
+          "nombre_clave": "SEAL ROW O REMO T",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "Espalda Neutra, Fallar hasta que no toque el pecho | [Descanso entre reps: sem 1: 1:30-2:00, sem 2: 1:30-2:00, sem 3: 1:30-2:00, sem 4: 1:30-2:00, sem 5: 02:00:00, sem 6: 02:00:00]",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Día 1°",
+              "descarga": false,
+              "series": "2",
+              "reps": "8",
+              "metodo": null,
+              "prescripcion_texto": "2 x 8",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": "RPE-10",
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Día 3°",
+              "descarga": false,
+              "series": "2",
+              "reps": "10",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Día 5°",
+              "descarga": false,
+              "series": "2",
+              "reps": "8",
+              "metodo": null,
+              "prescripcion_texto": "2 x 8",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 4,
+              "sesion": "Día 7°",
+              "descarga": false,
+              "series": "2",
+              "reps": "10",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 5,
+              "sesion": "Día 9°",
+              "descarga": false,
+              "series": "2",
+              "reps": "8",
+              "metodo": null,
+              "prescripcion_texto": "2 x 8",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 6,
+              "sesion": "Día 11°",
+              "descarga": true,
+              "series": "2",
+              "reps": "10",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "PRESS FRANCES",
+          "nombre": "Press frances",
+          "nombre_clave": "PRESS FRANCES",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "ALTERNO CON",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Día 1°",
+              "descarga": false,
+              "series": "2",
+              "reps": "10",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Día 3°",
+              "descarga": false,
+              "series": "2",
+              "reps": "12",
+              "metodo": null,
+              "prescripcion_texto": "2 x 12",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Día 5°",
+              "descarga": false,
+              "series": "2",
+              "reps": "15",
+              "metodo": null,
+              "prescripcion_texto": "2 x 15",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 4,
+              "sesion": "Día 7°",
+              "descarga": false,
+              "series": "1",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "1 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 5,
+              "sesion": "Día 9°",
+              "descarga": false,
+              "series": "2",
+              "reps": "AMRAP +1",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP +1",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 6,
+              "sesion": "Día 11°",
+              "descarga": true,
+              "series": "2",
+              "reps": "AMRAP +2",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP +2",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "PANTORRILLAS EN PRENSA o MÁQUINA",
+          "nombre": "Pantorrillas en prensa o máquina",
+          "nombre_clave": "PANTORRILLAS EN PRENSA O MAQUINA",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": "PRESS FRANCES",
+          "rm_referencia": null,
+          "notas": "[Superserie: alternar con PRESS FRANCES]",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Día 1°",
+              "descarga": false,
+              "series": "\"Máxima carga\"",
+              "reps": null,
+              "metodo": null,
+              "prescripcion_texto": "\"Máxima carga\"",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Día 3°",
+              "descarga": false,
+              "series": "\"Repetir carga\"",
+              "reps": null,
+              "metodo": null,
+              "prescripcion_texto": "\"Repetir carga\"",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Día 5°",
+              "descarga": false,
+              "series": "\"Repetir carga\"",
+              "reps": null,
+              "metodo": null,
+              "prescripcion_texto": "\"Repetir carga\"",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 4,
+              "sesion": "Día 7°",
+              "descarga": false,
+              "series": "\"SUBIR CARGA\"",
+              "reps": null,
+              "metodo": null,
+              "prescripcion_texto": "\"SUBIR CARGA\"",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 5,
+              "sesion": "Día 9°",
+              "descarga": false,
+              "series": "\"Repetir carga\"",
+              "reps": null,
+              "metodo": null,
+              "prescripcion_texto": "\"Repetir carga\"",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 6,
+              "sesion": "Día 11°",
+              "descarga": true,
+              "series": "\"Repetir carga\"",
+              "reps": null,
+              "metodo": null,
+              "prescripcion_texto": "\"Repetir carga\"",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            }
+          ]
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "codigo": "D",
+      "titulo": "3° MESOCICLO- APRENDER A ENTRENAR - FULL BODY DÍA DE SQUAT/BANCA/REMO",
+      "hoja": "Entrenamiento B",
+      "enfoque_dia": null,
+      "instrucciones_sesion": {
+        "1": "Día de Volumen: Tratar de conseguir las series pautadas, foco en tecnica",
+        "2": "Día de intensidad: Tratar de Alcanzar las máximas repeticiones posibles.",
+        "3": "Día de Volumen: Tratar de conseguir las series pautadas, foco en tecnica",
+        "4": "Día de intensidad: Tratar de Rebasar tu día 3°",
+        "5": "Día de Volumen: Tratar de conseguir las series pautadas, foco en tecnica",
+        "6": "Día de descarga:       Solo UNA serie                   entrega tu alma."
+      },
+      "ejercicios": [
+        {
+          "nombre_original": "PESO MUERTO",
+          "nombre": "Peso muerto",
+          "nombre_clave": "PESO MUERTO",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": {
+            "tipo": "1RM",
+            "valor": "100",
+            "unidad": null
+          },
+          "notas": "[Récord teórico del archivo] | Desde el piso, todas las repeticiones sin rebote, barra pegada | [Descanso entre reps: sem 1: 2:00 a 3:00, sem 2: 2:00 a 3:00, sem 3: 2:00 a 3:00, sem 4: 2:00 a 3:00, sem 5: 2:00 a 3:00, sem 6: 2:00 a 3:00]",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Día 2°",
+              "descarga": false,
+              "series": "3",
+              "reps": "4",
+              "metodo": null,
+              "prescripcion_texto": "3 x 4",
+              "porcentaje_rm": "0.75",
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": "¿ESFUERZO?",
+              "cargas_kg_registro": [
+                "75",
+                "75",
+                "75"
+              ]
+            },
+            {
+              "semana": 2,
+              "sesion": "Día 4°",
+              "descarga": false,
+              "series": "1",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "1 x AMRAP",
+              "porcentaje_rm": "0.85",
+              "carga_kg_fuente": null,
+              "carga_texto": "RPE-10",
+              "descanso": null,
+              "notas": null,
+              "cargas_kg_registro": [
+                "85"
+              ]
+            },
+            {
+              "semana": 3,
+              "sesion": "Día 6°",
+              "descarga": false,
+              "series": "3",
+              "reps": "5",
+              "metodo": null,
+              "prescripcion_texto": "3 x 5",
+              "porcentaje_rm": "0.77",
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": "¿ESFUERZO?",
+              "cargas_kg_registro": [
+                "77",
+                "77",
+                "77"
+              ]
+            },
+            {
+              "semana": 4,
+              "sesion": "Día 8°",
+              "descarga": false,
+              "series": "2",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP",
+              "porcentaje_rm": "0.85",
+              "carga_kg_fuente": null,
+              "carga_texto": "RPE-10",
+              "descanso": null,
+              "notas": null,
+              "cargas_kg_registro": [
+                "85",
+                "85"
+              ]
+            },
+            {
+              "semana": 5,
+              "sesion": "Día 10°",
+              "descarga": false,
+              "series": "4",
+              "reps": "4",
+              "metodo": null,
+              "prescripcion_texto": "4 x 4",
+              "porcentaje_rm": "0.8",
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": "¿ESFUERZO?",
+              "cargas_kg_registro": [
+                "80",
+                "80",
+                "80",
+                "80"
+              ]
+            },
+            {
+              "semana": 6,
+              "sesion": "Día 12°",
+              "descarga": true,
+              "series": "1",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "1 x AMRAP",
+              "porcentaje_rm": "0.85",
+              "carga_kg_fuente": null,
+              "carga_texto": "RPE-10",
+              "descanso": null,
+              "notas": null,
+              "cargas_kg_registro": [
+                "85"
+              ]
+            }
+          ]
+        },
+        {
+          "nombre_original": "LEG EXTENSIONS",
+          "nombre": "Leg extensions",
+          "nombre_clave": "LEG EXTENSIONS",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "[Descanso entre reps: sem 1: 1:30-2:00, sem 2: 1:30-2:00, sem 3: 1:30-2:00, sem 4: 1:30-2:00, sem 5: 02:00:00, sem 6: 02:00:00]",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Día 2°",
+              "descarga": false,
+              "series": "2",
+              "reps": "6",
+              "metodo": null,
+              "prescripcion_texto": "2 x 6",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Día 4°",
+              "descarga": false,
+              "series": "2",
+              "reps": "8",
+              "metodo": null,
+              "prescripcion_texto": "2 x 8",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Día 6°",
+              "descarga": false,
+              "series": "2",
+              "reps": "10",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 4,
+              "sesion": "Día 8°",
+              "descarga": false,
+              "series": "1x AMRAP",
+              "reps": null,
+              "metodo": null,
+              "prescripcion_texto": "1x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 5,
+              "sesion": "Día 10°",
+              "descarga": false,
+              "series": "2",
+              "reps": "AMRAP+1",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP+1",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 6,
+              "sesion": "Día 12°",
+              "descarga": true,
+              "series": "1",
+              "reps": "AMRAP + 2",
+              "metodo": null,
+              "prescripcion_texto": "1 x AMRAP + 2",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "PRESS MILITAR",
+          "nombre": "Press militar",
+          "nombre_clave": "PRESS MILITAR",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": {
+            "tipo": "1RM",
+            "valor": "100",
+            "unidad": null
+          },
+          "notas": "[Récord teórico del archivo] | Desde las claviculas. Sin ayuda de rodillas. | [Descanso entre reps: sem 1: 2:00 a 3:00, sem 2: 2:00 a 3:00, sem 3: 2:00 a 3:00, sem 4: 2:00 a 3:00, sem 5: 02:00:00, sem 6: 2:00 a 3:00]",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Día 2°",
+              "descarga": false,
+              "series": "3",
+              "reps": "5",
+              "metodo": null,
+              "prescripcion_texto": "3 x 5",
+              "porcentaje_rm": "0.75",
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": "¿ESFUERZO?",
+              "cargas_kg_registro": [
+                "75",
+                "75",
+                "75"
+              ]
+            },
+            {
+              "semana": 2,
+              "sesion": "Día 4°",
+              "descarga": false,
+              "series": "3",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "3 x AMRAP",
+              "porcentaje_rm": "0.85",
+              "carga_kg_fuente": null,
+              "carga_texto": "RPE-10",
+              "descanso": null,
+              "notas": null,
+              "cargas_kg_registro": [
+                "85",
+                "85",
+                "85"
+              ]
+            },
+            {
+              "semana": 3,
+              "sesion": "Día 6°",
+              "descarga": false,
+              "series": "3",
+              "reps": "6",
+              "metodo": null,
+              "prescripcion_texto": "3 x 6",
+              "porcentaje_rm": "0.75",
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": "¿ESFUERZO?",
+              "cargas_kg_registro": [
+                "75",
+                "75",
+                "75"
+              ]
+            },
+            {
+              "semana": 4,
+              "sesion": "Día 8°",
+              "descarga": false,
+              "series": "2",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP",
+              "porcentaje_rm": "0.85",
+              "carga_kg_fuente": null,
+              "carga_texto": "RPE-10",
+              "descanso": null,
+              "notas": null,
+              "cargas_kg_registro": [
+                "85",
+                "85"
+              ]
+            },
+            {
+              "semana": 5,
+              "sesion": "Día 10°",
+              "descarga": false,
+              "series": "3",
+              "reps": "8/6/4",
+              "metodo": null,
+              "prescripcion_texto": "3 x 8/6/4",
+              "porcentaje_rm": "0.75",
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": "¿ESFUERZO?",
+              "cargas_kg_registro": [
+                "75",
+                "75",
+                "75"
+              ]
+            },
+            {
+              "semana": 6,
+              "sesion": "Día 12°",
+              "descarga": true,
+              "series": "3",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "3 x AMRAP",
+              "porcentaje_rm": "0.85",
+              "carga_kg_fuente": null,
+              "carga_texto": "RPE-10",
+              "descanso": null,
+              "notas": null,
+              "cargas_kg_registro": [
+                "85",
+                "85",
+                "85"
+              ]
+            }
+          ]
+        },
+        {
+          "nombre_original": "LAT MACHINE",
+          "nombre": "Lat machine",
+          "nombre_clave": "LAT MACHINE",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "Hasta el pecho, agarre altura de los hombros | [Descanso entre reps: sem 1: 1:30-2:00, sem 2: 1:30-2:00, sem 3: 1:30-2:00, sem 4: 1:30-2:00, sem 5: 02:00:00, sem 6: 02:00:00]",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Día 2°",
+              "descarga": false,
+              "series": "2",
+              "reps": "8",
+              "metodo": null,
+              "prescripcion_texto": "2 x 8",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": "RPE-10",
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Día 4°",
+              "descarga": false,
+              "series": "2",
+              "reps": "10",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Día 6°",
+              "descarga": false,
+              "series": "2",
+              "reps": "8",
+              "metodo": null,
+              "prescripcion_texto": "2 x 8",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 4,
+              "sesion": "Día 8°",
+              "descarga": false,
+              "series": "2",
+              "reps": "10",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 5,
+              "sesion": "Día 10°",
+              "descarga": false,
+              "series": "2",
+              "reps": "8",
+              "metodo": null,
+              "prescripcion_texto": "2 x 8",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 6,
+              "sesion": "Día 12°",
+              "descarga": true,
+              "series": "2",
+              "reps": "10",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "CURL CON BARRA",
+          "nombre": "Curl con barra",
+          "nombre_clave": "CURL CON BARRA",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "ALTERNO CON",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Día 2°",
+              "descarga": false,
+              "series": "2",
+              "reps": "6",
+              "metodo": null,
+              "prescripcion_texto": "2 x 6",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Día 4°",
+              "descarga": false,
+              "series": "2",
+              "reps": "8",
+              "metodo": null,
+              "prescripcion_texto": "2 x 8",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Día 6°",
+              "descarga": false,
+              "series": "2",
+              "reps": "10",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 4,
+              "sesion": "Día 8°",
+              "descarga": false,
+              "series": "1x AMRAP",
+              "reps": null,
+              "metodo": null,
+              "prescripcion_texto": "1x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 5,
+              "sesion": "Día 10°",
+              "descarga": false,
+              "series": "2",
+              "reps": "AMRAP+1",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP+1",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 6,
+              "sesion": "Día 12°",
+              "descarga": true,
+              "series": "2",
+              "reps": "AMRAP + 2",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP + 2",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "CRUNCH INVERSO",
+          "nombre": "Crunch inverso",
+          "nombre_clave": "CRUNCH INVERSO",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": "CURL CON BARRA",
+          "rm_referencia": null,
+          "notas": " [Superserie: alternar con CURL CON BARRA; prescripción compartida según archivo — marcador 'alternar']",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Día 2°",
+              "descarga": false,
+              "series": "2",
+              "reps": "6",
+              "metodo": null,
+              "prescripcion_texto": "2 x 6",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Día 4°",
+              "descarga": false,
+              "series": "2",
+              "reps": "8",
+              "metodo": null,
+              "prescripcion_texto": "2 x 8",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Día 6°",
+              "descarga": false,
+              "series": "2",
+              "reps": "10",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 4,
+              "sesion": "Día 8°",
+              "descarga": false,
+              "series": "1x AMRAP",
+              "reps": null,
+              "metodo": null,
+              "prescripcion_texto": "1x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 5,
+              "sesion": "Día 10°",
+              "descarga": false,
+              "series": "2",
+              "reps": "AMRAP+1",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP+1",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 6,
+              "sesion": "Día 12°",
+              "descarga": true,
+              "series": "2",
+              "reps": "AMRAP + 2",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP + 2",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            }
+          ]
+        }
+      ],
+      "avisos": []
+    }
+  ],
+  "variantes": [
+    {
+      "etiqueta": "ALBERTO",
+      "etiquetas": [
+        "ALBERTO"
+      ],
+      "unidades": "kg",
+      "archivos": [
+        "3 Mesociclo - Aprender a Entrenar-Alberto.xlsx"
+      ],
+      "atleta": "Alberto",
+      "coincidencia_posicional_pct": 75,
+      "sustituciones": [],
+      "ejercicios_solo_variante": [],
+      "ejercicios_solo_plantilla": [],
+      "prescripcion_diferente": [
+        {
+          "dia": "D",
+          "posicion": 1,
+          "ejercicio": "SENTADILLA CON BARRA",
+          "semanas": {
+            "1": {
+              "plantilla": "3 x 5 x 0.75",
+              "variante": "3 x 5 x 0.7"
+            },
+            "2": {
+              "plantilla": "3 x AMRAP x 0.85",
+              "variante": "3 x AMRAP x 0.76"
+            },
+            "3": {
+              "plantilla": "3 x 6 x 0.75",
+              "variante": "3 x 6 x 0.7"
+            },
+            "4": {
+              "plantilla": "2 x AMRAP x 0.85",
+              "variante": "2 x AMRAP x 0.76"
+            },
+            "5": {
+              "plantilla": "4 x 6 x 0.75",
+              "variante": "4 x 6 x 0.7"
+            },
+            "6": {
+              "plantilla": "1 x AMRAP x 0.85",
+              "variante": "1 x AMRAP x 0.76"
+            }
+          }
+        },
+        {
+          "dia": "D",
+          "posicion": 3,
+          "ejercicio": "PRESS BANCA",
+          "semanas": {
+            "1": {
+              "plantilla": "3 x 5 x 0.75",
+              "variante": "3 x 5 x 0.76"
+            },
+            "3": {
+              "plantilla": "3 x 6 x 0.75",
+              "variante": "3 x 6 x 0.76"
+            },
+            "5": {
+              "plantilla": "3 x 8/6/4 x 0.75",
+              "variante": "3 x 8/6/4 x 0.76"
+            }
+          }
+        },
+        {
+          "dia": "D",
+          "posicion": 1,
+          "ejercicio": "PESO MUERTO",
+          "semanas": {
+            "1": {
+              "plantilla": "3 x 4 x 0.75",
+              "variante": "3 x 4 x 0.77"
+            },
+            "2": {
+              "plantilla": "1 x AMRAP x 0.85",
+              "variante": "2 x AMRAP x 0.85"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "etiqueta": "CARLOS MORENO",
+      "etiquetas": [
+        "CARLOS MORENO"
+      ],
+      "unidades": "kg",
+      "archivos": [
+        "3 Mesociclo - Aprender a Entrenar-Carlos Moreno.xlsx"
+      ],
+      "atleta": "Carlos Moreno",
+      "coincidencia_posicional_pct": 58,
+      "sustituciones": [
+        {
+          "dia": "D",
+          "posicion": 4,
+          "en_plantilla": "SEAL ROW o REMO T",
+          "en_variante": "DB SEAL ROW"
+        },
+        {
+          "dia": "D",
+          "posicion": 4,
+          "en_plantilla": "LAT MACHINE",
+          "en_variante": "LAT MACHINE AGARRE NEUTRO"
+        }
+      ],
+      "ejercicios_solo_variante": [],
+      "ejercicios_solo_plantilla": [],
+      "prescripcion_diferente": [
+        {
+          "dia": "D",
+          "posicion": 1,
+          "ejercicio": "SENTADILLA CON BARRA",
+          "semanas": {
+            "1": {
+              "plantilla": "3 x 5 x 0.75",
+              "variante": "3 x 5 x 0.73"
+            },
+            "2": {
+              "plantilla": "3 x AMRAP x 0.85",
+              "variante": "3 x AMRAPR x 0.81"
+            },
+            "4": {
+              "plantilla": "2 x AMRAP x 0.85",
+              "variante": "2 x AMRAPR x 0.845"
+            },
+            "5": {
+              "plantilla": "4 x 6 x 0.75",
+              "variante": "4 x 6 x 0.77"
+            },
+            "6": {
+              "plantilla": "1 x AMRAP x 0.85",
+              "variante": "1 x AMRAP x 0.885"
+            }
+          }
+        },
+        {
+          "dia": "D",
+          "posicion": 2,
+          "ejercicio": "LEG CURL",
+          "semanas": {
+            "1": {
+              "plantilla": "2 x 6",
+              "variante": "2 x 10 a 12"
+            },
+            "2": {
+              "plantilla": "2 x 8",
+              "variante": "2 x 10 a 12"
+            },
+            "3": {
+              "plantilla": "2 x 10",
+              "variante": "2 x 10 a 12"
+            },
+            "6": {
+              "plantilla": "1 x AMRAP + 2",
+              "variante": "1 x 10 a 12"
+            }
+          }
+        },
+        {
+          "dia": "D",
+          "posicion": 3,
+          "ejercicio": "PRESS BANCA",
+          "semanas": {
+            "2": {
+              "plantilla": "3 x AMRAP x 0.85",
+              "variante": "3 x AMRAPR x 0.84"
+            },
+            "4": {
+              "plantilla": "2 x AMRAP x 0.85",
+              "variante": "2 x AMRAP x 0.84"
+            }
+          }
+        },
+        {
+          "dia": "D",
+          "posicion": 1,
+          "ejercicio": "PESO MUERTO",
+          "semanas": {
+            "2": {
+              "plantilla": "1 x AMRAP x 0.85",
+              "variante": "3 x AMRAPR x 0.8"
+            },
+            "3": {
+              "plantilla": "3 x 5 x 0.77",
+              "variante": "4 x 4 x 0.8"
+            },
+            "4": {
+              "plantilla": "2 x AMRAP x 0.85",
+              "variante": "2 x AMRAP x 0.82"
+            },
+            "6": {
+              "plantilla": "1 x AMRAP x 0.85",
+              "variante": "1 x AMRAP x 0.86"
+            }
+          }
+        },
+        {
+          "dia": "D",
+          "posicion": 3,
+          "ejercicio": "PRESS MILITAR",
+          "semanas": {
+            "1": {
+              "plantilla": "3 x 5 x 0.75",
+              "variante": "3 x 5 x 0.79"
+            },
+            "3": {
+              "plantilla": "3 x 6 x 0.75",
+              "variante": "3 x 6 x 0.79"
+            },
+            "5": {
+              "plantilla": "3 x 8/6/4 x 0.75",
+              "variante": "3 x 8/6/4 x 0.79"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "archivos_fuente": [
+    {
+      "archivo": "3 Mesociclo - Aprender a Entrenar-Alberto.xlsx",
+      "drive_id": "1C0A3SGJEhjY8EDMmuOvixDSHlqpoGF-S",
+      "fase": "Fase 3 - Macrocilo 1 - Aprendiendo Fuerza",
+      "variante": "ALBERTO",
+      "atleta": "Alberto",
+      "n_ejercicios": 12,
+      "semanas": 6,
+      "firma": "b830466de51a"
+    },
+    {
+      "archivo": "3 Mesociclo - Aprender a Entrenar.xlsx",
+      "drive_id": "1ccu2xTU2AeJ4yWSv9qk_0q9wwbU74XI3",
+      "fase": "Fase 3 - Macrocilo 1 - Aprendiendo Fuerza",
+      "variante": null,
+      "atleta": null,
+      "n_ejercicios": 12,
+      "semanas": 6,
+      "firma": "e937df0df4b2"
+    },
+    {
+      "archivo": "3 Mesociclo - Aprender a Entrenar-Carlos Moreno.xlsx",
+      "drive_id": "1gXzdG67Ko8Dpxtc78eWToYeIpaRl6SKh",
+      "fase": "Fase 3 - Macrocilo 1 - Aprendiendo Fuerza",
+      "variante": "CARLOS MORENO",
+      "atleta": "Carlos Moreno",
+      "n_ejercicios": 12,
+      "semanas": 6,
+      "firma": "fbcf2b60f6fb"
+    }
+  ],
+  "notas": "Plantilla canónica construida a partir del archivo de referencia '3 Mesociclo - Aprender a Entrenar.xlsx'. Las cargas en kg/lbs de los archivos son registro del atleta, no prescripción, salvo que se indique carga_kg_fuente.",
+  "revision": []
+}

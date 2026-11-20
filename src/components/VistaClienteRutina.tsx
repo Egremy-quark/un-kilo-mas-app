@@ -12,6 +12,7 @@ import { GraficaRm } from './GraficaRm';
 import { Logo } from './Logo';
 import { BotonPendiente } from './BotonPendiente';
 import { crearClienteNavegador } from '@/lib/supabase/client';
+import { Desplegable } from './Desplegable';
 
 interface SerieLocal {
   id: string;
@@ -239,14 +240,15 @@ export function VistaClienteRutina({ datos }: { datos: VistaClienteDatos }) {
                 {datos.dias.length > 1 ? (
                   <label className="f">
                     Día
-                    <select className="in" value={diaId} onChange={(e) => setDiaId(e.target.value)}>
-                      {datos.dias.map((d) => (
-                        <option key={d.id} value={d.id}>
-                          {d.letra}
-                          {textoCliente(d.foco) ? ` ${textoCliente(d.foco)}` : ''}
-                        </option>
-                      ))}
-                    </select>
+                    <Desplegable
+                      etiqueta="Día"
+                      valor={diaId}
+                      alCambiar={setDiaId}
+                      opciones={datos.dias.map((d) => ({
+                        valor: d.id,
+                        etiqueta: `${d.letra}${textoCliente(d.foco) ? ` ${textoCliente(d.foco)}` : ''}`,
+                      }))}
+                    />
                   </label>
                 ) : null}
                 <h2 className="h" style={{ fontSize: 30 }}>

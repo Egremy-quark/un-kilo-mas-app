@@ -20,6 +20,17 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
   const parsed = Cuerpo.safeParse(bruto);
   if (!parsed.success) return jsonError('Revisa los datos.');
   const esPlantilla = parsed.data.es_plantilla ?? !parsed.data.cliente_id;
+  const nombreCopia = parsed.data.nombre?.trim();
+  if (esPlantilla && nombreCopia) {
+    const { data: repetida } = await auth.admin
+      .from('rutinas')
+      .select('id')
+      .eq('es_plantilla', true)
+      .is('cliente_id', null)
+      .ilike('nombre', nombreCopia)
+      .limit(1);
+    if (repetida?.length) return jsonError('Ya existe una plantilla con ese nombre');
+  }
   const { data, error } = await auth.admin.rpc('copiar_rutina', {
     p_origen: id,
     p_cliente_id: parsed.data.cliente_id ?? null,

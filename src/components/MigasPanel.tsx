@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { usePathname } from 'next/navigation';
+import { useIdioma } from './Idioma';
 
 export interface Miga {
   href?: string;
@@ -67,6 +68,23 @@ function migasDeRuta(path: string): Miga[] {
 export function MigasPanel() {
   const path = usePathname();
   const { extra } = useContext(MigasCtx);
+  const { t } = useIdioma();
+  const traducir = (label: string) => {
+    const mapa: Record<string, string> = {
+      Clientes: t('clientes'),
+      Alta: t('alta'),
+      Cliente: t('cliente'),
+      Pago: t('pago'),
+      Prueba: t('prueba'),
+      Plantillas: t('plantillas'),
+      Ejercicios: t('ejercicios'),
+      Pagos: t('pagos'),
+      Rutina: t('rutina'),
+      'Vista de cliente': t('vistaCliente'),
+      Panel: t('panel'),
+    };
+    return mapa[label] ?? label;
+  };
   const base = extra.length ? extra : migasDeRuta(path);
   const items: Miga[] = [{ href: '/panel', label: 'Panel' }, ...base];
 
@@ -83,9 +101,9 @@ export function MigasPanel() {
                 </span>
               ) : null}
               {ultimo || !m.href ? (
-                <span aria-current={ultimo ? 'page' : undefined}>{m.label}</span>
+                <span aria-current={ultimo ? 'page' : undefined}>{traducir(m.label)}</span>
               ) : (
-                <Link href={m.href}>{m.label}</Link>
+                <Link href={m.href}>{traducir(m.label)}</Link>
               )}
             </li>
           );

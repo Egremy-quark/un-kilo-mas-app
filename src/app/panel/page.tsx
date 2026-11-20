@@ -15,7 +15,7 @@ export default async function PanelClientes() {
     : { data: [] };
   const { data: entrenadores } = await supabase.from('perfiles').select('id, nombre').eq('rol', 'entrenador');
   const { data: inscripciones } = ids.length
-    ? await supabase.from('inscripciones').select('cliente_id, fase_orden, semana, terminada, programas(nombre), rutinas:rutina_iniciada_id(nombre)')
+    ? await supabase.from('inscripciones').select('cliente_id, fase_orden, semana, terminada, programas(clave, nombre), rutinas:rutina_iniciada_id(nombre)')
     : { data: [] };
   const { data: sesiones } = ids.length
     ? await supabase.from('sesiones').select('cliente_id, fecha').in('cliente_id', ids).order('fecha', { ascending: false })
@@ -36,7 +36,10 @@ export default async function PanelClientes() {
   }
 
   const lista: ClienteLista[] = (perfiles ?? []).map((p) => {
-    const ins = (inscripciones ?? []).find((i) => i.cliente_id === p.id);
+    const suyas = (inscripciones ?? []).filter((i) => i.cliente_id === p.id);
+    const clavePlan = p.plan === 'prueba' ? 'prueba' : p.plan === 'ruta_mensual' || p.plan === 'ruta_completa' ? 'ruta-1' : null;
+    const ins =
+      (clavePlan ? suyas.find((i) => (i.programas as { clave?: string } | null)?.clave === clavePlan) : null) ?? suyas[0];
     const rutinaCoach = (rutinas ?? []).find((r) => r.cliente_id === p.id);
     const cubre = ultimoPago.get(p.id as string) ?? null;
     const pruebaTerminada = Boolean(ins && (ins as { terminada?: boolean }).terminada && p.plan === 'prueba');

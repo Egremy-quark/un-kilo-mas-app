@@ -1,24 +1,40 @@
+import { BarraLateral } from './BarraLateral';
 import { CabeceraPanel } from './CabeceraPanel';
+import { IdiomaProvider } from './Idioma';
 import { MigasPanel, MigasProvider } from './MigasPanel';
+
+export type ConteosNav = {
+  ruta?: string;
+  prueba?: string;
+  plantillas?: string;
+  ejercicios?: string;
+};
 
 export function PanelShell({
   nombre,
   etiqueta,
+  conteos,
   children,
 }: {
   nombre: string;
   etiqueta: string;
+  conteos?: ConteosNav;
   children: React.ReactNode;
 }) {
   return (
+    <IdiomaProvider>
     <MigasProvider>
-      <div className="panel-raiz" style={{ minHeight: '100vh', paddingBottom: 56 }}>
-        <CabeceraPanel nombre={nombre} etiqueta={etiqueta} />
-        <div className="wrap panel-cuerpo" style={{ paddingTop: 20, display: 'flex', flexDirection: 'column', gap: 24 }}>
-          <MigasPanel />
-          {children}
+      <div className="panel-marco">
+        <BarraLateral nombre={nombre} etiqueta={etiqueta} conteos={conteos} />
+        <div className="panel-raiz" style={{ minHeight: '100vh', paddingBottom: 56 }}>
+          <CabeceraPanel nombre={nombre} etiqueta={etiqueta} />
+          <div className="wrap panel-cuerpo" style={{ paddingTop: 20, display: 'flex', flexDirection: 'column', gap: 24 }}>
+            <MigasPanel />
+            {children}
+          </div>
         </div>
       </div>
     </MigasProvider>
+    </IdiomaProvider>
   );
 }

@@ -1,5 +1,6 @@
 import { plataforma, type PlanPagado } from '@/config/plataforma';
 import { hoyUtc } from './fecha';
+import { formatearDinero } from './formato';
 
 export type EstadoPlan =
   | 'prueba'
@@ -55,6 +56,14 @@ export function calcularCobertura(entrada: CoberturaEntrada): { cubreDesde: Date
   }
 
   return { cubreDesde, cubreHasta };
+}
+
+/** Importe del plan. Coaching no tiene precio: devuelve «Sin monto». */
+export function textoMensualidad(plan: string): string {
+  if (plan === 'ruta_mensual') return formatearDinero(plataforma.planes.ruta_mensual.precio);
+  if (plan === 'ruta_completa') return formatearDinero(plataforma.planes.ruta_completa.precio);
+  if (plan === 'prueba') return formatearDinero(plataforma.planes.prueba.precio);
+  return 'Sin monto';
 }
 
 export function precioEsperado(plan: PlanPagado, meses?: number | null): number | null {

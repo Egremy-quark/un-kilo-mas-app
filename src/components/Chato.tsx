@@ -24,7 +24,7 @@ export function Chato() {
         el.getAttribute('aria-label') ||
         (el as HTMLElement).innerText?.replace(/\s+/g, ' ').trim() ||
         el.getAttribute('title');
-      if (label) setTexto(label.slice(0, 80));
+      if (label) setTexto(label);
     }
     document.addEventListener('pointerover', describir, true);
     document.addEventListener('click', describir, true);

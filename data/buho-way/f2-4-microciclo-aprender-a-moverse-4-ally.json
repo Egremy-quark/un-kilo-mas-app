@@ -1,0 +1,617 @@
+{
+  "id": "f2-4-microciclo-aprender-a-moverse-4-ally",
+  "nombre": "4° Microciclo - Aprender a moverse 4 (ALLY)",
+  "nombre_alias": [],
+  "fase": "Fase 2- Mesosiclo 1 - Aprender a Moverse",
+  "fase_corta": "Aprender a Moverse",
+  "semanas": 3,
+  "enfoque": "Técnica",
+  "enfoque_original": "inferido: contiene 'aprender a moverse'",
+  "estado": "Borrador",
+  "dias": [
+    {
+      "codigo": "A",
+      "titulo": "APRENDER A MOVERSE 4- DÍA A - INTRODUCCIÓN AL GYM",
+      "hoja": "Etrenamiento A",
+      "enfoque_dia": "INTRODUCCIÓN AL GYM",
+      "instrucciones_sesion": {
+        "1": "Coloca una carga, díficil, Completa todas las repeticiones sin perder el control del ejercicio.",
+        "2": "sube un poco tus cargas",
+        "3": "otro poco, máximo esfuerzo."
+      },
+      "ejercicios": [
+        {
+          "nombre_original": "PIN SQUAT",
+          "nombre": "Pin squat",
+          "nombre_clave": "PIN SQUAT",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "Seguros en 10.",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Entrenamiento 1°",
+              "descarga": false,
+              "series": "3",
+              "reps": "8",
+              "metodo": null,
+              "prescripcion_texto": "3 x 8",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "90\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Entrenamiento 3°",
+              "descarga": false,
+              "series": "3",
+              "reps": "7",
+              "metodo": null,
+              "prescripcion_texto": "3 x 7",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "90\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Entrenamiento 5°",
+              "descarga": false,
+              "series": "3",
+              "reps": "6",
+              "metodo": null,
+              "prescripcion_texto": "3 x 6",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "90\"",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "PRESS DE BANCA CON MANCUERNA",
+          "nombre": "Press de banca con mancuerna",
+          "nombre_clave": "PRESS DE BANCA CON MANCUERNA",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Entrenamiento 1°",
+              "descarga": false,
+              "series": "3",
+              "reps": "8",
+              "metodo": null,
+              "prescripcion_texto": "3 x 8",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "90\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Entrenamiento 3°",
+              "descarga": false,
+              "series": "3",
+              "reps": "7",
+              "metodo": null,
+              "prescripcion_texto": "3 x 7",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "90\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Entrenamiento 5°",
+              "descarga": false,
+              "series": "3",
+              "reps": "6",
+              "metodo": null,
+              "prescripcion_texto": "3 x 6",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "90\"",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "PRESS MILITAR CON MANCUERNAS",
+          "nombre": "Press militar con mancuernas",
+          "nombre_clave": "PRESS MILITAR CON MANCUERNAS",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "Desde abajo, Pausa abajo.",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Entrenamiento 1°",
+              "descarga": false,
+              "series": "3",
+              "reps": "8",
+              "metodo": null,
+              "prescripcion_texto": "3 x 8",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "90\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Entrenamiento 3°",
+              "descarga": false,
+              "series": "3",
+              "reps": "7",
+              "metodo": null,
+              "prescripcion_texto": "3 x 7",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "90\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Entrenamiento 5°",
+              "descarga": false,
+              "series": "3",
+              "reps": "6",
+              "metodo": null,
+              "prescripcion_texto": "3 x 6",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "90\"",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "EXTENSIONES DE PIERNA",
+          "nombre": "Extensiones de pierna",
+          "nombre_clave": "EXTENSIONES DE PIERNA",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "\" Aleja\" el dedo gordo de ti",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Entrenamiento 1°",
+              "descarga": false,
+              "series": "2",
+              "reps": "10 a 12",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10 a 12",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Entrenamiento 3°",
+              "descarga": false,
+              "series": "2",
+              "reps": "12 a 15",
+              "metodo": null,
+              "prescripcion_texto": "2 x 12 a 15",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Entrenamiento 5°",
+              "descarga": false,
+              "series": "2",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "60\"",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "PRESS TRICEPS TRAS NUCA",
+          "nombre": "Press triceps tras nuca",
+          "nombre_clave": "PRESS TRICEPS TRAS NUCA",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "Codo \"anclado arriba\"",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Entrenamiento 1°",
+              "descarga": false,
+              "series": "2",
+              "reps": "10 a 12",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10 a 12",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Entrenamiento 3°",
+              "descarga": false,
+              "series": "2",
+              "reps": "12 a 15",
+              "metodo": null,
+              "prescripcion_texto": "2 x 12 a 15",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Entrenamiento 5°",
+              "descarga": false,
+              "series": "2",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "60\"",
+              "notas": null
+            }
+          ]
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "codigo": "B",
+      "titulo": "APRENDER A MOVERSE 4- DÍA B- INTRODUCCIÓN AL GYM",
+      "hoja": "Etrenamiento B",
+      "enfoque_dia": "INTRODUCCIÓN AL GYM",
+      "instrucciones_sesion": {
+        "1": "Coloca una carga, díficil, Completa todas las repeticiones sin perder el control del ejercicio.",
+        "3": "Haz todas las repeticiones posibles trata de conocer un nuevo nivel de esfuerzo."
+      },
+      "ejercicios": [
+        {
+          "nombre_original": "PESO MUERTO DESDE BLOQUES",
+          "nombre": "Peso muerto desde bloques",
+          "nombre_clave": "PESO MUERTO DESDE BLOQUES",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "Cadera adelante/Atrás",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Entrenamiento 2°",
+              "descarga": false,
+              "series": "4",
+              "reps": "3",
+              "metodo": null,
+              "prescripcion_texto": "4 x 3",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "60\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Entrenamiento 4°",
+              "descarga": false,
+              "series": "4",
+              "reps": "4343",
+              "metodo": null,
+              "prescripcion_texto": "4 x 4343",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "60\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Entrenamiento 6°",
+              "descarga": false,
+              "series": "4",
+              "reps": "4",
+              "metodo": null,
+              "prescripcion_texto": "4 x 4",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "60\"",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "LAT MACHINE SUPINO",
+          "nombre": "Lat machine supino",
+          "nombre_clave": "LAT MACHINE SUPINO",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "Hasta el pecho",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Entrenamiento 2°",
+              "descarga": false,
+              "series": "2",
+              "reps": "10 a 12",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10 a 12",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Entrenamiento 4°",
+              "descarga": false,
+              "series": "2",
+              "reps": "12 a 15",
+              "metodo": null,
+              "prescripcion_texto": "2 x 12 a 15",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Entrenamiento 6°",
+              "descarga": false,
+              "series": "2",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "60\"",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "REMO CON MANCUERNA",
+          "nombre": "Remo con mancuerna",
+          "nombre_clave": "REMO CON MANCUERNA",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "Espalda neutra",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Entrenamiento 2°",
+              "descarga": false,
+              "series": "2",
+              "reps": "6 a 8",
+              "metodo": null,
+              "prescripcion_texto": "2 x 6 a 8",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Entrenamiento 4°",
+              "descarga": false,
+              "series": "3",
+              "reps": "8 a 10",
+              "metodo": null,
+              "prescripcion_texto": "3 x 8 a 10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Entrenamiento 6°",
+              "descarga": false,
+              "series": "2",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "60\"",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "LEG CURL",
+          "nombre": "Leg curl",
+          "nombre_clave": "LEG CURL",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "lento y controlado",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Entrenamiento 2°",
+              "descarga": false,
+              "series": "2",
+              "reps": "6 a 8",
+              "metodo": null,
+              "prescripcion_texto": "2 x 6 a 8",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Entrenamiento 4°",
+              "descarga": false,
+              "series": "2",
+              "reps": "8 a 10",
+              "metodo": null,
+              "prescripcion_texto": "2 x 8 a 10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Entrenamiento 6°",
+              "descarga": false,
+              "series": "2",
+              "reps": "10",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "CURL DE BÍCEPS CON BARRA Z",
+          "nombre": "Curl de bíceps con barra z",
+          "nombre_clave": "CURL DE BICEPS CON BARRA Z",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "Extiensión completa",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Entrenamiento 2°",
+              "descarga": false,
+              "series": "2",
+              "reps": "6 a 8",
+              "metodo": null,
+              "prescripcion_texto": "2 x 6 a 8",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Entrenamiento 4°",
+              "descarga": false,
+              "series": "2",
+              "reps": "8 a 10",
+              "metodo": null,
+              "prescripcion_texto": "2 x 8 a 10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Entrenamiento 6°",
+              "descarga": false,
+              "series": "2",
+              "reps": "10",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            }
+          ]
+        }
+      ],
+      "avisos": []
+    }
+  ],
+  "variantes": [],
+  "archivos_fuente": [
+    {
+      "archivo": "4° Microciclo - Aprender a moverse 4Ally.xlsx",
+      "drive_id": "1HHlyjvhSyCKf1eIdVBTaMPeiwGP6bjzn",
+      "fase": "Fase 2- Mesosiclo 1 - Aprender a Moverse",
+      "variante": "ALLY",
+      "atleta": "Ally",
+      "n_ejercicios": 10,
+      "semanas": 3,
+      "firma": "52e286e0cf16"
+    }
+  ],
+  "notas": "Plantilla canónica construida a partir del archivo de referencia '4° Microciclo - Aprender a moverse 4Ally.xlsx'. Las cargas en kg/lbs de los archivos son registro del atleta, no prescripción, salvo que se indique carga_kg_fuente.",
+  "revision": [
+    "Subgrupo separado de '4° Microciclo - Aprender a moverse 4': coincidencia 0% con la plantilla base."
+  ]
+}

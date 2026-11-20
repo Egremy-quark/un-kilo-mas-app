@@ -6,6 +6,7 @@ import { calcularCobertura, montoCoincide, precioEsperado } from '@/lib/planes';
 import type { PlanPagado } from '@/config/plataforma';
 import { formatearRangoCorto, utcDesdeYmd, ymdDeDate, ymdEnZona } from '@/lib/fecha';
 import { formatearDinero } from '@/lib/formato';
+import { Desplegable } from '@/components/Desplegable';
 import { TarjetasPlan } from '@/components/TarjetasPlan';
 import { BotonPendiente } from '@/components/BotonPendiente';
 
@@ -117,14 +118,12 @@ export function AltaForma({
       {plan === 'coaching' ? (
         <label className="f">
           Entrenador a cargo
-          <select className="in" value={entrenadorId} onChange={(e) => setEntrenadorId(e.target.value)} required>
-            <option value="">Elige entrenador</option>
-            {entrenadores.map((e) => (
-              <option key={e.id} value={e.id}>
-                {e.nombre ?? 'Entrenador'}
-              </option>
-            ))}
-          </select>
+          <Desplegable
+            etiqueta="Entrenador a cargo"
+            valor={entrenadorId}
+            alCambiar={setEntrenadorId}
+            opciones={[{ valor: '', etiqueta: 'Elige entrenador' }, ...entrenadores.map((e) => ({ valor: e.id, etiqueta: e.nombre ?? 'Entrenador' }))]}
+          />
         </label>
       ) : null}
       <label className="f">

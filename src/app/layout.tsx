@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { plataforma } from '@/config/plataforma';
 import { CapaCargando } from '@/components/CapaCargando';
+import { IndicadorDev } from '@/components/IndicadorDev';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <CapaCargando />
+        <IndicadorDev />
         {children}
       </body>
     </html>

@@ -1,0 +1,994 @@
+{
+  "id": "f1-9-microciclo-mas-hipertrofia",
+  "nombre": "9° Microciclo - Más Hipertrofia",
+  "nombre_alias": [],
+  "fase": "Fase 1 - Mesosciclo 1 - En Casa",
+  "fase_corta": "En Casa",
+  "semanas": 3,
+  "enfoque": "Hipertrofia",
+  "enfoque_original": "inferido: nombre contiene 'hipertrofia'",
+  "estado": "Borrador",
+  "dias": [
+    {
+      "codigo": "A",
+      "titulo": "ENTRENAMIENTO A - HIPERTROFIA - PIERNAS/HOMBRO/ABS",
+      "hoja": "Día A",
+      "enfoque_dia": null,
+      "instrucciones_sesion": {
+        "1": "Instrucciones: Sin dejar el peso, tratar de alcanzar las 25 reps. Pequeñas pausas respiratorias",
+        "2": "Instrucciones: Sin dejar el peso, tratar de alcanzar las 25 reps. Pequeñas pausas respiratorias",
+        "3": "DESCARGA FIN DE BLOQUE"
+      },
+      "ejercicios": [
+        {
+          "nombre_original": "SENTADILLA BULGARA",
+          "nombre": "Sentadilla bulgara",
+          "nombre_clave": "SENTADILLA BULGARA",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": {
+            "tipo": "1RM",
+            "valor": null,
+            "unidad": null
+          },
+          "notas": "Profundidad al máx",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "2",
+              "reps": "25/20",
+              "metodo": null,
+              "prescripcion_texto": "2 x 25/20",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2'00",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "4°",
+              "descarga": false,
+              "series": "3",
+              "reps": "25/20/15",
+              "metodo": null,
+              "prescripcion_texto": "3 x 25/20/15",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "3'00",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "7°",
+              "descarga": true,
+              "series": "1",
+              "reps": "20 REST PAUSE",
+              "metodo": null,
+              "prescripcion_texto": "1 x 20 REST PAUSE",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2'00",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "PESO MUERTO RUMANO",
+          "nombre": "Peso muerto rumano",
+          "nombre_clave": "PESO MUERTO RUMANO",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "1",
+              "reps": "10",
+              "metodo": null,
+              "prescripcion_texto": "1 x 10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2'00",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "4°",
+              "descarga": false,
+              "series": "2",
+              "reps": "10",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2'00",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "7°",
+              "descarga": true,
+              "series": "1",
+              "reps": "10 a 12",
+              "metodo": null,
+              "prescripcion_texto": "1 x 10 a 12",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2'00",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "PRESS MILITAR",
+          "nombre": "Press militar",
+          "nombre_clave": "PRESS MILITAR",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": {
+            "tipo": "1RM",
+            "valor": null,
+            "unidad": null
+          },
+          "notas": "Desde las claviculas",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "3",
+              "reps": "15/12/10",
+              "metodo": null,
+              "prescripcion_texto": "3 x 15/12/10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2'00",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "4°",
+              "descarga": false,
+              "series": "3",
+              "reps": "15/12/10",
+              "metodo": null,
+              "prescripcion_texto": "3 x 15/12/10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2'00",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "7°",
+              "descarga": true,
+              "series": "2",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2'00",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "ELEVACIONES LATERALES",
+          "nombre": "Elevaciones laterales",
+          "nombre_clave": "ELEVACIONES LATERALES",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "Ultima serie FALLO TOTAL",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "4",
+              "reps": "10",
+              "metodo": null,
+              "prescripcion_texto": "4 x 10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2'00",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "4°",
+              "descarga": false,
+              "series": "3",
+              "reps": "10",
+              "metodo": null,
+              "prescripcion_texto": "3 x 10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2'00",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "7°",
+              "descarga": true,
+              "series": "2",
+              "reps": "12",
+              "metodo": null,
+              "prescripcion_texto": "2 x 12",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2'30",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "CRUNCH INVERSO",
+          "nombre": "Crunch inverso",
+          "nombre_clave": "CRUNCH INVERSO",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "ALTERNAR con",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "3",
+              "reps": "12 a 15",
+              "metodo": null,
+              "prescripcion_texto": "3 x 12 a 15",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "4°",
+              "descarga": false,
+              "series": "3",
+              "reps": "15 a 20",
+              "metodo": null,
+              "prescripcion_texto": "3 x 15 a 20",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "7°",
+              "descarga": true,
+              "series": "2",
+              "reps": "15",
+              "metodo": null,
+              "prescripcion_texto": "2 x 15",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "PANTORRILLA UNILATERAL 1\" UP",
+          "nombre": "Pantorrilla unilateral 1\" up",
+          "nombre_clave": "PANTORRILLA UNILATERAL 1 UP",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": "CRUNCH INVERSO",
+          "rm_referencia": null,
+          "notas": " [Superserie: alternar con CRUNCH INVERSO; prescripción compartida según archivo — marcador 'alternar']",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "3",
+              "reps": "12 a 15",
+              "metodo": null,
+              "prescripcion_texto": "3 x 12 a 15",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "4°",
+              "descarga": false,
+              "series": "3",
+              "reps": "15 a 20",
+              "metodo": null,
+              "prescripcion_texto": "3 x 15 a 20",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "7°",
+              "descarga": true,
+              "series": "2",
+              "reps": "15",
+              "metodo": null,
+              "prescripcion_texto": "2 x 15",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            }
+          ]
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "codigo": "B",
+      "titulo": "ENTRENAMIENTO B - HIPERTROFIA - PECHO/BICEPS/ABS + ENFASIS",
+      "hoja": "Día B",
+      "enfoque_dia": null,
+      "instrucciones_sesion": {
+        "1": "MYO: Cuando veas esto quiere decir que despues de hacer las repeticiones hacer una pausa con el tiempo marcado y hacer todas las repeticiones posibles con la misma carga",
+        "2": "Subir cargas solo si se han logrado las repeticiones propuestas en la sesión anterior",
+        "3": "DESCARGA FIN DE BLOQUE"
+      },
+      "ejercicios": [
+        {
+          "nombre_original": "PRESS BANCA CON MANCUERNAS",
+          "nombre": "Press banca con mancuernas",
+          "nombre_clave": "PRESS BANCA CON MANCUERNAS",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": {
+            "tipo": "1RM",
+            "valor": null,
+            "unidad": null
+          },
+          "notas": "Retracción escapular",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "3",
+              "reps": "12/10/8",
+              "metodo": null,
+              "prescripcion_texto": "3 x 12/10/8",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "3'00",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "4°",
+              "descarga": false,
+              "series": "3",
+              "reps": "12/10/8",
+              "metodo": null,
+              "prescripcion_texto": "3 x 12/10/8",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "3'00",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "7°",
+              "descarga": true,
+              "series": "1",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "1 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "1'00",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "PRESS INCLINADO MANCUERNAS",
+          "nombre": "Press inclinado mancuernas",
+          "nombre_clave": "PRESS INCLINADO MANCUERNAS",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "Abajo Díficil, Arria Fácil | Lento y controlado",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "1",
+              "reps": "10 + J-REPS",
+              "metodo": null,
+              "prescripcion_texto": "1 x 10 + J-REPS",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2'00",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "4°",
+              "descarga": false,
+              "series": "2",
+              "reps": "10 + J-REPS",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10 + J-REPS",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2'00",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "7°",
+              "descarga": true,
+              "series": "1",
+              "reps": "10 a 12",
+              "metodo": null,
+              "prescripcion_texto": "1 x 10 a 12",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2'00",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "CURL DE BÍCEPS",
+          "nombre": "Curl de bíceps",
+          "nombre_clave": "CURL DE BICEPS",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": {
+            "tipo": "1RM",
+            "valor": null,
+            "unidad": null
+          },
+          "notas": "Extender el codo",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "3",
+              "reps": "8/6/4",
+              "metodo": null,
+              "prescripcion_texto": "3 x 8/6/4",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "3'00",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "4°",
+              "descarga": false,
+              "series": "3",
+              "reps": "8/6/4",
+              "metodo": null,
+              "prescripcion_texto": "3 x 8/6/4",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "3'00",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "7°",
+              "descarga": true,
+              "series": "2",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "1'00",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "PUENTE UNILATERAL",
+          "nombre": "Puente unilateral",
+          "nombre_clave": "PUENTE UNILATERAL",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "ALTERNAR con",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "3",
+              "reps": "20",
+              "metodo": null,
+              "prescripcion_texto": "3 x 20",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "4°",
+              "descarga": false,
+              "series": "3",
+              "reps": "20",
+              "metodo": null,
+              "prescripcion_texto": "3 x 20",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "7°",
+              "descarga": true,
+              "series": "2",
+              "reps": "20",
+              "metodo": null,
+              "prescripcion_texto": "2 x 20",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "REMO O SEAL ROW",
+          "nombre": "Remo o seal row",
+          "nombre_clave": "REMO O SEAL ROW",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": "PUENTE UNILATERAL",
+          "rm_referencia": null,
+          "notas": "[Superserie: alternar con PUENTE UNILATERAL]",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "3",
+              "reps": "12 a 15",
+              "metodo": null,
+              "prescripcion_texto": "3 x 12 a 15",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "30\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "4°",
+              "descarga": false,
+              "series": "3",
+              "reps": "12 a 15",
+              "metodo": null,
+              "prescripcion_texto": "3 x 12 a 15",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "30\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "7°",
+              "descarga": true,
+              "series": null,
+              "reps": null,
+              "metodo": null,
+              "prescripcion_texto": null,
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "30\"",
+              "notas": null
+            }
+          ]
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "codigo": "C",
+      "titulo": "ENTRENAMIENTO C - HIPERTROFIA - FEMORAL/DORSAL/BÍCEPS ABS/CALVS",
+      "hoja": "Día C",
+      "enfoque_dia": null,
+      "instrucciones_sesion": {
+        "1": "Para las 12 repeticiones, buscar unas carga casí al límite.",
+        "2": "Subir cargas solo si se han logrado las repeticiones propuestas en la sesión anterior",
+        "3": "DESCARGA FIN DE BLOQUE"
+      },
+      "ejercicios": [
+        {
+          "nombre_original": "PESO MUERTO MANCUERNAS",
+          "nombre": "Peso muerto mancuernas",
+          "nombre_clave": "PESO MUERTO MANCUERNAS",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": {
+            "tipo": "RM",
+            "valor": null,
+            "unidad": null
+          },
+          "notas": "Lento y controlado",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "3",
+              "reps": "12",
+              "metodo": null,
+              "prescripcion_texto": "3 x 12",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": "Carga Díficil.",
+              "descanso": "2'00",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "4°",
+              "descarga": false,
+              "series": "3",
+              "reps": "12/12/20 Rest Pause",
+              "metodo": null,
+              "prescripcion_texto": "3 x 12/12/20 Rest Pause",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": "BAJAR LA CARGA EN LA ULTIMA",
+              "descanso": "2'00",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "7°",
+              "descarga": true,
+              "series": "8",
+              "reps": "3",
+              "metodo": null,
+              "prescripcion_texto": "8 x 3",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": "SUBIR EL PESO al MÁX",
+              "descanso": "2'00",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "REMO UNILATERAL",
+          "nombre": "Remo unilateral",
+          "nombre_clave": "REMO UNILATERAL",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": {
+            "tipo": "1RM",
+            "valor": null,
+            "unidad": null
+          },
+          "notas": "espalda neutra",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "3",
+              "reps": "15/12/10",
+              "metodo": null,
+              "prescripcion_texto": "3 x 15/12/10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2'00",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "4°",
+              "descarga": false,
+              "series": "3",
+              "reps": "15/12/10",
+              "metodo": null,
+              "prescripcion_texto": "3 x 15/12/10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2'00",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "7°",
+              "descarga": true,
+              "series": "2",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "3'00",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "FONDOS CON PIERNAS ELEVADAS",
+          "nombre": "Fondos con piernas elevadas",
+          "nombre_clave": "FONDOS CON PIERNAS ELEVADAS",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": {
+            "tipo": "1RM",
+            "valor": null,
+            "unidad": null
+          },
+          "notas": "Pausa 1\" Abajo",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "2",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2'00",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "4°",
+              "descarga": false,
+              "series": "3",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "3 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2'00",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "7°",
+              "descarga": true,
+              "series": "2",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "2'00",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "PLANCHA FRONTAL",
+          "nombre": "Plancha frontal",
+          "nombre_clave": "PLANCHA FRONTAL",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "ALTERNAR con",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": "3",
+              "reps": "AMTAP",
+              "metodo": null,
+              "prescripcion_texto": "3 x AMTAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "4°",
+              "descarga": false,
+              "series": "3",
+              "reps": "AMTAP",
+              "metodo": null,
+              "prescripcion_texto": "3 x AMTAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "7°",
+              "descarga": true,
+              "series": "2",
+              "reps": "AMTAP",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMTAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "PANTORRILLA UNILATERAL 1\" PAUSA",
+          "nombre": "Pantorrilla unilateral 1\" pausa",
+          "nombre_clave": "PANTORRILLA UNILATERAL 1 PAUSA",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": "PLANCHA FRONTAL",
+          "rm_referencia": null,
+          "notas": "[Superserie: alternar con PLANCHA FRONTAL]",
+          "video_url": null,
+          "tiene_tutorial": false,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "1°",
+              "descarga": false,
+              "series": null,
+              "reps": "25",
+              "metodo": null,
+              "prescripcion_texto": "25",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "30\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "4°",
+              "descarga": false,
+              "series": null,
+              "reps": "25",
+              "metodo": null,
+              "prescripcion_texto": "25",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "30\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "7°",
+              "descarga": true,
+              "series": null,
+              "reps": "25",
+              "metodo": null,
+              "prescripcion_texto": "25",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "30\"",
+              "notas": null
+            }
+          ]
+        }
+      ],
+      "avisos": []
+    }
+  ],
+  "variantes": [],
+  "archivos_fuente": [
+    {
+      "archivo": "9° Microciclo - Más Hipertrofia.xlsx",
+      "drive_id": "1Kt6EKFcCtOTKlwGmbPbqfkhlAsQ0DEaD",
+      "fase": "Fase 1 - Mesosciclo 1 - En Casa",
+      "variante": null,
+      "atleta": null,
+      "n_ejercicios": 16,
+      "semanas": 3,
+      "firma": "132e7f945f19"
+    }
+  ],
+  "notas": "Plantilla canónica construida a partir del archivo de referencia '9° Microciclo - Más Hipertrofia.xlsx'. Las cargas en kg/lbs de los archivos son registro del atleta, no prescripción, salvo que se indique carga_kg_fuente.",
+  "revision": []
+}

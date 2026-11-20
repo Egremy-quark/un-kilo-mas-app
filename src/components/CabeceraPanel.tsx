@@ -7,10 +7,12 @@ import { Logo } from './Logo';
 import { NavPanel } from './NavPanel';
 import { CerrarSesion } from './CerrarSesion';
 import { Icono } from './Iconos';
+import { BotonIdioma, useIdioma } from './Idioma';
 
 export function CabeceraPanel({ nombre, etiqueta }: { nombre: string; etiqueta: string }) {
   const path = usePathname();
   const [abierto, setAbierto] = useState(false);
+  const { t } = useIdioma();
   const inicial = (nombre || 'E').slice(0, 1).toUpperCase();
 
   useEffect(() => {
@@ -44,7 +46,8 @@ export function CabeceraPanel({ nombre, etiqueta }: { nombre: string; etiqueta: 
     <header className="cabecera-panel">
       <div className="wrap cabecera-panel-inner">
         <div className="cabecera-panel-top">
-          <Logo subtitulo="Panel del entrenador" />
+          <Logo subtitulo={t('panelEntrenador')} />
+          <BotonIdioma />
           <div className="usuario-escritorio" style={{ marginLeft: 'auto' }}>
             {usuario}
           </div>
@@ -58,11 +61,6 @@ export function CabeceraPanel({ nombre, etiqueta }: { nombre: string; etiqueta: 
           >
             {abierto ? <Icono nombre="cerrar" /> : <Icono nombre="menu" />}
           </button>
-        </div>
-      </div>
-      <div className="cabecera-panel-nav">
-        <div className="wrap">
-          <NavPanel className="nav-panel-escritorio" />
         </div>
       </div>
       {abierto && typeof document !== 'undefined'

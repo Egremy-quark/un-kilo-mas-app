@@ -1,0 +1,618 @@
+{
+  "id": "f2-3-microciclo-aprender-a-moverse-3-version-sin-maquinas",
+  "nombre": "3° Microciclo - Aprender a moverse 3 (Versión Sin Máquinas)",
+  "nombre_alias": [],
+  "fase": "Fase 2- Mesosiclo 1 - Aprender a Moverse",
+  "fase_corta": "Aprender a Moverse",
+  "semanas": 3,
+  "enfoque": "Técnica",
+  "enfoque_original": "inferido: contiene 'aprender a moverse'",
+  "estado": "Borrador",
+  "dias": [
+    {
+      "codigo": "A",
+      "titulo": "APRENDER A MOVERSE 3- DÍA A - INTRODUCCIÓN AL GYM",
+      "hoja": "Etrenamiento A",
+      "enfoque_dia": "INTRODUCCIÓN AL GYM",
+      "instrucciones_sesion": {
+        "1": "Trata de seleccionar una carga díficil, pero no imposible prioriza tu tecnica y conocer los ejercicios",
+        "2": "Trata de esforzarte un poco más, sube alguna carga",
+        "3": "Ve al límite, esfuerzate al máximo"
+      },
+      "ejercicios": [
+        {
+          "nombre_original": "PLANCHA FRONTAL",
+          "nombre": "Plancha frontal",
+          "nombre_clave": "PLANCHA FRONTAL",
+          "seccion": "calentamiento",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Entrenamiento 1°",
+              "descarga": false,
+              "series": "2",
+              "reps": "15\"",
+              "metodo": null,
+              "prescripcion_texto": "2 x 15\"",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Entrenamiento 3°",
+              "descarga": false,
+              "series": "2",
+              "reps": "20\"",
+              "metodo": null,
+              "prescripcion_texto": "2 x 20\"",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Entrenamiento 5°",
+              "descarga": false,
+              "series": "2",
+              "reps": "30\"",
+              "metodo": null,
+              "prescripcion_texto": "2 x 30\"",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "SENTADILLA SIN PESO",
+          "nombre": "Sentadilla sin peso",
+          "nombre_clave": "SENTADILLA SIN PESO",
+          "seccion": "calentamiento",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Entrenamiento 1°",
+              "descarga": false,
+              "series": "2",
+              "reps": "8",
+              "metodo": null,
+              "prescripcion_texto": "2 x 8",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "30\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Entrenamiento 3°",
+              "descarga": false,
+              "series": "2",
+              "reps": "10",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "30\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Entrenamiento 5°",
+              "descarga": false,
+              "series": "2",
+              "reps": "12",
+              "metodo": null,
+              "prescripcion_texto": "2 x 12",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "30\"",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "FRONT SQUAT",
+          "nombre": "Front squat",
+          "nombre_clave": "FRONT SQUAT",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "\"CODOS ARRIBA\"",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Entrenamiento 1°",
+              "descarga": false,
+              "series": "2",
+              "reps": "10 a 12",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10 a 12",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Entrenamiento 3°",
+              "descarga": false,
+              "series": "2",
+              "reps": "12 a 15",
+              "metodo": null,
+              "prescripcion_texto": "2 x 12 a 15",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Entrenamiento 5°",
+              "descarga": false,
+              "series": "2",
+              "reps": "15 a 20",
+              "metodo": null,
+              "prescripcion_texto": "2 x 15 a 20",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "PRESS DE HOMBRO con mancuernas",
+          "nombre": "Press de hombro con mancuernas",
+          "nombre_clave": "PRESS DE HOMBRO CON MANCUERNAS",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Entrenamiento 1°",
+              "descarga": false,
+              "series": "2",
+              "reps": "10 a 12",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10 a 12",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Entrenamiento 3°",
+              "descarga": false,
+              "series": "2",
+              "reps": "12 a 15",
+              "metodo": null,
+              "prescripcion_texto": "2 x 12 a 15",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Entrenamiento 5°",
+              "descarga": false,
+              "series": "2",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "SENTADILLA BULGARA",
+          "nombre": "Sentadilla bulgara",
+          "nombre_clave": "SENTADILLA BULGARA",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "Foco \"Planta del pie contra el piso\"",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Entrenamiento 1°",
+              "descarga": false,
+              "series": "2",
+              "reps": "10 a 12",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10 a 12",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Entrenamiento 3°",
+              "descarga": false,
+              "series": "2",
+              "reps": "12 a 15",
+              "metodo": null,
+              "prescripcion_texto": "2 x 12 a 15",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Entrenamiento 5°",
+              "descarga": false,
+              "series": "2",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            }
+          ]
+        }
+      ],
+      "avisos": []
+    },
+    {
+      "codigo": "B",
+      "titulo": "APRENDER A MOVERSE 3- DÍA B - INTRODUCCIÓN AL GYM",
+      "hoja": "Etrenamiento B",
+      "enfoque_dia": "INTRODUCCIÓN AL GYM",
+      "instrucciones_sesion": {
+        "1": "Trata de seleccionar una carga díficil, pero no imposible prioriza tu tecnica y conocer los ejercicios",
+        "2": "Trata de esforzarte un poco más, sube alguna carga",
+        "3": "Ve al límite, sube el peso esfuerzate al máximo"
+      },
+      "ejercicios": [
+        {
+          "nombre_original": "PUENTES",
+          "nombre": "Puentes",
+          "nombre_clave": "PUENTES",
+          "seccion": "calentamiento",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Entrenamiento 2°",
+              "descarga": false,
+              "series": "2",
+              "reps": "15",
+              "metodo": null,
+              "prescripcion_texto": "2 x 15",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Entrenamiento 4°",
+              "descarga": false,
+              "series": "2",
+              "reps": "20",
+              "metodo": null,
+              "prescripcion_texto": "2 x 20",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Entrenamiento 6°",
+              "descarga": false,
+              "series": "2",
+              "reps": "25",
+              "metodo": null,
+              "prescripcion_texto": "2 x 25",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": null,
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "DEAD BUG",
+          "nombre": "Dead bug",
+          "nombre_clave": "DEAD BUG",
+          "seccion": "calentamiento",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Entrenamiento 2°",
+              "descarga": false,
+              "series": "2",
+              "reps": "8",
+              "metodo": null,
+              "prescripcion_texto": "2 x 8",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "30\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Entrenamiento 4°",
+              "descarga": false,
+              "series": "2",
+              "reps": "10",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "30\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Entrenamiento 6°",
+              "descarga": false,
+              "series": "2",
+              "reps": "12",
+              "metodo": null,
+              "prescripcion_texto": "2 x 12",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "30\"",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "PESO MUERTO CON BARRA",
+          "nombre": "Peso muerto con barra",
+          "nombre_clave": "PESO MUERTO CON BARRA",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "Desde el Suelo",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Entrenamiento 2°",
+              "descarga": false,
+              "series": "2",
+              "reps": "6 a 8",
+              "metodo": null,
+              "prescripcion_texto": "2 x 6 a 8",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Entrenamiento 4°",
+              "descarga": false,
+              "series": "2",
+              "reps": "8 a 10",
+              "metodo": null,
+              "prescripcion_texto": "2 x 8 a 10",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Entrenamiento 6°",
+              "descarga": false,
+              "series": "2",
+              "reps": "10 a 12",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10 a 12",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "REMO UNILATERAL con mancuerna",
+          "nombre": "Remo unilateral con mancuerna",
+          "nombre_clave": "REMO UNILATERAL CON MANCUERNA",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "Espalda neutra",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Entrenamiento 2°",
+              "descarga": false,
+              "series": "2",
+              "reps": "10 a 12",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10 a 12",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Entrenamiento 4°",
+              "descarga": false,
+              "series": "2",
+              "reps": "12 a 15",
+              "metodo": null,
+              "prescripcion_texto": "2 x 12 a 15",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Entrenamiento 6°",
+              "descarga": false,
+              "series": "2",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            }
+          ]
+        },
+        {
+          "nombre_original": "PESO MUERTO RUMANO",
+          "nombre": "Peso muerto rumano",
+          "nombre_clave": "PESO MUERTO RUMANO",
+          "seccion": "principal",
+          "componentes": [],
+          "superconjunto_con": null,
+          "rm_referencia": null,
+          "notas": "Espalda neutra",
+          "video_url": null,
+          "tiene_tutorial": true,
+          "prescripcion": [
+            {
+              "semana": 1,
+              "sesion": "Entrenamiento 2°",
+              "descarga": false,
+              "series": "2",
+              "reps": "10 a 12",
+              "metodo": null,
+              "prescripcion_texto": "2 x 10 a 12",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 2,
+              "sesion": "Entrenamiento 4°",
+              "descarga": false,
+              "series": "2",
+              "reps": "12 a 15",
+              "metodo": null,
+              "prescripcion_texto": "2 x 12 a 15",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            },
+            {
+              "semana": 3,
+              "sesion": "Entrenamiento 6°",
+              "descarga": false,
+              "series": "2",
+              "reps": "AMRAP",
+              "metodo": null,
+              "prescripcion_texto": "2 x AMRAP",
+              "porcentaje_rm": null,
+              "carga_kg_fuente": null,
+              "carga_texto": null,
+              "descanso": "45\"",
+              "notas": null
+            }
+          ]
+        }
+      ],
+      "avisos": []
+    }
+  ],
+  "variantes": [],
+  "archivos_fuente": [
+    {
+      "archivo": "3° Microciclo - Aprender a moverse 3 (Versión Sin Máquinas).xlsx",
+      "drive_id": "17TDnk8NF9i4PYtd6desrd59cz14xS0AT",
+      "fase": "Fase 2- Mesosiclo 1 - Aprender a Moverse",
+      "variante": "VERSIÓN SIN MÁQUINAS",
+      "atleta": null,
+      "n_ejercicios": 10,
+      "semanas": 3,
+      "firma": "a874c366f136"
+    }
+  ],
+  "notas": "Plantilla canónica construida a partir del archivo de referencia '3° Microciclo - Aprender a moverse 3 (Versión Sin Máquinas).xlsx'. Las cargas en kg/lbs de los archivos son registro del atleta, no prescripción, salvo que se indique carga_kg_fuente.",
+  "revision": [
+    "Subgrupo separado de '3° Microciclo - Aprender a moverse 3': coincidencia 20% con la plantilla base."
+  ]
+}

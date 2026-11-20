@@ -3,6 +3,7 @@ import { ConstructorRutina } from '@/components/ConstructorRutina';
 import { cargarConstructor } from '@/lib/cargar-constructor';
 import { FijarMigas } from '@/components/MigasPanel';
 import { notFound } from 'next/navigation';
+import { etiquetaVariante } from '@/lib/etiquetas';
 
 export default async function PaginaRutina({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -15,6 +16,33 @@ export default async function PaginaRutina({ params }: { params: Promise<{ id: s
     .select('orden, nombre, programas(clave, nombre)')
     .eq('rutina_id', id)
     .maybeSingle();
+  const { data: propia } = await supabase
+    .from('rutinas')
+    .select('es_plantilla, fase_plantilla_id')
+    .eq('id', id)
+    .maybeSingle();
+  let pertenencia: string | null = null;
+  if (propia?.es_plantilla && !fase) {
+    let nombreFase = 'Sin fase';
+    if (propia.fase_plantilla_id) {
+      const { data: carpeta } = await supabase
+        .from('plantilla_fases')
+        .select('nombre')
+        .eq('id', propia.fase_plantilla_id as string)
+        .maybeSingle();
+      nombreFase = (carpeta?.nombre as string) || 'Sin fase';
+    }
+    const { data: variantes } = await supabase
+      .from('plantilla_variantes')
+      .select('poblacion, material, unidades')
+      .eq('rutina_id', id);
+    const etiquetas = (variantes ?? []).map((v) =>
+      [etiquetaVariante('poblacion', v.poblacion as string | null), etiquetaVariante('material', v.material as string | null), etiquetaVariante('unidades', v.unidades as string | null)]
+        .filter(Boolean)
+        .join(' · '),
+    );
+    pertenencia = etiquetas.length ? `Fase: ${nombreFase}. Variantes: ${etiquetas.join(' / ')}` : `Fase: ${nombreFase}`;
+  }
   const programa = fase?.programas as { clave?: string; nombre?: string } | null;
   const nombreCliente = (rutina?.perfiles as { nombre?: string } | null)?.nombre;
   const migas = fase && programa?.clave
@@ -39,6 +67,7 @@ export default async function PaginaRutina({ params }: { params: Promise<{ id: s
         esFase={Boolean(fase)}
         faseOrden={(fase?.orden as number | undefined) ?? null}
         faseNombre={(fase?.nombre as string | undefined) ?? null}
+        pertenencia={pertenencia}
         inicial={inicial}
       />
     </>

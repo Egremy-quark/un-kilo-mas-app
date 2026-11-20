@@ -6,6 +6,7 @@ import { crearClienteNavegador } from '@/lib/supabase/client';
 import { etiquetaMedida, etiquetaPatron, etiquetaTipoAlternativa, PATRONES } from '@/lib/etiquetas';
 import { BotonPendiente } from '@/components/BotonPendiente';
 import { CamposEditor } from '@/components/CamposEditor';
+import { Desplegable } from '@/components/Desplegable';
 import { Icono } from '@/components/Iconos';
 
 interface Ej {
@@ -48,6 +49,7 @@ export function Biblioteca() {
   const [tipoAlt, setTipoAlt] = useState('equivalente');
   const [msg, setMsg] = useState('');
   const [guardando, setGuardando] = useState(false);
+  const [cerradosEj, setCerradosEj] = useState<string[]>([]);
 
   async function cargar() {
     const { data } = await supabase.from('ejercicios').select('*').order('nombre');
@@ -180,13 +182,21 @@ export function Biblioteca() {
     setMsg('');
   }
 
+  const gruposEj = [...ordenPatrones.map((id) => ({ id, nombre: etiquetaPatron(id), filas: filtrada.filter((e) => e.patron === id) })), { id: 'sin', nombre: 'Sin patrón', filas: filtrada.filter((e) => !e.patron) }].filter((g) => g.filas.length > 0);
+
   return (
-    <div>
-      <div className="card tabla-o-tarjetas" style={{ padding: 0 }}>
-        <div className="acciones-cabeza" style={{ padding: 16 }}>
-          <input className="in" placeholder="Buscar" value={q} onChange={(e) => setQ(e.target.value)} />
+    <div className="plantillas-boceto">
+      <header className="pt-cabeza">
+        <div>
+          <p className="pt-kicker">Panel · Ejercicios</p>
+          <div className="pt-titulo-linea">
+            <h1 className="h">Ejercicios</h1>
+            <p>{lista.length} en el catálogo</p>
+          </div>
+        </div>
+        <div className="pt-cabeza-acciones">
           <button
-            className="btn"
+            className="btn pt-btn-principal"
             type="button"
             onClick={() => {
               setEdit({ id: 'nuevo', nombre: '', patron: '', medida: 'kg_reps', video_url: '', nota_default: '' });
@@ -197,81 +207,87 @@ export function Biblioteca() {
             + Nuevo ejercicio
           </button>
         </div>
-        <div className="zona-filtros">
-          <span className="lbl">Patrón</span>
-          <div className="chips-scroll">
-            <button type="button" className="chip-filtro" aria-pressed={patronFiltro === 'todos'} onClick={() => setPatronFiltro('todos')}>
-              Todos ({lista.length})
+      </header>
+      <section className="pt-resumen parejo" aria-label="Resumen">
+        <article>
+          <b>{lista.length}</b> ejercicios
+        </article>
+        <article>
+          <b className="pt-num-lima">{lista.filter((e) => e.patron).length}</b> con patrón
+        </article>
+        <article>
+          <b>{lista.filter((e) => !e.patron).length}</b> sin patrón
+        </article>
+        <article>
+          <b>{lista.filter((e) => e.video_url).length}</b> con video
+        </article>
+      </section>
+      <div className="pt-herramientas">
+        <label className="campo-buscar">
+          <Icono nombre="lupa" />
+          <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Buscar ejercicio" aria-label="Buscar ejercicio" />
+        </label>
+        <div className="pt-segmento" role="group" aria-label="Patrón">
+          <button type="button" aria-pressed={patronFiltro === 'todos'} onClick={() => setPatronFiltro('todos')}>
+            Todos {lista.length}
+          </button>
+          {ordenPatrones.map((id) => (
+            <button key={id} type="button" aria-pressed={patronFiltro === id} onClick={() => setPatronFiltro(id)}>
+              {etiquetaPatron(id)} {lista.filter((e) => e.patron === id).length}
             </button>
-            {ordenPatrones.map((id) => (
-              <button key={id} type="button" className="chip-filtro" aria-pressed={patronFiltro === id} onClick={() => setPatronFiltro(id)}>
-                {etiquetaPatron(id)} ({lista.filter((e) => e.patron === id).length})
-              </button>
-            ))}
-          </div>
-        </div>
-        {filtrada.length === 0 ? (
-          <div className="estado-vacio">
-            <p>Ningún ejercicio coincide con el filtro. Hay {lista.length} en total.</p>
-            <button type="button" className="btn2" onClick={() => { setQ(''); setPatronFiltro('todos'); }}>
-              Limpiar filtros
-            </button>
-          </div>
-        ) : (
-        <>
-        <table className="tabla solo-escritorio">
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Patrón</th>
-              <th>Se mide</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filtrada.map((e) => (
-              <tr key={e.id}>
-                <td>
-                  <b>{e.nombre}</b>
-                </td>
-                <td>{e.patron ? etiquetaPatron(e.patron) : '—'}</td>
-                <td>{etiquetaMedida(e.medida)}</td>
-                <td>
-                  <div className="acciones-fila">
-                    <button type="button" className="btn-accion" title="Editar ejercicio" aria-label="Editar ejercicio" onClick={() => void abrir(e)}>
-                      <Icono nombre="lapiz" />
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <div className="tarjetas-movil">
-          {filtrada.map((e) => (
-            <article key={e.id} className="tarjeta-fila">
-              <h2>{e.nombre}</h2>
-              <dl>
-                <div>
-                  <dt>Patrón</dt>
-                  <dd>{e.patron ? etiquetaPatron(e.patron) : '—'}</dd>
-                </div>
-                <div>
-                  <dt>Se mide</dt>
-                  <dd>{etiquetaMedida(e.medida)}</dd>
-                </div>
-              </dl>
-              <div className="acciones-fila">
-                <button type="button" className="btn-accion" title="Editar ejercicio" aria-label="Editar ejercicio" onClick={() => void abrir(e)}>
-                  <Icono nombre="lapiz" />
-                </button>
-              </div>
-            </article>
           ))}
         </div>
-        </>
-        )}
       </div>
+      {filtrada.length === 0 ? (
+        <div className="pt-fila" style={{ padding: 16 }}>
+          <p>Ningún ejercicio coincide con el filtro. Hay {lista.length} en total.</p>
+          <button type="button" className="btn2" onClick={() => { setQ(''); setPatronFiltro('todos'); }}>
+            Limpiar filtros
+          </button>
+        </div>
+      ) : (
+        <div className="pt-lista">
+          {gruposEj.map((grupo) => {
+            const abierto = !cerradosEj.includes(grupo.id);
+            return (
+              <section key={grupo.id} className={`pt-fase${abierto ? ' abierta' : ''}`}>
+                <button
+                  type="button"
+                  className="pt-fase-cabeza"
+                  aria-expanded={abierto}
+                  onClick={() => setCerradosEj((prev) => (abierto ? [...prev, grupo.id] : prev.filter((id) => id !== grupo.id)))}
+                >
+                  <span className="pt-num">{grupo.filas.length}</span>
+                  <span className="pt-fase-nombre">
+                    <b>{grupo.nombre}</b>
+                  </span>
+                  <span className="pt-fase-meta">
+                    <span className="pt-pill">{grupo.filas.length} en total</span>
+                    <span className="pt-chevron" aria-hidden="true" />
+                  </span>
+                </button>
+                {abierto ? (
+                  <div className="pt-fase-cuerpo">
+                    {grupo.filas.map((e) => (
+                      <button key={e.id} type="button" className="pt-fila pt-fila-tope" onClick={() => void abrir(e)}>
+                        <span className="pt-fila-nombre">
+                          <b>{e.nombre}</b>
+                          <span>{e.patron ? etiquetaPatron(e.patron) : 'Sin patrón'}</span>
+                        </span>
+                        <span className="pt-pills">
+                          <span className="pt-pill">{etiquetaMedida(e.medida)}</span>
+                          {e.video_url ? <span className="pt-pill pt-pill-ok">Video</span> : <span className="pt-pill">Sin video</span>}
+                          <span className="pt-chevron" aria-hidden="true" />
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                ) : null}
+              </section>
+            );
+          })}
+        </div>
+      )}
       {edit && typeof document !== 'undefined'
         ? createPortal(
         <>
@@ -296,24 +312,21 @@ export function Biblioteca() {
           </label>
           <label className="f">
             Patrón
-            <select className="in" value={edit.patron ?? ''} onChange={(e) => setEdit({ ...edit, patron: e.target.value || null })}>
-              <option value="">Sin asignar</option>
-              {PATRONES.map((p) => (
-                <option key={p.id} value={p.id}>
-                  {p.label}
-                </option>
-              ))}
-            </select>
+            <Desplegable
+              etiqueta="Patrón"
+              valor={edit.patron ?? ''}
+              alCambiar={(valor) => setEdit({ ...edit, patron: valor || null })}
+              opciones={[{ valor: '', etiqueta: 'Sin asignar' }, ...PATRONES.map((p) => ({ valor: p.id, etiqueta: p.label }))]}
+            />
           </label>
           <label className="f">
             Se mide
-            <select className="in" value={edit.medida} onChange={(e) => setEdit({ ...edit, medida: e.target.value })}>
-              {MEDIDAS.map((m) => (
-                <option key={m.id} value={m.id}>
-                  {m.label}
-                </option>
-              ))}
-            </select>
+            <Desplegable
+              etiqueta="Se mide"
+              valor={edit.medida}
+              alCambiar={(valor) => setEdit({ ...edit, medida: valor })}
+              opciones={MEDIDAS.map((m) => ({ valor: m.id, etiqueta: m.label }))}
+            />
           </label>
           <label className="f">
             Video
@@ -348,13 +361,12 @@ export function Biblioteca() {
           </label>
           <label className="f">
             Tipo
-            <select className="in" value={tipoAlt} onChange={(e) => setTipoAlt(e.target.value)}>
-              {TIPOS_ALT.map((t) => (
-                <option key={t.id} value={t.id}>
-                  {t.label}
-                </option>
-              ))}
-            </select>
+            <Desplegable
+              etiqueta="Tipo de alternativa"
+              valor={tipoAlt}
+              alCambiar={setTipoAlt}
+              opciones={TIPOS_ALT.map((t) => ({ valor: t.id, etiqueta: t.label }))}
+            />
           </label>
           {busquedaAlt
             ? sugeridas.map((s) => (

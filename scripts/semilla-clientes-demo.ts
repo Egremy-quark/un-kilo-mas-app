@@ -100,7 +100,8 @@ for (const demo of demos) {
     correo: demo.correo,
     plan: demo.plan,
     origen: 'alta_manual',
-    entrenador_a_cargo_id: demo.plan === 'prueba' ? cargoFred : demo.plan === 'coaching' ? entrenador?.id ?? null : null,
+    entrenador_a_cargo_id:
+      demo.plan === 'prueba' || demo.plan === 'ruta_mensual' ? cargoFred : demo.plan === 'coaching' ? entrenador?.id ?? null : null,
     prueba_inicio: demo.plan === 'prueba' ? hoy : null,
     activo: true,
   });
@@ -134,6 +135,9 @@ for (const demo of demos) {
         cubre_hasta: cubre.cubreHasta.toISOString().slice(0, 10),
         registrado_por: entrenador?.id ?? user.id,
       });
+    }
+    if (prueba?.id) {
+      await supabase.from('inscripciones').delete().eq('cliente_id', user.id).eq('programa_id', prueba.id);
     }
     await supabase.from('inscripciones').upsert(
       {

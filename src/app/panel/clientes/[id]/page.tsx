@@ -163,6 +163,7 @@ export default async function FichaCliente({ params }: { params: Promise<{ id: s
 
       <div className="card">
         <div className="lbl">1RM de referencia</div>
+        {(rms ?? []).length === 0 ? <p className="muted">Sin 1RM de referencia todavía</p> : null}
         {(rms ?? []).map((r) => {
           const mejor = mias.filter((s) => s.ejercicio_id === r.ejercicio_id);
           const est = mejor

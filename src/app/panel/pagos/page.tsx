@@ -2,7 +2,6 @@ import { crearClienteServidor } from '@/lib/supabase/server';
 import { nombrePlan } from '@/lib/clientes-panel';
 import { finDeMes, formatearRangoCorto, mesActual, nombreMes } from '@/lib/fecha';
 import { formatearDinero, textoFolio, textoMonto } from '@/lib/formato';
-import { DescargarExcel } from '@/components/DescargarExcel';
 
 export default async function PagosDelMes({ searchParams }: { searchParams: Promise<{ mes?: string }> }) {
   const { mes: mesParam } = await searchParams;
@@ -25,111 +24,93 @@ export default async function PagosDelMes({ searchParams }: { searchParams: Prom
   const hayFolio = true;
   const hayMonto = true;
 
+  const pagos = data ?? [];
+  const planes = [...new Set(pagos.map((p) => nombrePlan(p.plan as string)))];
+
   return (
-    <>
-      <div className="acciones-cabeza">
-        <h1 className="h titulo-panel" style={{ fontSize: 60 }}>
-          Pagos de <em>{nombreMes(mes)}</em>
-        </h1>
-        <DescargarExcel href={`/api/panel/exportar?tipo=pagos&mes=${mes}`}>Exportar a Excel</DescargarExcel>
-      </div>
-      <form method="get" style={{ display: 'flex', gap: 12, alignItems: 'end' }}>
-        <label className="f" style={{ maxWidth: 220 }}>
+    <div className="plantillas-boceto">
+      <header className="pt-cabeza">
+        <div>
+          <p className="pt-kicker">Panel · Pagos</p>
+          <div className="pt-titulo-linea">
+            <h1 className="h">Pagos</h1>
+            <p>
+              {nombreMes(mes)} · {pagos.length} registros · {formatearDinero(total)}
+            </p>
+          </div>
+        </div>
+      </header>
+      <section className="pt-resumen parejo" aria-label="Resumen">
+        <article>
+          <b className="pt-num-lima">{formatearDinero(total)}</b> total del mes
+        </article>
+        <article>
+          <b>{pagos.length}</b> pagos
+        </article>
+        <article>
+          <b>{porEntrenador.size}</b> quienes registraron
+        </article>
+      </section>
+      <form className="pt-herramientas" method="get">
+        <label className="campo-buscar">
           Mes
-          <input className="in" type="month" name="mes" defaultValue={mes} />
+          <input type="month" name="mes" defaultValue={mes} aria-label="Mes" />
         </label>
-        <button className="btn2" type="submit">
+        <button className="btn pt-btn-principal" type="submit">
           Ver
         </button>
       </form>
-      <div className="cifras-grid cifras-2">
-        <div className="card">
-          <div className="lbl">Total</div>
-          <div className="big">{formatearDinero(total)}</div>
+      {pagos.length === 0 ? (
+        <div className="pt-fila" style={{ padding: 16 }}>
+          <p>Sin pagos registrados en {nombreMes(mes)}.</p>
         </div>
-        <div className="card">
-          <div className="lbl">Quién registró</div>
-          {porEntrenador.size === 0 ? (
-            <div className="muted">Nadie registró pagos este mes.</div>
-          ) : (
-            [...porEntrenador.entries()].map(([n, c]) => (
-              <div key={n}>
-                {n}: {c}
-              </div>
-            ))
-          )}
+      ) : (
+        <div className="pt-lista">
+          {planes.map((plan) => {
+            const delPlan = pagos.filter((p) => nombrePlan(p.plan as string) === plan);
+            return (
+              <section key={plan} className="pt-fase abierta">
+                <div className="pt-fase-cabeza">
+                  <span className="pt-num">{delPlan.length}</span>
+                  <span className="pt-fase-nombre">
+                    <b>{plan}</b>
+                  </span>
+                  <span className="pt-fase-meta">
+                    <span className="pt-pill">{delPlan.length} en total</span>
+                  </span>
+                </div>
+                <div className="pt-fase-cuerpo">
+                  {delPlan.map((p) => (
+                    <article key={p.id as string} className="pt-fila">
+                      <div className="pt-fila-tope">
+                        <span className="pt-fila-nombre">
+                          <b>{(p.perfiles as { nombre?: string } | null)?.nombre ?? 'Cliente'}</b>
+                          <span>
+                            {p.fecha_transferencia as string} · {formatearRangoCorto(p.cubre_desde as string, p.cubre_hasta as string)} ·{' '}
+                            {(p.entrenador as { nombre?: string } | null)?.nombre ?? 'Sin registrar'}
+                          </span>
+                        </span>
+                        <span className="pt-pills">
+                          <span className="pt-pill">{plan}</span>
+                          {hayMonto ? <span className="pt-pill pt-pill-ok">{textoMonto(p.monto_mxn as number | null)}</span> : null}
+                          {hayFolio ? <span className="pt-pill pt-pill-naranja">{textoFolio(p.folio as string | null)}</span> : null}
+                        </span>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            );
+          })}
         </div>
-      </div>
-      <div className="card tabla-o-tarjetas" style={{ padding: 0 }}>
-        {(data ?? []).length === 0 ? (
-          <div className="estado-vacio">
-            <p>Sin pagos registrados en {nombreMes(mes)}.</p>
-          </div>
-        ) : (
-          <>
-            <table className="tabla solo-escritorio">
-              <thead>
-                <tr>
-                  <th>Cliente</th>
-                  <th>Plan</th>
-                  <th>Fecha</th>
-                  {hayMonto ? <th>Monto</th> : null}
-                  {hayFolio ? <th>Folio</th> : null}
-                  <th>Cubre</th>
-                  <th>Registró</th>
-                </tr>
-              </thead>
-              <tbody>
-                {(data ?? []).map((p) => (
-                  <tr key={p.id as string}>
-                    <td>{(p.perfiles as { nombre?: string } | null)?.nombre}</td>
-                    <td>{nombrePlan(p.plan as string)}</td>
-                    <td>{p.fecha_transferencia as string}</td>
-                    {hayMonto ? <td>{textoMonto(p.monto_mxn as number | null)}</td> : null}
-                    {hayFolio ? <td>{textoFolio(p.folio as string | null)}</td> : null}
-                    <td>{formatearRangoCorto(p.cubre_desde as string, p.cubre_hasta as string)}</td>
-                    <td>{(p.entrenador as { nombre?: string } | null)?.nombre ?? 'Sin registrar'}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-            <div className="tarjetas-movil">
-              {(data ?? []).map((p) => (
-                <article key={p.id as string} className="tarjeta-fila">
-                  <h2>{(p.perfiles as { nombre?: string } | null)?.nombre ?? 'Cliente'}</h2>
-                  <span className="est ok">{nombrePlan(p.plan as string)}</span>
-                  <dl>
-                    <div>
-                      <dt>Fecha</dt>
-                      <dd>{p.fecha_transferencia as string}</dd>
-                    </div>
-                    {hayMonto ? (
-                      <div>
-                        <dt>Monto</dt>
-                        <dd>{textoMonto(p.monto_mxn as number | null)}</dd>
-                      </div>
-                    ) : null}
-                    {hayFolio ? (
-                      <div>
-                        <dt>Folio</dt>
-                        <dd>{textoFolio(p.folio as string | null)}</dd>
-                      </div>
-                    ) : null}
-                    <div>
-                      <dt>Cubre</dt>
-                      <dd>{formatearRangoCorto(p.cubre_desde as string, p.cubre_hasta as string)}</dd>
-                    </div>
-                    <div>
-                      <dt>Registró</dt>
-                      <dd>{(p.entrenador as { nombre?: string } | null)?.nombre ?? 'Sin registrar'}</dd>
-                    </div>
-                  </dl>
-                </article>
-              ))}
-            </div>
-          </>
-        )}
-      </div>
-    </>
+      )}
+      {porEntrenador.size > 0 ? (
+        <p className="muted" style={{ margin: 0, fontSize: 14 }}>
+          {[...porEntrenador.entries()].map(([n, c]) => `${n}: ${c}`).join(' · ')}
+        </p>
+      ) : (
+        <p className="muted" style={{ margin: 0, fontSize: 14 }}>Nadie registró pagos este mes.</p>
+      )}
+    </div>
   );
 }
